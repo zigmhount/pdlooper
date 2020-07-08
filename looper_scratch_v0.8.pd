@@ -12,10 +12,10 @@
 -1 -1;
 #X obj 81 -207 makenote 127;
 #X obj 109 -383 vradio 20 0 0 4 empty empty empty 0 -8 0 10 -262144
--170602 -1 0;
+-170602 -1 2;
 #X obj 237 -380 metro;
 #X obj 109 -414 tgl 20 0 \$0-globalplaypause-s \$0-globalplaypause-r
-play/pause -14 -12 0 10 -154176 -1 -1 0 1;
+play/pause -14 -12 0 10 -154176 -1 -1 1 1;
 #X floatatom 237 -315 5 0 0 0 - - -, f 5;
 #X obj 272 -346 + 1;
 #X obj 238 -289 mod 4;
@@ -66,6 +66,14 @@ play/pause -14 -12 0 10 -154176 -1 -1 0 1;
 #X obj 173 -29 s tempo_ms;
 #X obj 71 -28 s beat_num;
 #X obj 239 -239 t b f f f;
+#X obj 497 -212 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 533 -212 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 538 -273 r beat_num;
+#X obj 497 -180 realtime;
+#X floatatom 497 -155 5 0 0 0 - - -, f 5;
+#X obj 485 -312 pipe f 5;
 #X connect 1 0 2 0;
 #X connect 1 2 4 0;
 #X connect 2 0 30 0;
@@ -75,6 +83,7 @@ play/pause -14 -12 0 10 -154176 -1 -1 0 1;
 #X connect 6 0 5 0;
 #X connect 7 0 1 0;
 #X connect 7 1 1 1;
+#X connect 8 0 38 0;
 #X connect 9 0 15 0;
 #X connect 10 0 32 0;
 #X connect 11 0 13 0;
@@ -100,6 +109,10 @@ play/pause -14 -12 0 10 -154176 -1 -1 0 1;
 #X connect 37 1 36 0;
 #X connect 37 2 8 0;
 #X connect 37 3 18 0;
+#X connect 38 0 41 0;
+#X connect 39 0 41 1;
+#X connect 40 0 39 0;
+#X connect 41 0 42 0;
 #X coords 0 -1 1 1 88 174 2 89 -433;
 #X restore 173 33 pd tempo;
 #X text 357 -111 Save wav files;
@@ -1157,6 +1170,20 @@ the abstraction, f 29;
 #X connect 11 0 12 0;
 #X coords 0 -1 1 1 131 49 1 35 -3;
 #X restore 971 -80 pd load;
+#X obj 123 389 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 159 389 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 113 332 r beat_num;
+#X obj 123 421 realtime;
+#X floatatom 123 446 5 0 0 0 - - -, f 5;
+#X obj 109 352 select 0;
+#X obj 180 350 r 56-recstart;
+#X obj 180 375 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 196 417 r 56-playstart;
+#X obj 196 442 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
 #X connect 3 0 2 0;
 #X connect 7 0 3 0;
 #X connect 8 0 15 0;
@@ -1164,3 +1191,12 @@ the abstraction, f 29;
 #X connect 10 0 15 0;
 #X connect 15 0 6 0;
 #X connect 21 0 20 0;
+#X connect 100 0 103 0;
+#X connect 101 0 103 1;
+#X connect 102 0 105 0;
+#X connect 103 0 104 0;
+#X connect 105 0 100 0;
+#X connect 106 0 107 0;
+#X connect 107 0 101 0;
+#X connect 108 0 109 0;
+#X connect 109 0 101 0;
