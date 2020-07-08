@@ -14,14 +14,13 @@ Like the tools I was inspired by (see below), I intend to use Pdlooper in a modu
 
 ## Current features
 - Record audio loops
-- Play audio loops
+- Play audio loops (doesn't display the wave form to avoid the audio drop-out when resizing the array)
 - Set tempo by tapping
 - Controllable via MIDI controller (I use an AKAI APC Mini with 8*8 buttons) including outgoing MIDI message to light up the controller's LEDs
 - Save loops as wav files
 - select the output channels for each loop
 
 ## Current issues
-- Short freeeze when starting to record, pretty bad.
 - Can't easily load saved files
 
 ## Planned features
