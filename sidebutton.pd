@@ -1,0 +1,32 @@
+#N canvas 244 314 450 323 10;
+#X obj 42 25 cnv 15 114 56 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 74 29 tgl 48 0 \$0-sidebutton-s \$0-sidebutton-r b\$0 11 21
+0 10 -112348 -1 -1 0 1;
+#X obj 112 191 s;
+#X obj 213 10 bng 15 250 50 0 empty sidebutton-initbang-r empty 17
+7 0 10 -262144 -1 -1;
+#X obj 213 43 \$1;
+#X obj 268 113 s sidebutton-initbang2-r;
+#X msg 268 88 receive \$1-sidebutton-initbang-r;
+#X msg 150 161 symbol \$1-sidebutton-r;
+#X floatatom 170 69 5 0 0 0 - - -, f 5;
+#X msg 85 160 label b\$1;
+#X obj 250 193 s \$0-sidebutton-r;
+#X msg 245 137 receive \$1-sidebutton-r;
+#X obj 214 68 t f f f f f;
+#X msg 22 134 receive \$1-sidebutton-r;
+#X connect 3 0 4 0;
+#X connect 4 0 8 0;
+#X connect 4 0 12 0;
+#X connect 6 0 5 0;
+#X connect 7 0 2 1;
+#X connect 9 0 2 0;
+#X connect 11 0 10 0;
+#X connect 12 0 13 0;
+#X connect 12 1 9 0;
+#X connect 12 2 7 0;
+#X connect 12 3 11 0;
+#X connect 12 4 6 0;
+#X connect 13 0 2 0;
+#X coords 0 -1 1 1 116 58 1 41 24;
