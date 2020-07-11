@@ -1,4 +1,4 @@
-#N canvas 31 24 812 720 10;
+#N canvas 34 24 812 720 10;
 #X obj 79 -219 cnv 15 110 58 empty button_color-\$0 empty 0 0 0 10
 -262144 -33289 0;
 #X obj 118 -197 hsl 63 15 0 127 0 0 empty slider_voice\$0 empty -2
@@ -1147,43 +1147,57 @@ rec \; 4 for rec queue \; 5 for stop \; 6 for stop queue;
 -33289 0;
 #X symbolatom 118 -216 11 0 0 0 - #0-voicename-r #0-voicename-s, f
 11;
-#N canvas 745 282 450 300 configbutton 1;
-#X obj 70 137 cnv 15 110 58 empty button_color-\$0 empty 0 0 0 10 -262144
+#N canvas 757 113 584 462 cfgbutton 0;
+#X obj 70 60 cnv 15 103 40 empty button_color-\$0 empty 0 0 0 10 -216373
 -33289 0;
-#X obj 68 55 cnv 15 110 58 empty button_color-\$0 empty 0 0 0 10 -262144
+#X obj 70 10 cnv 15 103 40 empty button_color-\$0 empty 0 0 0 10 -191407
 -33289 0;
-#X obj 107 77 hsl 63 15 0 127 0 0 empty slider_voice\$0 empty -2 -9
+#X obj 108 30 hsl 58 16 0 127 0 0 empty slider_voice\$0 empty -2 -9
 0 10 -262144 -1 -1 0 0;
 #N canvas 0 0 450 300 (subpatch) 0;
-#X coords 0 1 32 -1 62 14 2 0 0;
-#X restore 110 77 graph;
-#X floatatom 152 156 4 1 127 0 - #0-barrec-r #0-barrec-s, f 4;
-#X obj 68 75 bng 15 250 50 0 \$0-stop-s \$0-stop-r S 4 6 0 10 -262144
+#X coords 0 1 32 -1 57 16 2 0 0;
+#X restore 111 30 graph;
+#X floatatom 151 80 3 1 127 0 - #0-barrec-r #0-barrec-s, f 3;
+#X obj 72 30 bng 16 250 50 0 \$0-stop-s \$0-stop-r S 4 6 0 10 -262144
 -1 -1;
-#X obj 68 58 tgl 15 0 \$0-play-s \$0-play-r P 4 6 0 10 -262144 -1 -1
+#X obj 72 12 tgl 16 0 \$0-play-s \$0-play-r P 4 6 0 10 -262144 -1 -1
 0 1;
-#X obj 86 58 tgl 15 0 \$0-rec-s \$0-rec-r R 4 6 0 10 -262144 -258049
+#X obj 90 12 tgl 16 0 \$0-rec-s \$0-rec-r R 4 6 0 10 -262144 -258049
 -176129 0 1;
-#X dropdown 110 156 3 0 0 0 - #0-dd-r #0-dd-s, f 3;
-#X obj 92 139 moonlib/mknob 15 20 0 127 0 0 \$0-vol-s \$0-vol-r V 4
+#X dropdown 108 80 4 0 0 0 - #0-dd-r #0-dd-s, f 4;
+#X obj 90 62 moonlib/mknob 16 20 0 127 0 0 \$0-vol-s \$0-vol-r V 4
 7 0 11 -191407 -1 -253822 0 0;
-#X obj 91 156 moonlib/mknob 15 20 0 127 0 1 \$0-pan-s \$0-pan-r P 4
+#X obj 90 80 moonlib/mknob 16 20 0 127 0 1 \$0-pan-s \$0-pan-r P 4
 7 0 11 -191407 -1 -249661 0 0;
-#X obj 189 46 cnv 6 68 8 empty button_color-\$0 empty 0 0 0 10 -262144
--33289 0;
-#X symbolatom 110 139 11 0 0 0 - #0-voicename-r #0-voicename-s, f
-11;
-#X obj 86 75 bng 15 250 50 0 \$0-stop-s \$0-stop-r X 4 6 0 10 -262144
--1 -1;
-#X obj 74 156 bng 15 250 50 0 \$0-stop-s \$0-stop-r S 4 6 0 10 -262144
--1 -1;
-#X obj 74 139 tgl 15 0 \$0-play-s \$0-play-r P 4 6 0 10 -262144 -1
--1 0 1;
-#X obj 106 24 cnv 15 65 17 empty empty Un\ named\ 1 1 6 0 10 -233017
--66577 0;
-#X obj 221 107 bng 15 250 50 0 empty empty C 4 6 0 10 -262144 -1 -1
+#X symbolatom 108 62 7 0 0 0 - #0-voicename-r #0-voicename-s, f 7
 ;
-#X restore 9 -160 pd configbutton;
+#X obj 72 80 bng 16 250 50 0 \$0-stop-s \$0-stop-r S 4 6 0 10 -262144
+-1 -1;
+#X obj 72 62 tgl 16 0 \$0-play-s \$0-play-r P 4 6 0 10 -262144 -1 -1
+0 1;
+#X obj 108 12 cnv 10 44 15 empty button_color-\$0 Unnamed\ 1 1 6 0
+10 -233017 -66577 0;
+#X obj 155 12 bng 16 250 50 0 empty empty cf 1 6 0 10 -262144 -1 -1
+;
+#X obj 155 62 bng 16 250 50 0 empty empty cf 1 6 0 10 -262144 -1 -1
+;
+#X obj 184 198 s pd-cfgbutton;
+#X msg 218 116 donecanvasdialog 1 -1 1 0 -1 1 1 103 40 70 10;
+#X msg 213 48 donecanvasdialog 1 -1 1 0 -1 1 1 103 40 70 60;
+#X obj 186 28 t b b;
+#X obj 193 90 t b b;
+#X msg 164 165 editmode 0;
+#X connect 15 0 20 0;
+#X connect 16 0 21 0;
+#X connect 18 0 17 0;
+#X connect 19 0 17 0;
+#X connect 20 0 22 0;
+#X connect 20 1 19 0;
+#X connect 21 0 22 0;
+#X connect 21 1 18 0;
+#X connect 22 0 17 0;
+#X coords 0 -1 1 1 103 40 1 70 10;
+#X restore 534 290 pd cfgbutton;
 #X connect 6 0 23 0;
 #X connect 8 0 19 5;
 #X connect 10 0 6 0;
@@ -1275,4 +1289,4 @@ rec \; 4 for rec queue \; 5 for stop \; 6 for stop queue;
 #X connect 101 1 102 0;
 #X connect 102 0 45 0;
 #X connect 106 0 107 0;
-#X coords 0 -1 1 1 110 58 1 79 -219;
+#X coords 0 -1 1 1 110 58 1 530 287;
