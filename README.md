@@ -20,6 +20,9 @@ Like the tools I was inspired by (see below), I intend to use Pdlooper in a modu
 - Save loops as wav files
 - select the output channels for each loop
 
+That's what it currently looks like:
+![](screenshots/latest.png)
+
 ## Current issues
 - Can't easily load saved files
 
