@@ -1,9 +1,9 @@
 #N canvas 2 29 1363 715 10;
-#N canvas 358 104 450 391 tempo 0;
+#N canvas 166 157 450 414 tempo 0;
 #X obj 90 -432 cnv 15 86 172 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X obj 82 -181 beat 4;
-#X floatatom 91 -298 4 0 0 0 - - -, f 4;
+#X floatatom 91 -298 4 0 0 0 - #0-tempobpm.r #0-tempobpm.s, f 4;
 #X floatatom 141 -106 5 0 0 0 - - -, f 5;
 #X obj 151 -179 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -58,7 +58,7 @@ play/pause -14 -12 0 10 -154176 -1 -1 0 1;
 #X text 286 -260 beat number between 0 and 3;
 #X obj 9 -387 loadbang;
 #X msg 9 -362 120;
-#X obj 55 -149 pow -1;
+#X obj 29 -136 pow -1;
 #X obj 68 -121 * 60000;
 #X obj 199 -413 t b b f;
 #X text -8 -50 outputs 0 for the first beat;
@@ -74,9 +74,10 @@ play/pause -14 -12 0 10 -154176 -1 -1 0 1;
 #X obj 497 -180 realtime;
 #X floatatom 497 -155 5 0 0 0 - - -, f 5;
 #X obj 485 -312 pipe f 5;
-#X connect 1 0 2 0;
+#X obj 6 -332 s \$0-tempobpm.r;
+#X obj 24 -159 r \$0-tempobpm.s;
+#X connect 1 0 44 0;
 #X connect 1 2 4 0;
-#X connect 2 0 30 0;
 #X connect 3 0 9 1;
 #X connect 3 0 35 0;
 #X connect 5 0 7 0;
@@ -100,7 +101,7 @@ play/pause -14 -12 0 10 -154176 -1 -1 0 1;
 #X connect 21 0 22 0;
 #X connect 21 0 22 1;
 #X connect 28 0 29 0;
-#X connect 29 0 2 0;
+#X connect 29 0 44 0;
 #X connect 30 0 31 0;
 #X connect 31 0 3 0;
 #X connect 32 1 16 0;
@@ -113,6 +114,7 @@ play/pause -14 -12 0 10 -154176 -1 -1 0 1;
 #X connect 39 0 41 1;
 #X connect 40 0 39 0;
 #X connect 41 0 42 0;
+#X connect 45 0 30 0;
 #X coords 0 -1 1 1 88 174 2 89 -433;
 #X restore 173 33 pd tempo;
 #X text 16 212 0 empty \; 1 playing \; 2 play queued \; 3 recording
@@ -1481,7 +1483,7 @@ sends \, but whatever \, it was faster to do it manually just now.
 0;
 #X obj 125 55 groupimage;
 #X text 84 55 Active loops:, f 6;
-#X obj 192 55 bng 15 250 50 0 empty empty Clear -32 4 0 10 -262144
+#X obj 192 55 bng 15 250 50 0 empty empty Reset -32 4 0 10 -262144
 -1 -1;
 #X dropdown 187 73 2 1 0 0 Send activeloopsenddd-r activeloopsenddd-s
 , f 2;
@@ -1501,7 +1503,8 @@ sends \, but whatever \, it was faster to do it manually just now.
 #X obj 120 13 r activeloops-r;
 #X obj 50 175 r activeloopsenddd-s;
 #X floatatom 50 200 5 0 0 0 - - -, f 5;
-#X connect 3 0 6 0;
+#X msg 235 24 reset;
+#X connect 3 0 20 0;
 #X connect 5 0 6 0;
 #X connect 6 0 14 0;
 #X connect 7 0 1 0;
@@ -1519,6 +1522,7 @@ sends \, but whatever \, it was faster to do it manually just now.
 #X connect 16 0 13 0;
 #X connect 17 0 1 0;
 #X connect 18 0 19 0;
+#X connect 20 0 1 0;
 #X coords 0 -1 1 1 134 43 1 81 51;
 #X restore 127 211 pd activeloop;
 #N canvas 0 0 450 300 latency_test 0;
@@ -1647,4 +1651,162 @@ sends \, but whatever \, it was faster to do it manually just now.
 #X obj 1181 467 sidebutton 89;
 #X obj 1181 529 sidebutton 98;
 #X obj 155 529 sidebutton 1064;
+#N canvas 460 186 672 307 saveload 0;
+#X obj 144 86 cnv 15 186 58 empty empty empty 20 12 0 14 -261682 -66577
+0;
+#X obj 199 121 bng 20 250 50 0 \$0-save.s \$0-save.r save 22 7 0 10
+-261234 -1 -1;
+#X obj 149 121 bng 20 250 50 0 \$0-load.s \$0-load.r load 22 7 0 10
+-204786 -1 -1;
+#X obj 149 91 cnv 15 178 20 \$0-preset.name.s \$0-preset.name.r PRESET_FILE:no_preset_loaded
+5 10 0 10 -86853 -261682 0;
+#N canvas 658 158 664 469 presets 0;
+#X obj 50 122 save.param \$0 number3;
+#X obj 50 142 save.param \$0 slider;
+#X obj 50 162 save.param \$0 hradio;
+#N canvas 674 249 666 431 read.write 1;
+#X obj 51 41 r \$0-save.s;
+#X msg 90 101 clear;
+#X obj 51 61 savepanel;
+#X msg 51 141 write \$1;
+#X obj 70 121 s \$0-get.values;
+#X obj 51 81 t s b b;
+#X obj 261 41 r \$0-load.s;
+#X obj 261 61 openpanel;
+#X obj 261 81 t b s s;
+#X msg 280 101 read \$1;
+#X obj 280 121 s \$0-to.text.define;
+#X obj 51 241 text define \$0-preset;
+#X obj 51 171 s \$0-to.text.define;
+#X obj 51 221 r \$0-to.text.define;
+#X msg 261 141 line 0 \, bang;
+#X obj 261 161 text sequence \$0-preset;
+#X obj 261 241 t a a;
+#X obj 261 281 list split 2;
+#X obj 261 221 list prepend \$0;
+#X msg 346 257 symbol \$1-\$2;
+#X obj 441 237 t a a;
+#X obj 441 217 list prepend \$0;
+#X msg 496 253 symbol \$1-\$2.r;
+#X obj 441 277 list split 2;
+#X obj 475 297 send;
+#X obj 51 281 r \$0-to.text.set;
+#X obj 51 301 text set \$0-preset 1e+06;
+#X obj 295 301 array set;
+#X obj 261 181 list trim;
+#X obj 261 201 route @array;
+#N canvas 132 151 450 300 write.preset.name 0;
+#X msg 234 202 label \$1;
+#X obj 234 222 s \$0-preset.name.r;
+#X obj 44 146 loadbang;
+#X obj 44 166 symbol no_preset_loaded;
+#X obj 234 182 makefilename PRESET_FILE:%s;
+#X obj 206 56 list fromsymbol;
+#X obj 206 132 list split;
+#X obj 234 152 list tosymbol;
+#X obj 263 112 + 1;
+#X obj 206 36 inlet;
+#N canvas 583 113 293 386 find 0;
+#X obj 102 46 inlet;
+#X obj 102 175 list store;
+#X obj 102 90 until;
+#X obj 102 112 f;
+#X obj 132 112 + 1;
+#X msg 102 153 get \$1 1;
+#X obj 145 91 0;
+#X obj 102 68 t b b a;
+#X obj 102 133 t f f;
+#X obj 102 196 == 47;
+#X obj 102 217 sel 1;
+#X obj 102 238 f;
+#X obj 159 279 f;
+#X obj 159 300 outlet;
+#X connect 0 0 7 0;
+#X connect 1 0 9 0;
+#X connect 1 1 2 1;
+#X connect 1 1 12 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 0 8 0;
+#X connect 4 0 3 1;
+#X connect 5 0 1 0;
+#X connect 6 0 3 1;
+#X connect 7 0 2 0;
+#X connect 7 1 6 0;
+#X connect 7 2 1 1;
+#X connect 8 0 5 0;
+#X connect 8 1 11 1;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 11 0 12 1;
+#X connect 12 0 13 0;
+#X restore 263 92 pd find;
+#X obj 206 76 t a a;
+#X connect 0 0 1 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X connect 5 0 11 0;
+#X connect 6 1 7 0;
+#X connect 7 0 4 0;
+#X connect 8 0 6 1;
+#X connect 9 0 5 0;
+#X connect 10 0 8 0;
+#X connect 11 0 6 0;
+#X connect 11 1 10 0;
+#X restore 341 97 pd write.preset.name;
+#X connect 0 0 2 0;
+#X connect 1 0 12 0;
+#X connect 2 0 5 0;
+#X connect 3 0 12 0;
+#X connect 5 0 3 0;
+#X connect 5 1 4 0;
+#X connect 5 2 1 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 14 0;
+#X connect 8 1 9 0;
+#X connect 8 2 30 0;
+#X connect 9 0 10 0;
+#X connect 13 0 11 0;
+#X connect 14 0 15 0;
+#X connect 15 0 28 0;
+#X connect 16 0 17 0;
+#X connect 16 1 19 0;
+#X connect 17 1 27 0;
+#X connect 18 0 16 0;
+#X connect 19 0 27 2;
+#X connect 20 0 23 0;
+#X connect 20 1 22 0;
+#X connect 21 0 20 0;
+#X connect 22 0 24 1;
+#X connect 23 1 24 0;
+#X connect 25 0 26 0;
+#X connect 28 0 29 0;
+#X connect 29 0 18 0;
+#X connect 29 1 21 0;
+#X restore 50 32 pd read.write;
+#X text 253 171 SEND: \$0-<parameter_name>.s;
+#X text 253 191 RECEIVE: \$0-<parameter_name>.r;
+#X text 253 31 this is the read/write subpatch which should be left
+as-is., f 82;
+#X text 253 81 in order for a parameter that is in the parent patch
+to be saved in the preset file \, here there needs to be a 'save.param'
+abstraction with the name of that parameter as the second argument
+(whilst the first argument is always \$0). The send and receive symbols
+for each parameter must be formated in this way:, f 82;
+#X text 253 231 tables can be saves as well with the [save.table] object.
+The first argument is \$0 \, the second is the name of the table without
+\$0-. The object on the left will save the content of a table named
+"\$0-array1"., f 82;
+#X text 253 301 With this method it's still required to create a new
+'save.param' (or 'save.table') abstraction for every parameter or table
+to be saved in the presets \, but at least there is no need to patch
+all the send and receives individually., f 82;
+#X obj 50 102 saveload/save.param \$0 number2;
+#X obj 50 82 saveload/save.param \$0 tempobpm;
+#X obj 50 232 saveload/save.array \$0 groupimagearray;
+#X restore 259 121 pd presets;
+#X coords 0 -1 1 1 193 65 2 141 83;
+#X restore 767 -87 pd saveload;
 #X connect 10 0 9 0;

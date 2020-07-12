@@ -1,0 +1,11 @@
+#N canvas 539 343 467 291 10;
+#X obj 58 104 r \$1-get.values;
+#X obj 58 124 array get \$1-\$2;
+#X text 62 50 \$1 = \$0 of the parent patch;
+#X text 62 35 arguments:;
+#X text 62 65 \$2 = name of the table;
+#X obj 58 164 s \$1-to.text.set;
+#X obj 58 144 list prepend @array \$2;
+#X connect 0 0 1 0;
+#X connect 1 0 6 0;
+#X connect 6 0 5 0;

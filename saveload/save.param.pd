@@ -1,0 +1,14 @@
+#N canvas 301 104 437 299 10;
+#X text 30 37 \$1 = \$0 of the parent patch;
+#X text 30 52 \$2 = name of the control to save;
+#X obj 101 111 r \$1-\$2.s;
+#X obj 26 131 list append 0;
+#X text 131 132 0 if no value is received before saving;
+#X text 30 22 arguments:;
+#X obj 26 91 r \$1-get.values;
+#X obj 26 111 symbol \$2;
+#X obj 26 151 s \$1-to.text.set;
+#X connect 2 0 3 1;
+#X connect 3 0 8 0;
+#X connect 6 0 7 0;
+#X connect 7 0 3 0;
