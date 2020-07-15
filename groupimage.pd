@@ -1,7 +1,7 @@
-#N canvas 619 72 735 441 10;
+#N canvas 88 110 763 530 10;
 #N canvas 182 107 450 323 groupimagecnv 0;
 #X obj 0 28 cnv 4 4 4 0-s 0-r empty 0 0 0 12 -33289 -33289 0;
-#X obj 4 28 cnv 4 4 4 1-s 1-r empty 0 0 0 12 -260818 -33289 0;
+#X obj 4 28 cnv 4 4 4 1-s 1-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 8 28 cnv 4 4 4 2-s 2-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 12 28 cnv 4 4 4 3-s 3-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 16 28 cnv 4 4 4 4-s 4-r empty 0 0 0 12 -33289 -33289 0;
@@ -32,7 +32,7 @@
 #X obj 20 16 cnv 4 4 4 29-s 29-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 24 16 cnv 4 4 4 30-s 30-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 28 16 cnv 4 4 4 31-s 31-r empty 0 0 0 12 -33289 -33289 0;
-#X obj 0 12 cnv 4 4 4 32-s 32-r empty 0 0 0 12 -33289 -33289 0;
+#X obj 0 12 cnv 4 4 4 32-s 32-r empty 0 0 0 12 -258699 -258699 0;
 #X obj 4 12 cnv 4 4 4 33-s 33-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 8 12 cnv 4 4 4 34-s 34-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 12 12 cnv 4 4 4 35-s 35-r empty 0 0 0 12 -33289 -33289 0;
@@ -40,7 +40,7 @@
 #X obj 20 12 cnv 4 4 4 37-s 37-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 24 12 cnv 4 4 4 38-s 38-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 28 12 cnv 4 4 4 39-s 39-r empty 0 0 0 12 -33289 -33289 0;
-#X obj 0 8 cnv 4 4 4 40-s 40-r empty 0 0 0 12 -33289 -33289 0;
+#X obj 0 8 cnv 4 4 4 40-s 40-r empty 0 0 0 12 -258699 -258699 0;
 #X obj 4 8 cnv 4 4 4 41-s 41-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 8 8 cnv 4 4 4 42-s 42-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 12 8 cnv 4 4 4 43-s 43-r empty 0 0 0 12 -33289 -33289 0;
@@ -48,17 +48,17 @@
 #X obj 20 8 cnv 4 4 4 45-s 45-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 24 8 cnv 4 4 4 46-s 46-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 28 8 cnv 4 4 4 47-s 47-r empty 0 0 0 12 -33289 -33289 0;
-#X obj 0 4 cnv 4 4 4 48-s 48-r empty 0 0 0 12 -33289 -33289 0;
-#X obj 4 4 cnv 4 4 4 49-s 49-r empty 0 0 0 12 -260818 -260818 0;
+#X obj 0 4 cnv 4 4 4 48-s 48-r empty 0 0 0 12 -258699 -258699 0;
+#X obj 4 4 cnv 4 4 4 49-s 49-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 8 4 cnv 4 4 4 50-s 50-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 12 4 cnv 4 4 4 51-s 51-r empty 0 0 0 12 -33289 -33289 0;
-#X obj 16 4 cnv 4 4 4 52-s 52-r empty 0 0 0 12 -33289 -33289 0;
+#X obj 16 4 cnv 4 4 4 52-s 52-r empty 0 0 0 12 -62784 -62784 0;
 #X obj 20 4 cnv 4 4 4 53-s 53-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 24 4 cnv 4 4 4 54-s 54-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 28 4 cnv 4 4 4 55-s 55-r empty 0 0 0 12 -33289 -33289 0;
-#X obj 0 0 cnv 4 4 4 56-s 56-r empty 0 0 0 12 -33289 -33289 0;
+#X obj 0 0 cnv 4 4 4 56-s 56-r empty 0 0 0 12 -258699 -258699 0;
 #X obj 4 0 cnv 4 4 4 57-s 57-r empty 0 0 0 12 -33289 -33289 0;
-#X obj 8 0 cnv 4 4 4 58-s 58-r empty 0 0 0 12 -33289 -33289 0;
+#X obj 8 0 cnv 4 4 4 58-s 58-r empty 0 0 0 12 -241291 -241291 0;
 #X obj 12 0 cnv 4 4 4 59-s 59-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 16 0 cnv 4 4 4 60-s 60-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 20 0 cnv 4 4 4 61-s 61-r empty 0 0 0 12 -33289 -33289 0;
@@ -72,19 +72,19 @@ label \; \$4 = receive \; \$5 = send;
 #X obj 127 53 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X msg 219 66 stop;
-#X floatatom 208 132 5 0 0 0 col - -;
-#X floatatom 265 132 5 0 0 0 row - -;
-#X floatatom 148 132 5 0 0 0 - - -;
+#X floatatom 208 132 5 0 0 0 col - -, f 5;
+#X floatatom 265 132 5 0 0 0 row - -, f 5;
+#X floatatom 148 132 5 0 0 0 - - -, f 5;
 #N canvas 139 366 450 323 iterate 0;
 #X obj 162 62 + 1;
 #X obj 128 62 f 0;
 #X obj 85 85 - 1;
 #X obj 129 130 mod 8;
-#X floatatom 129 155 5 0 0 0 col - -;
+#X floatatom 129 155 5 0 0 0 col - -, f 5;
 #X obj 186 130 div 8;
-#X floatatom 186 155 5 0 0 0 row - -;
+#X floatatom 186 155 5 0 0 0 row - -, f 5;
 #X obj 124 109 t f f f;
-#X floatatom 69 155 5 0 0 0 - - -;
+#X floatatom 69 155 5 0 0 0 - - -, f 5;
 #X obj 124 -9 inlet;
 #X obj 63 193 outlet;
 #X obj 196 191 outlet;
@@ -122,8 +122,8 @@ label \; \$4 = receive \; \$5 = send;
 #X obj 129 100 +;
 #X obj 258 30 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X floatatom 127 129 5 0 0 0 X - -;
-#X floatatom 186 168 5 0 0 0 Y - -;
+#X floatatom 127 129 5 0 0 0 X - -, f 5;
+#X floatatom 186 168 5 0 0 0 Y - -, f 5;
 #X obj 187 100 -;
 #X obj 120 199 outlet;
 #X obj 190 205 outlet;
@@ -146,8 +146,8 @@ label \; \$4 = receive \; \$5 = send;
 #X connect 12 1 7 1;
 #X connect 13 0 6 0;
 #X restore 209 168 pd coord;
-#X floatatom 209 199 5 0 0 0 X - -;
-#X floatatom 253 198 5 0 0 0 Y - -;
+#X floatatom 209 199 5 0 0 0 X - -, f 5;
+#X floatatom 253 198 5 0 0 0 Y - -, f 5;
 #X msg 90 249 clear;
 #X obj 174 252 pack f f f;
 #X obj 161 301 s pd-groupimagecnv;
@@ -189,15 +189,13 @@ label \; \$4 = receive \; \$5 = send;
 -1;
 #X msg 122 258 0;
 #X obj 82 236 t b b;
-#X floatatom 81 320 5 0 0 0 - - -;
+#X floatatom 81 320 5 0 0 0 - - -, f 5;
 #X obj 75 382 tabwrite \$0-groupimagearray;
 #X obj 81 340 t 0 f;
 #X msg 255 232 stop;
 #X obj 293 192 bng 15 250 50 0 empty empty update 17 7 0 10 -262144
 -1 -1;
 #X msg 332 234 0;
-#X obj 291 266 line 0 1;
-#X msg 287 234 64 64;
 #X obj 81 295 line 0 1;
 #X msg 76 258 64 64;
 #X obj 570 123 bng 15 250 50 0 empty empty write 17 7 0 10 -262144
@@ -208,25 +206,25 @@ label \; \$4 = receive \; \$5 = send;
 #X msg 605 196 \$1;
 #X msg 572 196 \$2;
 #X obj 553 176 t a a a;
-#N canvas 332 106 569 503 updatepoint 0;
+#N canvas 294 157 569 526 updatepoint 0;
 #X text 280 32 left: index \, output: value;
 #X obj 117 33 tabread \$0-groupimagearray;
 #X msg 148 56 symbol \$1-r;
 #X obj 117 86 select 0 1;
-#X floatatom 123 152 9 0 0 0 - - -;
+#X floatatom 123 152 9 0 0 0 - - -, f 9;
 #X obj 119 121 f 12;
 #X msg 120 178 color \$1 \$1;
 #X obj 120 203 s;
 #X obj 117 -19 inlet;
 #X obj 282 175 s 35-r;
-#X floatatom 282 106 5 0 0 0 - - -;
+#X floatatom 282 106 5 0 0 0 - - -, f 5;
 #X msg 282 141 color \$1 \$1;
 #X text 422 87 drums: 13 \; percu 14 \; bass:15 \; vert
 16 \; bleu 18 \; other1 19 \; bleu vlair 17 \; violet 25
 ;
-#X floatatom 54 295 5 0 0 0 - - -;
+#X floatatom 54 295 5 0 0 0 - - -, f 5;
 #X obj 54 319 mod 8;
-#X floatatom 54 344 5 0 0 0 - - -;
+#X floatatom 54 344 5 0 0 0 - - -, f 5;
 #X obj 54 368 select 0 1 2 3 4 5 6 7, f 54;
 #X msg 53 390 13;
 #X msg 94 390 14;
@@ -236,7 +234,7 @@ label \; \$4 = receive \; \$5 = send;
 #X msg 255 393 17;
 #X msg 293 389 19;
 #X msg 332 390 25;
-#X floatatom 54 417 5 0 0 0 - - -;
+#X floatatom 54 417 5 0 0 0 - - -, f 5;
 #X obj 117 7 t f f f;
 #X obj 175 121 f;
 #X connect 1 0 3 0;
@@ -278,76 +276,84 @@ label \; \$4 = receive \; \$5 = send;
 #X obj 531 42 inlet;
 #X text 574 41 index \, value;
 #X obj 253 87 route clear reset;
-#X obj 309 122 bng 15 250 50 0 empty empty update 17 7 0 10 -262144
--1 -1;
 #X obj 333 309 spigot;
-#X floatatom 482 354 5 0 0 0 loopstatusloop #0-loopstatusloop-r -;
+#X floatatom 482 354 5 0 0 0 loopstatusloop #0-loopstatusloop-r -,
+f 5;
 #X msg 483 301 receive \$1-loopstatus-r;
 #X obj 483 326 s loopstatusloop-r;
 #X msg 448 277 symbol \$1-loopstatus-r;
 #X obj 419 295 s;
 #X obj 420 258 t b f f;
-#X floatatom 363 287 5 0 0 0 - - -;
+#X floatatom 367 288 5 0 0 0 - - -, f 5;
 #X obj 290 308 spigot;
 #X obj 292 212 t b b;
 #X obj 241 146 t b b 0 1;
 #X obj 314 145 t b b 1 0;
 #X obj 244 121 bng 15 250 50 0 empty empty clear 17 7 0 10 -262144
 -1 -1;
-#X floatatom 321 288 5 0 0 0 - - -;
+#X floatatom 321 288 5 0 0 0 - - -, f 5;
 #X msg 341 174 1;
-#X msg 298 172 1;
+#X msg 292 167 1;
+#X obj 316 116 bng 15 250 50 0 empty empty update 17 7 0 10 -262144
+-1 -1;
+#X floatatom 247 292 5 0 0 0 - - -, f 5;
+#X msg 287 234 64 64;
+#X obj 291 266 line 0 1;
+#X text 613 275 this is the button's loop status indicator \; triggering
+it here forces loopstatusloop below to output the track's status number
+;
 #X connect 2 0 1 0;
-#X connect 6 0 18 0;
+#X connect 6 0 16 0;
 #X connect 7 0 9 0;
-#X connect 8 0 18 0;
-#X connect 9 0 19 0;
+#X connect 8 0 16 0;
+#X connect 9 0 17 0;
 #X connect 9 1 8 0;
 #X connect 10 0 12 0;
 #X connect 12 0 11 0;
 #X connect 12 1 11 1;
-#X connect 13 0 16 0;
-#X connect 14 0 42 0;
-#X connect 15 0 16 0;
-#X connect 16 0 33 0;
-#X connect 16 0 41 0;
+#X connect 13 0 49 0;
+#X connect 14 0 39 0;
+#X connect 15 0 49 0;
+#X connect 16 0 10 0;
 #X connect 17 0 16 0;
-#X connect 18 0 10 0;
-#X connect 19 0 18 0;
-#X connect 21 0 26 0;
-#X connect 22 0 26 0;
-#X connect 24 0 23 1;
-#X connect 25 0 23 0;
-#X connect 26 0 28 0;
-#X connect 26 1 25 0;
-#X connect 26 2 24 0;
-#X connect 28 0 27 0;
-#X connect 29 0 31 0;
-#X connect 31 0 45 0;
-#X connect 31 1 32 0;
-#X connect 31 2 26 0;
-#X connect 32 0 44 0;
-#X connect 33 0 39 0;
-#X connect 34 0 27 0;
-#X connect 35 0 36 0;
-#X connect 37 0 38 1;
-#X connect 39 0 38 0;
-#X connect 39 1 37 0;
-#X connect 39 2 35 0;
-#X connect 40 0 33 1;
-#X connect 41 0 27 0;
-#X connect 42 0 17 0;
-#X connect 42 1 15 0;
-#X connect 43 0 14 0;
-#X connect 43 1 7 0;
-#X connect 43 2 40 0;
-#X connect 43 3 48 0;
-#X connect 44 0 14 0;
-#X connect 44 1 7 0;
-#X connect 44 2 47 0;
-#X connect 44 3 46 0;
+#X connect 19 0 24 0;
+#X connect 20 0 24 0;
+#X connect 22 0 21 1;
+#X connect 23 0 21 0;
+#X connect 24 0 26 0;
+#X connect 24 1 23 0;
+#X connect 24 2 22 0;
+#X connect 26 0 25 0;
+#X connect 27 0 29 0;
+#X connect 29 0 42 0;
+#X connect 29 1 46 0;
+#X connect 29 2 24 0;
+#X connect 30 0 36 0;
+#X connect 31 0 25 0;
+#X connect 32 0 33 0;
+#X connect 34 0 35 1;
+#X connect 36 0 35 0;
+#X connect 36 1 34 0;
+#X connect 36 2 32 0;
+#X connect 37 0 30 1;
+#X connect 38 0 25 0;
+#X connect 39 0 48 0;
+#X connect 39 1 15 0;
+#X connect 40 0 14 0;
+#X connect 40 1 7 0;
+#X connect 40 2 37 0;
+#X connect 40 3 45 0;
+#X connect 41 0 14 0;
+#X connect 41 1 7 0;
+#X connect 41 2 44 0;
+#X connect 41 3 43 0;
+#X connect 42 0 40 0;
+#X connect 43 0 38 1;
+#X connect 44 0 37 0;
 #X connect 45 0 43 0;
-#X connect 46 0 41 1;
-#X connect 47 0 40 0;
-#X connect 48 0 46 0;
+#X connect 46 0 41 0;
+#X connect 48 0 49 0;
+#X connect 49 0 30 0;
+#X connect 49 0 38 0;
+#X connect 49 0 47 0;
 #X coords 0 -1 1 1 32 32 2 132 99;
