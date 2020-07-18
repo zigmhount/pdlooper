@@ -1,4 +1,4 @@
-#N canvas 44 24 812 720 10;
+#N canvas 45 24 812 720 10;
 #X obj 669 226 cnv 15 105 55 empty button_color-\$0 empty 0 0 0 10
 -191407 -33289 0;
 #X obj 268 -303 cnv 15 163 151 empty empty empty 20 12 0 14 -233017
@@ -1134,8 +1134,8 @@ rec \; 4 for rec queue \; 5 for stop \; 6 for stop queue;
 #X obj 213 -182 s \$0-pan-r;
 #X symbolatom 706 228 11 0 0 0 - #0-trackname-r #0-trackname-s, f
 11;
-#X obj 75 110 nbx 5 14 -1e+37 1e+37 0 0 0-loopstatus-s 0-loopstatus-r
-Loopstatus 0 -8 0 10 -260909 -1 -1 0 256 0;
+#X obj 75 110 nbx 5 14 -1e+37 1e+37 0 0 loopstatus-s loopstatus-r Loopstatus
+0 -8 0 10 -260909 -1 -1 0 256 0;
 #N canvas 836 119 450 346 vol_pan 0;
 #X obj 69 34 inlet~;
 #X obj 196 33 inlet~;

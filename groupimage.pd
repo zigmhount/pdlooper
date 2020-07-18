@@ -1,4 +1,4 @@
-#N canvas 88 110 763 530 10;
+#N canvas 331 164 763 576 10;
 #N canvas 182 107 450 323 groupimagecnv 0;
 #X obj 0 28 cnv 4 4 4 0-s 0-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 4 28 cnv 4 4 4 1-s 1-r empty 0 0 0 12 -33289 -33289 0;
@@ -32,7 +32,7 @@
 #X obj 20 16 cnv 4 4 4 29-s 29-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 24 16 cnv 4 4 4 30-s 30-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 28 16 cnv 4 4 4 31-s 31-r empty 0 0 0 12 -33289 -33289 0;
-#X obj 0 12 cnv 4 4 4 32-s 32-r empty 0 0 0 12 -258699 -258699 0;
+#X obj 0 12 cnv 4 4 4 32-s 32-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 4 12 cnv 4 4 4 33-s 33-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 8 12 cnv 4 4 4 34-s 34-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 12 12 cnv 4 4 4 35-s 35-r empty 0 0 0 12 -33289 -33289 0;
@@ -40,7 +40,7 @@
 #X obj 20 12 cnv 4 4 4 37-s 37-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 24 12 cnv 4 4 4 38-s 38-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 28 12 cnv 4 4 4 39-s 39-r empty 0 0 0 12 -33289 -33289 0;
-#X obj 0 8 cnv 4 4 4 40-s 40-r empty 0 0 0 12 -258699 -258699 0;
+#X obj 0 8 cnv 4 4 4 40-s 40-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 4 8 cnv 4 4 4 41-s 41-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 8 8 cnv 4 4 4 42-s 42-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 12 8 cnv 4 4 4 43-s 43-r empty 0 0 0 12 -33289 -33289 0;
@@ -48,17 +48,17 @@
 #X obj 20 8 cnv 4 4 4 45-s 45-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 24 8 cnv 4 4 4 46-s 46-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 28 8 cnv 4 4 4 47-s 47-r empty 0 0 0 12 -33289 -33289 0;
-#X obj 0 4 cnv 4 4 4 48-s 48-r empty 0 0 0 12 -258699 -258699 0;
+#X obj 0 4 cnv 4 4 4 48-s 48-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 4 4 cnv 4 4 4 49-s 49-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 8 4 cnv 4 4 4 50-s 50-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 12 4 cnv 4 4 4 51-s 51-r empty 0 0 0 12 -33289 -33289 0;
-#X obj 16 4 cnv 4 4 4 52-s 52-r empty 0 0 0 12 -62784 -62784 0;
+#X obj 16 4 cnv 4 4 4 52-s 52-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 20 4 cnv 4 4 4 53-s 53-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 24 4 cnv 4 4 4 54-s 54-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 28 4 cnv 4 4 4 55-s 55-r empty 0 0 0 12 -33289 -33289 0;
-#X obj 0 0 cnv 4 4 4 56-s 56-r empty 0 0 0 12 -258699 -258699 0;
+#X obj 0 0 cnv 4 4 4 56-s 56-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 4 0 cnv 4 4 4 57-s 57-r empty 0 0 0 12 -33289 -33289 0;
-#X obj 8 0 cnv 4 4 4 58-s 58-r empty 0 0 0 12 -241291 -241291 0;
+#X obj 8 0 cnv 4 4 4 58-s 58-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 12 0 cnv 4 4 4 59-s 59-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 16 0 cnv 4 4 4 60-s 60-r empty 0 0 0 12 -33289 -33289 0;
 #X obj 20 0 cnv 4 4 4 61-s 61-r empty 0 0 0 12 -33289 -33289 0;
@@ -302,6 +302,10 @@ f 5;
 #X text 613 275 this is the button's loop status indicator \; triggering
 it here forces loopstatusloop below to output the track's status number
 ;
+#X obj 664 50 inlet;
+#X text 664 75 bang;
+#X obj 646 111 outlet;
+#X msg 649 81 \$0;
 #X connect 2 0 1 0;
 #X connect 6 0 16 0;
 #X connect 7 0 9 0;
@@ -356,4 +360,6 @@ it here forces loopstatusloop below to output the track's status number
 #X connect 49 0 30 0;
 #X connect 49 0 38 0;
 #X connect 49 0 47 0;
+#X connect 51 0 54 0;
+#X connect 54 0 53 0;
 #X coords 0 -1 1 1 32 32 2 132 99;
