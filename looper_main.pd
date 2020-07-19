@@ -1,5 +1,5 @@
 #N canvas 2 30 1363 714 10;
-#X obj 16 -71 cnv 15 1030 662 empty empty empty 0 0 0 4 -66577 -262144
+#X obj 16 -45 cnv 15 1030 662 empty empty empty 0 0 0 4 -66577 -262144
 0;
 #N canvas 298 70 450 437 tempo 0;
 #X obj 90 -432 cnv 15 182 48 empty empty empty 20 12 0 14 -233017 -66577
@@ -77,7 +77,7 @@ play/pause -14 -12 0 10 -154176 -1 -1 1 1;
 #X obj 6 -332 s \$0-tempobpm.r;
 #X obj 24 -159 r \$0-tempobpm.s;
 #X obj 138 -411 hradio 20 0 0 4 empty empty empty 0 -8 0 10 -262144
--1 -1 1;
+-1 -1 2;
 #X connect 1 0 43 0;
 #X connect 1 2 4 0;
 #X connect 3 0 8 1;
@@ -116,7 +116,7 @@ play/pause -14 -12 0 10 -154176 -1 -1 1 1;
 #X connect 44 0 29 0;
 #X connect 45 0 37 0;
 #X coords 0 -1 1 1 184 50 2 89 -433;
-#X restore 268 -39 pd tempo;
+#X restore 268 -41 pd tempo;
 #N canvas 704 296 450 323 save 0;
 #N canvas 95 116 657 556 matrix_loop 0;
 #X floatatom 82 -22 3 0 0 0 - - -, f 3;
@@ -284,10 +284,10 @@ play/pause -14 -12 0 10 -154176 -1 -1 1 1;
 #X connect 16 0 14 0;
 #X coords 0 -1 1 1 131 49 1 35 -3;
 #X restore 544 -97 pd load;
-#N canvas 266 66 657 534 activeloop 0;
+#N canvas 545 122 657 557 activeloop 0;
 #X obj 82 52 cnv 15 132 41 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 125 55 groupimage;
+#X obj 472 320 groupimage;
 #X text 84 55 Active loops:, f 6;
 #X obj 192 55 bng 15 250 50 0 empty empty Reset -32 4 0 10 -262144
 -1 -1;
@@ -330,12 +330,463 @@ to send the list of active tracks to a sidebutton., f 29;
 #X obj 74 424 pack f f f;
 #X msg 74 450 \; sb\$3-groupimagearray \$2 \$1;
 #X obj 27 316 t f f;
-#X connect 1 0 34 0;
+#X obj 211 423 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#N canvas 64 113 736 556 groupimage 0;
+#N canvas 182 107 450 323 groupimagecnv 0;
+#X obj 0 28 cnv 4 4 4 0-0-s 0-0-r empty 0 0 0 12 -66577 -262144 0;
+#X obj 4 28 cnv 4 4 4 0-1-s 0-1-r empty 0 0 0 12 -66577 -262144 0;
+#X obj 8 28 cnv 4 4 4 0-2-s 0-2-r empty 0 0 0 12 -66577 -262144 0;
+#X obj 12 28 cnv 4 4 4 0-3-s 0-3-r empty 0 0 0 12 -66577 -262144 0
+;
+#X obj 16 28 cnv 4 4 4 0-4-s 0-4-r empty 0 0 0 12 -66577 -262144 0
+;
+#X obj 20 28 cnv 4 4 4 0-5-s 0-5-r empty 0 0 0 12 -66577 -262144 0
+;
+#X obj 24 28 cnv 4 4 4 0-6-s 0-6-r empty 0 0 0 12 -66577 -262144 0
+;
+#X obj 28 28 cnv 4 4 4 0-7-s 0-7-r empty 0 0 0 12 -66577 -262144 0
+;
+#X obj 0 24 cnv 4 4 4 0-8-s 0-8-r empty 0 0 0 12 -66577 -262144 0;
+#X obj 4 24 cnv 4 4 4 0-9-s 0-9-r empty 0 0 0 12 -66577 -262144 0;
+#X obj 8 24 cnv 4 4 4 0-10-s 0-10-r empty 0 0 0 12 -66577 -262144 0
+;
+#X obj 12 24 cnv 4 4 4 0-11-s 0-11-r empty 0 0 0 12 -66577 -262144
+0;
+#X obj 16 24 cnv 4 4 4 0-12-s 0-12-r empty 0 0 0 12 -66577 -262144
+0;
+#X obj 20 24 cnv 4 4 4 0-13-s 0-13-r empty 0 0 0 12 -66577 -262144
+0;
+#X obj 24 24 cnv 4 4 4 0-14-s 0-14-r empty 0 0 0 12 -66577 -262144
+0;
+#X obj 28 24 cnv 4 4 4 0-15-s 0-15-r empty 0 0 0 12 -66577 -262144
+0;
+#X obj 0 20 cnv 4 4 4 0-16-s 0-16-r empty 0 0 0 12 -66577 -262144 0
+;
+#X obj 4 20 cnv 4 4 4 0-17-s 0-17-r empty 0 0 0 12 -66577 -262144 0
+;
+#X obj 8 20 cnv 4 4 4 0-18-s 0-18-r empty 0 0 0 12 -66577 -262144 0
+;
+#X obj 12 20 cnv 4 4 4 0-19-s 0-19-r empty 0 0 0 12 -66577 -262144
+0;
+#X obj 16 20 cnv 4 4 4 0-20-s 0-20-r empty 0 0 0 12 -66577 -262144
+0;
+#X obj 20 20 cnv 4 4 4 0-21-s 0-21-r empty 0 0 0 12 -66577 -262144
+0;
+#X obj 24 20 cnv 4 4 4 0-22-s 0-22-r empty 0 0 0 12 -66577 -262144
+0;
+#X obj 28 20 cnv 4 4 4 0-23-s 0-23-r empty 0 0 0 12 -66577 -262144
+0;
+#X obj 0 16 cnv 4 4 4 0-24-s 0-24-r empty 0 0 0 12 -66577 -262144 0
+;
+#X obj 4 16 cnv 4 4 4 0-25-s 0-25-r empty 0 0 0 12 -66577 -262144 0
+;
+#X obj 8 16 cnv 4 4 4 0-26-s 0-26-r empty 0 0 0 12 -66577 -262144 0
+;
+#X obj 12 16 cnv 4 4 4 0-27-s 0-27-r empty 0 0 0 12 -66577 -262144
+0;
+#X obj 16 16 cnv 4 4 4 0-28-s 0-28-r empty 0 0 0 12 -66577 -262144
+0;
+#X obj 20 16 cnv 4 4 4 0-29-s 0-29-r empty 0 0 0 12 -66577 -262144
+0;
+#X obj 24 16 cnv 4 4 4 0-30-s 0-30-r empty 0 0 0 12 -66577 -262144
+0;
+#X obj 28 16 cnv 4 4 4 0-31-s 0-31-r empty 0 0 0 12 -66577 -262144
+0;
+#X obj 0 12 cnv 4 4 4 0-32-s 0-32-r empty 0 0 0 12 -66577 -262144 0
+;
+#X obj 4 12 cnv 4 4 4 0-33-s 0-33-r empty 0 0 0 12 -66577 -262144 0
+;
+#X obj 8 12 cnv 4 4 4 0-34-s 0-34-r empty 0 0 0 12 -66577 -262144 0
+;
+#X obj 12 12 cnv 4 4 4 0-35-s 0-35-r empty 0 0 0 12 -66577 -262144
+0;
+#X obj 16 12 cnv 4 4 4 0-36-s 0-36-r empty 0 0 0 12 -66577 -262144
+0;
+#X obj 20 12 cnv 4 4 4 0-37-s 0-37-r empty 0 0 0 12 -66577 -262144
+0;
+#X obj 24 12 cnv 4 4 4 0-38-s 0-38-r empty 0 0 0 12 -66577 -262144
+0;
+#X obj 28 12 cnv 4 4 4 0-39-s 0-39-r empty 0 0 0 12 -66577 -262144
+0;
+#X obj 0 8 cnv 4 4 4 0-40-s 0-40-r empty 0 0 0 12 -66577 -262144 0
+;
+#X obj 4 8 cnv 4 4 4 0-41-s 0-41-r empty 0 0 0 12 -66577 -262144 0
+;
+#X obj 8 8 cnv 4 4 4 0-42-s 0-42-r empty 0 0 0 12 -66577 -262144 0
+;
+#X obj 12 8 cnv 4 4 4 0-43-s 0-43-r empty 0 0 0 12 -66577 -262144 0
+;
+#X obj 16 8 cnv 4 4 4 0-44-s 0-44-r empty 0 0 0 12 -66577 -262144 0
+;
+#X obj 20 8 cnv 4 4 4 0-45-s 0-45-r empty 0 0 0 12 -66577 -262144 0
+;
+#X obj 24 8 cnv 4 4 4 0-46-s 0-46-r empty 0 0 0 12 -66577 -262144 0
+;
+#X obj 28 8 cnv 4 4 4 0-47-s 0-47-r empty 0 0 0 12 -66577 -262144 0
+;
+#X obj 0 4 cnv 4 4 4 0-48-s 0-48-r empty 0 0 0 12 -66577 -262144 0
+;
+#X obj 4 4 cnv 4 4 4 0-49-s 0-49-r empty 0 0 0 12 -66577 -262144 0
+;
+#X obj 8 4 cnv 4 4 4 0-50-s 0-50-r empty 0 0 0 12 -66577 -262144 0
+;
+#X obj 12 4 cnv 4 4 4 0-51-s 0-51-r empty 0 0 0 12 -66577 -262144 0
+;
+#X obj 16 4 cnv 4 4 4 0-52-s 0-52-r empty 0 0 0 12 -66577 -262144 0
+;
+#X obj 20 4 cnv 4 4 4 0-53-s 0-53-r empty 0 0 0 12 -66577 -262144 0
+;
+#X obj 24 4 cnv 4 4 4 0-54-s 0-54-r empty 0 0 0 12 -66577 -262144 0
+;
+#X obj 28 4 cnv 4 4 4 0-55-s 0-55-r empty 0 0 0 12 -66577 -262144 0
+;
+#X obj 0 0 cnv 4 4 4 0-56-s 0-56-r empty 0 0 0 12 -66577 -262144 0
+;
+#X obj 4 0 cnv 4 4 4 0-57-s 0-57-r empty 0 0 0 12 -66577 -262144 0
+;
+#X obj 8 0 cnv 4 4 4 0-58-s 0-58-r empty 0 0 0 12 -66577 -262144 0
+;
+#X obj 12 0 cnv 4 4 4 0-59-s 0-59-r empty 0 0 0 12 -66577 -262144 0
+;
+#X obj 16 0 cnv 4 4 4 0-60-s 0-60-r empty 0 0 0 12 -66577 -262144 0
+;
+#X obj 20 0 cnv 4 4 4 0-61-s 0-61-r empty 0 0 0 12 -66577 -262144 0
+;
+#X obj 24 0 cnv 4 4 4 0-62-s 0-62-r empty 0 0 0 12 -66577 -262144 0
+;
+#X obj 28 0 cnv 4 4 4 0-63-s 0-63-r empty 0 0 0 12 -66577 -262144 0
+;
+#X coords 0 -1 1 1 32 32 2 0 0;
+#X restore 148 67 pd groupimagecnv;
+#N canvas 596 258 450 346 generateinit 0;
+#X text 449 45 \$1 = X top left \; \$2 = Y top left \; \$3 =
+label \; \$4 = receive \; \$5 = send;
+#X obj 127 53 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 219 66 stop;
+#X floatatom 208 132 5 0 0 0 col - -, f 5;
+#X floatatom 265 132 5 0 0 0 row - -, f 5;
+#X floatatom 148 132 5 0 0 0 - - -, f 5;
+#N canvas 139 366 450 323 iterate 0;
+#X obj 162 62 + 1;
+#X obj 128 62 f 0;
+#X obj 85 85 - 1;
+#X obj 129 130 mod 8;
+#X floatatom 129 155 5 0 0 0 col - -, f 5;
+#X obj 186 130 div 8;
+#X floatatom 186 155 5 0 0 0 row - -, f 5;
+#X obj 124 109 t f f f;
+#X floatatom 69 155 5 0 0 0 - - -, f 5;
+#X obj 124 -9 inlet;
+#X obj 63 193 outlet;
+#X obj 196 191 outlet;
+#X obj 128 195 outlet;
+#X obj 219 -3 inlet;
+#X text 265 -1 stop;
+#X msg 174 15 stop;
+#X obj 128 14 t b 0;
+#X obj 294 191 select 63;
+#X obj 128 37 metro 10;
+#X connect 0 0 1 1;
+#X connect 1 0 0 0;
+#X connect 1 0 7 0;
+#X connect 3 0 4 0;
+#X connect 4 0 12 0;
+#X connect 5 0 6 0;
+#X connect 6 0 11 0;
+#X connect 7 0 8 0;
+#X connect 7 1 3 0;
+#X connect 7 2 5 0;
+#X connect 8 0 10 0;
+#X connect 8 0 17 0;
+#X connect 9 0 16 0;
+#X connect 13 0 15 0;
+#X connect 15 0 18 0;
+#X connect 16 0 18 0;
+#X connect 16 1 1 1;
+#X connect 17 0 15 0;
+#X connect 18 0 1 0;
+#X restore 190 94 pd iterate;
+#N canvas 199 255 450 346 coord 0;
+#X obj 130 11 inlet;
+#X obj 188 38 inlet;
+#X obj 130 67 * 4;
+#X obj 129 100 +;
+#X obj 258 30 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 127 129 5 0 0 0 X - -, f 5;
+#X floatatom 186 168 5 0 0 0 Y - -, f 5;
+#X obj 187 100 -;
+#X obj 120 199 outlet;
+#X obj 190 205 outlet;
+#X obj 130 33 t f b;
+#X obj 188 67 * -4;
+#X obj 258 59 t 0 -32;
+#X obj 188 128 - 4;
+#X connect 0 0 10 0;
+#X connect 1 0 11 0;
+#X connect 2 0 3 0;
+#X connect 3 0 5 0;
+#X connect 4 0 12 0;
+#X connect 5 0 8 0;
+#X connect 6 0 9 0;
+#X connect 7 0 13 0;
+#X connect 10 0 2 0;
+#X connect 10 1 4 0;
+#X connect 11 0 7 0;
+#X connect 12 0 3 1;
+#X connect 12 1 7 1;
+#X connect 13 0 6 0;
+#X restore 209 168 pd coord;
+#X floatatom 209 199 5 0 0 0 X - -, f 5;
+#X floatatom 253 198 5 0 0 0 Y - -, f 5;
+#X msg 90 249 clear;
+#X obj 161 301 s pd-groupimagecnv;
+#X obj 166 61 t b b;
+#X msg 131 94 set 0;
+#X obj 64 70 t b b;
+#X obj 43 18 inlet;
+#X obj 55 47 t b f;
+#X obj 174 252 pack f f f f;
+#X msg 173 275 obj \$2 \$3 cnv 4 4 4 \$4-\$1-s \$4-\$1-r empty 0 0
+14 12 -66577 0;
+#X connect 1 0 12 0;
+#X connect 2 0 6 1;
+#X connect 3 0 7 0;
+#X connect 4 0 7 1;
+#X connect 5 0 17 0;
+#X connect 6 0 5 0;
+#X connect 6 1 3 0;
+#X connect 6 2 4 0;
+#X connect 7 0 8 0;
+#X connect 7 1 9 0;
+#X connect 8 0 17 1;
+#X connect 9 0 17 2;
+#X connect 10 0 11 0;
+#X connect 12 0 6 0;
+#X connect 12 1 13 0;
+#X connect 13 0 5 0;
+#X connect 14 0 1 0;
+#X connect 14 1 10 0;
+#X connect 15 0 16 0;
+#X connect 16 0 14 0;
+#X connect 16 1 17 3;
+#X connect 17 0 18 0;
+#X connect 18 0 11 0;
+#X restore 154 153 pd generateinit;
+#X text 201 289 start index \, time in ms;
+#X text 96 396 set array name \, left: value \, right: index;
+#X msg 105 251 stop;
+#X obj 143 211 bng 15 250 50 0 empty empty clear 17 7 0 10 -262144
+-1 -1;
+#X msg 182 253 0;
+#X obj 142 231 t b b;
+#X floatatom 141 315 5 0 0 0 - - -, f 5;
+#X obj 141 335 t 0 f;
+#X msg 315 227 stop;
+#X obj 353 187 bng 15 250 50 0 empty empty update 17 7 0 10 -262144
+-1 -1;
+#X msg 392 229 0;
+#X obj 141 290 line 0 1;
+#X msg 136 253 64 64;
+#X obj 630 118 bng 15 250 50 0 empty empty write 17 7 0 10 -262144
+-1 -1;
+#X msg 630 144 34 1;
+#X msg 674 145 34 0;
+#X msg 665 191 \$1;
+#X msg 632 191 \$2;
+#X obj 613 171 t a a a;
+#N canvas 543 247 569 572 updatepoint 0;
+#X text 280 32 left: index \, output: value;
+#X obj 117 141 select 0 1;
+#X floatatom 123 207 9 0 0 0 - - -, f 9;
+#X obj 119 176 f 12;
+#X msg 120 233 color \$1 \$1;
+#X obj 120 258 s;
+#X obj 117 -19 inlet;
+#X obj 282 175 s 35-r;
+#X floatatom 282 106 5 0 0 0 - - -, f 5;
+#X msg 282 141 color \$1 \$1;
+#X text 422 87 drums: 13 \; percu 14 \; bass:15 \; vert
+16 \; bleu 18 \; other1 19 \; bleu vlair 17 \; violet 25
+;
+#X floatatom 54 295 5 0 0 0 - - -, f 5;
+#X obj 54 319 mod 8;
+#X floatatom 54 344 5 0 0 0 - - -, f 5;
+#X obj 54 368 select 0 1 2 3 4 5 6 7, f 54;
+#X msg 53 390 13;
+#X msg 94 390 14;
+#X msg 133 390 15;
+#X msg 174 389 16;
+#X msg 213 388 18;
+#X msg 255 393 17;
+#X msg 293 389 19;
+#X msg 332 390 25;
+#X floatatom 54 417 5 0 0 0 - - -, f 5;
+#X obj 117 7 t f f f;
+#X obj 175 176 f;
+#X obj 117 88 tabread;
+#X obj 48 -18 inlet;
+#X obj 137 32 pack f f;
+#X obj 34 4 t f f;
+#X msg 148 111 symbol \$2-\$1-r;
+#X msg 34 59 set groupimagearray;
+#X connect 1 0 3 0;
+#X connect 1 1 25 0;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;
+#X connect 4 0 5 0;
+#X connect 6 0 24 0;
+#X connect 8 0 9 0;
+#X connect 9 0 7 0;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 14 0 15 0;
+#X connect 14 1 16 0;
+#X connect 14 2 17 0;
+#X connect 14 3 18 0;
+#X connect 14 4 19 0;
+#X connect 14 5 20 0;
+#X connect 14 6 21 0;
+#X connect 14 7 22 0;
+#X connect 15 0 23 0;
+#X connect 16 0 23 0;
+#X connect 17 0 23 0;
+#X connect 18 0 23 0;
+#X connect 19 0 23 0;
+#X connect 20 0 23 0;
+#X connect 21 0 23 0;
+#X connect 22 0 23 0;
+#X connect 23 0 25 1;
+#X connect 24 0 26 0;
+#X connect 24 1 28 0;
+#X connect 24 2 11 0;
+#X connect 25 0 2 0;
+#X connect 26 0 1 0;
+#X connect 27 0 29 0;
+#X connect 28 0 30 0;
+#X connect 29 0 31 0;
+#X connect 29 1 28 1;
+#X connect 30 0 5 1;
+#X connect 31 0 26 0;
+#X restore 352 381 pd updatepoint;
+#X msg 586 196 \$1;
+#X obj 321 33 inlet;
+#X text 364 32 index \, value;
+#X obj 313 82 route clear reset;
+#X obj 393 304 spigot;
+#X floatatom 542 349 5 0 0 0 loopstatusloop #0-loopstatusloop-r -,
+f 5;
+#X msg 543 296 receive \$1-loopstatus-r;
+#X obj 543 321 s loopstatusloop-r;
+#X msg 508 272 symbol \$1-loopstatus-r;
+#X obj 479 290 s;
+#X obj 480 253 t b f f;
+#X floatatom 427 283 5 0 0 0 - - -, f 5;
+#X obj 350 303 spigot;
+#X obj 352 207 t b b;
+#X obj 301 141 t b b 0 1;
+#X obj 374 140 t b b 1 0;
+#X obj 304 116 bng 15 250 50 0 empty empty clear 17 7 0 10 -262144
+-1 -1;
+#X floatatom 381 283 5 0 0 0 - - -, f 5;
+#X msg 401 169 1;
+#X msg 352 162 1;
+#X obj 376 111 bng 15 250 50 0 empty empty update 17 7 0 10 -262144
+-1 -1;
+#X floatatom 307 287 5 0 0 0 - - -, f 5;
+#X msg 347 229 64 64;
+#X obj 351 261 line 0 1;
+#X text 673 270 this is the button's loop status indicator \; triggering
+it here forces loopstatusloop below to output the track's status number
+;
+#X obj 724 45 inlet;
+#X text 724 70 bang;
+#X obj 706 106 outlet;
+#X msg 709 76 \$0;
+#X obj 139 35 table groupimagearray;
+#X obj 564 36 inlet;
+#X floatatom 564 61 5 0 0 0 - - -, f 5;
+#X text 604 36 button ID;
+#X obj 632 212 tabwrite;
+#X floatatom 155 132 5 0 0 0 - - -, f 5;
+#X obj 576 82 t f f f f;
+#X msg 192 337 set groupimagearray;
+#X obj 134 377 tabwrite;
+#X msg 703 191 set groupimagearray;
+#X connect 4 0 13 0;
+#X connect 5 0 7 0;
+#X connect 6 0 13 0;
+#X connect 7 0 14 0;
+#X connect 7 1 6 0;
+#X connect 8 0 9 0;
+#X connect 9 0 59 0;
+#X connect 9 1 59 1;
+#X connect 10 0 45 0;
+#X connect 11 0 35 0;
+#X connect 12 0 45 0;
+#X connect 13 0 8 0;
+#X connect 14 0 13 0;
+#X connect 16 0 20 0;
+#X connect 17 0 20 0;
+#X connect 18 0 55 1;
+#X connect 19 0 55 0;
+#X connect 20 0 22 0;
+#X connect 20 1 19 0;
+#X connect 20 2 18 0;
+#X connect 22 0 21 1;
+#X connect 23 0 25 0;
+#X connect 25 0 38 0;
+#X connect 25 1 42 0;
+#X connect 25 2 20 0;
+#X connect 26 0 32 0;
+#X connect 27 0 21 1;
+#X connect 28 0 29 0;
+#X connect 30 0 31 1;
+#X connect 32 0 31 0;
+#X connect 32 1 30 0;
+#X connect 32 2 28 0;
+#X connect 33 0 26 1;
+#X connect 34 0 21 1;
+#X connect 35 0 44 0;
+#X connect 35 1 12 0;
+#X connect 36 0 11 0;
+#X connect 36 1 5 0;
+#X connect 36 2 33 0;
+#X connect 36 3 41 0;
+#X connect 37 0 11 0;
+#X connect 37 1 5 0;
+#X connect 37 2 40 0;
+#X connect 37 3 39 0;
+#X connect 38 0 36 0;
+#X connect 39 0 34 1;
+#X connect 40 0 33 0;
+#X connect 41 0 39 0;
+#X connect 42 0 37 0;
+#X connect 44 0 45 0;
+#X connect 45 0 26 0;
+#X connect 45 0 34 0;
+#X connect 45 0 43 0;
+#X connect 47 0 50 0;
+#X connect 50 0 49 0;
+#X connect 52 0 53 0;
+#X connect 53 0 57 0;
+#X connect 56 0 1 0;
+#X connect 57 0 60 0;
+#X connect 57 1 21 0;
+#X connect 57 2 58 0;
+#X connect 57 3 56 0;
+#X connect 58 0 59 0;
+#X connect 60 0 55 0;
+#X coords 0 -1 1 1 32 32 2 148 67;
+#X restore 123 56 pd groupimage;
 #X connect 3 0 17 0;
 #X connect 4 0 5 0;
 #X connect 5 0 12 0;
 #X connect 6 0 8 1;
-#X connect 7 0 1 0;
+#X connect 7 0 41 0;
 #X connect 8 0 9 0;
 #X connect 9 0 10 0;
 #X connect 11 0 8 0;
@@ -344,10 +795,10 @@ to send the list of active tracks to a sidebutton., f 29;
 #X connect 12 2 11 0;
 #X connect 12 3 7 0;
 #X connect 12 4 6 0;
-#X connect 14 0 1 0;
+#X connect 14 0 41 0;
 #X connect 15 0 16 0;
 #X connect 16 0 33 0;
-#X connect 17 0 1 0;
+#X connect 17 0 41 0;
 #X connect 18 0 24 0;
 #X connect 23 0 24 0;
 #X connect 24 0 8 0;
@@ -359,15 +810,17 @@ to send the list of active tracks to a sidebutton., f 29;
 #X connect 33 0 27 0;
 #X connect 33 1 26 0;
 #X connect 33 2 37 2;
-#X connect 33 3 1 0;
+#X connect 33 3 41 0;
 #X connect 34 0 36 0;
 #X connect 35 0 29 1;
 #X connect 35 0 37 0;
 #X connect 36 0 35 0;
 #X connect 37 0 38 0;
+#X connect 37 0 40 0;
 #X connect 39 0 29 0;
 #X connect 39 0 37 1;
 #X connect 39 1 35 0;
+#X connect 41 0 34 0;
 #X coords 0 -1 1 1 134 43 1 81 51;
 #X restore 613 -34 pd activeloop;
 #N canvas 460 186 672 307 saveload 0;
@@ -525,12 +978,12 @@ all the send and receives individually., f 82;
 #X restore 259 121 pd presets;
 #X coords 0 0 1 1 193 65 0;
 #X restore 767 -87 pd saveload;
-#N canvas 278 200 865 605 track_follow 0;
+#N canvas 94 87 865 605 track_follow 1;
 #X obj 45 54 cnv 15 148 44 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #N canvas 0 0 450 300 (subpatch) 0;
 #X array track_follow_table 8 float 19 black black;
-#A 0 42 45 56 -1 -1 -1 -1 -1;
+#A 0 52 54 23 -1 -1 -1 -1 -1;
 #X coords 0 64 8 -1 200 140 1;
 #X restore 203 15 graph;
 #X floatatom 48 183 5 0 0 0 current - -, f 5;
@@ -539,7 +992,7 @@ all the send and receives individually., f 82;
 1;
 #X floatatom 168 59 3 0 0 0 next - -, f 3;
 #X floatatom 117 183 5 0 0 0 next - -, f 5;
-#N canvas 112 77 1017 640 followseq 0;
+#N canvas 197 58 1017 663 followseq 1;
 #X obj 90 -99 select 0;
 #X obj 90 -149 r beat_num;
 #X obj 90 31 f 0;
@@ -600,6 +1053,10 @@ all the send and receives individually., f 82;
 #X obj 474 98 t f f;
 #X floatatom 90 163 5 0 0 0 - - -, f 5;
 #X floatatom 272 164 5 0 0 0 - - -, f 5;
+#X obj 397 -85 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -70 -101 loadbang;
+#X msg -70 -76 1;
 #X connect 0 0 36 0;
 #X connect 0 0 31 0;
 #X connect 1 0 24 0;
@@ -635,6 +1092,7 @@ all the send and receives individually., f 82;
 #X connect 30 0 29 0;
 #X connect 31 0 51 0;
 #X connect 32 0 25 0;
+#X connect 32 1 59 0;
 #X connect 33 0 34 0;
 #X connect 34 0 37 0;
 #X connect 34 1 35 0;
@@ -664,6 +1122,8 @@ all the send and receives individually., f 82;
 #X connect 56 1 53 0;
 #X connect 57 0 7 0;
 #X connect 58 0 17 0;
+#X connect 60 0 61 0;
+#X connect 61 0 36 1;
 #X restore 48 156 pd followseq;
 #X obj 169 289 delay 200;
 #X obj 191 340 s;
@@ -679,9 +1139,24 @@ all the send and receives individually., f 82;
 #X symbolatom 46 79 23 0 0 0 - - -, f 23;
 #X obj 122 60 tgl 15 0 empty empty Rnd -21 6 0 10 -262144 -1 -1 0 1
 ;
-#X msg 22 121 42 45 56, f 12;
+#X msg 21 126 42 45 56, f 12;
+#X obj 51 25 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 307 473 text;
+#X floatatom 359 375 5 0 0 0 - - -, f 5;
+#X floatatom 359 399 5 0 0 0 - - -, f 5;
+#X symbolatom 406 403 10 0 0 0 - - -, f 10;
+#X symbolatom 395 347 10 0 0 0 - - -, f 10;
+#X obj 491 364 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 405 448 list;
+#X obj 405 473 print;
+#X obj 476 440 zexy/s2l;
+#X obj 476 465 print s2l;
+#X obj 46 103 zexy/s2l;
 #X connect 2 0 14 0;
 #X connect 4 0 7 1;
+#X connect 4 0 22 0;
 #X connect 6 0 5 0;
 #X connect 6 0 10 0;
 #X connect 7 0 2 0;
@@ -696,13 +1171,23 @@ all the send and receives individually., f 82;
 #X connect 16 0 9 1;
 #X connect 17 0 13 0;
 #X connect 18 0 9 0;
-#X connect 19 0 7 0;
+#X connect 19 0 33 0;
 #X connect 20 0 7 2;
+#X connect 20 0 22 0;
 #X connect 21 0 7 0;
+#X connect 22 0 19 0;
+#X connect 24 0 25 0;
+#X connect 24 0 26 0;
+#X connect 26 0 29 0;
+#X connect 26 0 31 0;
+#X connect 27 0 26 0;
+#X connect 28 0 26 0;
+#X connect 29 0 30 0;
+#X connect 31 0 32 0;
+#X connect 33 0 7 0;
 #X coords 0 -1 1 1 150 46 1 44 53;
 #X restore 460 -37 pd track_follow;
-#X obj 1056 20 sidebutton_group 82;
-#N canvas 0 0 450 300 options 0;
+#N canvas 0 0 450 300 options 1;
 #X text 39 -395 0 empty \; 1 playing \; 2 play queued \; 3 recording
 \; 4 record armed \; 5 not empty \, stopped \; 6 stop queued;
 #X text 39 -508 MIDI out colors: \; 0 off \; 1 solid green \; 2
@@ -2012,21 +2497,8 @@ sends \, but whatever \, it was faster to do it manually just now.
 #X obj 590 33 empty_button 61;
 #X obj 704 33 empty_button 62;
 #X obj 818 33 empty_button 63;
-#X obj 20 529 sidebutton 64;
-#X obj 134 529 sidebutton 65;
-#X obj 248 529 sidebutton 66;
-#X obj 362 529 sidebutton 67;
-#X obj 476 529 sidebutton 68;
-#X obj 590 529 sidebutton 69;
-#X obj 704 529 sidebutton 70;
-#X obj 818 529 sidebutton 71;
-#X obj 932 33 sidebutton 82;
-#X obj 932 95 sidebutton 83;
-#X obj 932 157 sidebutton 84;
-#X obj 932 219 sidebutton 85;
-#X obj 932 281 sidebutton 86;
-#X obj 932 343 sidebutton 87;
-#X obj 932 405 sidebutton 88;
-#X obj 932 467 sidebutton 89;
-#X obj 932 529 sidebutton 98;
-#X obj -94 529 sidebutton 1064;
+#X obj 1076 27 sidebutton_group 82;
+#X obj 1090 -62 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1090 -39 s sidebutton-initbang-r;
+#X connect 82 0 83 0;

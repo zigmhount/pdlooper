@@ -1,8 +1,8 @@
-#N canvas 22 34 711 710 10;
+#N canvas 23 34 711 710 10;
 #N canvas 842 99 450 438 \$0-buttonframe 0;
-#X obj 79 52 bng 56 250 50 0 1108-bng-s 0-bng-r ADD 5 26 0 10 -128992
+#X obj 79 52 bng 56 250 50 0 1142-bng-s 0-bng-r ADD 5 26 0 10 -128992
 -1 -1;
-#X obj 130 52 bng 56 250 50 0 1108-bng-s 1108-bng-r ADD 5 26 0 10 -128992
+#X obj 130 52 bng 56 250 50 0 1142-bng-s 1142-bng-r ADD 5 26 0 10 -128992
 -1 -1;
 #X obj 78 51 cnv 15 110 58 empty empty Empty 42 25 0 10 -128992 -66577
 0;
