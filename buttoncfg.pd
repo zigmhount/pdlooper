@@ -1,6 +1,4 @@
-#N canvas 851 131 450 323 10;
-#X obj 43 48 cnv 15 103 40 empty button_color-\$0 empty 0 0 0 10 -216373
--33289 0;
+#N canvas 854 200 450 348 10;
 #X floatatom 124 68 3 1 127 0 - #0-cfgbars-r #0-cfgbars-s, f 3;
 #X dropdown 81 68 4 0 0 0 - #0-cfgoutput-r #0-cfgoutput-s, f 4;
 #X obj 63 50 moonlib/mknob 16 20 0 127 0 0 \$0-cfgvol-r \$0-cfgvol-r
@@ -8,7 +6,7 @@ V 4 7 0 11 -191407 -1 -253822 0 0;
 #X obj 63 68 moonlib/mknob 16 128 0 127 0 1 \$0-cfgpan-r \$0-cfgpan-r
 P 4 7 0 11 -191407 -1 -249661 6300 0;
 #X symbolatom 81 50 7 0 0 0 - #0-cfgname-r -, f 7;
-#X obj 127 50 bng 16 250 50 0 \$0-closecfg-s \$0-closecfg-r X 3 6 0
+#X obj 127 50 bng 16 250 50 0 \$1-closecfg-s \$0-closecfg-r X 3 6 0
 14 -262144 -1 -1;
 #N canvas 372 98 450 623 init_buttoncfg 0;
 #X obj 69 54 \$1;
@@ -28,9 +26,11 @@ P 4 7 0 11 -191407 -1 -249661 6300 0;
 #X msg 168 382 symbol \$1-track\$2-r;
 #X msg 151 406 bang;
 #X obj 68 17 inlet;
-#X obj 263 143 s \$0-closecfg-r;
-#X msg 263 118 send \$1-closecfg-s;
-#X obj 68 91 t f f f f f b;
+#X obj 279 210 s \$0-closecfg-r;
+#X msg 279 185 send \$1-closecfg-s;
+#X obj 68 91 t f f f f f b f;
+#X obj 277 151 s initbang-buttoncfg-r;
+#X msg 277 126 receive \$1-initbang-buttoncfg-r;
 #X connect 0 0 3 0;
 #X connect 0 0 19 0;
 #X connect 1 0 2 0;
@@ -56,24 +56,32 @@ P 4 7 0 11 -191407 -1 -249661 6300 0;
 #X connect 19 3 4 0;
 #X connect 19 4 11 0;
 #X connect 19 5 18 0;
+#X connect 19 6 21 0;
+#X connect 21 0 20 0;
 #X restore 251 60 pd init_buttoncfg;
 #X floatatom 45 108 5 0 0 0 - - -, f 5;
 #X floatatom 44 137 5 0 0 0 - - -, f 5;
 #X obj 208 70 \$1;
-#X obj 203 13 bng 15 250 50 0 empty initbang-buttoncfg-r initbang-buttoncfg
+#X obj 203 13 bng 15 250 50 0 empty 0-initbang-buttoncfg-r initbang-buttoncfg
 17 7 0 10 -262144 -1 -1;
 #X obj 204 36 t b b;
 #X obj 116 117 r \$0-cfgvol-s;
 #X obj 117 165 s;
 #X msg 140 144 symbol \$1-trackvol-r;
 #X obj 208 94 t f f f f f f f f;
+#X obj 139 11 loadbang;
+#X obj 46 69 bng 16 250 50 0 \$0-stop-s \$0-stop-r S 4 6 0 10 -262144
+-1 -1;
+#X obj 46 51 tgl 16 0 \$0-play-s \$0-play-r P 4 6 0 10 -262144 -1 -1
+0 1;
+#X connect 2 0 7 0;
 #X connect 3 0 8 0;
-#X connect 4 0 9 0;
-#X connect 10 0 16 0;
-#X connect 11 0 12 0;
-#X connect 12 0 10 0;
-#X connect 12 1 7 0;
-#X connect 13 0 14 0;
-#X connect 15 0 14 1;
-#X connect 16 0 15 0;
+#X connect 9 0 15 0;
+#X connect 10 0 11 0;
+#X connect 11 0 9 0;
+#X connect 11 1 6 0;
+#X connect 12 0 13 0;
+#X connect 14 0 13 1;
+#X connect 15 0 14 0;
+#X connect 16 0 11 0;
 #X coords 0 -1 1 1 103 40 2 43 48;
