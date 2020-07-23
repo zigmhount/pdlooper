@@ -1,0 +1,113 @@
+#N canvas 15 41 704 394 10;
+#N canvas 309 92 677 655 tempo 0;
+#X obj 90 -432 cnv 15 182 48 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X floatatom 231 -406 4 0 0 0 - - -, f 4;
+#X obj 230 -428 bng 15 250 50 0 empty empty tap 17 7 0 10 -262144 -1
+-1;
+#X obj 107 -411 tgl 20 0 \$0-globalplaypause-s \$0-globalplaypause-r
+play/pause -14 -12 0 10 -154176 -1 -1 0 1;
+#X obj 166 -429 tgl 14 0 empty empty metro 17 7 0 10 -262144 -1 -1
+0 1;
+#X text -8 -50 outputs 0 for the first beat;
+#X text 171 -51 tempo in ms;
+#X obj 98 -29 s tempo_ms;
+#X obj 24 -28 s beat_num;
+#X obj 138 -411 hradio 20 0 0 4 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 23 -155 routeOSC /beatnum /tempo_ms /tempo_bpm;
+#X floatatom 23 -130 5 0 0 0 - - -, f 5;
+#X msg 114 -363 /metro/playpause \$1;
+#X msg 165 -335 /metro/click \$1;
+#X msg 227 -313 /metro/tap;
+#X obj 23 -210 r fromdsp;
+#X obj 23 -180 routeOSC /metro;
+#X obj 240 -243 s todsp;
+#X connect 2 0 14 0;
+#X connect 3 0 12 0;
+#X connect 4 0 13 0;
+#X connect 10 0 11 0;
+#X connect 10 1 7 0;
+#X connect 10 2 1 0;
+#X connect 11 0 9 0;
+#X connect 11 0 8 0;
+#X connect 12 0 17 0;
+#X connect 13 0 17 0;
+#X connect 14 0 17 0;
+#X connect 15 0 16 0;
+#X connect 16 0 10 0;
+#X coords 0 -1 1 1 184 50 2 89 -433;
+#X restore 84 44 pd tempo;
+#N canvas 47 129 588 457 OSCconnections 0;
+#X obj 32 79 loadbang;
+#X obj 32 274 mrpeach/udpsend;
+#X obj 32 299 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X msg 32 104 connect localhost 8080;
+#X obj 133 213 mrpeach/packOSC;
+#X msg 49 132 disconnect;
+#X obj 38 23 bng 15 250 50 0 empty empty connect_to_8080 17 7 0 10
+-262144 -1 -1;
+#X obj 38 42 bng 15 250 50 0 empty empty disconnect 17 7 0 10 -262144
+-1 -1;
+#X obj 155 6 tgl 17 0 empty empty Connected 32 6 0 10 -262144 -1 -1
+1 1;
+#X obj 287 95 list split 1;
+#X msg 287 123 send /zig/dsp\$1;
+#X obj 286 150 list append;
+#X msg 463 51 /metro dfdf 45 ff;
+#X obj 285 172 list trim;
+#X obj 292 21 import mrpeach;
+#X obj 236 286 dumpOSC 8081;
+#X obj 236 365 s fromdsp;
+#X obj 287 72 r todsp;
+#X obj 463 76 s todsp;
+#X text 264 199 converts any message \; [/param arg1 arg2 argn( \;
+into \; [send /zig/dsp/metro/param arg1 arg2 argn(;
+#X obj 236 315 routeOSC /zig;
+#X obj 236 339 routeOSC /ui;
+#X obj 144 362 spigot;
+#X obj 155 28 tgl 15 0 empty empty printOSC\ in 17 7 0 10 -262144 -1
+-1 1 1;
+#X obj 155 45 tgl 15 0 empty empty printOSC\ out 17 7 0 10 -262144
+-1 -1 1 1;
+#X obj 143 386 print OSCin;
+#X obj 52 361 spigot;
+#X obj 51 385 print OSCout;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 2 0 8 0;
+#X connect 3 0 1 0;
+#X connect 4 0 1 0;
+#X connect 5 0 1 0;
+#X connect 6 0 3 0;
+#X connect 7 0 5 0;
+#X connect 9 0 10 0;
+#X connect 9 1 11 1;
+#X connect 10 0 11 0;
+#X connect 11 0 13 0;
+#X connect 12 0 18 0;
+#X connect 13 0 4 0;
+#X connect 13 0 26 0;
+#X connect 15 0 20 0;
+#X connect 15 0 22 0;
+#X connect 17 0 9 0;
+#X connect 20 0 21 0;
+#X connect 21 0 16 0;
+#X connect 22 0 25 0;
+#X connect 23 0 22 1;
+#X connect 24 0 26 1;
+#X connect 26 0 27 0;
+#X coords 0 -1 1 1 212 59 1 35 4;
+#X restore 87 119 pd OSCconnections;
+#X obj 184 241 s todsp;
+#X msg 184 216 /track/9/getall;
+#X msg 360 196 /track/9/vol 64;
+#X msg 338 243 /track/9/output 1;
+#X msg 388 291 /track/9/play 1;
+#X msg 368 139 /track/9/name hola;
+#X connect 3 0 2 0;
+#X connect 4 0 2 0;
+#X connect 5 0 2 0;
+#X connect 6 0 2 0;
+#X connect 7 0 2 0;
