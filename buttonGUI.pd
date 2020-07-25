@@ -1,14 +1,13 @@
-#N canvas 653 151 627 380 10;
+#N canvas 143 320 814 614 10;
 #X obj 395 93 hsl 58 16 0 127 0 0 empty slider_track-r empty -2 -9
 0 10 -262144 -1 -1 0 0;
-#X obj 58 65 bng 16 250 50 0 stopUI-s stopUI-r S 4 6 0 10 -262144 -1
--1;
-#X obj 58 47 tgl 16 0 playUI-s playUI-r P 4 6 0 10 -262144 -1 -1 0
-1;
-#X obj 76 47 tgl 16 0 recUI-s recUI-r R 4 6 0 10 -262144 -258049 -176129
-0 1;
-#X obj 94 47 cnv 10 44 15 empty tracknameUI-r Unnamed\ 1 1 6 0 10 -233017
--66577 0;
+#X obj 58 65 bng 16 250 50 0 0-stopUI-s 0-stopUI-r S 4 6 0 10 -262144
+-1 -1;
+#X obj 58 47 tgl 16 0 empty empty P 4 6 0 10 -262144 -1 -1 0 1;
+#X obj 76 47 tgl 16 0 0-recUI-s 0-recUI-r R 4 6 0 10 -262144 -258049
+-176129 0 1;
+#X obj 94 47 cnv 10 44 15 empty \$0-tracknameUI-r Unnamed\ 1 1 6 0
+10 -233017 -66577 0;
 #N canvas 0 0 450 300 (subpatch) 0;
 #X array grad\$0 32 float 2 black black;
 #X coords 0 1 32 -1 57 14 1;
@@ -77,8 +76,115 @@
 #X msg 273 318 receive voice_slider\$1;
 #X msg 241 358 label;
 #X obj 69 372 s tracknameUI-r;
+#N canvas 799 197 823 375 OSCinput 0;
+#X obj 72 50 routeOSC /track;
+#X obj 98 96 f \$1;
+#X obj 72 72 t a b;
+#X obj 72 143 routeOSC /\$0;
+#X msg 98 118 set /\$1;
+#X obj 60 267 outlet;
+#X obj 81 201 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 81 227 s \$0-play-s;
+#X obj 159 201 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 159 227 s \$0-rec-s;
+#X obj 229 226 s \$0-stop-s;
+#X obj 229 201 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 308 202 5 0 0 0 - - -, f 5;
+#X obj 308 226 s \$0-bars-s;
+#X floatatom 387 201 5 0 0 0 - - -, f 5;
+#X obj 387 225 s \$0-vol-s;
+#X floatatom 460 200 5 0 0 0 - - -, f 5;
+#X obj 460 224 s \$0-pan-s;
+#X floatatom 536 199 5 0 0 0 - - -, f 5;
+#X obj 536 223 s \$0-output-s;
+#X obj 81 177 routeOSC /play /rec /stop /bars /vol /pan /output /name
+/getall, f 117;
+#X obj 623 250 s \$0-name-s;
+#X obj 624 201 tosymbol;
+#X symbolatom 624 226 10 0 0 0 - - -, f 10;
+#X obj 72 25 r fromdsp;
+#X text 163 141 /\$0 is a placeholder that's replaced by /\$1 from
+the message above;
+#X connect 0 0 2 0;
+#X connect 1 0 4 0;
+#X connect 2 0 3 0;
+#X connect 2 1 1 0;
+#X connect 3 0 5 0;
+#X connect 3 0 20 0;
+#X connect 4 0 3 0;
+#X connect 6 0 7 0;
+#X connect 8 0 9 0;
+#X connect 11 0 10 0;
+#X connect 12 0 13 0;
+#X connect 14 0 15 0;
+#X connect 16 0 17 0;
+#X connect 18 0 19 0;
+#X connect 20 0 6 0;
+#X connect 20 1 8 0;
+#X connect 20 2 11 0;
+#X connect 20 3 12 0;
+#X connect 20 4 14 0;
+#X connect 20 5 16 0;
+#X connect 20 6 18 0;
+#X connect 20 7 22 0;
+#X connect 22 0 23 0;
+#X connect 23 0 21 0;
+#X connect 24 0 0 0;
+#X restore 623 25 pd OSCinput;
+#N canvas 925 247 803 483 \$0-OSCoutput 0;
+#X text 216 23 receive /playpause 1;
+#X obj 123 57 t a b;
+#X obj 150 81 \$1;
+#X obj 123 145 list split 1;
+#X obj 123 176 pack s s;
+#X msg 123 201 \$2\$1;
+#X msg 149 118 symbol /track/\$1;
+#X obj 122 233 list append;
+#X obj 122 258 list trim;
+#X obj 123 23 r \$0-OSCoutput;
+#X obj 122 283 s todsp;
+#X obj 96 337 r \$0-play-r;
+#X msg 96 362 /play \$1;
+#X obj 96 387 s \$0-OSCoutput;
+#X obj 179 339 r \$0-rec-r;
+#X msg 179 364 /rec \$1;
+#X obj 258 340 r \$0-stop-r;
+#X msg 258 365 /stop \$1;
+#X connect 1 0 3 0;
+#X connect 1 1 2 0;
+#X connect 2 0 6 0;
+#X connect 3 0 4 0;
+#X connect 3 1 7 1;
+#X connect 4 0 5 0;
+#X connect 5 0 7 0;
+#X connect 6 0 4 1;
+#X connect 7 0 8 0;
+#X connect 8 0 10 0;
+#X connect 9 0 1 0;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 14 0 15 0;
+#X connect 15 0 13 0;
+#X connect 16 0 17 0;
+#X connect 17 0 13 0;
+#X restore 623 57 pd \$0-OSCoutput;
+#X msg 466 417 /getall;
+#X obj 466 442 s \$0-OSCoutput;
+#X obj 277 456 r \$0-play-s;
+#X msg 277 481 set \$1;
+#X obj 278 529 s \$0-play-r;
+#X floatatom 277 506 5 0 0 0 - - -, f 5;
+#X obj 372 459 r \$0-name-s;
+#X msg 372 484 label \$1;
+#X obj 372 509 s \$0-tracknameUI-r;
+#X obj 372 484 print name;
+#X connect 2 0 43 0;
 #X connect 6 0 7 0;
 #X connect 9 0 10 0;
+#X connect 9 0 39 0;
 #X connect 10 0 8 0;
 #X connect 10 0 21 0;
 #X connect 12 0 11 0;
@@ -109,4 +215,11 @@
 #X connect 33 0 15 1;
 #X connect 34 0 15 0;
 #X connect 35 0 15 0;
+#X connect 39 0 40 0;
+#X connect 41 0 42 0;
+#X connect 42 0 2 0;
+#X connect 42 0 44 0;
+#X connect 45 0 46 0;
+#X connect 45 0 48 0;
+#X connect 46 0 47 0;
 #X coords 0 -1 1 1 104 41 2 55 44;
