@@ -1,0 +1,38 @@
+#N canvas 753 153 450 300 10;
+#X obj 148 24 notein;
+#X obj 148 49 pack 0 0 0;
+#X msg 148 74 \$3 \$1 \$2;
+#X obj 146 227 fluid~;
+#X obj 146 252 output~;
+#X msg 244 24 load /home/zig/soundfounts/FluidR3_GM.sf2;
+#X msg 244 49 load /home/zig/soundfounts/Timbres Of Heaven GM_GS_XG_SFX
+V 3.4 Final.sf2;
+#X floatatom 258 136 5 0 0 0 channel - -, f 5;
+#X floatatom 329 136 5 0 0 0 value - -, f 5;
+#X floatatom 328 112 5 0 0 0 bank - -, f 5;
+#X obj 260 203 pack f f;
+#X msg 260 228 prog \$1 \$2;
+#X msg 329 163 bank 1 \$1;
+#X obj 258 181 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 257 111 bng 15 250 50 0 empty empty Load -28 5 0 10 -262144
+-1 -1;
+#X connect 0 0 1 0;
+#X connect 0 1 1 1;
+#X connect 0 2 1 2;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 1 4 1;
+#X connect 5 0 3 0;
+#X connect 6 0 3 0;
+#X connect 7 0 10 0;
+#X connect 8 0 10 1;
+#X connect 8 0 13 0;
+#X connect 9 0 12 0;
+#X connect 10 0 11 0;
+#X connect 11 0 3 0;
+#X connect 12 0 3 0;
+#X connect 13 0 7 0;
+#X connect 14 0 6 0;
+#X coords 0 -1 1 1 155 61 1 210 96;
