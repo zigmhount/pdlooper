@@ -1,5 +1,5 @@
-#N canvas 41 134 1198 762 10;
-#N canvas 47 129 588 457 OSCconnections 0;
+#N canvas 1 29 508 417 10;
+#N canvas 48 152 588 457 OSCconnections 0;
 #X obj 32 79 loadbang;
 #X obj 32 274 mrpeach/udpsend;
 #X obj 32 299 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
@@ -29,12 +29,12 @@
 #X obj 236 339 routeOSC /ui;
 #X obj 144 362 spigot;
 #X obj 155 28 tgl 15 0 empty empty printOSC\ in 17 7 0 10 -262144 -1
--1 0 1;
+-1 1 1;
 #X obj 155 45 tgl 15 0 empty empty printOSC\ out 17 7 0 10 -262144
--1 -1 0 1;
-#X obj 143 386 print OSCin;
-#X obj 52 361 spigot;
-#X obj 51 385 print OSCout;
+-1 -1 1 1;
+#X obj 18 362 spigot;
+#X obj 143 386 print OSCin_fromdsp;
+#X obj 17 386 print OSCout_todsp;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
 #X connect 2 0 8 0;
@@ -49,16 +49,16 @@
 #X connect 11 0 13 0;
 #X connect 12 0 18 0;
 #X connect 13 0 4 0;
-#X connect 13 0 26 0;
+#X connect 13 0 25 0;
 #X connect 15 0 20 0;
 #X connect 15 0 22 0;
 #X connect 17 0 9 0;
 #X connect 20 0 21 0;
 #X connect 21 0 16 0;
-#X connect 22 0 25 0;
+#X connect 22 0 26 0;
 #X connect 23 0 22 1;
-#X connect 24 0 26 1;
-#X connect 26 0 27 0;
+#X connect 24 0 25 1;
+#X connect 25 0 27 0;
 #X coords 0 -1 1 1 212 59 1 35 4;
 #X restore 230 10 pd OSCconnections;
 #N canvas 309 92 677 655 tempo 0;
@@ -76,7 +76,7 @@ play/pause -14 -12 0 10 -154176 -1 -1 0 1;
 #X obj 98 -29 s tempo_ms;
 #X obj 24 -28 s beat_num;
 #X obj 138 -411 hradio 20 0 0 4 empty empty empty 0 -8 0 10 -262144
--1 -1 2;
+-1 -1 0;
 #X obj 23 -155 routeOSC /beatnum /tempo_ms /tempo_bpm;
 #X floatatom 23 -130 5 0 0 0 - - -, f 5;
 #X msg 114 -363 /metro/playpause \$1;
@@ -100,7 +100,7 @@ play/pause -14 -12 0 10 -154176 -1 -1 0 1;
 #X connect 16 0 10 0;
 #X coords 0 -1 1 1 184 50 2 89 -433;
 #X restore 25 15 pd tempo;
-#N canvas 729 97 450 325 test 1;
+#N canvas 729 97 450 325 test 0;
 #X obj 89 235 s todsp;
 #X msg 89 210 /track/9/getall;
 #X msg 75 84 /track/9/vol 64;
