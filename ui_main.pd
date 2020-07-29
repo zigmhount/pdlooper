@@ -1,4 +1,4 @@
-#N canvas 40 134 1198 762 10;
+#N canvas 41 134 1198 762 10;
 #N canvas 47 129 588 457 OSCconnections 0;
 #X obj 32 79 loadbang;
 #X obj 32 274 mrpeach/udpsend;
@@ -76,7 +76,7 @@ play/pause -14 -12 0 10 -154176 -1 -1 0 1;
 #X obj 98 -29 s tempo_ms;
 #X obj 24 -28 s beat_num;
 #X obj 138 -411 hradio 20 0 0 4 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
+-1 -1 2;
 #X obj 23 -155 routeOSC /beatnum /tempo_ms /tempo_bpm;
 #X floatatom 23 -130 5 0 0 0 - - -, f 5;
 #X msg 114 -363 /metro/playpause \$1;
@@ -113,7 +113,7 @@ play/pause -14 -12 0 10 -154176 -1 -1 0 1;
 #X connect 4 0 0 0;
 #X connect 5 0 0 0;
 #X restore 571 34 pd test;
-#N canvas 0 0 450 300 options 0;
+#N canvas 596 322 450 300 options 0;
 #X text 39 -395 0 empty \; 1 playing \; 2 play queued \; 3 recording
 \; 4 record armed \; 5 not empty \, stopped \; 6 stop queued;
 #X text 39 -508 MIDI out colors: \; 0 off \; 1 solid green \; 2
@@ -1319,8 +1319,90 @@ sends \, but whatever \, it was faster to do it manually just now.
 #X connect 10 0 11 0;
 #X restore 305 -646 pd initialize;
 #X obj 305 -675 loadbang;
-#X connect 8 0 7 0;
 #X restore 487 37 pd options;
 #N canvas 253 229 1210 810 tracks-matrix 0;
+#X obj 16 -71 cnv 15 1030 662 empty empty empty 0 0 0 4 -66577 -262144
+0;
+#X obj 19 14 cnv 10 112 512 empty empty drums 11 6 0 10 -237569 -66577
+0;
+#X obj 133 14 cnv 10 112 512 empty empty percu 11 6 0 10 -260097 -66577
+0;
+#X obj 247 14 cnv 10 112 512 empty empty bass 11 6 0 10 -241153 -66577
+0;
+#X obj 361 14 cnv 10 112 512 empty empty pads 11 6 0 10 -3650 -66577
+0;
+#X obj 475 14 cnv 10 112 512 empty empty chords 11 6 0 10 -2043 -66577
+0;
+#X obj 589 14 cnv 10 112 512 empty empty lead 11 6 0 10 -3761 -66577
+0;
+#X obj 703 14 cnv 10 112 512 empty empty other1 11 6 0 10 -237626 -66577
+0;
+#X obj 817 14 cnv 10 112 512 empty empty other2 11 6 0 10 -188475 -66577
+0;
+#X obj 20 467 empty_button 0;
+#X obj 20 467 empty_button 0;
+#X obj 134 467 empty_button 1;
+#X obj 248 467 empty_button 2;
+#X obj 362 467 empty_button 3;
+#X obj 476 467 empty_button 4;
+#X obj 590 467 empty_button 5;
+#X obj 704 467 empty_button 6;
+#X obj 818 467 empty_button 7;
+#X obj 20 405 empty_button 8;
+#X obj 134 405 empty_button 9;
+#X obj 248 405 empty_button 10;
+#X obj 362 405 empty_button 11;
+#X obj 476 405 empty_button 12;
+#X obj 590 405 empty_button 13;
+#X obj 704 405 empty_button 14;
+#X obj 818 405 empty_button 15;
+#X obj 20 343 empty_button 16;
+#X obj 134 343 empty_button 17;
+#X obj 248 343 empty_button 18;
+#X obj 362 343 empty_button 19;
+#X obj 476 343 empty_button 20;
+#X obj 590 343 empty_button 21;
+#X obj 704 343 empty_button 22;
+#X obj 818 343 empty_button 23;
+#X obj 20 281 empty_button 24;
+#X obj 134 281 empty_button 25;
+#X obj 248 281 empty_button 26;
+#X obj 362 281 empty_button 27;
+#X obj 476 281 empty_button 28;
+#X obj 590 281 empty_button 29;
+#X obj 704 281 empty_button 30;
+#X obj 818 281 empty_button 31;
+#X obj 20 219 empty_button 32;
+#X obj 134 219 empty_button 33;
+#X obj 248 219 empty_button 34;
+#X obj 362 219 empty_button 35;
+#X obj 476 219 empty_button 36;
+#X obj 590 219 empty_button 37;
+#X obj 704 219 empty_button 38;
+#X obj 818 219 empty_button 39;
+#X obj 20 157 empty_button 40;
+#X obj 134 157 empty_button 41;
+#X obj 248 157 empty_button 42;
+#X obj 362 157 empty_button 43;
+#X obj 476 157 empty_button 44;
+#X obj 590 157 empty_button 45;
+#X obj 704 157 empty_button 46;
+#X obj 818 157 empty_button 47;
+#X obj 20 95 empty_button 48;
+#X obj 134 95 empty_button 49;
+#X obj 248 95 empty_button 50;
+#X obj 362 95 empty_button 51;
+#X obj 476 95 empty_button 52;
+#X obj 590 95 empty_button 53;
+#X obj 704 95 empty_button 54;
+#X obj 818 95 empty_button 55;
+#X obj 20 33 empty_button 56;
+#X obj 134 33 empty_button 57;
+#X obj 248 33 empty_button 58;
+#X obj 362 33 empty_button 59;
+#X obj 476 33 empty_button 60;
+#X obj 590 33 empty_button 61;
+#X obj 704 33 empty_button 62;
+#X obj 818 33 empty_button 63;
 #X coords 0 -1 1 1 1140 664 2 -94 -72;
 #X restore 24 73 pd tracks-matrix;

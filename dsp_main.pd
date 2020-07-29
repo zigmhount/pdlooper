@@ -1,4 +1,4 @@
-#N canvas 1083 317 544 558 10;
+#N canvas 1084 338 544 558 10;
 #N canvas 963 107 450 692 metronome 0;
 #X text 113 527 OSC messages to /ui/metro;
 #X text 145 15 OSC messages to /dsp/metro;
@@ -119,7 +119,7 @@
 #X connect 43 1 35 0;
 #X connect 43 2 42 0;
 #X restore 332 107 pd metronome;
-#N canvas 1082 323 467 495 OSCconnections 0;
+#N canvas 838 342 467 545 OSCconnections 0;
 #X obj 41 98 loadbang;
 #X obj 41 382 mrpeach/udpsend;
 #X obj 41 407 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
@@ -145,13 +145,13 @@
 #X obj 256 380 s fromui;
 #X msg 392 170 /metro;
 #X obj 157 33 tgl 15 0 empty empty printOSC\ in 17 7 0 10 -262144 -1
--1 0 1;
+-1 1 1;
 #X obj 156 50 tgl 15 0 empty empty printOSC\ out 17 7 0 10 -262144
--1 -1 0 1;
+-1 -1 1 1;
 #X obj 203 402 spigot;
 #X obj 371 258 spigot;
-#X obj 371 283 print OSCout;
-#X obj 203 427 print OSCin;
+#X obj 371 283 print OSCout_toui;
+#X obj 203 427 print OSCin_fromui;
 #X connect 0 0 5 0;
 #X connect 1 0 2 0;
 #X connect 2 0 8 0;
@@ -420,7 +420,7 @@ the abstraction, f 29;
 #X connect 25 0 24 0;
 #X coords 0 -1 1 1 100 34 1 1 191;
 #X restore 20 124 pd create_dspbutton_array;
-#N canvas 0 0 450 300 track_dsp_all 0;
+#N canvas 596 323 450 325 track_dsp_all 0;
 #X obj 0 0 track_dsp 0;
 #X obj 0 0 track_dsp 0;
 #X obj 112 0 track_dsp 1;

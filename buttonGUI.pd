@@ -1,13 +1,12 @@
-#N canvas 8 92 814 614 10;
+#N canvas 121 233 814 614 10;
 #X obj 395 93 hsl 58 16 0 127 0 0 empty slider_track-r empty -2 -9
 0 10 -262144 -1 -1 0 0;
-#X obj 58 65 bng 16 250 50 0 empty \$0-stopUI-r S 4 6 0 10 -262144
+#X obj 76 65 bng 16 250 50 0 \$0-stopUI-s \$0-stopUI-r S 4 6 0 10 -262144
 -1 -1;
-#X obj 58 47 tgl 16 0 empty \$0-playUI-r P 4 6 0 10 -262144 -1 -1 0
-1;
-#X obj 76 47 tgl 16 0 empty \$0-recUI-r R 4 6 0 10 -262144 -258049
+#X obj 44 20 tgl 16 0 empty empty P 4 6 0 10 -262144 -1 -1 0 1;
+#X obj 76 47 tgl 16 0 \$0-recUI-s \$0-recUI-r R 4 6 0 10 -262144 -258049
 -176129 0 1;
-#X obj 94 47 cnv 10 44 15 empty \$0-nameUI-r Unnamed\ 1 1 6 0 10 -233017
+#X obj 94 47 cnv 10 44 15 empty \$0-nameUI-r symbol 1 6 0 10 -233017
 -66577 0;
 #X msg 19 88 \$0;
 #X floatatom 19 113 5 0 0 0 - - -, f 5;
@@ -72,11 +71,11 @@
 #X obj 69 372 s tracknameUI-r;
 #X obj 304 166 t f f;
 #X msg 325 191 label \$1-buttonguibang;
-#X msg 513 342 receive \$1-tracknameUI-r;
 #X obj 559 218 s \$0-playUI-r;
 #X obj 545 267 s \$0-recUI-r;
 #X obj 528 312 s \$0-stopUI-r;
 #X obj 512 368 s \$0-nameUI-r;
+#X msg 513 342 receive \$1-nameUI-r;
 #X connect 5 0 6 0;
 #X connect 8 0 9 0;
 #X connect 9 0 7 0;
@@ -98,18 +97,17 @@
 #X connect 23 4 19 0;
 #X connect 23 5 17 1;
 #X connect 24 0 32 0;
-#X connect 25 0 38 0;
-#X connect 26 0 37 0;
-#X connect 27 0 36 0;
-#X connect 28 2 35 0;
+#X connect 25 0 37 0;
+#X connect 26 0 36 0;
+#X connect 27 0 35 0;
+#X connect 28 2 39 0;
 #X connect 28 3 25 0;
 #X connect 28 4 26 0;
-#X connect 28 5 27 0;
 #X connect 29 0 14 1;
 #X connect 30 0 14 0;
 #X connect 31 0 14 0;
 #X connect 33 0 11 0;
 #X connect 33 1 34 0;
 #X connect 34 0 10 0;
-#X connect 35 0 39 0;
-#X coords 0 -1 1 1 104 41 2 55 44;
+#X connect 39 0 38 0;
+#X coords 0 -1 1 1 86 41 2 73 44;
