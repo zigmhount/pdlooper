@@ -1,27 +1,23 @@
-#N canvas 121 233 814 614 10;
-#X obj 395 93 hsl 58 16 0 127 0 0 empty slider_track-r empty -2 -9
-0 10 -262144 -1 -1 0 0;
+#N canvas 435 169 814 614 10;
+#X obj 73 63 cnv 15 20 22 empty \$0-UIbackgd-r empty 20 12 0 14 -233017
+-66577 0;
+#X obj 73 44 cnv 15 86 18 empty \$0-UIbackgd-r empty 20 12 0 14 -233017
+-66577 0;
 #X obj 76 65 bng 16 250 50 0 \$0-stopUI-s \$0-stopUI-r S 4 6 0 10 -262144
 -1 -1;
-#X obj 44 20 tgl 16 0 empty empty P 4 6 0 10 -262144 -1 -1 0 1;
 #X obj 76 47 tgl 16 0 \$0-recUI-s \$0-recUI-r R 4 6 0 10 -262144 -258049
 -176129 0 1;
 #X obj 94 47 cnv 10 44 15 empty \$0-nameUI-r symbol 1 6 0 10 -233017
 -66577 0;
-#X msg 19 88 \$0;
-#X floatatom 19 113 5 0 0 0 - - -, f 5;
 #X floatatom 138 46 3 0 0 0 - - -, f 3;
 #X obj 248 55 bng 15 250 50 0 empty buttonguibang-r buttonguibang 17
 7 0 10 -262144 -1 -1;
 #X obj 248 79 \$1;
-#X obj 277 238 s buttonguibang-r;
-#X msg 277 213 receive \$1-buttonguibang-r;
+#X obj 281 238 s buttonguibang-r;
+#X msg 281 213 receive \$1-buttonguibang-r;
 #X obj 249 32 s buttonguibang-r;
 #X obj 250 3 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 241 385 s;
-#X text 219 406 send to slider;
-#X obj 210 292 t f b f f f;
 #N canvas 731 372 450 373 gradarray-init 0;
 #X msg 289 28 32;
 #X obj 289 55 array size gradarray;
@@ -65,49 +61,47 @@
 #X msg 545 244 send \$1-recUI-s \, receive \$1-recUI-r;
 #X msg 559 195 send \$1-playUI-s \, receive \$1-playUI-r;
 #X obj 485 172 t b f f f f f;
-#X msg 257 337 symbol slider_track-r;
-#X msg 273 318 receive voice_slider\$1;
-#X msg 241 358 label;
 #X obj 69 372 s tracknameUI-r;
 #X obj 304 166 t f f;
-#X msg 325 191 label \$1-buttonguibang;
+#X msg 329 191 label \$1-buttonguibang;
 #X obj 559 218 s \$0-playUI-r;
 #X obj 545 267 s \$0-recUI-r;
 #X obj 528 312 s \$0-stopUI-r;
 #X obj 512 368 s \$0-nameUI-r;
 #X msg 513 342 receive \$1-nameUI-r;
-#X connect 5 0 6 0;
-#X connect 8 0 9 0;
-#X connect 9 0 7 0;
-#X connect 9 0 20 0;
+#X obj 93 84 cnv 1 66 1 empty \$0-UIbackgd-r empty 20 12 0 14 -233017
+-66577 0;
+#X obj 158 62 cnv 1 1 22 empty \$0-UIbackgd-r empty 20 12 0 14 -233017
+-66577 0;
+#X msg 210 395 receive \$1-UIbackgd-r;
+#X obj 210 420 s \$0-UIbackgd-r;
+#X connect 6 0 7 0;
+#X connect 7 0 5 0;
+#X connect 7 0 15 0;
+#X connect 9 0 8 0;
 #X connect 11 0 10 0;
 #X connect 13 0 12 0;
-#X connect 16 2 31 0;
-#X connect 16 3 29 0;
-#X connect 16 4 30 0;
+#X connect 14 0 13 0;
+#X connect 15 1 34 0;
+#X connect 15 2 25 0;
+#X connect 15 3 23 0;
+#X connect 16 0 17 0;
+#X connect 17 0 19 0;
 #X connect 18 0 17 0;
-#X connect 19 0 18 0;
-#X connect 20 2 33 0;
-#X connect 20 3 28 0;
-#X connect 21 0 22 0;
-#X connect 22 0 24 0;
-#X connect 23 0 22 0;
-#X connect 23 1 21 0;
-#X connect 23 3 18 0;
-#X connect 23 4 19 0;
-#X connect 23 5 17 1;
-#X connect 24 0 32 0;
-#X connect 25 0 37 0;
-#X connect 26 0 36 0;
-#X connect 27 0 35 0;
-#X connect 28 2 39 0;
-#X connect 28 3 25 0;
-#X connect 28 4 26 0;
-#X connect 29 0 14 1;
-#X connect 30 0 14 0;
-#X connect 31 0 14 0;
-#X connect 33 0 11 0;
-#X connect 33 1 34 0;
-#X connect 34 0 10 0;
-#X connect 39 0 38 0;
+#X connect 18 1 16 0;
+#X connect 18 3 13 0;
+#X connect 18 4 14 0;
+#X connect 18 5 12 1;
+#X connect 19 0 24 0;
+#X connect 20 0 29 0;
+#X connect 21 0 28 0;
+#X connect 22 0 27 0;
+#X connect 23 2 31 0;
+#X connect 23 3 20 0;
+#X connect 23 4 21 0;
+#X connect 25 0 9 0;
+#X connect 25 1 26 0;
+#X connect 26 0 8 0;
+#X connect 31 0 30 0;
+#X connect 34 0 35 0;
 #X coords 0 -1 1 1 86 41 2 73 44;

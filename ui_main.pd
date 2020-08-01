@@ -1,5 +1,5 @@
-#N canvas 1 29 508 417 10;
-#N canvas 48 152 588 457 OSCconnections 0;
+#N canvas 65 140 508 417 10;
+#N canvas 52 77 588 482 OSCconnections 0;
 #X obj 32 79 loadbang;
 #X obj 32 274 mrpeach/udpsend;
 #X obj 32 299 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
@@ -19,7 +19,6 @@
 #X msg 463 51 /metro dfdf 45 ff;
 #X obj 285 172 list trim;
 #X obj 292 21 import mrpeach;
-#X obj 236 286 dumpOSC 8081;
 #X obj 236 365 s fromdsp;
 #X obj 287 72 r todsp;
 #X obj 463 76 s todsp;
@@ -35,6 +34,9 @@
 #X obj 18 362 spigot;
 #X obj 143 386 print OSCin_fromdsp;
 #X obj 17 386 print OSCout_todsp;
+#X obj 236 292 unpackOSC;
+#X obj 357 296 print;
+#X obj 236 271 udpreceive 8081;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
 #X connect 2 0 8 0;
@@ -47,21 +49,22 @@
 #X connect 9 1 11 1;
 #X connect 10 0 11 0;
 #X connect 11 0 13 0;
-#X connect 12 0 18 0;
+#X connect 12 0 17 0;
 #X connect 13 0 4 0;
-#X connect 13 0 25 0;
-#X connect 15 0 20 0;
-#X connect 15 0 22 0;
-#X connect 17 0 9 0;
-#X connect 20 0 21 0;
-#X connect 21 0 16 0;
-#X connect 22 0 26 0;
-#X connect 23 0 22 1;
-#X connect 24 0 25 1;
-#X connect 25 0 27 0;
+#X connect 13 0 24 0;
+#X connect 16 0 9 0;
+#X connect 19 0 20 0;
+#X connect 20 0 15 0;
+#X connect 21 0 25 0;
+#X connect 22 0 21 1;
+#X connect 23 0 24 1;
+#X connect 24 0 26 0;
+#X connect 27 0 19 0;
+#X connect 27 0 21 0;
+#X connect 29 0 27 0;
 #X coords 0 -1 1 1 212 59 1 35 4;
 #X restore 230 10 pd OSCconnections;
-#N canvas 309 92 677 655 tempo 0;
+#N canvas 110 46 677 705 tempo 0;
 #X obj 90 -432 cnv 15 182 48 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X floatatom 231 -406 4 0 0 0 - - -, f 4;
@@ -71,36 +74,90 @@
 play/pause -14 -12 0 10 -154176 -1 -1 0 1;
 #X obj 166 -429 tgl 14 0 empty empty metro 17 7 0 10 -262144 -1 -1
 0 1;
-#X text -8 -50 outputs 0 for the first beat;
+#X text 33 67 outputs 0 for the first beat;
 #X text 171 -51 tempo in ms;
 #X obj 98 -29 s tempo_ms;
-#X obj 24 -28 s beat_num;
+#X obj 23 36 s beat_num;
 #X obj 138 -411 hradio 20 0 0 4 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
-#X obj 23 -155 routeOSC /beatnum /tempo_ms /tempo_bpm;
+-1 -1 3;
 #X floatatom 23 -130 5 0 0 0 - - -, f 5;
-#X msg 114 -363 /metro/playpause \$1;
-#X msg 165 -335 /metro/click \$1;
-#X msg 227 -313 /metro/tap;
+#X msg 403 -277 /metro/playpause \$1;
+#X msg 420 -306 /metro/click \$1;
+#X msg 438 -334 /metro/tap;
 #X obj 23 -210 r fromdsp;
 #X obj 23 -180 routeOSC /metro;
-#X obj 240 -243 s todsp;
-#X connect 2 0 14 0;
-#X connect 3 0 12 0;
-#X connect 4 0 13 0;
-#X connect 10 0 11 0;
-#X connect 10 1 7 0;
-#X connect 10 2 1 0;
-#X connect 11 0 9 0;
-#X connect 11 0 8 0;
-#X connect 12 0 17 0;
-#X connect 13 0 17 0;
-#X connect 14 0 17 0;
-#X connect 15 0 16 0;
-#X connect 16 0 10 0;
+#X obj 403 -243 s todsp;
+#X obj 421 -145 select 0 1;
+#X msg 421 -123 stop;
+#X obj 421 -33 f 0;
+#X obj 452 -33 + 1;
+#X obj 421 17 mod;
+#X obj 23 -155 routeOSC /beatnum /tempo_ms /tempo_bpm /beatsperbar
+;
+#X obj 98 -129 change;
+#X obj 98 -104 t f f;
+#X obj 174 -129 change;
+#X obj 244 -131 change;
+#X obj 174 -104 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 23 -106 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 421 42 5 0 0 0 - - -, f 5;
+#X obj 421 66 t f f;
+#X obj 244 -106 t f f;
+#X obj 244 -39 s beatsperbar;
+#X obj 107 -373 t f b b b f;
+#X floatatom 98 -79 5 0 0 0 - - -, f 5;
+#X floatatom 284 -106 5 0 0 0 - - -, f 5;
+#X floatatom 190 -105 5 0 0 0 - - -, f 5;
+#X obj 421 -58 metro 500;
+#X obj 459 -123 t b 0;
+#X connect 2 0 13 0;
+#X connect 3 0 33 0;
+#X connect 4 0 12 0;
+#X connect 10 0 28 0;
+#X connect 10 0 8 0;
+#X connect 11 0 16 0;
+#X connect 12 0 16 0;
+#X connect 13 0 16 0;
+#X connect 14 0 15 0;
+#X connect 15 0 22 0;
+#X connect 17 0 18 0;
+#X connect 17 1 38 0;
+#X connect 18 0 37 0;
+#X connect 19 0 20 0;
+#X connect 19 0 21 0;
+#X connect 20 0 19 1;
+#X connect 21 0 29 0;
+#X connect 22 0 10 0;
+#X connect 22 0 28 0;
+#X connect 22 1 23 0;
+#X connect 22 2 25 0;
+#X connect 22 3 26 0;
+#X connect 23 0 24 0;
+#X connect 24 0 7 0;
+#X connect 24 0 34 0;
+#X connect 24 1 37 1;
+#X connect 25 0 1 0;
+#X connect 25 0 27 0;
+#X connect 25 0 36 0;
+#X connect 26 0 31 0;
+#X connect 26 0 35 0;
+#X connect 29 0 30 0;
+#X connect 30 0 9 0;
+#X connect 31 0 32 0;
+#X connect 31 1 21 1;
+#X connect 33 0 17 0;
+#X connect 33 1 23 0;
+#X connect 33 2 25 0;
+#X connect 33 3 26 0;
+#X connect 33 4 11 0;
+#X connect 37 0 19 0;
+#X connect 38 0 37 0;
+#X connect 38 1 19 1;
 #X coords 0 -1 1 1 184 50 2 89 -433;
 #X restore 25 15 pd tempo;
-#N canvas 729 97 450 325 test 0;
+#N canvas 291 96 450 350 test 0;
 #X obj 89 235 s todsp;
 #X msg 89 210 /track/9/getall;
 #X msg 75 84 /track/9/vol 64;
@@ -113,7 +170,7 @@ play/pause -14 -12 0 10 -154176 -1 -1 0 1;
 #X connect 4 0 0 0;
 #X connect 5 0 0 0;
 #X restore 571 34 pd test;
-#N canvas 596 322 450 300 options 0;
+#N canvas 10 85 450 325 options 0;
 #X text 39 -395 0 empty \; 1 playing \; 2 play queued \; 3 recording
 \; 4 record armed \; 5 not empty \, stopped \; 6 stop queued;
 #X text 39 -508 MIDI out colors: \; 0 off \; 1 solid green \; 2
@@ -1406,3 +1463,5 @@ sends \, but whatever \, it was faster to do it manually just now.
 #X obj 818 33 empty_button 63;
 #X coords 0 -1 1 1 1140 664 2 -94 -72;
 #X restore 24 73 pd tracks-matrix;
+#X text 7 95 idea for later: mix back to mono \, play live on right
+side and pre-listen in headphones on left ear?, f 17;
