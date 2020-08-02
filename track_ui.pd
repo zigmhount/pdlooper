@@ -940,7 +940,7 @@ button-initbang 17 7 0 10 -262144 -1 -1;
 #X connect 44 0 46 0;
 #X restore 421 -59 pd play_sample_queue;
 #X text 436 -40 play queue;
-#N canvas 777 24 588 718 play_full_sample 1;
+#N canvas 778 52 588 743 play_full_sample 0;
 #X obj 313 38 inlet;
 #X text 355 40 array to read;
 #X obj 51 37 inlet;
@@ -1164,7 +1164,7 @@ button-initbang 17 7 0 10 -262144 -1 -1;
 #X connect 24 0 17 0;
 #X restore 640 79 pd vol_pan;
 #X msg 213 -205 63;
-#N canvas 869 65 450 419 trackconfig 1;
+#N canvas 870 93 450 444 trackconfig 0;
 #N canvas 219 54 551 688 initconfig 0;
 #X obj 35 14 bng 15 250 50 0 empty button-initbang-r initbang 17 7
 0 10 -262144 -1 -1;
@@ -1256,7 +1256,7 @@ button-initbang 17 7 0 10 -262144 -1 -1;
 trackoutput -69 6 0 10 -262144 -1 -1 0 256 0;
 #X obj 99 28 nbx 5 14 -1e+37 1e+37 0 0 trackstatus-s trackstatus-r
 trackstatus -71 5 0 10 -262144 -1 -1 0 256 0;
-#N canvas 562 28 780 714 outputforbutton 1;
+#N canvas 562 28 780 714 outputforbutton 0;
 #X obj 18 20 r \$0-loadnum;
 #X msg 18 75 \$1 status;
 #X msg 88 75 \$1 bars;
@@ -1402,7 +1402,7 @@ tracksliderpos -88 5 0 10 -262144 -1 -1 0 256 0;
 V 4 7 0 11 -191407 -1 -253822 0 0;
 #X obj 689 246 moonlib/mknob 16 128 0 127 0 1 \$0-trackpan-s \$0-trackpan-r
 P 4 7 0 11 -191407 -1 -249661 6300 0;
-#N canvas 677 128 625 400 buttonUI 1;
+#N canvas 677 156 625 400 buttonUI 1;
 #X msg 261 104 clear;
 #X obj 216 23 inlet;
 #X obj 216 48 select 0 1, f 60;
