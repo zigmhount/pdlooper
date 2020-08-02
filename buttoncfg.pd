@@ -1,13 +1,13 @@
-#N canvas 784 261 209 144 10;
-#X obj 60 48 cnv 15 86 40 empty \$0-cfgbackgd-r empty 20 12 0 14 -233017
+#N canvas 433 73 188 126 10;
+#X obj 60 48 cnv 15 86 41 empty \$0-cfgbackgd-r empty 20 12 0 14 -233017
 -66577 0;
-#X floatatom 124 68 3 1 127 0 - - -, f 3;
-#X dropdown 81 68 4 0 0 0 - - -, f 4;
-#X obj 63 50 moonlib/mknob 16 20 0 127 0 0 \$0-volcfg-s \$0-volcfg-r
+#X floatatom 124 69 3 1 127 0 - - -, f 3;
+#X dropdown 81 69 4 0 0 0 - - -, f 4;
+#X obj 63 51 moonlib/mknob 16 20 0 127 0 0 \$0-volcfg-s \$0-volcfg-r
 V 4 7 0 11 -191407 -1 -253822 0 0;
-#X obj 63 68 moonlib/mknob 16 128 0 127 0 1 \$0-pancfg-s \$0-pancfg-r
+#X obj 63 69 moonlib/mknob 16 128 0 127 0 1 \$0-pancfg-s \$0-pancfg-r
 P 4 7 0 11 -191407 -1 -249661 7700 0;
-#X symbolatom 81 50 7 0 0 0 - - -, f 7;
+#X symbolatom 81 51 7 0 0 0 - - -, f 7;
 #N canvas 712 119 450 648 init_buttoncfg 0;
 #X obj 68 43 \$1;
 #X obj 119 322 tools/receiver;
@@ -120,7 +120,7 @@ P 4 7 0 11 -191407 -1 -249661 7700 0;
 #X text 531 5 obsolete:;
 #X msg 621 270 label \$1-initbang-buttoncfg \, receive \$1-initbang-buttoncfg-r
 ;
-#X obj 128 51 bng 15 250 50 0 empty empty C 3 5 0 10 -262144 -1 -1
+#X obj 128 52 bng 15 250 50 0 empty empty C 3 5 0 10 -262144 -1 -1
 ;
 #X msg 544 137 symbol \$1-clear-s;
 #X obj 528 166 s;

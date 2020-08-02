@@ -554,7 +554,7 @@ of the config parameters, f 26;
 #X obj 276 489 r \$0-volset-s;
 #X floatatom 156 585 5 0 0 0 - - -, f 5;
 #X obj 156 560 r \$0-outputset-s;
-#N canvas 552 103 624 789 play_full_sample 0;
+#N canvas 605 72 624 789 play_full_sample 1;
 #X obj 58 31 inlet;
 #X text 99 33 start;
 #X obj 145 34 inlet;
