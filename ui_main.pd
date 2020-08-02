@@ -1,4 +1,4 @@
-#N canvas 147 178 809 417 10;
+#N canvas 71 158 1173 737 10;
 #N canvas 52 77 588 482 OSCconnections 0;
 #X obj 32 79 loadbang;
 #X obj 32 274 mrpeach/udpsend;
@@ -28,9 +28,9 @@
 #X obj 236 339 routeOSC /ui;
 #X obj 144 362 spigot;
 #X obj 155 28 tgl 15 0 empty empty printOSC\ in 17 7 0 10 -262144 -1
--1 0 1;
+-1 1 1;
 #X obj 155 45 tgl 15 0 empty empty printOSC\ out 17 7 0 10 -262144
--1 -1 0 1;
+-1 -1 1 1;
 #X obj 18 362 spigot;
 #X obj 143 386 print OSCin_fromdsp;
 #X obj 17 386 print OSCout_todsp;
@@ -63,7 +63,7 @@
 #X connect 27 0 21 0;
 #X connect 29 0 27 0;
 #X coords 0 -1 1 1 212 59 1 35 4;
-#X restore 230 10 pd OSCconnections;
+#X restore 23 8 pd OSCconnections;
 #N canvas 291 96 450 350 test 0;
 #X obj 89 235 s todsp;
 #X msg 89 210 /track/9/getall;
@@ -76,7 +76,7 @@
 #X connect 3 0 0 0;
 #X connect 4 0 0 0;
 #X connect 5 0 0 0;
-#X restore 571 34 pd test;
+#X restore 256 41 pd test;
 #N canvas 10 85 450 325 options 0;
 #X text 39 -395 0 empty \; 1 playing \; 2 play queued \; 3 recording
 \; 4 record armed \; 5 not empty \, stopped \; 6 stop queued;
@@ -1283,7 +1283,7 @@ sends \, but whatever \, it was faster to do it manually just now.
 #X connect 10 0 11 0;
 #X restore 305 -646 pd initialize;
 #X obj 305 -675 loadbang;
-#X restore 487 37 pd options;
+#X restore 256 12 pd options;
 #N canvas 253 229 1210 810 tracks-matrix 0;
 #X obj 16 -71 cnv 15 1030 662 empty empty empty 0 0 0 4 -66577 -262144
 0;
@@ -1370,7 +1370,7 @@ sends \, but whatever \, it was faster to do it manually just now.
 #X obj 818 33 empty_button 63;
 #X coords 0 -1 1 1 1140 664 2 -94 -72;
 #X restore 24 73 pd tracks-matrix;
-#N canvas 110 46 677 705 tempo 0;
+#N canvas 183 183 677 730 tempo 0;
 #X obj 90 -432 cnv 15 182 48 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X text 33 67 outputs 0 for the first beat;
@@ -1408,16 +1408,20 @@ sends \, but whatever \, it was faster to do it manually just now.
 #X floatatom 284 -106 5 0 0 0 - - -, f 5;
 #X floatatom 190 -105 5 0 0 0 - - -, f 5;
 #X obj 421 -58 metro 500;
-#X obj 459 -123 t b 0;
 #X floatatom 231 -406 4 0 0 0 - - -, f 4;
 #X obj 138 -411 hradio 20 0 0 4 empty empty empty 0 -8 0 10 -262144
--1 -1 1;
+-1 -1 0;
 #X obj 107 -411 tgl 20 0 \$0-globalplaypause-s \$0-globalplaypause-r
 play/pause -14 -12 0 10 -154176 -1 -1 0 1;
 #X obj 166 -429 tgl 14 0 empty empty metro 17 7 0 10 -262144 -1 -1
 0 1;
 #X obj 230 -428 bng 15 250 50 0 empty empty tap 17 7 0 10 -262144 -1
 -1;
+#X obj 459 -123 t b 0 0;
+#X floatatom 421 -166 5 0 0 0 - - -, f 5;
+#X obj 98 -55 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 451 -359 /metro/tempo_bpm \$1;
 #X connect 5 0 23 0;
 #X connect 5 0 4 0;
 #X connect 6 0 11 0;
@@ -1426,7 +1430,7 @@ play/pause -14 -12 0 10 -154176 -1 -1 0 1;
 #X connect 9 0 10 0;
 #X connect 10 0 17 0;
 #X connect 12 0 13 0;
-#X connect 12 1 33 0;
+#X connect 12 1 38 0;
 #X connect 13 0 32 0;
 #X connect 14 0 15 0;
 #X connect 14 0 16 0;
@@ -1441,38 +1445,43 @@ play/pause -14 -12 0 10 -154176 -1 -1 0 1;
 #X connect 19 0 3 0;
 #X connect 19 0 29 0;
 #X connect 19 1 32 1;
-#X connect 20 0 34 0;
+#X connect 20 0 33 0;
 #X connect 20 0 22 0;
 #X connect 20 0 31 0;
 #X connect 21 0 26 0;
 #X connect 21 0 30 0;
+#X connect 23 0 39 0;
 #X connect 24 0 25 0;
-#X connect 25 0 35 0;
+#X connect 25 0 34 0;
 #X connect 26 0 27 0;
 #X connect 26 1 16 1;
-#X connect 28 0 12 0;
+#X connect 28 0 39 0;
 #X connect 28 1 18 0;
 #X connect 28 2 20 0;
 #X connect 28 3 21 0;
 #X connect 28 4 6 0;
+#X connect 29 0 40 0;
 #X connect 32 0 14 0;
-#X connect 33 0 32 0;
-#X connect 33 1 14 1;
-#X connect 36 0 28 0;
-#X connect 37 0 7 0;
-#X connect 38 0 8 0;
+#X connect 33 0 41 0;
+#X connect 35 0 28 0;
+#X connect 36 0 7 0;
+#X connect 37 0 8 0;
+#X connect 38 0 32 0;
+#X connect 38 1 14 1;
+#X connect 39 0 12 0;
+#X connect 41 0 11 0;
 #X coords 0 -1 1 1 184 50 2 89 -433;
 #X restore 155 87 pd tempo;
-#N canvas 0 0 450 300 midifluid_GUI 0;
-#X obj 206 -47 cnv 15 154 61 empty empty empty 20 12 0 14 -104026 -66577
-0;
+#N canvas 151 79 450 325 midifluid_GUI 0;
+#X obj 206 -47 cnv 15 154 61 empty empty Fluidsynth 37 6 0 10 -104026
+-66577 0;
 #X msg 239 -119 load /home/zig/soundfounts/FluidR3_GM.sf2;
 #X msg 239 -94 load /home/zig/soundfounts/Timbres Of Heaven GM_GS_XG_SFX
 V 3.4 Final.sf2;
 #X floatatom 253 -7 5 0 0 0 channel - -, f 5;
 #X floatatom 324 -7 5 0 0 0 value - -, f 5;
 #X floatatom 323 -31 5 0 0 0 bank - -, f 5;
-#X obj 255 60 pack f f;
+#X obj 253 61 pack f f;
 #X msg 255 85 prog \$1 \$2;
 #X msg 324 20 bank 1 \$1;
 #X obj 253 38 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -1482,6 +1491,11 @@ V 3.4 Final.sf2;
 #X obj 57 143 s todsp;
 #X obj 58 114 list trim;
 #X obj 58 89 list prepend /fluid;
+#X msg 311 134 p 1 0;
+#X msg 386 102 bank 2 128;
+#X msg 386 129 p 2 8;
+#X msg 312 107 bank 1 0;
+#X obj 352 72 t b b b b;
 #X connect 1 0 13 0;
 #X connect 2 0 13 0;
 #X connect 3 0 6 0;
@@ -1493,19 +1507,28 @@ V 3.4 Final.sf2;
 #X connect 8 0 13 0;
 #X connect 9 0 3 0;
 #X connect 10 0 1 0;
+#X connect 10 0 18 0;
 #X connect 12 0 11 0;
 #X connect 13 0 12 0;
+#X connect 14 0 13 0;
+#X connect 15 0 13 0;
+#X connect 16 0 13 0;
+#X connect 17 0 13 0;
+#X connect 18 0 16 0;
+#X connect 18 1 15 0;
+#X connect 18 2 14 0;
+#X connect 18 3 17 0;
 #X coords 0 -1 1 1 154 62 1 206 -47;
 #X restore 392 84 pd midifluid_GUI;
 #N canvas 190 142 708 531 sound_input 0;
-#X obj 49 103 cnv 15 171 51 empty empty empty 20 12 0 14 -116509 -66577
-0;
+#X obj 49 103 cnv 15 171 51 empty empty Audio\ Input 72 9 0 10 -116509
+-66577 0;
 #X text 148 13 switch between adc~ and midifluid;
 #X dropdown 51 114 6 0 0 0 - - -, f 6;
 #X msg 70 58 names adc~ midifluid;
 #X obj 51 9 loadbang;
 #X obj 51 134 tgl 15 0 empty empty monitor-> 17 7 0 10 -262144 -1 -1
-0 1;
+1 1;
 #X obj 51 34 t b b 1;
 #X msg 51 80 set 1;
 #X obj 124 398 s todsp;
@@ -1513,7 +1536,7 @@ V 3.4 Final.sf2;
 #X msg 128 230 /input/monitor \$1;
 #X msg 47 207 0;
 #X obj 131 128 hsl 66 20 0 1 0 0 \$0-volmonslider \$0-set-volmonslider
-volume 19 7 1 13 -228856 -1 -1 4400 1;
+volume 19 7 1 13 -228856 -1 -1 6500 1;
 #X obj 200 116 tgl 16 0 \$0-dsp-montoggle \$0-dsp-montoggle-set on
 3 6 1 9 -74965 -74965 -262144 0 1;
 #X obj 200 132 bng 16 500 50 0 \$0-monmute-bng \$0-monmute empty 0
@@ -1524,7 +1547,7 @@ volume 19 7 1 13 -228856 -1 -1 4400 1;
 #X msg 268 361 /input/volmon mute;
 #X obj 47 182 select 0 1;
 #X msg 74 207 1;
-#N canvas 596 322 450 300 mute 0;
+#N canvas 597 345 450 300 mute 0;
 #X obj 121 76 select 0 1;
 #N canvas 186 185 358 434 off 0;
 #X obj 154 221 +;
@@ -1579,15 +1602,15 @@ volume 19 7 1 13 -228856 -1 -1 4400 1;
 #X obj 121 53 tgl 15 0 empty \$0-monmute-bng empty 17 7 0 10 -262144
 -1 -1 0 1;
 #X obj 113 4 loadbang;
-#X msg 113 29 1;
 #X obj 122 195 s \$0-set-volmonslider;
+#X msg 113 29 0;
 #X connect 0 0 1 0;
 #X connect 0 1 2 0;
-#X connect 1 0 6 0;
-#X connect 2 0 6 0;
+#X connect 1 0 5 0;
+#X connect 2 0 5 0;
 #X connect 3 0 0 0;
-#X connect 4 0 5 0;
-#X connect 5 0 3 0;
+#X connect 4 0 6 0;
+#X connect 6 0 3 0;
 #X restore 451 205 pd mute;
 #X obj 269 282 list trim;
 #X obj 269 258 list prepend /input/volmon;
@@ -1680,3 +1703,55 @@ volume 19 7 1 13 -228856 -1 -1 4400 1;
 #X connect 30 1 25 0;
 #X coords 0 -1 1 1 171 51 1 49 103;
 #X restore 556 91 pd sound_input;
+#N canvas 205 244 450 325 OSCconnect_dsp 0;
+#X obj 65 52 bng 15 250 50 0 empty empty connect_to_8081 17 7 0 10
+-262144 -1 -1;
+#X obj 65 71 bng 15 250 50 0 empty empty disconnect 17 7 0 10 -262144
+-1 -1;
+#X obj 182 35 tgl 17 0 empty empty Connected 32 6 0 10 -262144 -1 -1
+1 1;
+#X obj 182 57 tgl 15 0 empty empty printOSC\ in 17 7 0 10 -262144 -1
+-1 0 1;
+#X obj 182 74 tgl 15 0 empty empty printOSC\ out 17 7 0 10 -262144
+-1 -1 0 1;
+#X msg 79 164 /oscconnect/connect;
+#X msg 79 194 /oscconnect/disconnect;
+#X obj 317 137 r fromdsp;
+#X obj 317 162 routeOSC /oscconnect;
+#X obj 317 187 routeOSC /status;
+#X floatatom 317 212 5 0 0 0 - - -, f 5;
+#X obj 78 254 s todsp;
+#X msg 137 136 /oscconnect/printIn \$1;
+#X msg 143 236 /oscconnect/printOut \$1;
+#X connect 0 0 5 0;
+#X connect 1 0 6 0;
+#X connect 3 0 12 0;
+#X connect 4 0 13 0;
+#X connect 5 0 11 0;
+#X connect 6 0 11 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 2 0;
+#X connect 12 0 11 0;
+#X connect 13 0 11 0;
+#X coords 0 -1 1 1 212 61 1 62 31;
+#X restore 356 7 pd OSCconnect_dsp;
+#X text 588 21 there is dome delay and increasing sliding between the
+GUI's and DSP's metronome!;
+#N canvas 497 330 450 325 vumixer 0;
+#X obj 81 54 tgl 15 0 empty empty mon\ sigin_1 17 7 0 10 -262144 -1
+-1 0 1;
+#X floatatom 82 78 5 0 0 0 - - -, f 5;
+#X obj 82 102 vu 15 120 empty empty -1 -8 0 10 -66577 -1 1 0;
+#X msg 263 93 /monitor \$1;
+#X obj 268 38 routeOSC /monitor;
+#X obj 263 118 s todsp;
+#X obj 268 13 r fromdsp;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 3 0 5 0;
+#X connect 4 0 1 0;
+#X connect 6 0 4 0;
+#X coords 0 -1 1 1 87 191 1 79 39;
+#X restore 31 79 pd vumixer;

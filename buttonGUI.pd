@@ -1,4 +1,4 @@
-#N canvas 435 169 814 614 10;
+#N canvas 438 238 814 614 10;
 #X obj 73 63 cnv 15 20 22 empty \$0-UIbackgd-r empty 20 12 0 14 -233017
 -66577 0;
 #X obj 73 44 cnv 15 86 18 empty \$0-UIbackgd-r empty 20 12 0 14 -233017
@@ -9,7 +9,7 @@
 -176129 0 1;
 #X obj 94 47 cnv 10 44 15 empty \$0-nameUI-r symbol 1 6 0 10 -233017
 -66577 0;
-#X floatatom 138 46 3 0 0 0 - - -, f 3;
+#X floatatom 168 48 3 0 0 0 - - -, f 3;
 #X obj 248 55 bng 15 250 50 0 empty buttonguibang-r buttonguibang 17
 7 0 10 -262144 -1 -1;
 #X obj 248 79 \$1;

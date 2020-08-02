@@ -1,5 +1,5 @@
-#N canvas 415 24 648 718 10;
-#N canvas 57 24 703 743 trackconfig 0;
+#N canvas 549 100 648 718 10;
+#N canvas 58 47 703 743 trackconfig 0;
 #X obj 6 14 cnv 15 201 233 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #N canvas 219 54 551 688 initconfig 0;
@@ -84,13 +84,13 @@
 #X obj 135 101 nbx 5 14 -1e+37 1e+37 0 0 \$0-volset-s \$0-volset-r
 \$0-volset -75 5 0 10 -262144 -1 -1 127 256 0;
 #X obj 136 78 nbx 5 14 -1e+37 1e+37 0 0 \$0-barsset-s \$0-barsset-r
-\$0-barsset -84 4 0 10 -262144 -1 -1 4 256 0;
+\$0-barsset -84 4 0 10 -262144 -1 -1 2 256 0;
 #X obj 136 125 nbx 5 14 -1e+37 1e+37 0 0 \$0-panset-s \$0-panset-r
 \$0-panset -72 4 0 10 -262144 -1 -1 64 256 0;
 #X obj 138 145 nbx 5 14 -1e+37 1e+37 0 0 \$0-outputset-s \$0-outputset-r
 \$0-outputset -90 5 0 10 -262144 -1 -1 0 256 0;
 #X obj 133 27 nbx 5 14 -1e+37 1e+37 0 0 \$0-statusset-s \$0-statusset-r
-\$0-statusset -87 5 0 10 -262144 -1 -1 5 256 0;
+\$0-statusset -87 5 0 10 -262144 -1 -1 0 256 0;
 #N canvas 562 28 780 714 outputforbutton 0;
 #X obj 18 20 r \$0-loadnum;
 #X msg 18 75 \$1 status;
@@ -267,9 +267,11 @@ of the config parameters, f 26;
 #X obj 118 22 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X msg 204 368 0;
-#X obj 119 42 t b b b b b b b;
 #X msg 211 430 0;
 #X obj 211 455 s \$0-phasorfreq;
+#X obj 280 96 samplerate~;
+#X obj 280 121 s samplerateval;
+#X obj 119 42 t b b b b b b b b, f 18;
 #X connect 0 0 13 0;
 #X connect 1 0 2 0;
 #X connect 3 0 7 0;
@@ -277,16 +279,18 @@ of the config parameters, f 26;
 #X connect 5 0 6 0;
 #X connect 8 0 9 0;
 #X connect 10 0 11 0;
-#X connect 13 0 15 0;
+#X connect 13 0 19 0;
 #X connect 14 0 12 0;
-#X connect 15 0 1 0;
-#X connect 15 1 4 0;
-#X connect 15 2 5 0;
-#X connect 15 3 8 0;
-#X connect 15 4 10 0;
-#X connect 15 5 14 0;
-#X connect 15 6 16 0;
-#X connect 16 0 17 0;
+#X connect 15 0 16 0;
+#X connect 17 0 18 0;
+#X connect 19 0 1 0;
+#X connect 19 1 4 0;
+#X connect 19 2 5 0;
+#X connect 19 3 8 0;
+#X connect 19 4 10 0;
+#X connect 19 5 14 0;
+#X connect 19 6 15 0;
+#X connect 19 7 17 0;
 #X restore 267 165 pd initvalues;
 #X text 268 138 valid:;
 #X msg 166 489 \$1;
@@ -300,9 +304,9 @@ of the config parameters, f 26;
 #X msg 109 687 \$1;
 #X obj 294 598 r \$0-duration_samples;
 #X obj 137 211 nbx 6 13 -1e+37 1e+37 0 0 \$0-dursamplesset-s \$0-dursamplesset-r
-\$0-dursamplesset -114 5 0 10 -262144 -1 -1 384000 256 0;
+\$0-dursamplesset -114 5 0 10 -262144 -1 -1 0 256 0;
 #X obj 136 230 nbx 5 14 -1e+37 1e+37 0 0 \$0-dursecset-s \$0-dursecset-r
-\$0-dursecset -94 5 0 10 -262144 -1 -1 8 256 0;
+\$0-dursecset -94 5 0 10 -262144 -1 -1 0 256 0;
 #X obj 289 627 r \$0-duration_sec;
 #X obj 294 563 r \$0-sliderfreq;
 #X msg 67 711 /sliderfreq \$1;
@@ -489,7 +493,7 @@ of the config parameters, f 26;
 #X connect 17 0 2 0;
 #X restore 75 605 pd output_sel~;
 #X symbolatom 75 629 22 0 0 0 - - -, f 22;
-#N canvas 836 119 450 346 vol_pan 0;
+#N canvas 837 142 450 346 vol_pan 0;
 #X obj 69 34 inlet~;
 #X obj 196 33 inlet~;
 #X obj 275 31 inlet;
@@ -550,7 +554,7 @@ of the config parameters, f 26;
 #X obj 276 489 r \$0-volset-s;
 #X floatatom 156 585 5 0 0 0 - - -, f 5;
 #X obj 156 560 r \$0-outputset-s;
-#N canvas 549 34 624 822 play_full_sample 0;
+#N canvas 552 103 624 789 play_full_sample 0;
 #X obj 58 31 inlet;
 #X text 99 33 start;
 #X obj 145 34 inlet;
@@ -809,7 +813,7 @@ of the config parameters, f 26;
 -1 -1;
 #X obj 79 372 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#N canvas 770 95 557 559 rec_samples 0;
+#N canvas 772 141 557 559 rec_samples 0;
 #X obj 392 30 inlet;
 #X text 428 30 start;
 #X obj 473 29 inlet;
@@ -839,7 +843,6 @@ of the config parameters, f 26;
 #X obj 145 236 array size;
 #X floatatom 43 108 9 0 0 0 - - -, f 9;
 #X obj 43 78 r \$0-duration_samples;
-#X obj 23 326 dac~ 8;
 #X connect 0 0 4 0;
 #X connect 2 0 5 0;
 #X connect 4 0 7 0;
@@ -859,7 +862,6 @@ of the config parameters, f 26;
 #X connect 18 0 17 0;
 #X connect 19 0 11 0;
 #X connect 20 0 6 0;
-#X connect 20 0 27 0;
 #X connect 21 0 24 1;
 #X connect 22 0 12 0;
 #X connect 22 1 13 0;
