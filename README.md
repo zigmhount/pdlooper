@@ -13,12 +13,18 @@ Like the tools I was inspired by (see below), I intend to use Pdlooper in a modu
 - Lv2 plugin host for synths and effects (Carla, Ardour, Non-Mixer)
 
 ## Current features
-- Record audio loops
-- Play audio loops (doesn't display the wave form to avoid the audio drop-out when resizing the array)
+The current minor version, while not ready for production, is considered "jammable" i.e. it can be used for basic jamming (but there are still many visual and audio glitches).
+- Record audio tracks in stereo
+- Loop audio tracks (doesn't display the wave form to avoid the audio drop-out when resizing the array)
 - Set tempo by tapping
-- Controllable via MIDI controller (I use an AKAI APC Mini with 8*8 buttons) including outgoing MIDI message to light up the controller's LEDs
-- Save loops as wav files
-- select the output channels for each loop
+- Controllable via MIDI controller (I use an AKAI APC Mini with 8\*8 buttons) including outgoing MIDI message to light up the controller's LEDs
+- Save tracks as wav files
+- configuration panel for every track:
+  - select the output channels
+  - change the name
+  - adjust volume and panning
+  - change the number of bars
+  - clear the track
 
 That's what it currently looks like:
 ![](screenshots/latest.png)
@@ -30,13 +36,12 @@ That's what it currently looks like:
 - File management
   - Save session file
   - Load session file and wav files as loops
-- Make recording and playing actually stereo (i.e. add an array for each loop)
-- Control loops
-  - groups/scenes of loops to be started at once
-  - automatic set of loops following each other (incl random)
+- Control tracks
+  - groups/scenes of tracks to be started at once
+  - automatic set of tracks following each other (incl random)
 - More looping
-  - loops for midi controls
-  - loops for midi sequences?
+  - tracks for midi controls
+  - tracks for midi sequences?
 - Fancy stuff
   - include knobs and faders in the UI to make it a single interface between my physical controllers and mixers/plugins (rather than connecting the controllers to each mixer/effect host)
   - include lv2 host with [lv2plugin~]?
