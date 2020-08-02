@@ -1,4 +1,4 @@
-#N canvas 75 159 1173 737 10;
+#N canvas 76 159 1173 737 10;
 #N canvas 52 77 588 482 OSCconnections 0;
 #X obj 32 79 loadbang;
 #X obj 32 274 mrpeach/udpsend;
@@ -82,7 +82,7 @@
 #X connect 4 0 0 0;
 #X connect 5 0 0 0;
 #X restore 256 41 pd test;
-#N canvas 10 85 450 325 options 0;
+#N canvas 896 289 450 350 options 0;
 #X text 39 -395 0 empty \; 1 playing \; 2 play queued \; 3 recording
 \; 4 record armed \; 5 not empty \, stopped \; 6 stop queued;
 #X text 39 -508 MIDI out colors: \; 0 off \; 1 solid green \; 2
@@ -1544,7 +1544,7 @@ V 3.4 Final.sf2;
 #X msg 70 58 names adc~ midifluid;
 #X obj 51 9 loadbang;
 #X obj 51 134 tgl 15 0 empty empty monitor-> 17 7 0 10 -262144 -1 -1
-0 1;
+1 1;
 #X obj 51 34 t b b 1;
 #X msg 51 80 set 1;
 #X obj 124 398 s todsp;
@@ -1784,3 +1784,12 @@ volume 19 7 1 13 -228856 -1 -1 0 1;
 #X restore 31 79 pd vumixer;
 #X text 669 24 midi pedal: press pedal + button of APC to select \,
 start recording when pressing again;
+#N canvas 487 345 450 300 midisetup 0;
+#X obj 37 26 bng 15 250 50 0 empty empty Connect\ MIDI\ devices 17
+5 0 10 -262144 -1 -1;
+#X msg 37 58 /midi/connect;
+#X obj 37 83 s todsp;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X coords 0 -1 1 1 151 32 1 33 12;
+#X restore 593 11 pd midisetup;
