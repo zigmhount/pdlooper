@@ -1,14 +1,13 @@
-#N canvas 87 55 811 492 10;
+#N canvas 767 184 811 492 10;
 #X obj 197 414 outlet;
 #X obj 85 89 bng 15 250 50 0 empty empty Ramp\ volume\ down\ and\ switch\ off\ audio\ computation
 17 7 0 10 -262144 -1 -1;
-#X obj 85 140 delay 51;
 #X obj 85 111 t b 0 0, f 13;
 #X obj 182 111 bng 15 250 50 0 empty empty Switch\ on\ and\ ramp\ volume\ up
 17 7 0 10 -262144 -1 -1;
 #X msg 216 160 1;
 #X obj 395 29 tgl 38 0 empty \$0-dspswitchgui-r switch 1 17 0 10 -259674
--1 -1 1 1;
+-1 -1 0 1;
 #X obj 359 31 bng 15 250 50 0 empty empty On 17 7 0 10 -262144 -1 -1
 ;
 #X obj 359 50 bng 15 250 50 0 empty empty Off 17 7 0 10 -262144 -1
@@ -20,7 +19,6 @@
 #X obj 85 37 select 0 1;
 #X text 120 436 multiplicateur;
 #X text 195 433 0 or 1;
-#X msg 122 308 \$1 50;
 #X obj 122 333 line~;
 #X obj 122 413 outlet~;
 #X obj 182 133 t 1 1 1 1;
@@ -29,27 +27,29 @@
 #X floatatom 277 382 5 0 0 0 - - -, f 5;
 #X obj 289 315 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X connect 1 0 3 0;
-#X connect 2 0 20 0;
-#X connect 3 0 2 0;
-#X connect 3 1 16 0;
-#X connect 3 2 0 0;
-#X connect 4 0 19 0;
-#X connect 5 0 9 0;
-#X connect 7 0 4 0;
-#X connect 8 0 1 0;
-#X connect 11 0 13 0;
-#X connect 13 0 1 0;
-#X connect 13 1 4 0;
-#X connect 16 0 17 0;
-#X connect 17 0 18 0;
-#X connect 17 0 21 0;
-#X connect 19 0 16 0;
-#X connect 19 1 0 0;
-#X connect 19 2 5 0;
-#X connect 19 3 6 0;
-#X connect 20 0 9 0;
-#X connect 20 1 6 0;
-#X connect 21 0 22 0;
-#X connect 23 0 21 0;
+#X msg 122 308 \$1 10;
+#X obj 85 140 delay 15;
+#X connect 1 0 2 0;
+#X connect 2 0 23 0;
+#X connect 2 1 22 0;
+#X connect 2 2 0 0;
+#X connect 3 0 17 0;
+#X connect 4 0 8 0;
+#X connect 6 0 3 0;
+#X connect 7 0 1 0;
+#X connect 10 0 12 0;
+#X connect 12 0 1 0;
+#X connect 12 1 3 0;
+#X connect 15 0 16 0;
+#X connect 15 0 19 0;
+#X connect 17 0 22 0;
+#X connect 17 1 0 0;
+#X connect 17 2 4 0;
+#X connect 17 3 5 0;
+#X connect 18 0 8 0;
+#X connect 18 1 5 0;
+#X connect 19 0 20 0;
+#X connect 21 0 19 0;
+#X connect 22 0 15 0;
+#X connect 23 0 18 0;
 #X coords 0 -1 1 1 78 41 2 357 27;

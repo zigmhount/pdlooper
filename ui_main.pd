@@ -1,4 +1,6 @@
-#N canvas 76 159 1173 737 10;
+#N canvas 1 24 727 398 10;
+#X obj 127 74 cnv 15 1030 662 empty empty empty 0 0 0 4 -66577 -262144
+0;
 #N canvas 52 77 588 482 OSCconnections 0;
 #X obj 32 79 loadbang;
 #X obj 32 274 mrpeach/udpsend;
@@ -491,7 +493,6 @@ height, f 17;
 #X connect 31 0 23 0;
 #X connect 35 0 29 0;
 #X connect 36 0 37 0;
-#X connect 37 0 41 0;
 #X connect 38 0 30 0;
 #X connect 39 0 5 0;
 #X connect 40 0 11 0;
@@ -1213,7 +1214,7 @@ sends \, but whatever \, it was faster to do it manually just now.
 #X connect 8 0 9 0;
 #X connect 9 0 1 0;
 #X restore 42 -141 pd latency_test;
-#N canvas 459 246 450 300 initialize 0;
+#N canvas 427 243 450 325 initialize 0;
 #X obj 67 46 inlet;
 #N canvas 682 104 657 556 matrix_loop 0;
 #X floatatom 82 -22 3 0 0 0 - - -, f 3;
@@ -1289,9 +1290,7 @@ sends \, but whatever \, it was faster to do it manually just now.
 #X restore 305 -646 pd initialize;
 #X obj 305 -675 loadbang;
 #X restore 256 12 pd options;
-#N canvas 253 229 1210 810 tracks-matrix 0;
-#X obj 16 -71 cnv 15 1030 662 empty empty empty 0 0 0 4 -66577 -262144
-0;
+#N canvas 99 85 1210 835 tracks-matrix 0;
 #X obj 19 14 cnv 10 112 512 empty empty drums 11 6 0 10 -237569 -66577
 0;
 #X obj 133 14 cnv 10 112 512 empty empty percu 11 6 0 10 -260097 -66577
@@ -1375,13 +1374,11 @@ sends \, but whatever \, it was faster to do it manually just now.
 #X obj 818 33 empty_button 63;
 #X coords 0 -1 1 1 1140 664 2 -94 -72;
 #X restore 24 73 pd tracks-matrix;
-#N canvas 184 166 677 730 tempo 0;
+#N canvas 885 169 618 562 tempo 0;
 #X obj 90 -432 cnv 15 182 48 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X text 33 67 outputs 0 for the first beat;
-#X text 171 -51 tempo in ms;
-#X obj 98 -29 s tempo_ms;
-#X obj 23 36 s beat_num;
+#X text 113 -37 tempo in ms;
 #X floatatom 23 -130 5 0 0 0 - - -, f 5;
 #X msg 403 -277 /metro/playpause \$1;
 #X msg 420 -306 /metro/click \$1;
@@ -1396,10 +1393,7 @@ sends \, but whatever \, it was faster to do it manually just now.
 #X obj 421 17 mod;
 #X obj 23 -155 routeOSC /beatnum /tempo_ms /tempo_bpm /beatsperbar
 ;
-#X obj 98 -129 change;
 #X obj 98 -104 t f f;
-#X obj 174 -129 change;
-#X obj 244 -131 change;
 #X obj 174 -104 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 23 -106 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -1407,8 +1401,6 @@ sends \, but whatever \, it was faster to do it manually just now.
 #X floatatom 421 42 5 0 0 0 - - -, f 5;
 #X obj 421 66 t f f;
 #X obj 244 -106 t f f;
-#X obj 244 -39 s beatsperbar;
-#X obj 107 -373 t f b b b f;
 #X floatatom 98 -79 5 0 0 0 - - -, f 5;
 #X floatatom 284 -106 5 0 0 0 - - -, f 5;
 #X floatatom 190 -105 5 0 0 0 - - -, f 5;
@@ -1417,7 +1409,7 @@ sends \, but whatever \, it was faster to do it manually just now.
 #X obj 138 -411 hradio 20 0 0 4 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
 #X obj 107 -411 tgl 20 0 \$0-globalplaypause-s \$0-globalplaypause-r
-play/pause -14 -12 0 10 -154176 -1 -1 0 1;
+play/pause -14 -12 0 10 -154176 -1 -1 1 1;
 #X obj 166 -429 tgl 14 0 empty empty metro 17 7 0 10 -262144 -1 -1
 0 1;
 #X obj 230 -428 bng 15 250 50 0 empty empty tap 17 7 0 10 -262144 -1
@@ -1429,59 +1421,80 @@ play/pause -14 -12 0 10 -154176 -1 -1 0 1;
 #X msg 451 -359 /metro/tempo_bpm \$1;
 #X obj 421 -33 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 471 -430 loadbang;
-#X msg 471 -405 120;
-#X connect 5 0 23 0;
-#X connect 5 0 4 0;
-#X connect 6 0 11 0;
-#X connect 7 0 11 0;
-#X connect 8 0 11 0;
-#X connect 9 0 10 0;
-#X connect 10 0 17 0;
+#X obj 401 -435 loadbang;
+#X msg 401 -391 120;
+#X msg 302 -333 /getmetro;
+#X obj 401 -410 delay 1000;
+#X msg 190 -78 set \$1;
+#X obj 107 -373 t f b b b f f b;
+#X obj 291 -218 s metrostart;
+#X obj 263 -199 s metrostop;
+#X obj 263 -244 select 0 1;
+#X obj 23 36 s beatnum;
+#X obj 303 -217 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 246 -4 nbx 5 14 -1e+37 1e+37 0 0 beatsperbar beatsperbar-r empty
+0 -8 0 10 -262144 -1 -1 4 256 0;
+#X obj 99 -16 nbx 5 14 -1e+37 1e+37 0 0 tempo_ms tempo_ms-r empty 0
+-8 0 10 -262144 -1 -1 500 256 0;
+#X floatatom 244 -81 5 0 0 0 - - -, f 5;
+#X connect 3 0 18 0;
+#X connect 3 0 45 0;
+#X connect 4 0 9 0;
+#X connect 5 0 9 0;
+#X connect 6 0 9 0;
+#X connect 7 0 8 0;
+#X connect 8 0 15 0;
+#X connect 10 0 11 0;
+#X connect 10 1 31 0;
+#X connect 11 0 25 0;
 #X connect 12 0 13 0;
-#X connect 12 1 38 0;
-#X connect 13 0 32 0;
-#X connect 14 0 15 0;
-#X connect 14 0 16 0;
-#X connect 15 0 14 1;
-#X connect 16 0 24 0;
-#X connect 17 0 5 0;
-#X connect 17 0 23 0;
-#X connect 17 1 18 0;
-#X connect 17 2 20 0;
-#X connect 17 3 21 0;
-#X connect 18 0 19 0;
-#X connect 19 0 3 0;
-#X connect 19 0 29 0;
-#X connect 19 1 32 1;
-#X connect 20 0 33 0;
-#X connect 20 0 22 0;
-#X connect 20 0 31 0;
-#X connect 21 0 26 0;
-#X connect 21 0 30 0;
-#X connect 23 0 39 0;
-#X connect 24 0 25 0;
-#X connect 25 0 34 0;
-#X connect 26 0 27 0;
-#X connect 26 1 16 1;
-#X connect 28 0 39 0;
-#X connect 28 1 18 0;
-#X connect 28 2 20 0;
-#X connect 28 3 21 0;
-#X connect 28 4 6 0;
-#X connect 29 0 40 0;
-#X connect 32 0 14 0;
-#X connect 32 0 42 0;
-#X connect 33 0 41 0;
-#X connect 35 0 28 0;
-#X connect 36 0 7 0;
-#X connect 37 0 8 0;
-#X connect 38 0 32 0;
-#X connect 38 1 14 1;
-#X connect 39 0 12 0;
-#X connect 41 0 11 0;
-#X connect 43 0 44 0;
-#X connect 44 0 33 0;
+#X connect 12 0 14 0;
+#X connect 13 0 12 1;
+#X connect 14 0 19 0;
+#X connect 15 0 3 0;
+#X connect 15 0 18 0;
+#X connect 15 1 16 0;
+#X connect 15 2 24 0;
+#X connect 15 3 21 0;
+#X connect 16 0 22 0;
+#X connect 16 1 25 1;
+#X connect 18 0 32 0;
+#X connect 19 0 20 0;
+#X connect 20 0 27 0;
+#X connect 21 0 49 0;
+#X connect 21 1 14 1;
+#X connect 21 1 23 0;
+#X connect 22 0 33 0;
+#X connect 22 0 48 0;
+#X connect 24 0 40 0;
+#X connect 24 0 17 0;
+#X connect 25 0 12 0;
+#X connect 25 0 35 0;
+#X connect 26 0 34 0;
+#X connect 28 0 41 0;
+#X connect 29 0 5 0;
+#X connect 30 0 6 0;
+#X connect 31 0 25 0;
+#X connect 31 1 12 1;
+#X connect 32 0 10 0;
+#X connect 34 0 9 0;
+#X connect 36 0 39 0;
+#X connect 37 0 26 0;
+#X connect 38 0 9 0;
+#X connect 39 0 37 0;
+#X connect 40 0 26 0;
+#X connect 41 0 32 0;
+#X connect 41 1 22 0;
+#X connect 41 2 24 0;
+#X connect 41 3 49 0;
+#X connect 41 4 4 0;
+#X connect 41 5 44 0;
+#X connect 41 6 38 0;
+#X connect 44 0 43 0;
+#X connect 44 1 42 0;
+#X connect 44 1 46 0;
+#X connect 49 0 47 0;
 #X coords 0 -1 1 1 184 50 2 89 -433;
 #X restore 155 87 pd tempo;
 #N canvas 151 79 450 325 midifluid_GUI 0;
@@ -1725,7 +1738,7 @@ volume 19 7 1 13 -228856 -1 -1 0 1;
 #X connect 32 1 9 0;
 #X coords 0 -1 1 1 171 51 1 49 103;
 #X restore 556 91 pd sound_input;
-#N canvas 206 267 450 325 OSCconnect_dsp 0;
+#N canvas 207 290 450 325 OSCconnect_dsp 0;
 #X obj 65 52 bng 15 250 50 0 empty empty connect_to_8081 17 7 0 10
 -262144 -1 -1;
 #X obj 65 71 bng 15 250 50 0 empty empty disconnect 17 7 0 10 -262144
@@ -1747,6 +1760,9 @@ volume 19 7 1 13 -228856 -1 -1 0 1;
 #X msg 143 236 /oscconnect/printOut \$1;
 #X obj 7 108 loadbang;
 #X obj 7 133 t 1 1 b b;
+#X obj 288 38 tgl 15 0 empty empty Show\ DSP\ ui 17 7 0 10 -262144
+-1 -1 0 1;
+#X msg 245 202 /vis \$1;
 #X connect 0 0 5 0;
 #X connect 1 0 6 0;
 #X connect 3 0 12 0;
@@ -1764,7 +1780,9 @@ volume 19 7 1 13 -228856 -1 -1 0 1;
 #X connect 15 1 3 0;
 #X connect 15 2 5 0;
 #X connect 15 3 6 0;
-#X coords 0 -1 1 1 212 61 1 62 31;
+#X connect 16 0 17 0;
+#X connect 17 0 11 0;
+#X coords 0 -1 1 1 313 61 1 62 31;
 #X restore 356 7 pd OSCconnect_dsp;
 #N canvas 497 330 450 325 vumixer 0;
 #X obj 81 54 tgl 15 0 empty empty mon\ sigin_1 17 7 0 10 -262144 -1
@@ -1782,7 +1800,7 @@ volume 19 7 1 13 -228856 -1 -1 0 1;
 #X connect 6 0 4 0;
 #X coords 0 -1 1 1 87 191 1 79 39;
 #X restore 31 79 pd vumixer;
-#X text 669 24 midi pedal: press pedal + button of APC to select \,
+#X text 859 25 midi pedal: press pedal + button of APC to select \,
 start recording when pressing again;
 #N canvas 487 345 450 300 midisetup 0;
 #X obj 37 26 bng 15 250 50 0 empty empty Connect\ MIDI\ devices 17
@@ -1792,4 +1810,4 @@ start recording when pressing again;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X coords 0 -1 1 1 151 32 1 33 12;
-#X restore 593 11 pd midisetup;
+#X restore 679 17 pd midisetup;

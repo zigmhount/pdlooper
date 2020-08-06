@@ -1,5 +1,7 @@
-#N canvas 438 238 814 614 10;
-#X obj 73 63 cnv 15 20 22 empty \$0-UIbackgd-r empty 20 12 0 14 -233017
+#N canvas 441 305 186 105 10;
+#X obj 92 65 hsl 62 16 0 127 0 0 \$0-sliderUI-s \$0-sliderUI-r empty
+-2 -9 0 10 -262144 -1 -262144 0 0;
+#X obj 73 63 cnv 15 22 22 empty \$0-UIbackgd-r empty 20 12 0 14 -233017
 -66577 0;
 #X obj 73 44 cnv 15 86 18 empty \$0-UIbackgd-r empty 20 12 0 14 -233017
 -66577 0;
@@ -71,37 +73,43 @@
 #X msg 513 342 receive \$1-nameUI-r;
 #X obj 93 84 cnv 1 66 1 empty \$0-UIbackgd-r empty 20 12 0 14 -233017
 -66577 0;
-#X obj 158 62 cnv 1 1 22 empty \$0-UIbackgd-r empty 20 12 0 14 -233017
--66577 0;
 #X msg 210 395 receive \$1-UIbackgd-r;
 #X obj 210 420 s \$0-UIbackgd-r;
-#X connect 6 0 7 0;
-#X connect 7 0 5 0;
-#X connect 7 0 15 0;
-#X connect 9 0 8 0;
-#X connect 11 0 10 0;
-#X connect 13 0 12 0;
+#X obj 498 421 s \$0-sliderUI-r;
+#X msg 498 396 receive \$1-sliderUI-r;
+#X obj 95 65 cnv 1 1 16 empty empty empty 20 12 0 14 -1 -66577 0;
+#X obj 154 65 cnv 1 1 16 empty empty empty 20 12 0 14 -1 -66577 0;
+#X obj 156 62 cnv 1 3 22 empty \$0-UIbackgd-r empty 20 12 0 14 -233017
+-66577 0;
+#X connect 7 0 8 0;
+#X connect 8 0 6 0;
+#X connect 8 0 16 0;
+#X connect 10 0 9 0;
+#X connect 12 0 11 0;
 #X connect 14 0 13 0;
-#X connect 15 1 34 0;
-#X connect 15 2 25 0;
-#X connect 15 3 23 0;
-#X connect 16 0 17 0;
-#X connect 17 0 19 0;
-#X connect 18 0 17 0;
-#X connect 18 1 16 0;
-#X connect 18 3 13 0;
-#X connect 18 4 14 0;
-#X connect 18 5 12 1;
-#X connect 19 0 24 0;
-#X connect 20 0 29 0;
-#X connect 21 0 28 0;
-#X connect 22 0 27 0;
-#X connect 23 2 31 0;
-#X connect 23 3 20 0;
-#X connect 23 4 21 0;
-#X connect 25 0 9 0;
-#X connect 25 1 26 0;
-#X connect 26 0 8 0;
-#X connect 31 0 30 0;
+#X connect 15 0 14 0;
+#X connect 16 1 34 0;
+#X connect 16 2 26 0;
+#X connect 16 3 24 0;
+#X connect 17 0 18 0;
+#X connect 18 0 20 0;
+#X connect 19 0 18 0;
+#X connect 19 1 17 0;
+#X connect 19 3 14 0;
+#X connect 19 4 15 0;
+#X connect 19 5 13 1;
+#X connect 20 0 25 0;
+#X connect 21 0 30 0;
+#X connect 22 0 29 0;
+#X connect 23 0 28 0;
+#X connect 24 1 37 0;
+#X connect 24 2 32 0;
+#X connect 24 3 21 0;
+#X connect 24 4 22 0;
+#X connect 26 0 10 0;
+#X connect 26 1 27 0;
+#X connect 27 0 9 0;
+#X connect 32 0 31 0;
 #X connect 34 0 35 0;
+#X connect 37 0 36 0;
 #X coords 0 -1 1 1 86 41 2 73 44;
