@@ -331,7 +331,7 @@ of the config parameters, f 26;
 #X msg 125 636 \$1;
 #X msg 211 442 symbol \$1;
 #X obj 137 191 nbx 5 14 -1e+37 1e+37 0 0 \$0-sliderfreqset-s \$0-sliderfreqset-r
-\$0-sliderfreqset -115 4 0 10 -262144 -1 -1 0 256 0;
+\$0-sliderfreqset -115 4 0 10 -262144 -1 -1 0.25 256 0;
 #X floatatom 67 687 5 0 0 0 - - -, f 5;
 #X msg 109 687 \$1;
 #X obj 294 598 r \$0-duration_samples;
