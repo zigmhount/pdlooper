@@ -1,4 +1,4 @@
-#N canvas 1071 288 544 608 10;
+#N canvas 1072 288 544 608 10;
 #N canvas 946 103 627 793 metronome 0;
 #X text 93 726 OSC messages to /ui/metro;
 #X text 145 15 OSC messages to /dsp/metro;
@@ -54,7 +54,7 @@
 -1;
 #X msg 38 148 0;
 #X floatatom 162 168 5 0 0 0 - - -, f 5;
-#X obj 23 75 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+#X obj 23 75 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
 #X obj 23 2 r fromui;
 #X obj 43 726 s toui;
@@ -188,7 +188,7 @@ out of sync - but not with getmetro, f 27;
 #N canvas 624 70 1004 651 OSCconnections 0;
 #X obj 41 98 loadbang;
 #X obj 41 382 mrpeach/udpsend;
-#X obj 41 407 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 41 407 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 64 339 mrpeach/packOSC;
 #X msg 50 156 disconnect;
@@ -197,7 +197,7 @@ out of sync - but not with getmetro, f 27;
 #X obj 36 47 bng 15 250 50 0 empty empty disconnect 17 7 0 10 -262144
 -1 -1;
 #X obj 156 13 tgl 18 0 empty empty connected 35 6 0 10 -262144 -1 -1
-0 1;
+1 1;
 #X obj 282 33 import mrpeach;
 #X obj 237 109 r toui;
 #X obj 293 158 list split 1;
@@ -208,9 +208,9 @@ out of sync - but not with getmetro, f 27;
 #X obj 256 415 mrpeach/routeOSC /dsp;
 #X obj 256 440 s fromui;
 #X obj 157 33 tgl 15 0 empty empty printOSC\ in 17 7 0 10 -262144 -1
--1 1 1;
+-1 0 1;
 #X obj 156 50 tgl 15 0 empty empty printOSC\ out 17 7 0 10 -262144
--1 -1 1 1;
+-1 -1 0 1;
 #X obj 203 462 spigot;
 #X obj 319 277 spigot;
 #X obj 319 302 print OSCout_toui;
@@ -745,25 +745,4 @@ Qjakcctl should remember anyway I guess.;
 #X connect 7 0 6 0;
 #X connect 8 0 5 0;
 #X restore 287 48 pd loadGUI;
-#N canvas 1047 471 450 325 midiconnect 0;
-#X obj 103 12 r fromui;
-#X obj 103 78 t b b b;
-#X obj 102 219 shell;
-#X obj 39 28 loadbang;
-#X msg 103 103 aconnect 'MPKmini2' 131:0 &;
-#X msg 122 125 aconnect 'APC MINI' 132:0 &;
-#X msg 142 146 aconnect 132:2 'APC MINI' &;
-#X obj 103 35 routeOSC /midi;
-#X obj 103 56 routeOSC /connect;
-#X connect 0 0 7 0;
-#X connect 1 0 4 0;
-#X connect 1 1 5 0;
-#X connect 1 2 6 0;
-#X connect 3 0 1 0;
-#X connect 4 0 2 0;
-#X connect 5 0 2 0;
-#X connect 6 0 2 0;
-#X connect 7 0 8 0;
-#X connect 8 0 1 0;
-#X restore 365 51 pd midiconnect;
 #X connect 9 0 10 0;

@@ -1,4 +1,4 @@
-#N canvas 1 24 727 398 10;
+#N canvas 3 70 892 424 10;
 #X obj 127 74 cnv 15 1030 662 empty empty empty 0 0 0 4 -66577 -262144
 0;
 #N canvas 52 77 588 482 OSCconnections 0;
@@ -30,9 +30,9 @@
 #X obj 236 339 routeOSC /ui;
 #X obj 144 362 spigot;
 #X obj 155 28 tgl 15 0 empty empty printOSC\ in 17 7 0 10 -262144 -1
--1 1 1;
+-1 0 1;
 #X obj 155 45 tgl 15 0 empty empty printOSC\ out 17 7 0 10 -262144
--1 -1 1 1;
+-1 -1 0 1;
 #X obj 18 362 spigot;
 #X obj 143 386 print OSCin_fromdsp;
 #X obj 17 386 print OSCout_todsp;
@@ -1290,7 +1290,7 @@ sends \, but whatever \, it was faster to do it manually just now.
 #X restore 305 -646 pd initialize;
 #X obj 305 -675 loadbang;
 #X restore 256 12 pd options;
-#N canvas 99 85 1210 835 tracks-matrix 0;
+#N canvas 1 30 1210 860 tracks-matrix 0;
 #X obj 19 14 cnv 10 112 512 empty empty drums 11 6 0 10 -237569 -66577
 0;
 #X obj 133 14 cnv 10 112 512 empty empty percu 11 6 0 10 -260097 -66577
@@ -1407,9 +1407,9 @@ sends \, but whatever \, it was faster to do it manually just now.
 #X obj 421 -58 metro 500;
 #X floatatom 231 -406 4 0 0 0 - - -, f 4;
 #X obj 138 -411 hradio 20 0 0 4 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
+-1 -1 2;
 #X obj 107 -411 tgl 20 0 \$0-globalplaypause-s \$0-globalplaypause-r
-play/pause -14 -12 0 10 -154176 -1 -1 1 1;
+play/pause -14 -12 0 10 -154176 -1 -1 0 1;
 #X obj 166 -429 tgl 14 0 empty empty metro 17 7 0 10 -262144 -1 -1
 0 1;
 #X obj 230 -428 bng 15 250 50 0 empty empty tap 17 7 0 10 -262144 -1
@@ -1565,7 +1565,7 @@ V 3.4 Final.sf2;
 #X msg 51 334 /input/monitor \$1;
 #X msg 68 217 0;
 #X obj 131 128 hsl 66 20 0 1 0 0 \$0-volmonslider \$0-set-volmonslider
-volume 19 7 1 13 -228856 -1 -1 0 1;
+volume 19 7 1 13 -228856 -1 -1 6500 1;
 #X obj 200 116 tgl 16 0 \$0-dsp-montoggle \$0-dsp-montoggle-set on
 3 6 1 9 -74965 -74965 -262144 0 1;
 #X obj 200 132 bng 16 500 50 0 \$0-monmute-bng \$0-monmute empty 0
@@ -1746,9 +1746,9 @@ volume 19 7 1 13 -228856 -1 -1 0 1;
 #X obj 182 35 tgl 17 0 empty empty Connected 32 6 0 10 -262144 -1 -1
 1 1;
 #X obj 182 57 tgl 15 0 empty empty printOSC\ in 17 7 0 10 -262144 -1
--1 1 1;
+-1 0 1;
 #X obj 182 74 tgl 15 0 empty empty printOSC\ out 17 7 0 10 -262144
--1 -1 1 1;
+-1 -1 0 1;
 #X msg 79 164 /oscconnect/connect;
 #X msg 79 194 /oscconnect/disconnect;
 #X obj 317 137 r fromdsp;
@@ -1761,7 +1761,7 @@ volume 19 7 1 13 -228856 -1 -1 0 1;
 #X obj 7 108 loadbang;
 #X obj 7 133 t 1 1 b b;
 #X obj 288 38 tgl 15 0 empty empty Show\ DSP\ ui 17 7 0 10 -262144
--1 -1 0 1;
+-1 -1 1 1;
 #X msg 245 202 /vis \$1;
 #X connect 0 0 5 0;
 #X connect 1 0 6 0;
@@ -1802,12 +1802,27 @@ volume 19 7 1 13 -228856 -1 -1 0 1;
 #X restore 31 79 pd vumixer;
 #X text 859 25 midi pedal: press pedal + button of APC to select \,
 start recording when pressing again;
-#N canvas 487 345 450 300 midisetup 0;
+#N canvas 488 368 450 300 midisetup 0;
 #X obj 37 26 bng 15 250 50 0 empty empty Connect\ MIDI\ devices 17
 5 0 10 -262144 -1 -1;
-#X msg 37 58 /midi/connect;
-#X obj 37 83 s todsp;
+#X obj 37 49 t b b b;
+#X obj 224 12 loadbang;
+#X msg 73 84 aconnect 132:2 'APC MINI' &;
+#X msg 56 135 aconnect 'APC MINI' 132:0 &;
+#X msg 36 186 aconnect 'MPKmini2' 131:0 &;
+#X obj 38 232 shell;
+#X obj 56 110 delay 1000;
+#X obj 36 161 delay 1000;
 #X connect 0 0 1 0;
-#X connect 1 0 2 0;
+#X connect 1 0 8 0;
+#X connect 1 1 7 0;
+#X connect 1 2 3 0;
+#X connect 2 0 1 0;
+#X connect 3 0 6 0;
+#X connect 4 0 6 0;
+#X connect 5 0 6 0;
+#X connect 7 0 4 0;
+#X connect 8 0 5 0;
 #X coords 0 -1 1 1 151 32 1 33 12;
 #X restore 679 17 pd midisetup;
+#X obj 736 89 track_follow;
