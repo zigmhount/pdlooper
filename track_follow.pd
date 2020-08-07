@@ -1,4 +1,4 @@
-#N canvas 552 329 518 392 10;
+#N canvas 552 329 518 417 10;
 #X text 87 15 input: track output from all tracks, f 21;
 #X text 279 14 outputs: connect to the tracks to randomly follow,
 f 25;
@@ -187,7 +187,7 @@ another one finished \, or randomly triggered (currently up to 8).
 ;
 #X text 274 121 The output of the first track is connected to the input
 of the next one., f 26;
-#X text 255 300 The output of each track is connected to the "randomizer"
+#X text 249 275 The output of each track is connected to the "randomizer"
 \, which will trigger one of the tracks connected. The number defined
 in the right field defines how many tracks to be randomized amongst.
 , f 26;
