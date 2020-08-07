@@ -13,9 +13,10 @@ Like the tools I was inspired by (see below), I intend to use Pdlooper in a modu
 - Lv2 plugin host for synths and effects (Carla, Ardour, Non-Mixer)
 
 ## Current features
-The current minor version, while not ready for production, is considered "jammable" i.e. it can be used for basic jamming (but there are still many visual and audio glitches).
+The current minor version, while not ready for production, is considered "jammable" i.e. it can be used for basic jamming (but there are still some visual and audio glitches).
 - Record audio tracks in stereo
-- Loop audio tracks (doesn't display the wave form to avoid the audio drop-out when resizing the array)
+- Loop audio tracks
+- "Follow" and "Random Follow" modes to play a few given tracks in a sequence or randomly after one another
 - Set tempo by tapping
 - Controllable via MIDI controller (I use an AKAI APC Mini with 8\*8 buttons) including outgoing MIDI message to light up the controller's LEDs
 - Save tracks as wav files
@@ -28,6 +29,12 @@ The current minor version, while not ready for production, is considered "jammab
 
 That's what it currently looks like:
 ![](screenshots/latest.png)
+
+Follow and Random Follow:
+![](screenshots/track_follow.png) ![](screenshots/randomfollow.png)
+
+Matrix thumbnail of all currently playing tracks (soon to be sent to mute-groups and for arranging):
+![](screenshots/matrix_thumb.png)
 
 ## Current issues
 - Can't easily load saved files
