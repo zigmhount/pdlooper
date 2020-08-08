@@ -1,11 +1,11 @@
-#N canvas 552 329 518 417 10;
+#N canvas 553 325 518 417 10;
 #X text 87 15 input: track output from all tracks, f 21;
 #X text 279 14 outputs: connect to the tracks to randomly follow,
 f 25;
 #X text 10 69 add tracks with [tr2f <track_num>], f 18;
 #N canvas 911 108 557 712 randomfollow 0;
-#X obj 29 37 cnv 15 343 15 empty rnd-flw-cnv Random\ follow: 8 6 0
-10 -149797 -1 0;
+#X obj 29 37 cnv 15 343 15 empty rnd-flw-cnv Random\ follow:\ 56 8
+6 0 10 -149797 -1 0;
 #X obj 323 114 random 3;
 #X obj 339 37 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;

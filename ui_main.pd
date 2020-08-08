@@ -1,4 +1,4 @@
-#N canvas 4 93 1142 424 10;
+#N canvas 1 24 1295 698 10;
 #X obj 127 74 cnv 15 1030 662 empty empty empty 0 0 0 4 -66577 -262144
 0;
 #N canvas 52 77 588 482 OSCconnections 0;
@@ -1409,7 +1409,7 @@ sends \, but whatever \, it was faster to do it manually just now.
 #X obj 138 -411 hradio 20 0 0 4 empty empty empty 0 -8 0 10 -262144
 -1 -1 1;
 #X obj 107 -411 tgl 20 0 \$0-globalplaypause-s \$0-globalplaypause-r
-play/pause -14 -12 0 10 -154176 -1 -1 0 1;
+play/pause -14 -12 0 10 -154176 -1 -1 1 1;
 #X obj 166 -429 tgl 14 0 empty empty metro 17 7 0 10 -262144 -1 -1
 0 1;
 #X obj 230 -428 bng 15 250 50 0 empty empty tap 17 7 0 10 -262144 -1
@@ -1737,7 +1737,7 @@ volume 19 7 1 13 -228856 -1 -1 0 1;
 #X connect 32 0 19 0;
 #X connect 32 1 9 0;
 #X coords 0 -1 1 1 171 51 1 49 103;
-#X restore 495 100 pd sound_input;
+#X restore 512 100 pd sound_input;
 #N canvas 207 290 450 325 OSCconnect_dsp 0;
 #X obj 65 52 bng 15 250 50 0 empty empty connect_to_8081 17 7 0 10
 -262144 -1 -1;
@@ -1802,7 +1802,7 @@ volume 19 7 1 13 -228856 -1 -1 0 1;
 #X restore 31 79 pd vumixer;
 #X text 859 25 midi pedal: press pedal + button of APC to select \,
 start recording when pressing again;
-#N canvas 474 323 450 300 midisetup 1;
+#N canvas 474 323 450 300 midisetup 0;
 #X obj 37 26 bng 15 250 50 0 empty empty Connect\ MIDI\ devices 17
 5 0 10 -262144 -1 -1;
 #X obj 37 49 t b b b;
@@ -1846,5 +1846,11 @@ start recording when pressing again;
 #X connect 8 1 5 0;
 #X coords 0 -1 1 1 151 32 1 33 12;
 #X restore 679 17 pd midisetup;
-#X obj 479 78 track_follow;
+#X obj 510 78 track_follow;
 #X obj 347 81 matrix_thumb;
+#X obj 1057 174 scene 82;
+#X obj 1058 248 scene 83;
+#X obj 1058 322 scene 84;
+#X obj 1060 400 scene 85;
+#X obj 1060 473 scene 86;
+#X obj 1061 548 scene 87;
