@@ -1,10 +1,10 @@
-#N canvas 51 186 711 710 10;
+#N canvas 53 32 711 710 10;
 #X obj 203 330 cnv 15 110 58 empty empty empty 20 12 0 14 -120670 -66577
 0;
 #N canvas 842 99 450 438 \$0-buttonframe 0;
-#X obj 79 52 bng 56 250 50 0 1361-bng-s 0-bng-r ADD 5 26 0 10 -128992
+#X obj 79 52 bng 56 250 50 0 1162-bng-s 0-bng-r ADD 5 26 0 10 -128992
 -1 -1;
-#X obj 130 52 bng 56 250 50 0 1361-bng-s 1361-bng-r ADD 5 26 0 10 -128992
+#X obj 130 52 bng 56 250 50 0 1162-bng-s 1162-bng-r ADD 5 26 0 10 -128992
 -1 -1;
 #X obj 78 51 cnv 15 110 58 empty empty Empty 42 25 0 10 -128992 -66577
 0;
@@ -43,7 +43,7 @@
 #X msg 384 396 9;
 #X obj 384 421 t b f b;
 #X obj 44 79 t f f f;
-#N canvas 293 175 450 472 clear_track 0;
+#N canvas 294 198 450 472 clear_track 1;
 #X obj 89 15 inlet;
 #X obj 88 117 tools/receiver;
 #X obj 88 144 t b b;
@@ -52,7 +52,7 @@
 #X floatatom 89 40 5 0 0 0 - - -, f 5;
 #X obj 89 64 t f f, f 12;
 #X msg 89 92 \$1-clear;
-#X obj 88 169 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 88 226 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 114 291 delay 51;
 #X floatatom 166 327 5 0 0 0 - - -, f 5;
@@ -61,9 +61,10 @@
 #X msg 166 265 set \$1;
 #X msg 219 264 /track/\$1/stop;
 #X obj 114 240 t f f f f, f 26;
+#X obj 88 169 delay 100;
 #X connect 0 0 5 0;
 #X connect 1 0 2 0;
-#X connect 2 0 8 0;
+#X connect 2 0 16 0;
 #X connect 2 1 12 0;
 #X connect 5 0 6 0;
 #X connect 6 0 7 0;
@@ -78,6 +79,7 @@
 #X connect 15 0 9 0;
 #X connect 15 1 13 0;
 #X connect 15 2 14 0;
+#X connect 16 0 8 0;
 #X restore 44 107 pd clear_track;
 #N canvas 415 166 450 447 switchon_track 0;
 #X obj 87 33 inlet;
@@ -110,6 +112,8 @@
 #X msg 194 150 label \$1-initbang-emptybutton-r \, receive \$1-initbang-emptybutton-r
 ;
 #X obj 208 481 \$1;
+#X floatatom 235 59 5 0 0 0 - - -, f 5;
+#X obj 44 132 \$1;
 #X connect 2 0 10 0;
 #X connect 3 0 29 0;
 #X connect 5 0 19 0;
@@ -121,6 +125,7 @@
 #X connect 12 0 24 0;
 #X connect 13 0 10 0;
 #X connect 14 0 33 0;
+#X connect 14 0 35 0;
 #X connect 17 0 18 0;
 #X connect 17 1 26 0;
 #X connect 19 0 10 0;
@@ -143,7 +148,8 @@
 #X connect 29 0 30 0;
 #X connect 29 1 21 0;
 #X connect 29 2 9 0;
-#X connect 30 0 21 0;
+#X connect 30 0 36 0;
 #X connect 33 0 16 0;
 #X connect 34 0 25 0;
+#X connect 36 0 21 0;
 #X coords 0 -1 1 1 110 58 1 203 330;

@@ -1,4 +1,4 @@
-#N canvas 248 271 450 300 10;
+#N canvas 249 294 450 300 10;
 #X obj 21 65 cnv 15 156 69 empty empty empty 20 12 0 14 -133153 -66577
 0;
 #N canvas 182 107 450 323 thumbcnv 0;
@@ -116,9 +116,9 @@
 0;
 #X obj 56 8 cnv 8 8 8 1147-55-s 1147-55-r empty 0 0 0 12 -33289 -33289
 0;
-#X obj 0 0 cnv 8 8 8 1147-56-s 1147-56-r empty 0 0 0 12 -258699 -258699
+#X obj 0 0 cnv 8 8 8 1147-56-s 1147-56-r empty 0 0 0 12 -33289 -33289
 0;
-#X obj 8 0 cnv 8 8 8 1147-57-s 1147-57-r empty 0 0 0 12 -260818 -260818
+#X obj 8 0 cnv 8 8 8 1147-57-s 1147-57-r empty 0 0 0 12 -33289 -33289
 0;
 #X obj 16 0 cnv 8 8 8 1147-58-s 1147-58-r empty 0 0 0 12 -33289 -33289
 0;
@@ -290,8 +290,8 @@ top left \; \$3 = label \; \$4 = receive \; \$5 = send;
 #X connect 26 0 23 0;
 #X connect 27 0 3 0;
 #X connect 28 0 27 0;
-#X restore 43 253 pd init_fill_thumb;
-#X obj 43 227 bng 15 250 50 0 empty empty reinitialize 17 7 0 10 -262144
+#X restore 70 280 pd init_fill_thumb;
+#X obj 70 254 bng 15 250 50 0 empty empty reinitialize 17 7 0 10 -262144
 -1 -1;
 #N canvas 785 147 562 532 thumb_reset 0;
 #X obj 146 384 s thumb_array_act-val;
@@ -363,7 +363,10 @@ top left \; \$3 = label \; \$4 = receive \; \$5 = send;
 #X text 90 98 Send to scene:;
 #X floatatom 144 83 4 0 0 0 Max_bars #0-thumb-maxbars-r #0-thumb-maxbars-s
 , f 4;
+#X obj 43 229 t b b;
 #X connect 6 0 5 0;
 #X connect 8 0 7 0;
-#X connect 10 0 6 0;
+#X connect 10 0 14 0;
+#X connect 14 0 8 0;
+#X connect 14 1 6 0;
 #X coords 0 -1 1 1 158 70 1 20 65;
