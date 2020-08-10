@@ -1,4 +1,4 @@
-#N canvas 370 237 594 506 10;
+#N canvas 660 119 594 506 10;
 #X obj 444 24 cnv 15 71 37 empty \$0-tr2f-r t56 33 6 0 14 -233017 -66577
 0;
 #X obj 91 414 outlet;
@@ -14,7 +14,7 @@
 #X obj 499 7 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 369 412 s;
-#X msg 369 183 1;
+#X msg 288 183 1;
 #X obj 479 198 tools/receiver;
 #X floatatom 493 43 3 0 0 0 - - -, f 3;
 #X msg 479 173 \$1-status;
@@ -25,7 +25,7 @@
 #X obj 89 54 \$1;
 #X obj 413 74 initbang;
 #X obj 440 145 t f f f;
-#X obj 369 149 t f f;
+#X obj 288 149 t f f;
 #X obj 89 287 delay 1000;
 #X obj 89 312 \$1;
 #X obj 89 229 t b 1 b;
@@ -50,6 +50,9 @@ next track;
 #X text 139 183 process the trackstart bang only if play=1, f 15;
 #X msg 441 274 \$1;
 #X obj 441 299 s rndflw-list;
+#X floatatom 43 77 5 0 0 0 - - -, f 5;
+#X msg 364 178 \$1-trackstart;
+#X obj 364 203 tools/receiver;
 #X connect 2 0 3 0;
 #X connect 3 0 40 0;
 #X connect 4 0 26 0;
@@ -65,6 +68,7 @@ next track;
 #X connect 15 0 13 0;
 #X connect 19 0 18 0;
 #X connect 20 0 36 0;
+#X connect 20 0 44 0;
 #X connect 21 0 33 0;
 #X connect 22 0 42 0;
 #X connect 22 1 19 0;
@@ -81,6 +85,7 @@ next track;
 #X connect 29 0 1 0;
 #X connect 29 1 27 0;
 #X connect 33 0 34 0;
+#X connect 34 0 45 0;
 #X connect 34 1 22 0;
 #X connect 35 0 33 0;
 #X connect 36 0 2 0;
@@ -91,4 +96,6 @@ next track;
 #X connect 38 0 40 1;
 #X connect 40 0 4 0;
 #X connect 42 0 43 0;
+#X connect 45 0 46 0;
+#X connect 46 0 10 0;
 #X coords 0 -1 1 1 74 57 1 442 5;

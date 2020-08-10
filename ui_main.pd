@@ -1,4 +1,4 @@
-#N canvas 7 24 1295 718 10;
+#N canvas 11 24 1295 718 10;
 #X obj 127 74 cnv 15 1030 662 empty empty empty 0 0 0 4 -66577 -262144
 0;
 #N canvas 52 77 588 482 OSCconnections 0;
@@ -1054,14 +1054,14 @@ sends \, but whatever \, it was faster to do it manually just now.
 #X connect 41 0 40 0;
 #X coords 0 -1 1 1 138 61 1 2 192;
 #X restore 85 -713 pd button_array;
-#N canvas 326 62 803 529 apc_midi_control 1;
+#N canvas 493 74 803 554 apc_midi_control 0;
 #X obj 159 77 r midibutton;
 #X floatatom 159 102 5 0 0 0 - - -, f 5;
 #X obj 159 160 moses 64;
 #X floatatom 159 185 5 0 0 0 - - -, f 5;
 #X obj 333 164 r midipedal;
 #X floatatom 333 189 5 0 0 0 - - -, f 5;
-#N canvas 544 74 782 455 midiin 0;
+#N canvas 75 137 782 555 midiin 0;
 #X floatatom 69 175 5 0 0 0 - - -, f 5;
 #X floatatom 119 177 5 0 0 0 - - -, f 5;
 #X floatatom 101 42 5 0 0 0 - - -, f 5;
@@ -1082,7 +1082,6 @@ sends \, but whatever \, it was faster to do it manually just now.
 #X text 273 39 velocity;
 #X obj 156 247 outlet;
 #X text 204 245 0 or 8 to add to midi note;
-#X msg 202 176 8;
 #X text 243 152 if velocity is 0 or 127;
 #X floatatom 190 206 5 0 0 0 - - -, f 5;
 #X obj 161 89 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -1090,22 +1089,28 @@ sends \, but whatever \, it was faster to do it manually just now.
 #X obj 161 70 t b 1;
 #X obj 161 129 spigot;
 #X obj 161 151 select 0 127;
-#X obj 161 177 t 0 0;
 #X obj 161 107 f \$1;
-#X connect 0 0 10 0;
-#X connect 2 0 14 1;
-#X connect 6 0 8 0;
-#X connect 8 0 4 0;
-#X connect 9 0 14 0;
-#X connect 10 0 9 0;
-#X connect 10 1 11 1;
-#X connect 11 0 12 0;
-#X connect 12 0 13 0;
-#X connect 12 1 6 0;
-#X connect 12 2 13 0;
-#X connect 13 0 11 1;
-#X connect 13 1 8 0;
-#X connect 14 0 11 0;
+#X obj 224 180 t 1 8;
+#X obj 160 176 t 0 0 0;
+#X floatatom 58 222 5 0 0 0 - - -, f 5;
+#X obj 58 246 s midishift;
+#X connect 0 0 9 0;
+#X connect 2 0 12 1;
+#X connect 7 0 4 0;
+#X connect 8 0 12 0;
+#X connect 9 0 8 0;
+#X connect 9 1 10 1;
+#X connect 10 0 11 0;
+#X connect 11 0 14 0;
+#X connect 11 1 13 0;
+#X connect 11 2 14 0;
+#X connect 12 0 10 0;
+#X connect 13 0 15 0;
+#X connect 13 1 7 0;
+#X connect 14 0 15 0;
+#X connect 14 1 10 1;
+#X connect 14 2 7 0;
+#X connect 15 0 16 0;
 #X restore 188 148 pd apc_shift;
 #X floatatom 560 66 5 0 0 1 channel - -, f 5;
 #X floatatom 473 86 5 0 0 0 - - -, f 5;
@@ -1141,6 +1146,10 @@ control \, [value cc#(;
 #X msg 373 62 127 64;
 #X obj 373 87 unpack f f;
 #X msg 86 309 symbol midibutton;
+#X msg 298 69 0;
+#X msg 204 57 56 127;
+#X obj 204 82 unpack;
+#X msg 313 51 127;
 #X connect 0 0 22 0;
 #X connect 3 0 7 0;
 #X connect 3 1 1 0;
@@ -1193,6 +1202,11 @@ control \, [value cc#(;
 #X connect 44 0 15 0;
 #X connect 44 1 16 0;
 #X connect 45 0 6 1;
+#X connect 46 0 15 0;
+#X connect 47 0 48 0;
+#X connect 48 0 5 0;
+#X connect 48 1 4 0;
+#X connect 49 0 15 0;
 #X restore 158 30 pd midiin;
 #X obj 333 213 t f f;
 #X obj 159 126 t f f;
@@ -1254,11 +1268,13 @@ control \, [value cc#(;
 #X connect 11 0 7 0;
 #X connect 11 0 10 0;
 #X restore 584 84 pd buttons_rightcol;
-#N canvas 67 230 450 325 midicontrols 0;
+#N canvas 302 74 450 350 midicontrols 0;
 #X obj 72 21 r midictl;
 #X obj 72 46 unpack f f;
 #X floatatom 72 71 5 0 0 0 value - -, f 5;
 #X floatatom 129 70 5 0 0 0 cc# - -, f 5;
+#X text 227 20 track config controls are done directly in ui_track_2
+;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 1 1 3 0;
@@ -1288,6 +1304,8 @@ control \, [value cc#(;
 #X msg 114 59 symbol \$1-selected-s;
 #X obj 87 -70 delay 100;
 #X obj 50 -148 r global-selected-s;
+#X symbolatom 114 84 10 0 0 0 - - -, f 10;
+#X text 50 107 keep this disconnected;
 #X connect 0 0 6 0;
 #X connect 0 0 10 0;
 #X connect 1 0 8 0;
@@ -1303,16 +1321,13 @@ control \, [value cc#(;
 #X connect 11 0 12 0;
 #X connect 12 0 7 0;
 #X connect 13 0 7 0;
-#X connect 14 0 2 0;
 #X connect 15 0 2 1;
+#X connect 15 0 18 0;
 #X connect 16 0 11 0;
 #X connect 17 0 0 0;
 #X restore 361 55 pd select_track;
 #X obj 130 213 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X text 212 105 I should move most of this to track_ui_2 \, keep only
-the pedal here. that will make it actually possible to change a track's
-config without having to redefine \$1-vol et company;
 #X obj 178 256 s;
 #X msg 198 231 symbol \$1-midibutton;
 #X obj 159 209 t f b f;
@@ -1361,18 +1376,21 @@ config without having to redefine \$1-vol et company;
 #X connect 14 4 13 0;
 #X connect 14 5 11 0;
 #X restore 159 281 pd createtrackifmissing;
+#X obj 435 160 r midishift;
+#X floatatom 435 185 5 0 0 0 - - -, f 5;
 #X connect 0 0 1 0;
 #X connect 1 0 8 0;
 #X connect 2 0 3 0;
 #X connect 3 0 14 0;
-#X connect 3 0 18 0;
+#X connect 3 0 17 0;
 #X connect 4 0 5 0;
 #X connect 5 0 7 0;
 #X connect 8 0 2 0;
-#X connect 17 0 16 1;
-#X connect 18 0 19 0;
-#X connect 18 1 16 0;
-#X connect 18 2 17 0;
+#X connect 16 0 15 1;
+#X connect 17 0 18 0;
+#X connect 17 1 15 0;
+#X connect 17 2 16 0;
+#X connect 19 0 20 0;
 #X restore 78 -620 pd apc_midi_control;
 #N canvas 0 0 450 300 sidebuttons_config 0;
 #X obj 75 78 s \$0-globalplaypause-r;
@@ -1598,7 +1616,7 @@ config without having to redefine \$1-vol et company;
 #X obj 421 -58 metro 500;
 #X floatatom 231 -406 4 0 0 0 - - -, f 4;
 #X obj 138 -411 hradio 20 0 0 4 empty empty empty 0 -8 0 10 -262144
--1 -1 2;
+-1 -1 1;
 #X obj 107 -411 tgl 20 0 \$0-globalplaypause-s \$0-globalplaypause-r
 play/pause -14 -12 0 10 -154176 -1 -1 0 1;
 #X obj 166 -429 tgl 14 0 empty empty metro 17 7 0 10 -262144 -1 -1
@@ -1748,7 +1766,7 @@ V 3.4 Final.sf2;
 #X msg 70 58 names adc~ midifluid;
 #X obj 51 9 loadbang;
 #X obj 51 134 tgl 15 0 empty empty monitor-> 17 7 0 10 -262144 -1 -1
-0 1;
+1 1;
 #X obj 51 34 t b b 1;
 #X msg 51 80 set 1;
 #X obj 124 398 s todsp;
@@ -1991,9 +2009,7 @@ volume 19 7 1 13 -228856 -1 -1 0 1;
 #X connect 6 0 4 0;
 #X coords 0 -1 1 1 87 191 1 79 39;
 #X restore 31 79 pd vumixer;
-#X text 859 25 midi pedal: press pedal + button of APC to select \,
-start recording when pressing again;
-#N canvas 474 323 450 300 midisetup 0;
+#N canvas 475 228 450 443 midisetup 0;
 #X obj 37 26 bng 15 250 50 0 empty empty Connect\ MIDI\ devices 17
 5 0 10 -262144 -1 -1;
 #X obj 37 49 t b b b;
@@ -2023,11 +2039,12 @@ start recording when pressing again;
 #X connect 6 0 5 0;
 #X connect 7 0 8 0;
 #X connect 8 0 2 0;
-#X restore 55 246 pd clear_apc_leds;
+#X restore 55 347 pd clear_apc_leds;
 #X obj 73 161 shell;
 #X obj 73 219 shell;
+#X obj 75 281 shell;
+#X msg 75 248 aconnect 'MPKmini2' 132:0 &;
 #X connect 0 0 1 0;
-#X connect 1 1 7 0;
 #X connect 1 2 3 0;
 #X connect 2 0 1 0;
 #X connect 3 0 6 0;
@@ -2035,6 +2052,9 @@ start recording when pressing again;
 #X connect 5 0 9 0;
 #X connect 6 1 4 0;
 #X connect 8 1 5 0;
+#X connect 9 1 11 0;
+#X connect 10 1 7 0;
+#X connect 11 0 10 0;
 #X coords 0 -1 1 1 151 32 1 33 12;
 #X restore 679 17 pd midisetup;
 #X obj 510 78 track_follow;
@@ -2046,3 +2066,185 @@ start recording when pressing again;
 #X obj 1060 473 scene 86;
 #X obj 1061 548 scene 87;
 #X obj 1062 621 scene 89;
+#N canvas 363 178 546 392 current_apc_config 0;
+#X obj 47 43 cnv 15 505 315 empty empty empty 20 12 0 14 -58255 -66577
+0;
+#X obj 61 72 cnv 15 48 21 empty empty 56 2 4 0 9 -233017 -66577 0;
+#X obj 118 72 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 174 72 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 230 72 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 286 72 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 343 72 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 399 72 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 455 72 cnv 15 48 21 empty empty 63 2 4 0 9 -233017 -66577 0
+;
+#X obj 61 103 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 118 103 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 174 103 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 230 103 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 286 103 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 343 103 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 399 103 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 455 103 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 61 134 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 118 134 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 174 134 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 230 134 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 286 134 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 343 134 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 399 134 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 455 134 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 61 165 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 118 165 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 174 165 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 230 165 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 286 165 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 343 165 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 399 165 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 455 165 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 61 196 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 118 196 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 174 196 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 230 196 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 286 196 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 343 196 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 399 196 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 455 196 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 61 227 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 118 227 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 174 227 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 230 227 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 286 227 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 343 227 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 399 227 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 455 227 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 61 258 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 118 258 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 174 258 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 230 258 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 286 258 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 343 258 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 399 258 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 455 258 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 61 289 cnv 15 48 21 empty empty 0 2 4 0 9 -233017 -66577 0;
+#X obj 118 289 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 174 289 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 230 289 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 286 289 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 343 289 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 399 289 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 455 289 cnv 15 48 21 empty empty 7 2 4 0 9 -233017 -66577 0
+;
+#X obj 524 72 cnv 15 21 21 empty empty 82 1 4 0 9 -233017 -66577 0
+;
+#X obj 524 103 cnv 15 21 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 524 134 cnv 15 21 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 524 165 cnv 15 21 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 524 196 cnv 15 21 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 524 227 cnv 15 21 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 524 258 cnv 15 21 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 524 289 cnv 15 21 21 empty empty 89 2 4 0 9 -233017 -66577 0
+;
+#X obj 72 328 cnv 15 21 21 empty empty 64 2 4 0 9 -233017 -66577 0
+;
+#X obj 130 328 cnv 15 21 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 187 328 cnv 15 21 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 243 328 cnv 15 21 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 299 328 cnv 15 21 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 357 328 cnv 15 21 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 414 328 cnv 15 21 21 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 470 328 cnv 15 21 21 empty empty 71 2 4 0 9 -233017 -66577 0
+;
+#X text 516 9 launch scene, f 6;
+#X obj 524 327 cnv 15 21 21 empty empty 98 2 4 0 9 -233017 -66577 0
+;
+#X text 573 74 Toggle Cfg;
+#X text 571 9 When track is selected:, f 12;
+#X text 573 105 Rec;
+#X text 554 328 SHIFT / REC if empty;
+#X text 572 137 Stop;
+#X text 531 80 90;
+#X text 531 296 97;
+#X text 477 336 79;
+#X text 79 336 72;
+#X text 61 366 + 1 bar;
+#X text 121 367 - 1 bar;
+#X text 173 367 output -1;
+#X text 232 367 output +1;
+#X obj 61 54 cnv 5 48 8 empty empty empty 20 12 0 14 -258049 -66577
+0;
+#X obj 118 54 cnv 5 48 8 empty empty empty 20 12 0 14 -260481 -66577
+0;
+#X restore 678 52 pd current_apc_config;
