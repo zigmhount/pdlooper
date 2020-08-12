@@ -1,7 +1,7 @@
-#N canvas 11 24 1295 718 10;
+#N canvas 13 24 1295 718 10;
 #X obj 127 74 cnv 15 1030 662 empty empty empty 0 0 0 4 -66577 -262144
 0;
-#N canvas 52 77 588 482 OSCconnections 0;
+#N canvas 600 57 588 507 OSCconnections 0;
 #X obj 32 79 loadbang;
 #X obj 32 274 mrpeach/udpsend;
 #X obj 32 299 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
@@ -84,7 +84,7 @@
 #X connect 4 0 0 0;
 #X connect 5 0 0 0;
 #X restore 256 41 pd test;
-#N canvas 896 289 450 350 options 1;
+#N canvas 896 289 450 350 options 0;
 #X text 39 -395 0 empty \; 1 playing \; 2 play queued \; 3 recording
 \; 4 record armed \; 5 not empty \, stopped \; 6 stop queued;
 #X text 39 -508 MIDI out colors: \; 0 off \; 1 solid green \; 2
@@ -1378,6 +1378,8 @@ control \, [value cc#(;
 #X restore 159 281 pd createtrackifmissing;
 #X obj 435 160 r midishift;
 #X floatatom 435 185 5 0 0 0 - - -, f 5;
+#X text 359 79 why does the deselection of a track not change global-selected
+to 128?, f 26;
 #X connect 0 0 1 0;
 #X connect 1 0 8 0;
 #X connect 2 0 3 0;
@@ -1616,9 +1618,9 @@ control \, [value cc#(;
 #X obj 421 -58 metro 500;
 #X floatatom 231 -406 4 0 0 0 - - -, f 4;
 #X obj 138 -411 hradio 20 0 0 4 empty empty empty 0 -8 0 10 -262144
--1 -1 1;
+-1 -1 3;
 #X obj 107 -411 tgl 20 0 \$0-globalplaypause-s \$0-globalplaypause-r
-play/pause -14 -12 0 10 -154176 -1 -1 0 1;
+play/pause -14 -12 0 10 -154176 -1 -1 1 1;
 #X obj 166 -429 tgl 14 0 empty empty metro 17 7 0 10 -262144 -1 -1
 0 1;
 #X obj 230 -428 bng 15 250 50 0 empty empty tap 17 7 0 10 -262144 -1
@@ -1766,7 +1768,7 @@ V 3.4 Final.sf2;
 #X msg 70 58 names adc~ midifluid;
 #X obj 51 9 loadbang;
 #X obj 51 134 tgl 15 0 empty empty monitor-> 17 7 0 10 -262144 -1 -1
-1 1;
+0 1;
 #X obj 51 34 t b b 1;
 #X msg 51 80 set 1;
 #X obj 124 398 s todsp;
@@ -1774,7 +1776,7 @@ V 3.4 Final.sf2;
 #X msg 51 334 /input/monitor \$1;
 #X msg 68 217 0;
 #X obj 131 128 hsl 66 20 0 1 0 0 \$0-volmonslider \$0-set-volmonslider
-volume 19 7 1 13 -228856 -1 -1 0 1;
+volume 19 7 1 13 -228856 -1 -1 2100 1;
 #X obj 200 116 tgl 16 0 \$0-dsp-montoggle \$0-dsp-montoggle-set on
 3 6 1 9 -74965 -74965 -262144 0 1;
 #X obj 200 132 bng 16 500 50 0 \$0-monmute-bng \$0-monmute empty 0
@@ -2043,7 +2045,7 @@ volume 19 7 1 13 -228856 -1 -1 0 1;
 #X obj 73 161 shell;
 #X obj 73 219 shell;
 #X obj 75 281 shell;
-#X msg 75 248 aconnect 'MPKmini2' 132:0 &;
+#X msg 75 248 aconnect 'MPKmini2' 132:1 &;
 #X connect 0 0 1 0;
 #X connect 1 2 3 0;
 #X connect 2 0 1 0;
@@ -2232,9 +2234,9 @@ volume 19 7 1 13 -228856 -1 -1 0 1;
 ;
 #X text 573 74 Toggle Cfg;
 #X text 571 9 When track is selected:, f 12;
-#X text 573 105 Rec;
+#X text 573 138 Rec;
 #X text 554 328 SHIFT / REC if empty;
-#X text 572 137 Stop;
+#X text 572 170 Stop;
 #X text 531 80 90;
 #X text 531 296 97;
 #X text 477 336 79;
@@ -2247,4 +2249,144 @@ volume 19 7 1 13 -228856 -1 -1 0 1;
 0;
 #X obj 118 54 cnv 5 48 8 empty empty empty 20 12 0 14 -260481 -66577
 0;
+#X text 571 104 Clear;
 #X restore 678 52 pd current_apc_config;
+#N canvas 480 200 553 389 faders 1;
+#X obj 26 16 cnv 15 406 131 empty empty empty 20 12 0 14 -58255 -66577
+0;
+#X obj 34 22 vsl 22 102 0 127 0 0 empty fader48-r fader48 -8 112 0
+10 -133153 -1 -224695 0 1;
+#X obj 78 22 vsl 22 102 0 127 0 0 fader49-s fader49-r fader49 -8 112
+0 10 -133153 -1 -224695 0 1;
+#X obj 126 23 vsl 22 102 0 127 0 0 fader50-s fader50-r fader50 -8 112
+0 10 -133153 -1 -224695 0 1;
+#X obj 173 23 vsl 22 102 0 127 0 0 fader51-s fader51-r fader51 -8 112
+0 10 -133153 -1 -224695 0 1;
+#X obj 217 23 vsl 22 102 0 127 0 0 fader52-s fader52-r fader52 -8 112
+0 10 -133153 -1 -224695 0 1;
+#X obj 265 23 vsl 22 102 0 127 0 0 fader53-s fader53-r fader53 -8 112
+0 10 -133153 -1 -224695 0 1;
+#X obj 307 23 vsl 22 102 0 127 0 0 fader54-s fader54-r fader54 -8 112
+0 10 -133153 -1 -224695 0 1;
+#X obj 351 23 vsl 22 102 0 127 0 0 fader55-s fader55-r fader55 -8 112
+0 10 -133153 -1 -224695 0 1;
+#X obj 399 24 vsl 22 102 0 127 0 0 fader56-s fader56-r fader56 -8 112
+0 10 -133153 -1 -224695 0 1;
+#N canvas 679 194 450 325 midictl_in 0;
+#X obj 111 31 r midictl;
+#X obj 111 56 unpack f f;
+#X floatatom 111 81 5 0 0 0 value - -, f 5;
+#X floatatom 168 80 5 0 0 0 cc# - -, f 5;
+#X obj 112 134 s;
+#X msg 168 104 symbol fader\$1-r;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 1 3 0;
+#X connect 2 0 4 0;
+#X connect 3 0 5 0;
+#X connect 5 0 4 1;
+#X restore 353 326 pd midictl_in;
+#N canvas 261 282 872 354 OSC_out 1;
+#X obj 196 21 bng 15 250 50 0 empty empty Connect_NonMixer 17 7 0 10
+-262144 -1 -1;
+#X msg 329 127 connect localhost 17154;
+#X obj 197 244 mrpeach/udpsend;
+#X obj 159 20 tgl 33 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 196 39 bng 15 250 50 0 empty empty disconnect 17 7 0 10 -262144
+-1 -1;
+#X msg 204 66 disconnect;
+#X obj 39 187 mrpeach/packOSC;
+#X obj 32 46 inlet;
+#X floatatom 33 96 5 0 0 0 - - -, f 5;
+#X obj 33 120 / 127;
+#X obj 32 71 unpack f s;
+#X obj 39 142 pack f s;
+#X msg 39 164 /strip/\$2/Gain/Gain%20(dB) \$1;
+#X symbolatom 89 115 10 0 0 0 - - -, f 10;
+#X obj 85 94 tosymbol;
+#X obj 78 41 print;
+#X obj 368 11 loadbang;
+#X msg 328 78 connect_jack_pd_nonmixer.sh;
+#X obj 328 103 shell;
+#X connect 0 0 17 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 4 0 5 0;
+#X connect 5 0 2 0;
+#X connect 6 0 2 0;
+#X connect 7 0 10 0;
+#X connect 7 0 15 0;
+#X connect 8 0 9 0;
+#X connect 9 0 11 0;
+#X connect 10 0 8 0;
+#X connect 10 1 14 0;
+#X connect 11 0 12 0;
+#X connect 12 0 6 0;
+#X connect 13 0 11 1;
+#X connect 14 0 13 0;
+#X connect 16 0 0 0;
+#X connect 17 0 18 0;
+#X connect 18 1 1 0;
+#X coords 0 -1 1 1 158 39 2 156 17;
+#X restore 138 321 pd OSC_out;
+#X obj 461 243 loadbang;
+#X obj 27 178 pack f s;
+#X obj 73 221 pack f s;
+#X obj 124 182 pack f s;
+#X obj 157 224 pack f s;
+#X obj 208 179 pack f s;
+#X obj 257 222 pack f s;
+#X obj 297 178 pack f s;
+#X obj 345 222 pack f s;
+#X obj 382 181 pack f s;
+#X obj 461 268 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 27 158 symbol Drums;
+#X obj 55 200 symbol Percu;
+#X obj 103 158 symbol Bass;
+#X obj 152 204 symbol Pads;
+#X obj 186 159 symbol Chords;
+#X obj 246 202 symbol Lead;
+#X obj 276 156 symbol Other1;
+#X obj 325 202 symbol Other2;
+#X obj 365 158 symbol Master;
+#X connect 1 0 13 0;
+#X connect 2 0 14 0;
+#X connect 3 0 15 0;
+#X connect 4 0 16 0;
+#X connect 5 0 17 0;
+#X connect 6 0 18 0;
+#X connect 7 0 19 0;
+#X connect 8 0 20 0;
+#X connect 9 0 21 0;
+#X connect 12 0 22 0;
+#X connect 13 0 11 0;
+#X connect 14 0 11 0;
+#X connect 15 0 11 0;
+#X connect 16 0 11 0;
+#X connect 17 0 11 0;
+#X connect 18 0 11 0;
+#X connect 19 0 11 0;
+#X connect 20 0 11 0;
+#X connect 21 0 11 0;
+#X connect 22 0 23 0;
+#X connect 22 0 24 0;
+#X connect 22 0 25 0;
+#X connect 22 0 26 0;
+#X connect 22 0 27 0;
+#X connect 22 0 28 0;
+#X connect 22 0 29 0;
+#X connect 22 0 30 0;
+#X connect 22 0 31 0;
+#X connect 23 0 13 1;
+#X connect 24 0 14 1;
+#X connect 25 0 15 1;
+#X connect 26 0 16 1;
+#X connect 27 0 17 1;
+#X connect 28 0 18 1;
+#X connect 29 0 19 1;
+#X connect 30 0 20 1;
+#X connect 31 0 21 1;
+#X coords 0 -1 1 1 201 56 1 136 306;
+#X restore 852 10 pd faders;

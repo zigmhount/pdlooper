@@ -1,4 +1,4 @@
-#N canvas 915 132 450 350 10;
+#N canvas 554 289 450 375 10;
 #X obj 15 58 cnv 15 156 69 empty empty empty 20 12 0 14 -133153 -66577
 0;
 #X obj 19 13 table \$0-scene_array 64;
@@ -186,7 +186,7 @@ top left \; \$3 = label \; \$4 = receive \; \$5 = send;
 , f 4;
 #X obj 87 100 bng 15 250 50 0 \$0-sceneplay-s \$0-sceneplay-r Play
 16 5 0 10 -262144 -1 -1;
-#N canvas 482 152 432 264 from_act_to_scene 1;
+#N canvas 482 152 432 264 from_act_to_scene 0;
 #X obj 59 66 \$1;
 #X obj 59 45 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -205,135 +205,135 @@ to the scene's array and thumbnail., f 32;
 #X connect 5 0 1 0;
 #X restore 200 14 pd from_act_to_scene;
 #N canvas 182 107 450 323 \$0-scenecnv 0;
-#X obj 0 56 cnv 8 8 8 1154-0-s 1154-0-r empty 0 0 0 12 -66577 -262144
+#X obj 0 56 cnv 8 8 8 1399-0-s 1399-0-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 0 56 cnv 8 8 8 1154-0-s 1154-0-r empty 0 0 0 12 -66577 -262144
+#X obj 0 56 cnv 8 8 8 1399-0-s 1399-0-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 8 56 cnv 8 8 8 1154-1-s 1154-1-r empty 0 0 0 12 -66577 -262144
+#X obj 8 56 cnv 8 8 8 1399-1-s 1399-1-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 16 56 cnv 8 8 8 1154-2-s 1154-2-r empty 0 0 0 12 -66577 -262144
+#X obj 16 56 cnv 8 8 8 1399-2-s 1399-2-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 24 56 cnv 8 8 8 1154-3-s 1154-3-r empty 0 0 0 12 -66577 -262144
+#X obj 24 56 cnv 8 8 8 1399-3-s 1399-3-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 32 56 cnv 8 8 8 1154-4-s 1154-4-r empty 0 0 0 12 -66577 -262144
+#X obj 32 56 cnv 8 8 8 1399-4-s 1399-4-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 40 56 cnv 8 8 8 1154-5-s 1154-5-r empty 0 0 0 12 -66577 -262144
+#X obj 40 56 cnv 8 8 8 1399-5-s 1399-5-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 48 56 cnv 8 8 8 1154-6-s 1154-6-r empty 0 0 0 12 -66577 -262144
+#X obj 48 56 cnv 8 8 8 1399-6-s 1399-6-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 56 56 cnv 8 8 8 1154-7-s 1154-7-r empty 0 0 0 12 -66577 -262144
+#X obj 56 56 cnv 8 8 8 1399-7-s 1399-7-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 0 48 cnv 8 8 8 1154-8-s 1154-8-r empty 0 0 0 12 -66577 -262144
+#X obj 0 48 cnv 8 8 8 1399-8-s 1399-8-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 8 48 cnv 8 8 8 1154-9-s 1154-9-r empty 0 0 0 12 -66577 -262144
+#X obj 8 48 cnv 8 8 8 1399-9-s 1399-9-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 16 48 cnv 8 8 8 1154-10-s 1154-10-r empty 0 0 0 12 -66577 -262144
+#X obj 16 48 cnv 8 8 8 1399-10-s 1399-10-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 24 48 cnv 8 8 8 1154-11-s 1154-11-r empty 0 0 0 12 -66577 -262144
+#X obj 24 48 cnv 8 8 8 1399-11-s 1399-11-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 32 48 cnv 8 8 8 1154-12-s 1154-12-r empty 0 0 0 12 -66577 -262144
+#X obj 32 48 cnv 8 8 8 1399-12-s 1399-12-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 40 48 cnv 8 8 8 1154-13-s 1154-13-r empty 0 0 0 12 -66577 -262144
+#X obj 40 48 cnv 8 8 8 1399-13-s 1399-13-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 48 48 cnv 8 8 8 1154-14-s 1154-14-r empty 0 0 0 12 -66577 -262144
+#X obj 48 48 cnv 8 8 8 1399-14-s 1399-14-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 56 48 cnv 8 8 8 1154-15-s 1154-15-r empty 0 0 0 12 -66577 -262144
+#X obj 56 48 cnv 8 8 8 1399-15-s 1399-15-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 0 40 cnv 8 8 8 1154-16-s 1154-16-r empty 0 0 0 12 -66577 -262144
+#X obj 0 40 cnv 8 8 8 1399-16-s 1399-16-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 8 40 cnv 8 8 8 1154-17-s 1154-17-r empty 0 0 0 12 -66577 -262144
+#X obj 8 40 cnv 8 8 8 1399-17-s 1399-17-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 16 40 cnv 8 8 8 1154-18-s 1154-18-r empty 0 0 0 12 -66577 -262144
+#X obj 16 40 cnv 8 8 8 1399-18-s 1399-18-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 24 40 cnv 8 8 8 1154-19-s 1154-19-r empty 0 0 0 12 -66577 -262144
+#X obj 24 40 cnv 8 8 8 1399-19-s 1399-19-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 32 40 cnv 8 8 8 1154-20-s 1154-20-r empty 0 0 0 12 -66577 -262144
+#X obj 32 40 cnv 8 8 8 1399-20-s 1399-20-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 40 40 cnv 8 8 8 1154-21-s 1154-21-r empty 0 0 0 12 -66577 -262144
+#X obj 40 40 cnv 8 8 8 1399-21-s 1399-21-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 48 40 cnv 8 8 8 1154-22-s 1154-22-r empty 0 0 0 12 -66577 -262144
+#X obj 48 40 cnv 8 8 8 1399-22-s 1399-22-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 56 40 cnv 8 8 8 1154-23-s 1154-23-r empty 0 0 0 12 -66577 -262144
+#X obj 56 40 cnv 8 8 8 1399-23-s 1399-23-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 0 32 cnv 8 8 8 1154-24-s 1154-24-r empty 0 0 0 12 -66577 -262144
+#X obj 0 32 cnv 8 8 8 1399-24-s 1399-24-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 8 32 cnv 8 8 8 1154-25-s 1154-25-r empty 0 0 0 12 -66577 -262144
+#X obj 8 32 cnv 8 8 8 1399-25-s 1399-25-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 16 32 cnv 8 8 8 1154-26-s 1154-26-r empty 0 0 0 12 -66577 -262144
+#X obj 16 32 cnv 8 8 8 1399-26-s 1399-26-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 24 32 cnv 8 8 8 1154-27-s 1154-27-r empty 0 0 0 12 -66577 -262144
+#X obj 24 32 cnv 8 8 8 1399-27-s 1399-27-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 32 32 cnv 8 8 8 1154-28-s 1154-28-r empty 0 0 0 12 -66577 -262144
+#X obj 32 32 cnv 8 8 8 1399-28-s 1399-28-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 40 32 cnv 8 8 8 1154-29-s 1154-29-r empty 0 0 0 12 -66577 -262144
+#X obj 40 32 cnv 8 8 8 1399-29-s 1399-29-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 48 32 cnv 8 8 8 1154-30-s 1154-30-r empty 0 0 0 12 -66577 -262144
+#X obj 48 32 cnv 8 8 8 1399-30-s 1399-30-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 56 32 cnv 8 8 8 1154-31-s 1154-31-r empty 0 0 0 12 -66577 -262144
+#X obj 56 32 cnv 8 8 8 1399-31-s 1399-31-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 0 24 cnv 8 8 8 1154-32-s 1154-32-r empty 0 0 0 12 -66577 -262144
+#X obj 0 24 cnv 8 8 8 1399-32-s 1399-32-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 8 24 cnv 8 8 8 1154-33-s 1154-33-r empty 0 0 0 12 -66577 -262144
+#X obj 8 24 cnv 8 8 8 1399-33-s 1399-33-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 16 24 cnv 8 8 8 1154-34-s 1154-34-r empty 0 0 0 12 -66577 -262144
+#X obj 16 24 cnv 8 8 8 1399-34-s 1399-34-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 24 24 cnv 8 8 8 1154-35-s 1154-35-r empty 0 0 0 12 -66577 -262144
+#X obj 24 24 cnv 8 8 8 1399-35-s 1399-35-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 32 24 cnv 8 8 8 1154-36-s 1154-36-r empty 0 0 0 12 -66577 -262144
+#X obj 32 24 cnv 8 8 8 1399-36-s 1399-36-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 40 24 cnv 8 8 8 1154-37-s 1154-37-r empty 0 0 0 12 -66577 -262144
+#X obj 40 24 cnv 8 8 8 1399-37-s 1399-37-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 48 24 cnv 8 8 8 1154-38-s 1154-38-r empty 0 0 0 12 -66577 -262144
+#X obj 48 24 cnv 8 8 8 1399-38-s 1399-38-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 56 24 cnv 8 8 8 1154-39-s 1154-39-r empty 0 0 0 12 -66577 -262144
+#X obj 56 24 cnv 8 8 8 1399-39-s 1399-39-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 0 16 cnv 8 8 8 1154-40-s 1154-40-r empty 0 0 0 12 -66577 -262144
+#X obj 0 16 cnv 8 8 8 1399-40-s 1399-40-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 8 16 cnv 8 8 8 1154-41-s 1154-41-r empty 0 0 0 12 -66577 -262144
+#X obj 8 16 cnv 8 8 8 1399-41-s 1399-41-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 16 16 cnv 8 8 8 1154-42-s 1154-42-r empty 0 0 0 12 -66577 -262144
+#X obj 16 16 cnv 8 8 8 1399-42-s 1399-42-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 24 16 cnv 8 8 8 1154-43-s 1154-43-r empty 0 0 0 12 -66577 -262144
+#X obj 24 16 cnv 8 8 8 1399-43-s 1399-43-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 32 16 cnv 8 8 8 1154-44-s 1154-44-r empty 0 0 0 12 -66577 -262144
+#X obj 32 16 cnv 8 8 8 1399-44-s 1399-44-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 40 16 cnv 8 8 8 1154-45-s 1154-45-r empty 0 0 0 12 -66577 -262144
+#X obj 40 16 cnv 8 8 8 1399-45-s 1399-45-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 48 16 cnv 8 8 8 1154-46-s 1154-46-r empty 0 0 0 12 -66577 -262144
+#X obj 48 16 cnv 8 8 8 1399-46-s 1399-46-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 56 16 cnv 8 8 8 1154-47-s 1154-47-r empty 0 0 0 12 -66577 -262144
+#X obj 56 16 cnv 8 8 8 1399-47-s 1399-47-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 0 8 cnv 8 8 8 1154-48-s 1154-48-r empty 0 0 0 12 -66577 -262144
+#X obj 0 8 cnv 8 8 8 1399-48-s 1399-48-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 8 8 cnv 8 8 8 1154-49-s 1154-49-r empty 0 0 0 12 -66577 -262144
+#X obj 8 8 cnv 8 8 8 1399-49-s 1399-49-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 16 8 cnv 8 8 8 1154-50-s 1154-50-r empty 0 0 0 12 -66577 -262144
+#X obj 16 8 cnv 8 8 8 1399-50-s 1399-50-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 24 8 cnv 8 8 8 1154-51-s 1154-51-r empty 0 0 0 12 -66577 -262144
+#X obj 24 8 cnv 8 8 8 1399-51-s 1399-51-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 32 8 cnv 8 8 8 1154-52-s 1154-52-r empty 0 0 0 12 -66577 -262144
+#X obj 32 8 cnv 8 8 8 1399-52-s 1399-52-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 40 8 cnv 8 8 8 1154-53-s 1154-53-r empty 0 0 0 12 -66577 -262144
+#X obj 40 8 cnv 8 8 8 1399-53-s 1399-53-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 48 8 cnv 8 8 8 1154-54-s 1154-54-r empty 0 0 0 12 -66577 -262144
+#X obj 48 8 cnv 8 8 8 1399-54-s 1399-54-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 56 8 cnv 8 8 8 1154-55-s 1154-55-r empty 0 0 0 12 -66577 -262144
+#X obj 56 8 cnv 8 8 8 1399-55-s 1399-55-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 0 0 cnv 8 8 8 1154-56-s 1154-56-r empty 0 0 0 12 -66577 -262144
+#X obj 0 0 cnv 8 8 8 1399-56-s 1399-56-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 8 0 cnv 8 8 8 1154-57-s 1154-57-r empty 0 0 0 12 -66577 -262144
+#X obj 8 0 cnv 8 8 8 1399-57-s 1399-57-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 16 0 cnv 8 8 8 1154-58-s 1154-58-r empty 0 0 0 12 -66577 -262144
+#X obj 16 0 cnv 8 8 8 1399-58-s 1399-58-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 24 0 cnv 8 8 8 1154-59-s 1154-59-r empty 0 0 0 12 -66577 -262144
+#X obj 24 0 cnv 8 8 8 1399-59-s 1399-59-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 32 0 cnv 8 8 8 1154-60-s 1154-60-r empty 0 0 0 12 -66577 -262144
+#X obj 32 0 cnv 8 8 8 1399-60-s 1399-60-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 40 0 cnv 8 8 8 1154-61-s 1154-61-r empty 0 0 0 12 -66577 -262144
+#X obj 40 0 cnv 8 8 8 1399-61-s 1399-61-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 48 0 cnv 8 8 8 1154-62-s 1154-62-r empty 0 0 0 12 -66577 -262144
+#X obj 48 0 cnv 8 8 8 1399-62-s 1399-62-r empty 0 0 0 12 -66577 -262144
 0;
-#X obj 56 0 cnv 8 8 8 1154-63-s 1154-63-r empty 0 0 0 12 -66577 -262144
+#X obj 56 0 cnv 8 8 8 1399-63-s 1399-63-r empty 0 0 0 12 -66577 -262144
 0;
 #X coords 0 -1 1 1 64 64 2 0 0;
 #X restore 17 61 pd \$0-scenecnv;
@@ -377,12 +377,12 @@ to the scene's array and thumbnail., f 32;
 #X connect 16 0 7 0;
 #X connect 16 1 14 0;
 #X restore 250 148 pd playscene;
-#N canvas 22 120 450 562 midiin-scenes 1;
-#X obj 100 40 r midibutton;
+#N canvas 410 131 619 587 midiin-scenes 1;
+#X obj 100 10 r midibutton;
 #X obj 100 95 select;
 #X obj 209 35 loadbang;
 #X obj 209 60 \$1;
-#X floatatom 100 65 5 0 0 0 - - -, f 5;
+#X floatatom 100 35 5 0 0 0 - - -, f 5;
 #X obj 144 140 s \$0-sceneplay-r;
 #X obj 151 171 r beatnum;
 #X obj 151 226 f 0;
@@ -406,12 +406,26 @@ to the scene's array and thumbnail., f 32;
 #X obj 151 345 t b 0;
 #X text 104 440 use [until] to listen for the scenebang \; or maybe
 I have to create the scenebang here;
+#X obj 100 66 spigot;
+#X obj 324 13 r midishift;
+#X floatatom 324 63 5 0 0 0 - - -, f 5;
+#X obj 332 35 r midipedal;
+#X obj 324 87 == 0;
+#X text 327 109 Do not launch scene if a track is selected;
+#X obj 419 14 r global-selected-s;
+#X floatatom 419 39 5 0 0 0 - - -, f 5;
+#X obj 419 63 select 128;
+#X floatatom 143 45 5 0 0 0 - - -, f 5;
+#X obj 423 172 spigot;
+#X floatatom 455 134 5 0 0 0 - - -, f 5;
+#X obj 481 88 t 0 0 1;
+#X obj 419 88 t 1 1;
 #X connect 0 0 4 0;
 #X connect 1 0 18 0;
 #X connect 1 0 20 0;
 #X connect 2 0 3 0;
 #X connect 3 0 1 1;
-#X connect 4 0 1 0;
+#X connect 4 0 24 0;
 #X connect 6 0 17 0;
 #X connect 7 0 8 0;
 #X connect 7 0 9 0;
@@ -432,8 +446,25 @@ I have to create the scenebang here;
 #X connect 21 0 16 0;
 #X connect 22 0 13 0;
 #X connect 22 1 14 1;
+#X connect 24 0 1 0;
+#X connect 25 0 26 0;
+#X connect 26 0 28 0;
+#X connect 27 0 26 0;
+#X connect 28 0 34 0;
+#X connect 30 0 31 0;
+#X connect 31 0 32 0;
+#X connect 32 0 37 0;
+#X connect 32 1 36 0;
+#X connect 33 0 24 1;
+#X connect 34 0 33 0;
+#X connect 35 0 34 1;
+#X connect 36 0 35 0;
+#X connect 36 1 34 0;
+#X connect 36 2 35 0;
+#X connect 37 0 34 0;
+#X connect 37 1 35 0;
 #X restore 302 86 pd midiin-scenes;
-#N canvas 424 246 450 300 midiout-scenes 1;
+#N canvas 424 246 450 300 midiout-scenes 0;
 #X obj 78 23 r \$0-thumb-maxbars-s;
 #X floatatom 78 48 5 0 0 0 - - -, f 5;
 #X obj 78 72 select 0;
