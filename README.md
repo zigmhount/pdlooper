@@ -14,18 +14,25 @@ Like the tools I was inspired by (see below), I intend to use Pdlooper in a modu
 
 ## Current features
 The current minor version, while not ready for production, is considered "jammable" i.e. it can be used for basic jamming (but there are still some visual and audio glitches).
-- Record audio tracks in stereo
-- Loop audio tracks
-- "Follow" and "Random Follow" modes to play a few given tracks in a sequence or randomly after one another
 - Set tempo by tapping
-- Controllable via MIDI controller (I use an AKAI APC Mini with 8\*8 buttons) including outgoing MIDI message to light up the controller's LEDs
-- Save tracks as wav files
+- Audio input: selection between [adc~] (microphone) or an embedded fluidsynth input with [fluid~]
+- Audio tracks
+  - Record audio tracks in stereo
+  - Loop audio tracks
+- Control tracks
+  - groups/scenes of tracks to start at once
+  - "Follow" and "Random Follow" modes to play a few given tracks in a sequence or randomly after one another
+- ~Save tracks as wav files~
 - configuration panel for every track:
   - select the output channels
   - change the name
   - adjust volume and panning
   - change the number of bars
   - clear the track
+- Midi control
+  - Controllable via a MIDI control surface (I use an AKAI APC Mini with 8\*8 buttons) including outgoing MIDI message to light up the controller's LEDs, including a pedal (CC#64)
+  - include the controllers' knobs and faders in pdlooper's UI to send the signals to external mixers/plugins (rather than connecting the controllers to each mixer/effect host)
+  - use some controls directly for the tracks' configuration inside pdlooper
 
 That's what it currently looks like:
 ![](screenshots/latest.png)
@@ -33,7 +40,7 @@ That's what it currently looks like:
 Follow and Random Follow:
 ![](screenshots/track_follow.png) ![](screenshots/randomfollow.png)
 
-Matrix thumbnail of all currently playing tracks (soon to be sent to mute-groups and for arranging):
+Matrix thumbnail of all currently playing tracks, can be sent to scenes for arranging (and used to display the tracks in each output):
 ![](screenshots/matrix_thumb.png)
 
 ## Current issues
@@ -43,14 +50,10 @@ Matrix thumbnail of all currently playing tracks (soon to be sent to mute-groups
 - File management
   - Save session file
   - Load session file and wav files as loops
-- Control tracks
-  - groups/scenes of tracks to be started at once
-  - automatic set of tracks following each other (incl random)
 - More looping
   - tracks for midi controls
   - tracks for midi sequences?
 - Fancy stuff
-  - include knobs and faders in the UI to make it a single interface between my physical controllers and mixers/plugins (rather than connecting the controllers to each mixer/effect host)
   - include lv2 host with [lv2plugin~]?
   - timeline editor to arrange loops (*à la* seq24/seq64)?
   - playlist?
