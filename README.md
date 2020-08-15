@@ -1,19 +1,32 @@
-# pdlooper
+# Intro
 
-Pdlooper is a looping software, typically used in live setups (but not only), with audio and MIDI support. It is written in [Pure Data](https://puredata.info/) - [Purr Data](https://github.com/agraef/purr-data) actually, though I'm trying to limit the number of externals used.   
+Pdlooper is a looping software, typically used in live setups (but not only), with audio and MIDI support. It is written in [Pure Data](https://puredata.info/) - actually [Purr Data](https://github.com/agraef/purr-data), though I'm trying (not so successfully) to limit the number of externals used.   
+
 I've been trying out open-source looping software for a while and could not find exactly what I was looking for. I have pretty much no skills in "proper" programming languages so I didn't really have the possibility (unfortunately) to improve any of the tools I've tried, so I decided to build my own from scratch.  
 Not sure whether this will actually be usable (especially in terms of real-time performance) but it's at least fun to learn!
 
+This has been developed and tested only on Debian 9.0 and OpenSuse 15.1-15.2 so far.
+
+# Quick start
+The current minor version, while not ready for production, is considered "jammable" i.e. it can be used for basic jamming (but there are still some visual and audio glitches).
+
+Follow the instructions [here](https://github.com/agraef/purr-data) to install Purr-Data, copy this project's files, start jack, and run:
+
+`purr-data -rt -nogui -jack -unique -inchannels "2" -outchannels "16" dsp_main.pd`
+
+There is a script to launch Non-Mixer and auto-connect Pdlooper to it, but the Non-Mixer settings are not here yet.
+
+# Description
 ## Usage concept
 Like the tools I was inspired by (see below), I intend to use Pdlooper in a modular setup, involving for example:
 - physical MIDI controllers (control surface such as Akai APCs, Novation Launchpads, Ableton Push), including some knobs and faders
 - MIDI keyboard(s)
-- Software synthesizers (Fluidsynth, ZynAddSubFx/Zyn-Fusion, Helm, Calf suite's synths...)
-- Mixer (Non-Mixer, jack_mixer, Ardour)
+- Software synthesizers (Fluidsynth, ZynAddSubFx/Zyn-Fusion, Helm, Calf suite's synths...) 
+- a microphone and some real instruments
+- Mixer (Non-Mixer, jack_mixer, or even Ardour)
 - Lv2 plugin host for synths and effects (Carla, Ardour, Non-Mixer)
 
 ## Current features
-The current minor version, while not ready for production, is considered "jammable" i.e. it can be used for basic jamming (but there are still some visual and audio glitches).
 - Set tempo by tapping
 - Audio input: selection between [adc~] (microphone) or an embedded fluidsynth input with [fluid~]
 - Audio tracks
@@ -34,7 +47,7 @@ The current minor version, while not ready for production, is considered "jammab
   - include the controllers' knobs and faders in pdlooper's UI to send the signals to external mixers/plugins (rather than connecting the controllers to each mixer/effect host)
   - use some controls directly for the tracks' configuration inside pdlooper
 
-That's what it currently looks like:
+That's what it currently looks like. It's a bit of a mess, as I added widgets to quicky test and jam, but I plan to improve that soon!
 ![](screenshots/latest.png)
 
 Follow and Random Follow:
@@ -45,6 +58,8 @@ Matrix thumbnail of all currently playing tracks, can be sent to scenes for arra
 
 ## Current issues
 - Can't easily load saved files
+- Still some audio glitches
+- Quite a few unexpected behaviours of the UI
 
 ## Planned features
 - File management
@@ -55,10 +70,10 @@ Matrix thumbnail of all currently playing tracks, can be sent to scenes for arra
   - tracks for midi sequences?
 - Fancy stuff
   - include lv2 host with [lv2plugin~]?
-  - timeline editor to arrange loops (*à la* seq24/seq64)?
+  - arrange the tracks and scenes to start sequentially, while keeping the freedom to start/stop other tracks as wished
   - playlist?
   - support NSM protocol for use with Ray-Session?
 
 
 ## Inspiration
-This looper is heavily inspired from Seq24/[Seq64](https://github.com/ahlstromcj/sequencer64) and [Luppp](http://openavproductions.com/luppp/)/[Loopp](https://git.netzspielplatz.de/soundship/loopp), and takes some ideas from [FreeWheeling](https://github.com/free-wheeling/freewheeling) and [SuperBoucle](https://github.com/Vampouille/superboucle), and probably others I don't remember (and some other well-known commercial software).
+This looper is heavily inspired by Seq24/[Seq64](https://github.com/ahlstromcj/sequencer64) and [Luppp](http://openavproductions.com/luppp/)/[Loopp](https://git.netzspielplatz.de/soundship/loopp), and takes some ideas from [FreeWheeling](https://github.com/free-wheeling/freewheeling) and [SuperBoucle](https://github.com/Vampouille/superboucle), and probably others I don't remember (and some other well-known commercial software).
