@@ -14,7 +14,9 @@ Follow the instructions [here](https://github.com/agraef/purr-data) to install P
 
 `purr-data -rt -nogui -jack -unique -inchannels "2" -outchannels "16" dsp_main.pd`
 
-There is a script to launch Non-Mixer and auto-connect Pdlooper to it, but the Non-Mixer settings are not here yet.
+This is starting the DSP backend program, which will start a second instance of Purr-data with `-nrt -jack -unique -nosound ui_main.pd` to start the GUI in a separate thread, and the 2 instances will communicate *via* OSC messages.
+
+There is a script to launch Non-Mixer and auto-connect Pdlooper to it (and send it OSC messages), but the Non-Mixer settings are not here yet.
 
 # Description
 ## Usage concept
