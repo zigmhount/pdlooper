@@ -1,12 +1,12 @@
-#N canvas 53 32 711 710 10;
-#X obj 203 330 cnv 15 110 58 empty empty empty 20 12 0 14 -120670 -66577
+#N canvas 54 32 711 710 10;
+#X obj 203 330 cnv 15 110 58 empty empty empty 20 12 0 14 #747474 #404040
 0;
 #N canvas 842 99 450 438 \$0-buttonframe 0;
-#X obj 79 52 bng 56 250 50 0 1162-bng-s 0-bng-r ADD 5 26 0 10 -128992
--1 -1;
-#X obj 130 52 bng 56 250 50 0 1162-bng-s 1162-bng-r ADD 5 26 0 10 -128992
--1 -1;
-#X obj 78 51 cnv 15 110 58 empty empty Empty 42 25 0 10 -128992 -66577
+#X obj 79 52 bng 56 250 50 0 1171-bng-s 0-bng-r ADD 5 26 0 10 #7c7c7c
+#000000 #000000;
+#X obj 130 52 bng 56 250 50 0 1171-bng-s 1171-bng-r ADD 5 26 0 10 #7c7c7c
+#000000 #000000;
+#X obj 78 51 cnv 15 110 58 empty empty Empty 42 25 0 10 #7c7c7c #404040
 0;
 #X coords 0 -1 1 1 110 58 1 78 51;
 #X restore 203 330 pd \$0-buttonframe;
@@ -15,13 +15,13 @@
 #X obj 100 -6 loadbang;
 #X msg 9 207 1;
 #X msg 132 471 1;
-#X obj 191 -12 bng 15 250 50 1 empty 0-initbang-emptybutton-r 0-initbang-emptybutton-r
-17 7 0 10 -262144 -1 -1;
+#X obj 191 -12 bng 15 250 50 1 empty initbang-emptybutton-r initbang-emptybutton-r
+17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 193 9 t b b;
 #X floatatom 111 78 5 0 0 0 - - -, f 5;
 #X obj 43 674 s pd-\$0-buttonframe;
-#X obj 214 426 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 214 426 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 125 410 r \$0-bng-s;
 #X msg 119 207 clear;
 #X obj 192 34 \$1;
@@ -52,8 +52,8 @@
 #X floatatom 89 40 5 0 0 0 - - -, f 5;
 #X obj 89 64 t f f, f 12;
 #X msg 89 92 \$1-clear;
-#X obj 88 226 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 88 226 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X obj 114 291 delay 51;
 #X floatatom 166 327 5 0 0 0 - - -, f 5;
 #X msg 166 356 /track/\$1/clear;

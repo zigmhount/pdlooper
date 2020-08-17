@@ -1,20 +1,20 @@
 #N canvas 148 89 1295 718 10;
-#X obj 127 74 cnv 15 1030 662 empty empty empty 0 0 0 4 -66577 -262144
+#X obj 127 74 cnv 15 1030 662 empty empty empty 0 0 0 4 #404040 #fcfcfc
 0;
 #N canvas 600 57 588 507 OSCconnections 0;
 #X obj 32 79 loadbang;
 #X obj 32 274 mrpeach/udpsend;
-#X obj 32 299 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
-1;
+#X obj 32 299 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 1 1;
 #X msg 32 104 connect localhost 8080;
 #X obj 133 213 mrpeach/packOSC;
 #X msg 49 132 disconnect;
 #X obj 38 23 bng 15 250 50 0 empty empty connect_to_8080 17 7 0 10
--262144 -1 -1;
-#X obj 38 42 bng 15 250 50 0 empty empty disconnect 17 7 0 10 -262144
--1 -1;
-#X obj 155 6 tgl 17 0 empty empty Connected 32 6 0 10 -262144 -1 -1
-1 1;
+#fcfcfc #000000 #000000;
+#X obj 38 42 bng 15 250 50 0 empty empty disconnect 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 155 6 tgl 17 0 empty empty Connected 32 6 0 10 #fcfcfc #000000
+#000000 1 1;
 #X obj 287 95 list split 1;
 #X msg 287 123 send /zig/dsp\$1;
 #X obj 286 150 list append;
@@ -29,10 +29,10 @@
 #X obj 236 315 routeOSC /zig;
 #X obj 236 339 routeOSC /ui;
 #X obj 144 362 spigot;
-#X obj 155 28 tgl 15 0 empty empty printOSC\ in 17 7 0 10 -262144 -1
--1 0 1;
-#X obj 155 45 tgl 15 0 empty empty printOSC\ out 17 7 0 10 -262144
--1 -1 0 1;
+#X obj 155 28 tgl 15 0 empty empty printOSC\ in 17 7 0 10 #fcfcfc #000000
+#000000 1 1;
+#X obj 155 45 tgl 15 0 empty empty printOSC\ out 17 7 0 10 #fcfcfc
+#000000 #000000 1 1;
 #X obj 18 362 spigot;
 #X obj 143 386 print OSCin_fromdsp;
 #X obj 17 386 print OSCout_todsp;
@@ -101,14 +101,15 @@ orange blink;
 #X obj 143 193 outlet;
 #X obj 101 145 t f f;
 #X floatatom 150 173 5 0 0 0 - - -, f 5;
-#X obj 65 -21 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 65 -21 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X obj 73 214 select 1;
-#X obj 203 247 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 203 247 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X msg 175 82 0;
 #X msg 207 43 4;
-#X obj 65 -2 bng 15 250 50 0 empty empty S 4 6 0 10 -262144 -1 -1;
+#X obj 65 -2 bng 15 250 50 0 empty empty S 4 6 0 10 #fcfcfc #000000
+#000000;
 #X obj 348 197 outlet;
 #X obj 84 183 ==;
 #X obj 101 50 t b b 0;
@@ -163,8 +164,8 @@ orange blink;
 #X text 147 68 max;
 #X obj 214 107 + 1;
 #X text -31 435 fill from the bottom left;
-#X obj 3 207 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 3 207 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #N canvas 444 75 697 669 button_cnv 0;
 #X text 363 -6 nrow;
 #X text 206 14 ncol;
@@ -196,8 +197,8 @@ orange blink;
 #X text 432 273 yi;
 #X obj 350 233 +;
 #X floatatom 350 301 5 0 0 0 - - -, f 5;
-#X obj 37 305 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 37 305 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X obj 178 253 +;
 #X text 138 276 width;
 #X text 308 300 height;
@@ -228,8 +229,8 @@ orange blink;
 \; vert space \; X init \; Y init \; ncol \; nrow;
 #N canvas 3 24 974 743 colorcnvs 0;
 #X obj 306 162 pack f f f f f f, f 23;
-#X obj 156 115 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 156 115 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X msg 457 182 obj \$2 \$3 cnv 10 \$4 \$5 empty empty drums 11 6 0
 10 -237569 -66577;
 #X floatatom 266 64 5 0 0 0 - - -, f 5;
@@ -242,56 +243,56 @@ orange blink;
 #X obj 149 41 unpack f f f f f, f 20;
 #X obj 236 117 + 2;
 #X obj 304 218 pack f f f f f f, f 23;
-#X obj 147 193 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 147 193 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 176 171 +;
 #X floatatom 203 171 3 0 0 0 - - -, f 3;
 #X floatatom 232 171 5 0 0 0 - - -, f 5;
 #X floatatom 266 173 5 0 0 0 - - -, f 5;
 #X obj 176 192 + 2;
 #X obj 304 280 pack f f f f f f, f 23;
-#X obj 147 255 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 147 255 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 176 233 +;
 #X floatatom 203 233 3 0 0 0 - - -, f 3;
 #X floatatom 232 233 5 0 0 0 - - -, f 5;
 #X floatatom 266 235 5 0 0 0 - - -, f 5;
 #X obj 176 254 + 2;
 #X obj 301 343 pack f f f f f f, f 23;
-#X obj 144 318 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 144 318 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 173 296 +;
 #X floatatom 200 296 3 0 0 0 - - -, f 3;
 #X floatatom 229 296 5 0 0 0 - - -, f 5;
 #X floatatom 263 298 5 0 0 0 - - -, f 5;
 #X obj 173 317 + 2;
 #X obj 301 405 pack f f f f f f, f 23;
-#X obj 144 380 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 144 380 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 173 358 +;
 #X floatatom 200 358 3 0 0 0 - - -, f 3;
 #X floatatom 229 358 5 0 0 0 - - -, f 5;
 #X floatatom 263 360 5 0 0 0 - - -, f 5;
 #X obj 173 379 + 2;
 #X obj 301 469 pack f f f f f f, f 23;
-#X obj 144 444 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 144 444 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 173 422 +;
 #X floatatom 200 422 3 0 0 0 - - -, f 3;
 #X floatatom 229 422 5 0 0 0 - - -, f 5;
 #X floatatom 263 424 5 0 0 0 - - -, f 5;
 #X obj 173 443 + 2;
 #X obj 302 538 pack f f f f f f, f 23;
-#X obj 145 513 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 145 513 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 174 491 +;
 #X floatatom 201 491 3 0 0 0 - - -, f 3;
 #X floatatom 230 491 5 0 0 0 - - -, f 5;
 #X floatatom 264 493 5 0 0 0 - - -, f 5;
 #X obj 174 512 + 2;
 #X obj 300 611 pack f f f f f f, f 23;
-#X obj 143 586 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 143 586 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 172 564 +;
 #X floatatom 199 564 3 0 0 0 - - -, f 3;
 #X floatatom 228 564 5 0 0 0 - - -, f 5;
@@ -440,8 +441,8 @@ orange blink;
 #X restore 39 567 pd colorcnvs;
 #X obj 66 538 pack f f f f f f;
 #X obj 39 477 t b b;
-#X obj 66 503 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 66 503 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X text 115 303 + side buttons -->;
 #X obj 226 304 +;
 #X obj 227 340 +;
@@ -576,8 +577,8 @@ height, f 17;
 #X floatatom 294 434 5 0 0 0 - - -, f 5;
 #X obj 254 477 pack f f f;
 #X obj 171 571 print;
-#X obj 109 573 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 109 573 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 230 540 t b a;
 #X text 115 612 renumber the array etc. and rename the initbang in
 the abstraction, f 29;
@@ -670,10 +671,10 @@ the abstraction, f 29;
 #X connect 49 0 21 0;
 #X restore 126 436 pd buttons_create;
 #X text 18 206 create 8x8;
-#X obj 81 207 bng 16 250 50 0 empty empty S 4 6 0 10 -262144 -1 -1
-;
-#X obj 2 228 bng 15 250 50 0 empty empty Create 17 7 0 10 -262144 -1
--1;
+#X obj 81 207 bng 16 250 50 0 empty empty S 4 6 0 10 #fcfcfc #000000
+#000000;
+#X obj 2 228 bng 15 250 50 0 empty empty Create 17 7 0 10 #fcfcfc #000000
+#000000;
 #X obj 181 306 t a a a;
 #N canvas 771 24 568 743 sidebuttons_create 0;
 #X obj 231 30 inlet;
@@ -687,16 +688,16 @@ the abstraction, f 29;
 #X text 470 20 button width \; button height \; horizontal space
 \; vert space \; X init \; Y init \; ncol \; nrow;
 #X obj 85 26 inlet;
-#X obj 14 13 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 14 13 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #N canvas 1 93 618 505 sidebuttonscount 0;
 #X obj 143 13 inlet;
 #X text 183 13 starting num;
 #X obj 204 119 f 0;
 #X obj 232 119 + 1;
 #X floatatom 208 66 5 0 0 0 - - -, f 5;
-#X obj 133 69 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 133 69 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X msg 351 266 stop;
 #X floatatom 179 196 5 0 0 0 - - -, f 5;
 #X obj 174 298 +;
@@ -706,8 +707,8 @@ the abstraction, f 29;
 #X obj 216 221 select 1;
 #X floatatom 216 249 5 0 0 0 - - -, f 5;
 #X obj 315 241 select 1;
-#X obj 315 266 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 315 266 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X floatatom 331 310 5 0 0 0 - - -, f 5;
 #X obj 177 351 +;
 #X floatatom 177 376 5 0 0 0 - - -, f 5;
@@ -737,16 +738,16 @@ the abstraction, f 29;
 #X text 491 399 col num;
 #X obj 292 365 f 0;
 #X obj 320 365 + 1;
-#X obj 291 344 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 291 344 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X floatatom 291 386 5 0 0 0 - - -, f 5;
 #X floatatom 438 367 5 0 0 0 - - -, f 5;
 #X obj 446 306 moses;
 #X obj 472 283 + 2;
 #X floatatom 239 359 5 0 0 0 - - -, f 5;
 #X obj 240 337 + 1;
-#X obj 254 242 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 254 242 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 218 200 >;
 #X msg 104 128 0;
 #X obj 278 441 pack f f f;
@@ -843,8 +844,8 @@ the abstraction, f 29;
 #X floatatom 112 313 5 0 0 0 - - -, f 5;
 #X text 99 313 Y;
 #X obj 60 358 pack f f f;
-#X obj 59 441 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 59 441 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X obj 63 408 t b a;
 #X obj 59 464 s sidebutton-initbang-r;
 #X msg 298 29 116 58 4 4 269 33 8 8;
@@ -1012,8 +1013,8 @@ sends \, but whatever \, it was faster to do it manually just now.
 #X obj 140 482 s pd-tracks-matrix;
 #X obj 150 255 t b b b b 8 63 b;
 #X msg 263 456 clear;
-#X obj 82 227 bng 15 250 50 0 empty empty Clear 17 7 0 10 -262144 -1
--1;
+#X obj 82 227 bng 15 250 50 0 empty empty Clear 17 7 0 10 #fcfcfc #000000
+#000000;
 #X connect 0 0 7 0;
 #X connect 0 1 15 0;
 #X connect 2 0 4 0;
@@ -1084,8 +1085,8 @@ sends \, but whatever \, it was faster to do it manually just now.
 #X text 204 245 0 or 8 to add to midi note;
 #X text 243 152 if velocity is 0 or 127;
 #X floatatom 190 206 5 0 0 0 - - -, f 5;
-#X obj 161 89 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 161 89 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X obj 161 70 t b 1;
 #X obj 161 129 spigot;
 #X obj 161 151 select 0 127;
@@ -1253,8 +1254,8 @@ control \, [value cc#(;
 #X connect 6 0 1 1;
 #X restore 33 266 pd midi_out;
 #X obj 207 220 s \$0-globalplaypause-r;
-#X obj 181 176 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 181 176 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 207 151 moses 98;
 #N canvas 518 260 450 325 rightcol_noshift 0;
 #X obj 98 13 inlet;
@@ -1288,18 +1289,18 @@ control \, [value cc#(;
 #X text 148 -123 128 = no track selected;
 #X obj 302 -134 loadbang;
 #X msg 302 -109 128;
-#X obj 25 -97 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 25 -97 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X floatatom 87 10 5 0 0 0 - - -, f 5;
-#X obj 255 26 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X obj 237 4 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 255 26 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 237 4 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X obj 50 -99 t 1 f b f b f, f 16;
 #X obj 87 -42 pack f f;
 #X msg 87 -17 set \$2;
-#X obj 150 -70 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 150 -70 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X msg 87 64 0;
 #X msg 114 59 symbol \$1-selected-s;
 #X obj 87 -70 delay 100;
@@ -1326,8 +1327,8 @@ control \, [value cc#(;
 #X connect 16 0 11 0;
 #X connect 17 0 0 0;
 #X restore 361 55 pd select_track;
-#X obj 130 213 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 130 213 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 178 256 s;
 #X msg 198 231 symbol \$1-midibutton;
 #X obj 159 209 t f b f;
@@ -1335,8 +1336,8 @@ control \, [value cc#(;
 #X obj 124 24 inlet;
 #X text 163 25 button number;
 #X obj 111 335 spigot;
-#X obj 88 360 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 88 360 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X obj 60 21 loadbang;
 #X obj 60 82 t 1 0;
 #X obj 188 301 t 0 1 f 0;
@@ -1401,20 +1402,20 @@ to 128?, f 26;
 #X connect 1 0 0 0;
 #X restore 78 -597 pd sidebuttons_config;
 #N canvas 0 0 450 300 latency_test 0;
-#X obj 103 150 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 139 150 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 103 150 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 139 150 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 93 93 r beat_num;
 #X obj 103 182 realtime;
 #X floatatom 103 207 5 0 0 0 - - -, f 5;
 #X obj 89 113 select 0;
 #X obj 160 111 r 56-recstart;
-#X obj 160 136 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 160 136 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 140 43 r 56-playstart;
-#X obj 140 68 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 140 68 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X connect 0 0 3 0;
 #X connect 1 0 3 1;
 #X connect 2 0 5 0;
@@ -1436,13 +1437,14 @@ to 128?, f 26;
 #X obj 143 193 outlet;
 #X obj 101 145 t f f;
 #X floatatom 150 173 5 0 0 0 - - -, f 5;
-#X obj 65 -21 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 65 -21 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X obj 73 214 select 1;
-#X obj 203 247 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 203 247 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X msg 175 82 0;
-#X obj 65 -2 bng 15 250 50 0 empty empty S 4 6 0 10 -262144 -1 -1;
+#X obj 65 -2 bng 15 250 50 0 empty empty S 4 6 0 10 #fcfcfc #000000
+#000000;
 #X obj 348 197 outlet;
 #X obj 84 183 ==;
 #X obj 101 50 t b b 0;
@@ -1484,8 +1486,8 @@ to 128?, f 26;
 #X msg 77 234 symbol \$1-button-initbang-r;
 #X msg 110 212 symbol \$1-initbang-emptybutton-r;
 #X obj 59 188 t b f b f;
-#X obj 243 95 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 243 95 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X obj 243 118 s sidebutton-initbang-r;
 #X connect 0 0 1 0;
 #X connect 0 0 10 0;
@@ -1500,23 +1502,70 @@ to 128?, f 26;
 #X connect 10 0 11 0;
 #X restore 305 -646 pd initialize;
 #X obj 305 -675 loadbang;
+#N canvas 358 182 450 350 load 0;
+#X obj 61 56 inlet;
+#X obj 199 45 r fromdsp;
+#X obj 199 70 routeOSC /create;
+#X floatatom 199 95 5 0 0 0 - - -, f 5;
+#X obj 199 119 t b f;
+#X obj 199 174 s;
+#X msg 222 145 symbol \$1-bng-r;
+#X obj 61 81 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 61 104 openpanel;
+#X msg 61 129 /load \$1;
+#X obj 61 154 s todsp;
+#X connect 0 0 7 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 4 1 6 0;
+#X connect 6 0 5 1;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X restore 82 -546 pd load;
+#X obj 82 -571 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 155 -565 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#N canvas 39 401 450 300 save 1;
+#X obj 151 65 inlet;
+#X obj 151 90 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 151 113 openpanel;
+#X msg 151 138 /save \$1;
+#X obj 151 163 s todsp;
+#X obj 267 68 r fromdsp;
+#X obj 267 93 routeOSC /saved;
+#X obj 267 118 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 6 0 7 0;
+#X restore 155 -542 pd save;
+#X connect 10 0 9 0;
+#X connect 11 0 12 0;
 #X restore 256 12 pd options;
 #N canvas 1 30 1210 860 tracks-matrix 0;
-#X obj 19 14 cnv 10 112 512 empty empty drums 11 6 0 10 -237569 -66577
+#X obj 19 14 cnv 10 112 512 empty empty drums 11 6 0 10 #e80000 #404040
 0;
-#X obj 133 14 cnv 10 112 512 empty empty percu 11 6 0 10 -260097 -66577
+#X obj 133 14 cnv 10 112 512 empty empty percu 11 6 0 10 #fc8000 #404040
 0;
-#X obj 247 14 cnv 10 112 512 empty empty bass 11 6 0 10 -241153 -66577
+#X obj 247 14 cnv 10 112 512 empty empty bass 11 6 0 10 #e8e000 #404040
 0;
-#X obj 361 14 cnv 10 112 512 empty empty pads 11 6 0 10 -3650 -66577
+#X obj 361 14 cnv 10 112 512 empty empty pads 11 6 0 10 #00e404 #404040
 0;
-#X obj 475 14 cnv 10 112 512 empty empty chords 11 6 0 10 -2043 -66577
+#X obj 475 14 cnv 10 112 512 empty empty chords 11 6 0 10 #007ce8 #404040
 0;
-#X obj 589 14 cnv 10 112 512 empty empty lead 11 6 0 10 -3761 -66577
+#X obj 589 14 cnv 10 112 512 empty empty lead 11 6 0 10 #00e8c0 #404040
 0;
-#X obj 703 14 cnv 10 112 512 empty empty other1 11 6 0 10 -237626 -66577
+#X obj 703 14 cnv 10 112 512 empty empty other1 11 6 0 10 #e800e4 #404040
 0;
-#X obj 817 14 cnv 10 112 512 empty empty other2 11 6 0 10 -188475 -66577
+#X obj 817 14 cnv 10 112 512 empty empty other2 11 6 0 10 #b800e8 #404040
 0;
 #X obj 20 467 empty_button 0;
 #X obj 20 467 empty_button 0;
@@ -1586,7 +1635,7 @@ to 128?, f 26;
 #X coords 0 -1 1 1 1140 664 2 -94 -72;
 #X restore 24 73 pd tracks-matrix;
 #N canvas 885 169 618 562 tempo 0;
-#X obj 90 -432 cnv 15 182 48 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 90 -432 cnv 15 182 48 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
 #X text 33 67 outputs 0 for the first beat;
 #X text 113 -37 tempo in ms;
@@ -1605,10 +1654,10 @@ to 128?, f 26;
 #X obj 23 -155 routeOSC /beatnum /tempo_ms /tempo_bpm /beatsperbar
 ;
 #X obj 98 -104 t f f;
-#X obj 174 -104 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 23 -106 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 174 -104 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 23 -106 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X floatatom 421 42 5 0 0 0 - - -, f 5;
 #X obj 421 66 t f f;
 #X obj 244 -106 t f f;
@@ -1617,21 +1666,21 @@ to 128?, f 26;
 #X floatatom 190 -105 5 0 0 0 - - -, f 5;
 #X obj 421 -58 metro 500;
 #X floatatom 231 -406 4 0 0 0 - - -, f 4;
-#X obj 138 -411 hradio 20 0 0 4 empty empty empty 0 -8 0 10 -262144
--1 -1 1;
+#X obj 138 -411 hradio 20 0 0 4 empty empty empty 0 -8 0 10 #fcfcfc
+#000000 #000000 2;
 #X obj 107 -411 tgl 20 0 \$0-globalplaypause-s \$0-globalplaypause-r
-play/pause -14 -12 0 10 -154176 -1 -1 0 1;
-#X obj 166 -429 tgl 14 0 empty empty metro 17 7 0 10 -262144 -1 -1
-0 1;
-#X obj 230 -428 bng 15 250 50 0 empty empty tap 17 7 0 10 -262144 -1
--1;
+play/pause -14 -12 0 10 #94a0fc #000000 #000000 0 1;
+#X obj 166 -429 tgl 14 0 empty empty metro 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 230 -428 bng 15 250 50 0 empty empty tap 17 7 0 10 #fcfcfc #000000
+#000000;
 #X obj 459 -123 t b 0 0;
 #X floatatom 421 -166 5 0 0 0 - - -, f 5;
-#X obj 98 -55 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 98 -55 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X msg 451 -359 /metro/tempo_bpm \$1;
-#X obj 421 -33 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 421 -33 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 401 -435 loadbang;
 #X msg 401 -391 120;
 #X msg 302 -333 /getmetro;
@@ -1642,12 +1691,12 @@ play/pause -14 -12 0 10 -154176 -1 -1 0 1;
 #X obj 263 -199 s metrostop;
 #X obj 263 -244 select 0 1;
 #X obj 23 36 s beatnum;
-#X obj 303 -217 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 303 -217 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 246 -4 nbx 5 14 -1e+37 1e+37 0 0 beatsperbar beatsperbar-r empty
-0 -8 0 10 -262144 -1 -1 4 256 0;
+0 -8 0 10 #fcfcfc #000000 #000000 4 256 0;
 #X obj 99 -16 nbx 5 14 -1e+37 1e+37 0 0 tempo_ms tempo_ms-r empty 0
--8 0 10 -262144 -1 -1 909.091 256 0;
+-8 0 10 #fcfcfc #000000 #000000 652.174 256 0;
 #X floatatom 244 -81 5 0 0 0 - - -, f 5;
 #X connect 3 0 18 0;
 #X connect 3 0 45 0;
@@ -1709,8 +1758,8 @@ play/pause -14 -12 0 10 -154176 -1 -1 0 1;
 #X coords 0 -1 1 1 184 50 2 89 -433;
 #X restore 155 87 pd tempo;
 #N canvas 151 79 450 325 midifluid_GUI 0;
-#X obj 206 -47 cnv 15 154 61 empty empty Fluidsynth 37 6 0 10 -104026
--66577 0;
+#X obj 206 -47 cnv 15 154 61 empty empty Fluidsynth 37 6 0 10 #646464
+#404040 0;
 #X msg 239 -119 load /home/zig/soundfounts/FluidR3_GM.sf2;
 #X msg 239 -94 load /home/zig/soundfounts/Timbres Of Heaven GM_GS_XG_SFX
 V 3.4 Final.sf2;
@@ -1720,10 +1769,10 @@ V 3.4 Final.sf2;
 #X obj 253 61 pack f f;
 #X msg 255 85 prog \$1 \$2;
 #X msg 324 20 bank 1 \$1;
-#X obj 253 38 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X obj 252 -32 bng 15 250 50 0 empty empty Load -28 5 0 10 -262144
--1 -1;
+#X obj 253 38 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 252 -32 bng 15 250 50 0 empty empty Load -28 5 0 10 #fcfcfc
+#000000 #000000;
 #X obj 57 143 s todsp;
 #X obj 58 114 list trim;
 #X obj 58 89 list prepend /fluid;
@@ -1762,14 +1811,14 @@ V 3.4 Final.sf2;
 #X coords 0 -1 1 1 154 62 1 206 -47;
 #X restore 844 90 pd midifluid_GUI;
 #N canvas 556 195 708 556 sound_input 0;
-#X obj 49 103 cnv 15 171 51 empty empty Audio\ Input 72 9 0 10 -116509
--66577 0;
+#X obj 49 103 cnv 15 171 51 empty empty Audio\ Input 72 9 0 10 #707070
+#404040 0;
 #X text 148 13 switch between adc~ and midifluid;
 #X dropdown 51 114 6 0 0 0 - - -, f 6;
 #X msg 70 58 names adc~ midifluid;
 #X obj 51 9 loadbang;
-#X obj 51 134 tgl 15 0 empty empty monitor-> 17 7 0 10 -262144 -1 -1
-1 1;
+#X obj 51 134 tgl 15 0 empty empty monitor-> 17 7 0 10 #fcfcfc #000000
+#000000 1 1;
 #X obj 51 34 t b b 1;
 #X msg 51 80 set 1;
 #X obj 124 398 s todsp;
@@ -1777,11 +1826,11 @@ V 3.4 Final.sf2;
 #X msg 51 334 /input/monitor \$1;
 #X msg 68 217 0;
 #X obj 131 128 hsl 66 20 0 1 0 0 \$0-volmonslider \$0-set-volmonslider
-volume 19 7 1 13 -228856 -1 -1 6200 1;
+volume 19 7 1 13 #dcdcdc #000000 #000000 0 1;
 #X obj 200 116 tgl 16 0 \$0-dsp-montoggle \$0-dsp-montoggle-set on
-3 6 1 9 -74965 -74965 -262144 0 1;
+3 6 1 9 #4a4f51 #4a4f51 #fcfcfc 0 1;
 #X obj 200 132 bng 16 500 50 0 \$0-monmute-bng \$0-monmute empty 0
-9 2 8 -228856 -91674 -195568;
+9 2 8 #dcdcdc #586064 #bcbcbc;
 #X obj 268 209 select 0 1;
 #X msg 268 234 on;
 #X msg 301 236 off;
@@ -1840,8 +1889,8 @@ volume 19 7 1 13 -228856 -1 -1 6200 1;
 #X connect 9 0 6 0;
 #X connect 10 0 8 0;
 #X restore 181 115 pd on;
-#X obj 121 53 tgl 15 0 empty \$0-monmute-bng empty 17 7 0 10 -262144
--1 -1 0 1;
+#X obj 121 53 tgl 15 0 empty \$0-monmute-bng empty 17 7 0 10 #fcfcfc
+#000000 #000000 0 1;
 #X obj 113 4 loadbang;
 #X obj 122 195 s \$0-set-volmonslider;
 #X msg 113 29 0;
@@ -1952,15 +2001,15 @@ volume 19 7 1 13 -228856 -1 -1 6200 1;
 #X restore 512 100 pd sound_input;
 #N canvas 207 290 450 325 OSCconnect_dsp 0;
 #X obj 65 52 bng 15 250 50 0 empty empty connect_to_8081 17 7 0 10
--262144 -1 -1;
-#X obj 65 71 bng 15 250 50 0 empty empty disconnect 17 7 0 10 -262144
--1 -1;
-#X obj 182 35 tgl 17 0 empty empty Connected 32 6 0 10 -262144 -1 -1
-1 1;
-#X obj 182 57 tgl 15 0 empty empty printOSC\ in 17 7 0 10 -262144 -1
--1 0 1;
-#X obj 182 74 tgl 15 0 empty empty printOSC\ out 17 7 0 10 -262144
--1 -1 0 1;
+#fcfcfc #000000 #000000;
+#X obj 65 71 bng 15 250 50 0 empty empty disconnect 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 182 35 tgl 17 0 empty empty Connected 32 6 0 10 #fcfcfc #000000
+#000000 1 1;
+#X obj 182 57 tgl 15 0 empty empty printOSC\ in 17 7 0 10 #fcfcfc #000000
+#000000 1 1;
+#X obj 182 74 tgl 15 0 empty empty printOSC\ out 17 7 0 10 #fcfcfc
+#000000 #000000 1 1;
 #X msg 79 164 /oscconnect/connect;
 #X msg 79 194 /oscconnect/disconnect;
 #X obj 317 137 r fromdsp;
@@ -1972,8 +2021,8 @@ volume 19 7 1 13 -228856 -1 -1 6200 1;
 #X msg 143 236 /oscconnect/printOut \$1;
 #X obj 7 108 loadbang;
 #X obj 7 133 t 1 1 b b;
-#X obj 288 38 tgl 15 0 empty empty Show\ DSP\ ui 17 7 0 10 -262144
--1 -1 0 1;
+#X obj 288 38 tgl 15 0 empty empty Show\ DSP\ ui 17 7 0 10 #fcfcfc
+#000000 #000000 0 1;
 #X msg 245 202 /vis \$1;
 #X connect 0 0 5 0;
 #X connect 1 0 6 0;
@@ -1997,10 +2046,11 @@ volume 19 7 1 13 -228856 -1 -1 6200 1;
 #X coords 0 -1 1 1 313 61 1 62 31;
 #X restore 356 7 pd OSCconnect_dsp;
 #N canvas 497 330 450 325 vumixer 0;
-#X obj 81 54 tgl 15 0 empty empty mon\ sigin_1 17 7 0 10 -262144 -1
--1 0 1;
+#X obj 81 54 tgl 15 0 empty empty mon\ sigin_1 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
 #X floatatom 82 78 5 0 0 0 - - -, f 5;
-#X obj 82 102 vu 15 120 empty empty -1 -8 0 10 -66577 -1 1 0;
+#X obj 82 102 vu 15 120 empty empty -1 -8 0 10 #404040 #000000 1 0
+;
 #X msg 263 93 /monitor \$1;
 #X obj 268 38 routeOSC /monitor;
 #X obj 263 118 s todsp;
@@ -2014,7 +2064,7 @@ volume 19 7 1 13 -228856 -1 -1 6200 1;
 #X restore 31 79 pd vumixer;
 #N canvas 475 228 450 443 midisetup 0;
 #X obj 37 26 bng 15 250 50 0 empty empty Connect\ MIDI\ devices 17
-5 0 10 -262144 -1 -1;
+5 0 10 #fcfcfc #000000 #000000;
 #X obj 37 49 t b b b;
 #X obj 224 12 loadbang;
 #X msg 73 84 aconnect 132:2 'APC MINI' &;
@@ -2027,8 +2077,8 @@ volume 19 7 1 13 -228856 -1 -1 6200 1;
 #X floatatom 101 160 5 0 0 0 - - -, f 5;
 #X obj 101 223 noteout 1;
 #X obj 101 184 t f 0;
-#X obj 101 64 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 101 64 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X obj 100 31 inlet;
 #X msg 101 110 127 1270;
 #X obj 101 135 line 10;
@@ -2070,169 +2120,171 @@ volume 19 7 1 13 -228856 -1 -1 6200 1;
 #X obj 1061 548 scene 87;
 #X obj 1062 621 scene 89;
 #N canvas 363 178 546 392 current_apc_config 0;
-#X obj 47 43 cnv 15 505 315 empty empty empty 20 12 0 14 -58255 -66577
+#X obj 47 43 cnv 15 505 315 empty empty empty 20 12 0 14 #383838 #404040
 0;
-#X obj 61 72 cnv 15 48 21 empty empty 56 2 4 0 9 -233017 -66577 0;
-#X obj 118 72 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 174 72 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 230 72 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 286 72 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 343 72 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 399 72 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 455 72 cnv 15 48 21 empty empty 63 2 4 0 9 -233017 -66577 0
+#X obj 61 72 cnv 15 48 21 empty empty 56 2 4 0 9 #e0e0e0 #404040 0
 ;
-#X obj 61 103 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 118 72 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
-#X obj 118 103 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 174 72 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
-#X obj 174 103 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 230 72 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
-#X obj 230 103 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 286 72 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
-#X obj 286 103 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 343 72 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
-#X obj 343 103 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 399 72 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
-#X obj 399 103 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 455 103 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 61 134 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 118 134 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 174 134 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 230 134 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 286 134 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 343 134 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 399 134 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 455 134 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 61 165 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 118 165 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 174 165 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 230 165 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 286 165 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 343 165 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 399 165 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 455 165 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 61 196 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 118 196 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 174 196 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 230 196 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 286 196 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 343 196 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 399 196 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 455 196 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 61 227 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 118 227 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 174 227 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 230 227 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 286 227 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 343 227 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 399 227 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 455 227 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 61 258 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 118 258 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 174 258 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 230 258 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 286 258 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 343 258 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 399 258 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 455 258 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 61 289 cnv 15 48 21 empty empty 0 2 4 0 9 -233017 -66577 0;
-#X obj 118 289 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 174 289 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 230 289 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 286 289 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 343 289 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 399 289 cnv 15 48 21 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 455 289 cnv 15 48 21 empty empty 7 2 4 0 9 -233017 -66577 0
+#X obj 455 72 cnv 15 48 21 empty empty 63 2 4 0 9 #e0e0e0 #404040 0
 ;
-#X obj 524 72 cnv 15 21 21 empty empty 82 1 4 0 9 -233017 -66577 0
+#X obj 61 103 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 118 103 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 174 103 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 230 103 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 286 103 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 343 103 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 399 103 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 455 103 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 61 134 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 118 134 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 174 134 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 230 134 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 286 134 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 343 134 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 399 134 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 455 134 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 61 165 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 118 165 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 174 165 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 230 165 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 286 165 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 343 165 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 399 165 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 455 165 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 61 196 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 118 196 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 174 196 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 230 196 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 286 196 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 343 196 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 399 196 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 455 196 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 61 227 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 118 227 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 174 227 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 230 227 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 286 227 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 343 227 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 399 227 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 455 227 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 61 258 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 118 258 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 174 258 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 230 258 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 286 258 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 343 258 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 399 258 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 455 258 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 61 289 cnv 15 48 21 empty empty 0 2 4 0 9 #e0e0e0 #404040 0
 ;
-#X obj 524 103 cnv 15 21 21 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 118 289 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
-#X obj 524 134 cnv 15 21 21 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 174 289 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
-#X obj 524 165 cnv 15 21 21 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 230 289 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
-#X obj 524 196 cnv 15 21 21 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 286 289 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
-#X obj 524 227 cnv 15 21 21 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 343 289 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
-#X obj 524 258 cnv 15 21 21 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 399 289 cnv 15 48 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
-#X obj 524 289 cnv 15 21 21 empty empty 89 2 4 0 9 -233017 -66577 0
+#X obj 455 289 cnv 15 48 21 empty empty 7 2 4 0 9 #e0e0e0 #404040 0
 ;
-#X obj 72 328 cnv 15 21 21 empty empty 64 2 4 0 9 -233017 -66577 0
+#X obj 524 72 cnv 15 21 21 empty empty 82 1 4 0 9 #e0e0e0 #404040 0
 ;
-#X obj 130 328 cnv 15 21 21 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 524 103 cnv 15 21 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
-#X obj 187 328 cnv 15 21 21 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 524 134 cnv 15 21 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
-#X obj 243 328 cnv 15 21 21 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 524 165 cnv 15 21 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
-#X obj 299 328 cnv 15 21 21 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 524 196 cnv 15 21 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
-#X obj 357 328 cnv 15 21 21 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 524 227 cnv 15 21 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
-#X obj 414 328 cnv 15 21 21 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 524 258 cnv 15 21 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
-#X obj 470 328 cnv 15 21 21 empty empty 71 2 4 0 9 -233017 -66577 0
+#X obj 524 289 cnv 15 21 21 empty empty 89 2 4 0 9 #e0e0e0 #404040
+0;
+#X obj 72 328 cnv 15 21 21 empty empty 64 2 4 0 9 #e0e0e0 #404040 0
 ;
+#X obj 130 328 cnv 15 21 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 187 328 cnv 15 21 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 243 328 cnv 15 21 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 299 328 cnv 15 21 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 357 328 cnv 15 21 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 414 328 cnv 15 21 21 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 470 328 cnv 15 21 21 empty empty 71 2 4 0 9 #e0e0e0 #404040
+0;
 #X text 516 9 launch scene, f 6;
-#X obj 524 327 cnv 15 21 21 empty empty 98 2 4 0 9 -233017 -66577 0
-;
+#X obj 524 327 cnv 15 21 21 empty empty 98 2 4 0 9 #e0e0e0 #404040
+0;
 #X text 573 74 Toggle Cfg;
 #X text 571 9 When track is selected:, f 12;
 #X text 573 138 Rec;
@@ -2246,33 +2298,33 @@ volume 19 7 1 13 -228856 -1 -1 6200 1;
 #X text 121 367 - 1 bar;
 #X text 173 367 output -1;
 #X text 232 367 output +1;
-#X obj 61 54 cnv 5 48 8 empty empty empty 20 12 0 14 -258049 -66577
+#X obj 61 54 cnv 5 48 8 empty empty empty 20 12 0 14 #fc0000 #404040
 0;
-#X obj 118 54 cnv 5 48 8 empty empty empty 20 12 0 14 -260481 -66577
+#X obj 118 54 cnv 5 48 8 empty empty empty 20 12 0 14 #fc9800 #404040
 0;
 #X text 571 104 Clear;
 #X restore 678 52 pd current_apc_config;
 #N canvas 37 162 998 498 faders 0;
-#X obj 26 16 cnv 15 406 131 empty empty empty 20 12 0 14 -58255 -66577
+#X obj 26 16 cnv 15 406 131 empty empty empty 20 12 0 14 #383838 #404040
 0;
 #X obj 34 22 vsl 22 102 0 127 0 0 empty fader48-r fader48 -8 112 0
-10 -99865 -249661 -224695 9941 1;
+10 #606060 #f0f0f0 #d8d8d8 0 1;
 #X obj 78 22 vsl 22 102 0 127 0 0 fader49-s fader49-r fader49 -8 112
-0 10 -133153 -1 -224695 9305 1;
+0 10 #808080 #000000 #d8d8d8 0 1;
 #X obj 126 23 vsl 22 102 0 127 0 0 fader50-s fader50-r fader50 -8 112
-0 10 -133153 -1 -224695 10100 1;
+0 10 #808080 #000000 #d8d8d8 0 1;
 #X obj 173 23 vsl 22 102 0 127 0 0 fader51-s fader51-r fader51 -8 112
-0 10 -133153 -1 -224695 9623 1;
+0 10 #808080 #000000 #d8d8d8 0 1;
 #X obj 217 23 vsl 22 102 0 127 0 0 fader52-s fader52-r fader52 -8 112
-0 10 -133153 -1 -224695 9543 1;
+0 10 #808080 #000000 #d8d8d8 0 1;
 #X obj 265 23 vsl 22 102 0 127 0 0 fader53-s fader53-r fader53 -8 112
-0 10 -133153 -1 -224695 9225 1;
+0 10 #808080 #000000 #d8d8d8 0 1;
 #X obj 307 23 vsl 22 102 0 127 0 0 fader54-s fader54-r fader54 -8 112
-0 10 -133153 -1 -224695 7157 1;
+0 10 #808080 #000000 #d8d8d8 0 1;
 #X obj 351 23 vsl 22 102 0 127 0 0 fader55-s fader55-r fader55 -8 112
-0 10 -133153 -1 -224695 5010 1;
+0 10 #808080 #000000 #d8d8d8 0 1;
 #X obj 399 24 vsl 22 102 0 127 0 0 fader56-s fader56-r fader56 -8 112
-0 10 -133153 -1 -224695 10100 1;
+0 10 #808080 #000000 #d8d8d8 0 1;
 #N canvas 274 133 450 350 midictl_in 0;
 #X obj 111 31 r midictl;
 #X floatatom 111 81 5 0 0 0 value - -, f 5;
@@ -2299,13 +2351,13 @@ volume 19 7 1 13 -228856 -1 -1 6200 1;
 #X restore 353 326 pd midictl_in;
 #N canvas 262 305 872 354 OSC_out 0;
 #X obj 196 21 bng 15 250 50 0 empty empty Connect_NonMixer 17 7 0 10
--262144 -1 -1;
+#fcfcfc #000000 #000000;
 #X msg 329 127 connect localhost 17154;
 #X obj 197 244 mrpeach/udpsend;
-#X obj 159 20 tgl 33 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
-1;
-#X obj 196 39 bng 15 250 50 0 empty empty disconnect 17 7 0 10 -262144
--1 -1;
+#X obj 159 20 tgl 33 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 1 1;
+#X obj 196 39 bng 15 250 50 0 empty empty disconnect 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X msg 204 66 disconnect;
 #X obj 39 187 mrpeach/packOSC;
 #X obj 32 46 inlet;
@@ -2351,8 +2403,8 @@ volume 19 7 1 13 -228856 -1 -1 6200 1;
 #X obj 297 178 pack f s;
 #X obj 345 222 pack f s;
 #X obj 382 181 pack f s;
-#X obj 461 268 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 461 268 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 27 158 symbol Drums;
 #X obj 55 200 symbol Percu;
 #X obj 103 158 symbol Bass;
@@ -2361,154 +2413,4 @@ volume 19 7 1 13 -228856 -1 -1 6200 1;
 #X obj 246 202 symbol Lead;
 #X obj 276 156 symbol Other1;
 #X obj 325 202 symbol Other2;
-#X obj 365 158 symbol Master;
-#X connect 1 0 13 0;
-#X connect 2 0 14 0;
-#X connect 3 0 15 0;
-#X connect 4 0 16 0;
-#X connect 5 0 17 0;
-#X connect 6 0 18 0;
-#X connect 7 0 19 0;
-#X connect 8 0 20 0;
-#X connect 9 0 21 0;
-#X connect 12 0 22 0;
-#X connect 13 0 11 0;
-#X connect 14 0 11 0;
-#X connect 15 0 11 0;
-#X connect 16 0 11 0;
-#X connect 17 0 11 0;
-#X connect 18 0 11 0;
-#X connect 19 0 11 0;
-#X connect 20 0 11 0;
-#X connect 21 0 11 0;
-#X connect 22 0 23 0;
-#X connect 22 0 24 0;
-#X connect 22 0 25 0;
-#X connect 22 0 26 0;
-#X connect 22 0 27 0;
-#X connect 22 0 28 0;
-#X connect 22 0 29 0;
-#X connect 22 0 30 0;
-#X connect 22 0 31 0;
-#X connect 23 0 13 1;
-#X connect 24 0 14 1;
-#X connect 25 0 15 1;
-#X connect 26 0 16 1;
-#X connect 27 0 17 1;
-#X connect 28 0 18 1;
-#X connect 29 0 19 1;
-#X connect 30 0 20 1;
-#X connect 31 0 21 1;
-#X coords 0 -1 1 1 161 56 1 136 306;
-#X restore 852 10 pd faders;
-#N canvas 558 193 483 366 MPKknobs 0;
-#N canvas 195 170 450 325 midiin 0;
-#X obj 46 12 r midictl;
-#X floatatom 46 62 5 0 0 0 value - -, f 5;
-#X floatatom 104 61 5 0 0 0 cc# - -, f 5;
-#X obj 46 208 s;
-#X obj 46 37 unpack f f f, f 20;
-#X floatatom 163 60 5 0 0 0 - - -, f 5;
-#X obj 46 171 spigot;
-#X floatatom 163 138 5 0 0 0 - - -, f 5;
-#X obj 163 113 == 2;
-#X text 202 138 only midi channel 2 is MPK (to check);
-#X msg 104 89 symbol knob\$1-r;
-#X connect 0 0 4 0;
-#X connect 1 0 6 0;
-#X connect 2 0 10 0;
-#X connect 4 0 1 0;
-#X connect 4 1 2 0;
-#X connect 4 2 5 0;
-#X connect 5 0 8 0;
-#X connect 6 0 3 0;
-#X connect 7 0 6 1;
-#X connect 8 0 7 0;
-#X connect 10 0 3 1;
-#X restore 28 268 pd midiin;
-#X obj 20 12 cnv 15 406 131 empty empty empty 20 12 0 14 -58255 -66577
-0;
-#X obj 46 31 moonlib/mknob 25 100 0 127 0 0 knob0-s knob0-r knob0 -2
--6 0 8 -128992 -245500 -233017 0 1;
-#X obj 47 95 moonlib/mknob 25 100 0 127 0 0 knob4-s knob4-r knob4 -2
--6 0 8 -128992 -245500 -245500 0 1;
-#X obj 135 30 moonlib/mknob 25 100 0 127 0 0 knob1-s knob1-r knob1
--2 -6 0 8 -128992 -245500 -233017 0 1;
-#X obj 219 29 moonlib/mknob 25 100 0 127 0 0 knob2-s knob2-r knob2
--2 -6 0 8 -128992 -245500 -233017 0 1;
-#X obj 298 29 moonlib/mknob 25 100 0 127 0 0 knob3-s knob3-r knob3
--2 -6 0 8 -128992 -245500 -233017 0 1;
-#X obj 134 93 moonlib/mknob 25 100 0 127 0 0 knob5-s knob5-r knob5
--2 -6 0 8 -128992 -245500 -233017 0 1;
-#X obj 220 93 moonlib/mknob 25 100 0 127 0 0 knob6-s knob6-r knob6
--2 -6 0 8 -128992 -245500 -233017 0 1;
-#X obj 297 94 moonlib/mknob 25 100 0 127 0 0 knob7-s knob7-r knob7
--2 -6 0 8 -128992 -245500 -233017 0 1;
-#X text 25 208 Vol & Pan of the selected track, f 9;
-#X msg 118 157 \$1 1 2;
-#X msg 131 189 \$1 5 2;
-#X msg 210 157 \$1 2 2;
-#X msg 288 158 \$1 3 2;
-#X msg 225 191 \$1 6 2;
-#X msg 295 189 \$1 7 2;
-#N canvas 161 127 615 486 midiout 0;
-#X obj 49 293 spigot;
-#X obj 103 58 r midishift;
-#X floatatom 103 108 5 0 0 0 - - -, f 5;
-#X obj 111 80 r midipedal;
-#X obj 103 132 == 0;
-#X obj 198 59 r global-selected-s;
-#X floatatom 198 84 5 0 0 0 - - -, f 5;
-#X obj 198 108 select 128;
-#X floatatom 92 272 5 0 0 0 - - -, f 5;
-#X obj 202 217 spigot;
-#X floatatom 234 179 5 0 0 0 - - -, f 5;
-#X obj 260 133 t 0 0 1;
-#X obj 198 133 t 1 1;
-#X text 106 154 Do not pass controls if a track is selected;
-#X obj 49 22 inlet;
-#X text 93 23 global controls (track controls are defined in track_ui_2)
-;
-#X obj 49 318 ctlout;
-#X connect 0 0 16 0;
-#X connect 1 0 2 0;
-#X connect 2 0 4 0;
-#X connect 3 0 2 0;
-#X connect 4 0 9 0;
-#X connect 5 0 6 0;
-#X connect 6 0 7 0;
-#X connect 7 0 12 0;
-#X connect 7 1 11 0;
-#X connect 8 0 0 1;
-#X connect 9 0 8 0;
-#X connect 10 0 9 1;
-#X connect 11 0 10 0;
-#X connect 11 1 9 0;
-#X connect 11 2 10 0;
-#X connect 12 0 9 0;
-#X connect 12 1 10 0;
-#X connect 14 0 0 0;
-#X restore 118 267 pd midiout;
-#X text 96 286 send controls to MIDI only if no track is selected \;
-If a track is selected \, it will grab the controls directly., f
-40;
-#X msg 45 154 \$1 0 2;
-#X msg 58 186 \$1 4 2;
-#X connect 2 0 19 0;
-#X connect 3 0 20 0;
-#X connect 4 0 11 0;
-#X connect 5 0 13 0;
-#X connect 6 0 14 0;
-#X connect 7 0 12 0;
-#X connect 8 0 15 0;
-#X connect 9 0 16 0;
-#X connect 11 0 17 0;
-#X connect 12 0 17 0;
-#X connect 13 0 17 0;
-#X connect 14 0 17 0;
-#X connect 15 0 17 0;
-#X connect 16 0 17 0;
-#X connect 19 0 17 0;
-#X connect 20 0 17 0;
-#X restore 1062 31 pd MPKknobs;
-#X obj 163 675 matrix_thumb_output 0;
+#X 

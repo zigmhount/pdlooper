@@ -1,4 +1,4 @@
-#N canvas 822 157 544 608 10;
+#N canvas 821 134 544 608 10;
 #N canvas 946 103 627 793 metronome 0;
 #X text 93 726 OSC messages to /ui/metro;
 #X text 145 15 OSC messages to /dsp/metro;
@@ -50,12 +50,12 @@
 #X obj 349 53 loadbang;
 #X msg 349 96 120;
 #X text 201 273 tempo in ms;
-#X obj 162 74 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 162 74 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X msg 38 148 0;
 #X floatatom 162 168 5 0 0 0 - - -, f 5;
-#X obj 23 75 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
-;
+#X obj 23 75 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000
+0 1;
 #X obj 23 2 r fromui;
 #X obj 43 726 s toui;
 #X obj 23 27 mrpeach/routeOSC /metro;
@@ -85,8 +85,8 @@
 #X msg 156 590 /metro/beatsperbar \$1;
 #X msg 0 630 /metro/beatnum \$1;
 #X obj 23 53 mrpeach/routeOSC /playpause /click /tap /tempo_bpm;
-#X obj 40 75 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 40 75 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X obj 23 126 t f b f 0 f;
 #X obj 449 257 select 0 1;
 #X obj 450 285 s metrostop;
@@ -194,16 +194,16 @@ out of sync - but not with getmetro, f 27;
 #N canvas 624 70 1004 651 OSCconnections 0;
 #X obj 41 98 loadbang;
 #X obj 41 382 mrpeach/udpsend;
-#X obj 41 407 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
-1;
+#X obj 41 407 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 1 1;
 #X obj 64 339 mrpeach/packOSC;
 #X msg 50 156 disconnect;
 #X obj 37 24 bng 15 250 50 0 empty empty connect_to_8081 17 7 0 10
--262144 -1 -1;
-#X obj 36 47 bng 15 250 50 0 empty empty disconnect 17 7 0 10 -262144
--1 -1;
-#X obj 156 13 tgl 18 0 empty empty connected 35 6 0 10 -262144 -1 -1
-1 1;
+#fcfcfc #000000 #000000;
+#X obj 36 47 bng 15 250 50 0 empty empty disconnect 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 156 13 tgl 18 0 empty empty connected 35 6 0 10 #fcfcfc #000000
+#000000 1 1;
 #X obj 282 33 import mrpeach;
 #X obj 237 109 r toui;
 #X obj 293 158 list split 1;
@@ -213,10 +213,10 @@ out of sync - but not with getmetro, f 27;
 #X obj 256 390 mrpeach/routeOSC /zig;
 #X obj 256 415 mrpeach/routeOSC /dsp;
 #X obj 256 440 s fromui;
-#X obj 157 33 tgl 15 0 empty empty printOSC\ in 17 7 0 10 -262144 -1
--1 1 1;
-#X obj 156 50 tgl 15 0 empty empty printOSC\ out 17 7 0 10 -262144
--1 -1 1 1;
+#X obj 157 33 tgl 15 0 empty empty printOSC\ in 17 7 0 10 #fcfcfc #000000
+#000000 1 1;
+#X obj 156 50 tgl 15 0 empty empty printOSC\ out 17 7 0 10 #fcfcfc
+#000000 #000000 1 1;
 #X obj 203 462 spigot;
 #X obj 319 277 spigot;
 #X obj 319 302 print OSCout_toui;
@@ -313,14 +313,15 @@ out of sync - but not with getmetro, f 27;
 #X obj 143 193 outlet;
 #X obj 101 145 t f f;
 #X floatatom 150 173 5 0 0 0 - - -, f 5;
-#X obj 65 -21 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 65 -21 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X obj 73 214 select 1;
-#X obj 203 247 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 203 247 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X msg 175 82 0;
 #X msg 207 43 4;
-#X obj 65 -2 bng 15 250 50 0 empty empty S 4 6 0 10 -262144 -1 -1;
+#X obj 65 -2 bng 15 250 50 0 empty empty S 4 6 0 10 #fcfcfc #000000
+#000000;
 #X obj 348 197 outlet;
 #X obj 84 183 ==;
 #X obj 101 50 t b b 0;
@@ -370,15 +371,15 @@ out of sync - but not with getmetro, f 27;
 #X text 147 68 max;
 #X obj 214 107 + 1;
 #X text -31 435 fill from the bottom left;
-#X obj 3 207 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 3 207 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X obj 261 72 t f f f;
 #X text 342 269 button width \; button height \; horizontal space
 \; vert space \; X init \; Y init \; ncol \; nrow;
 #X text 18 206 create 8x8;
 #X obj 150 255 t b b b b 8 63;
-#X obj 81 207 bng 16 250 50 0 empty empty S 4 6 0 10 -262144 -1 -1
-;
+#X obj 81 207 bng 16 250 50 0 empty empty S 4 6 0 10 #fcfcfc #000000
+#000000;
 #X obj 181 306 t a a a;
 #X msg 99 275 clear;
 #X obj 41 280 t b b;
@@ -404,8 +405,8 @@ out of sync - but not with getmetro, f 27;
 #X floatatom 237 435 5 0 0 0 - - -, f 5;
 #X floatatom 294 434 5 0 0 0 - - -, f 5;
 #X obj 254 477 pack f f f;
-#X obj 109 573 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 109 573 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 230 540 t b a;
 #X text 115 612 renumber the array etc. and rename the initbang in
 the abstraction, f 29;
@@ -519,7 +520,7 @@ the abstraction, f 29;
 #X connect 25 0 24 0;
 #X coords 0 -1 1 1 100 34 1 1 191;
 #X restore 20 124 pd create_dspbutton_array;
-#N canvas 597 346 1 1 track_dsp_all 1;
+#N canvas 597 346 1 1 track_dsp_all 0;
 #X obj 0 0 track_dsp_2 0;
 #X obj 0 0 track_dsp_2 0;
 #X obj 112 0 track_dsp_2 1;
@@ -595,8 +596,8 @@ the abstraction, f 29;
 #X obj 51 9 loadbang;
 #X floatatom 150 172 5 0 0 0 - - -, f 5;
 #X obj 150 196 select 0 1, f 41;
-#X obj 51 134 tgl 15 0 empty empty monitor-> 17 7 0 10 -262144 -1 -1
-0 1;
+#X obj 51 134 tgl 15 0 empty empty monitor-> 17 7 0 10 #fcfcfc #000000
+#000000 1 1;
 #X text 156 386 [spigot~] sends to left output if input=0 \, sends
 to right outlet if input=1, f 35;
 #X obj 290 359 send~ sigin_2;
@@ -774,8 +775,8 @@ sends to right outlet if right input=1, f 35;
 #X obj 90 76 t b b, f 18;
 #X obj 90 101 samplerate~;
 #X obj 90 126 s samplerateval;
-#X obj 90 46 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 90 46 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X connect 0 0 5 0;
 #X connect 2 0 3 0;
 #X connect 2 1 1 0;
@@ -788,8 +789,8 @@ sends to right outlet if right input=1, f 35;
 #X obj 23 213 receive~ sigin_1;
 #X obj 24 286 - 100;
 #X floatatom 133 82 5 0 0 0 - - -, f 5;
-#X obj 111 83 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 111 83 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
 #X msg 29 372 /monitor \$1;
 #X obj 29 397 s toui;
 #X obj 110 17 r fromui;
@@ -799,8 +800,8 @@ sends to right outlet if right input=1, f 35;
 #X obj 154 263 env~ 8192;
 #X obj 153 212 adc~;
 #X floatatom 133 113 5 0 0 2 adc~ - -, f 5;
-#X obj 113 114 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 113 114 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
 #X obj 23 237 spigot~;
 #X obj 153 235 spigot~;
 #X obj 29 327 spigot;
@@ -850,4 +851,41 @@ Qjakcctl should remember anyway I guess.;
 #X connect 7 0 6 0;
 #X connect 8 0 5 0;
 #X restore 287 48 pd loadGUI;
+#N canvas 125 87 450 418 get_dollarnums_tracks 0;
+#X obj 61 40 table dollarnumarray 64;
+#X obj 109 76 loadbang;
+#X obj 109 120 delay 500;
+#X obj 109 145 t b;
+#X floatatom 109 220 5 0 0 0 - - -, f 5;
+#X obj 109 244 t b f;
+#X obj 109 289 s;
+#X obj 251 99 r dollarnumarray-r;
+#X obj 251 140 unpack f f;
+#X text 310 183 value \, index;
+#X text 265 120 \$0 \, \$1 (of the track);
+#X obj 109 101 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 251 184 tabwrite dollarnumarray;
+#X floatatom 326 162 5 0 0 0 - - -, f 5;
+#X msg 136 266 symbol \$1-num;
+#X msg 109 170 0 \, 63 1260;
+#X obj 109 195 line 20;
+#X text 207 41 array of tracknum \, \$0-value;
+#X text 67 12 dollarnumarray lists the \$0 for each track;
+#X connect 1 0 11 0;
+#X connect 2 0 3 0;
+#X connect 3 0 15 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 5 1 14 0;
+#X connect 7 0 8 0;
+#X connect 8 0 12 0;
+#X connect 8 1 13 0;
+#X connect 11 0 2 0;
+#X connect 13 0 12 1;
+#X connect 14 0 6 1;
+#X connect 15 0 16 0;
+#X connect 16 0 4 0;
+#X restore 75 445 pd get_dollarnums_tracks;
+#X obj 35 352 saveload;
 #X connect 9 0 10 0;

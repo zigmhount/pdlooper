@@ -1,10 +1,10 @@
-#N canvas 179 68 648 718 10;
-#N canvas 822 48 703 818 trackconfig 1;
-#X obj 6 14 cnv 15 201 233 empty empty empty 20 12 0 14 -233017 -66577
+#N canvas 704 24 648 718 10;
+#N canvas 822 48 703 818 trackconfig 0;
+#X obj 6 14 cnv 15 201 233 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
 #N canvas 219 54 551 688 initconfig 0;
 #X obj 35 14 bng 15 250 50 0 empty 0-button-initbang-r initbang 17
-7 0 10 -262144 -1 -1;
+7 0 10 #fcfcfc #000000 #000000;
 #X obj 35 34 \$1;
 #X msg 203 113 receive \$1-trackstatus-r;
 #X msg 203 88 send \$1-trackstatus-s;
@@ -80,17 +80,18 @@
 #X connect 31 0 32 0;
 #X connect 33 0 31 0;
 #X restore 264 49 pd initconfig;
-#X symbolatom 132 55 10 0 0 0 #0-trackname - -, f 10;
+#X symbolatom 132 55 10 0 0 0 #0-nameset #0-nameset-r #0-nameset-s
+, f 10;
 #X obj 135 101 nbx 5 14 -1e+37 1e+37 0 0 \$0-volset-s \$0-volset-r
-\$0-volset -75 5 0 10 -262144 -1 -1 127 256 0;
+\$0-volset -75 5 0 10 #fcfcfc #000000 #000000 127 256 0;
 #X obj 136 78 nbx 5 14 -1e+37 1e+37 0 0 \$0-barsset-s \$0-barsset-r
-\$0-barsset -84 4 0 10 -262144 -1 -1 2 256 0;
+\$0-barsset -84 4 0 10 #fcfcfc #000000 #000000 2 256 0;
 #X obj 136 125 nbx 5 14 -1e+37 1e+37 0 0 \$0-panset-s \$0-panset-r
-\$0-panset -72 4 0 10 -262144 -1 -1 64 256 0;
+\$0-panset -72 4 0 10 #fcfcfc #000000 #000000 64 256 0;
 #X obj 138 145 nbx 5 14 -1e+37 1e+37 0 0 \$0-outputset-s \$0-outputset-r
-\$0-outputset -90 5 0 10 -262144 -1 -1 0 256 0;
+\$0-outputset -90 5 0 10 #fcfcfc #000000 #000000 0 256 0;
 #X obj 133 27 nbx 5 14 -1e+37 1e+37 0 0 \$0-statusset-s \$0-statusset-r
-\$0-statusset -87 5 0 10 -262144 -1 -1 0 256 0;
+\$0-statusset -87 5 0 10 #fcfcfc #000000 #000000 0 256 0;
 #N canvas 562 28 780 714 outputforbutton 0;
 #X obj 18 20 r \$0-loadnum;
 #X msg 18 75 \$1 status;
@@ -221,12 +222,12 @@
 #X connect 59 0 48 1;
 #X restore 267 77 pd outputforbutton;
 #X obj 138 167 nbx 5 14 -1e+37 1e+37 0 0 tracksliderpos-s tracksliderpos-r
-tracksliderpos -88 5 0 10 -262144 -1 -1 0 256 0;
+tracksliderpos -88 5 0 10 #fcfcfc #000000 #000000 0 256 0;
 #X text 67 325 receive a /getall message from ui and send a bundle
 of the config parameters, f 26;
 #X obj 49 324 r \$0-getall-s;
-#X obj 49 349 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 49 349 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X obj 49 371 t b b b b b b b b b, f 21;
 #X msg 159 418 /status \$1;
 #X msg 140 463 /name \$1;
@@ -264,15 +265,15 @@ of the config parameters, f 26;
 #X msg 186 318 64;
 #X obj 186 343 s \$0-pan-s;
 #X obj 204 393 s \$0-output-s;
-#X obj 118 22 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 118 22 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X msg 204 368 0;
 #X msg 211 430 0;
 #X obj 211 455 s \$0-phasorfreq;
 #X obj 280 96 samplerate~;
 #X obj 280 121 s samplerateval;
-#X obj 422 55 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 422 55 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X obj 119 42 t b b b b b b b b b b, f 24;
 #X text 450 107 bars;
 #X msg 439 131 4;
@@ -329,29 +330,30 @@ of the config parameters, f 26;
 #X msg 154 536 \$1;
 #X msg 152 586 \$1;
 #X msg 125 636 \$1;
-#X msg 211 442 symbol \$1;
+#X msg 211 452 symbol \$1;
 #X obj 137 191 nbx 5 14 -1e+37 1e+37 0 0 \$0-sliderfreqset-s \$0-sliderfreqset-r
-\$0-sliderfreqset -115 4 0 10 -262144 -1 -1 0 256 0;
+\$0-sliderfreqset -115 4 0 10 #fcfcfc #000000 #000000 0 256 0;
 #X floatatom 67 687 5 0 0 0 - - -, f 5;
 #X msg 109 687 \$1;
 #X obj 294 598 r \$0-duration_samples;
 #X obj 137 211 nbx 6 13 -1e+37 1e+37 0 0 \$0-dursamplesset-s \$0-dursamplesset-r
-\$0-dursamplesset -114 5 0 10 -262144 -1 -1 0 256 0;
+\$0-dursamplesset -114 5 0 10 #fcfcfc #000000 #000000 0 256 0;
 #X obj 136 230 nbx 5 14 -1e+37 1e+37 0 0 \$0-dursecset-s \$0-dursecset-r
-\$0-dursecset -94 5 0 10 -262144 -1 -1 0 256 0;
+\$0-dursecset -94 5 0 10 #fcfcfc #000000 #000000 0 256 0;
 #X obj 289 627 r \$0-duration_sec;
 #X obj 294 563 r \$0-sliderfreq;
 #X msg 67 711 /sliderfreq \$1;
 #X text 457 170 bang samplerate~ when starting to record;
 #X obj 420 309 r \$0-clear-s;
-#X obj 420 334 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 420 334 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X msg 454 404 \; track\$0_l const 0;
 #X msg 437 442 \; track\$0_r const 0;
 #X obj 471 382 s \$0-status-r;
 #X obj 420 357 t 0 b b 5;
 #X obj 420 478 s \$0-status-r;
-#X connect 2 0 42 0;
+#X obj 283 321 s \$0-nameset-r;
+#X obj 208 379 r \$0-nameset-s;
 #X connect 3 0 39 0;
 #X connect 4 0 38 0;
 #X connect 5 0 40 0;
@@ -373,7 +375,7 @@ of the config parameters, f 26;
 #X connect 19 0 18 0;
 #X connect 20 0 18 0;
 #X connect 21 0 35 0;
-#X connect 22 0 2 0;
+#X connect 22 0 60 0;
 #X connect 23 0 4 0;
 #X connect 24 0 3 0;
 #X connect 25 0 5 0;
@@ -402,24 +404,25 @@ of the config parameters, f 26;
 #X connect 58 1 56 0;
 #X connect 58 2 55 0;
 #X connect 58 3 57 0;
+#X connect 61 0 42 0;
 #X coords 0 -1 1 1 201 235 1 5 13;
 #X restore 433 13 pd trackconfig;
-#N canvas -2 134 1050 637 OSCinput 0;
+#N canvas 0 134 1050 637 OSCinput 0;
 #X obj 72 25 r fromui;
 #X obj 72 50 routeOSC /track;
 #X obj 98 96 f \$1;
 #X obj 72 72 t a b;
 #X obj 72 143 routeOSC /\$0;
 #X msg 98 118 set /\$1;
-#X obj 72 201 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 72 201 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
 #X obj 72 227 s \$0-play-s;
-#X obj 114 250 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 114 250 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
 #X obj 114 276 s \$0-rec-s;
 #X obj 157 326 s \$0-stop-s;
-#X obj 157 301 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 157 301 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X floatatom 200 357 5 0 0 0 - - -, f 5;
 #X obj 200 381 s \$0-bars-s;
 #X floatatom 243 411 5 0 0 0 - - -, f 5;
@@ -428,8 +431,8 @@ of the config parameters, f 26;
 #X obj 286 224 s \$0-pan-s;
 #X floatatom 328 249 5 0 0 0 - - -, f 5;
 #X obj 328 273 s \$0-output-s;
-#X obj 413 200 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 413 200 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 440 433 s \$0-getall-s;
 #X obj 370 354 s \$0-name-s;
 #X obj 371 305 tosymbol;
@@ -438,8 +441,8 @@ of the config parameters, f 26;
 #X obj 457 273 s \$0-switch;
 #X obj 72 177 routeOSC /play /rec /stop /bars /vol /pan /output /name
 /getall /switch /clear, f 79;
-#X obj 500 299 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 500 299 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 413 458 s getmetro;
 #X obj 413 223 t b b;
 #X obj 500 322 s \$0-clear-s;
@@ -515,13 +518,13 @@ of the config parameters, f 26;
 #X restore 203 54 pd \$0-OSCoutput;
 #X symbolatom 42 288 22 0 0 0 - - -, f 22;
 #N canvas 62 47 661 778 rec_samples 0;
-#X obj 220 120 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 220 120 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X msg 312 163 stop;
 #X obj 254 383 tabwrite~;
 #X text 27 103 rec queue bang, f 15;
-#X obj 22 154 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 22 154 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X obj 376 383 tabwrite~;
 #X msg 546 138 set \$1_l;
 #X msg 561 160 set \$1_r;
@@ -683,7 +686,7 @@ than the current one, f 27;
 #X connect 24 0 12 0;
 #X connect 24 1 12 0;
 #X restore 40 85 pd expected_samples;
-#N canvas 134 220 757 574 play_audio 1;
+#N canvas 134 220 757 574 play_audio 0;
 #X obj 90 498 outlet;
 #X text 141 500 output signals;
 #N canvas 72 188 450 346 output_sel~ 0;
@@ -803,20 +806,20 @@ than the current one, f 27;
 #X floatatom 380 163 5 0 0 1 duration_s - -, f 5;
 #X obj 300 685 outlet~;
 #X obj 427 684 outlet~;
-#X obj 110 60 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 110 60 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X obj 110 296 select 0 1, f 13;
 #X obj 110 250 change;
 #X obj 489 36 loadbang;
 #X floatatom 489 117 5 0 0 0 - - -, f 5;
-#X obj 489 61 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 489 61 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X msg 197 219 0;
 #X msg 110 220 1;
 #X floatatom 110 275 5 0 0 0 - - -, f 5;
 #X obj 353 114 t f f;
-#X obj 197 64 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 197 64 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X obj 353 36 r \$0-duration_samples;
 #X obj 300 551 tabplay~ track\$0_l;
 #X obj 427 551 tabplay~ track\$0_r;
@@ -839,8 +842,8 @@ than the current one, f 27;
 #X restore 353 257 pd floor;
 #X msg 399 232 64;
 #X obj 399 206 loadbang;
-#X obj 405 574 bng 14 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 405 574 bng 14 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X msg 300 482 0 \$1;
 #X obj 300 507 t a a;
 #X obj 300 656 *~;
@@ -862,8 +865,8 @@ than the current one, f 27;
 #X floatatom 439 398 5 0 0 0 - - -, f 5;
 #X obj 110 362 t b b b 0, f 22;
 #X obj 297 37 inlet;
-#X obj 297 62 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 297 62 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X text 297 15 stop queue;
 #X msg 300 324 0;
 #X text 484 395 restart playing when reaching the end \, unless stopped
@@ -943,8 +946,8 @@ duration in bars and the tempo to calculate the length/progression.
 #X obj 261 406 *~;
 #X obj 544 337 snapshot~;
 #X floatatom 544 362 5 0 0 0 - - -, f 5;
-#X obj 544 310 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 544 310 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 35 119 t b 1;
 #X obj 108 120 t 0 b b;
 #X obj 35 0 r \$0-status-s;
@@ -994,16 +997,16 @@ duration in bars and the tempo to calculate the length/progression.
 \; 4 rec queued \; 5 stopped \; 6 stop queued;
 #N canvas 570 125 886 796 playrecstatus2 0;
 #X obj 21 49 s \$0-barsset-r;
-#X obj 21 21 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 21 21 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #N canvas 606 326 483 442 trackstart 0;
 #X floatatom 141 39 5 0 0 0 - - -, f 5;
 #X obj 141 13 r \$0-barsset-s;
 #X obj 59 21 r beatnum;
 #X floatatom 59 46 5 0 0 0 - - -, f 5;
 #X obj 59 70 select 0;
-#X obj 59 95 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 59 95 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X obj 59 118 t b b;
 #X obj 48 -39 r metrostart;
 #X obj 59 143 f 0;
@@ -1031,10 +1034,10 @@ duration in bars and the tempo to calculate the length/progression.
 #X connect 13 0 15 0;
 #X connect 14 0 8 0;
 #X restore 19 85 pd trackstart;
-#X obj 19 110 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X obj 198 92 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 19 110 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 198 92 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
 #X floatatom 198 115 5 0 0 0 - - -, f 5;
 #X obj 198 139 pack;
 #X msg 198 164 \$2 \$1;
@@ -1047,8 +1050,8 @@ duration in bars and the tempo to calculate the length/progression.
 #X obj 198 235 t 5 6;
 #X msg 321 302 set \$1;
 #X obj 262 232 select 1;
-#X obj 464 94 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 464 94 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
 #X floatatom 464 117 5 0 0 0 - - -, f 5;
 #X obj 464 141 pack;
 #X msg 464 166 \$2 \$1;
@@ -1086,8 +1089,8 @@ duration in bars and the tempo to calculate the length/progression.
 #X obj 78 668 s \$0-play-s;
 #X obj 268 631 t a a;
 #X obj 344 676 s \$0-rec-s;
-#X obj 434 112 bng 13 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 434 112 bng 13 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 274 432 s \$0-status-s;
 #X obj 282 51 r \$0-status-s;
 #X obj 577 73 r \$0-stop-s;
@@ -1105,8 +1108,8 @@ duration in bars and the tempo to calculate the length/progression.
 #X obj 108 244 -;
 #X obj 108 116 t b b;
 #X floatatom 108 269 5 0 0 0 - - -, f 5;
-#X obj 108 89 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 108 89 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X obj 108 293 select 0;
 #X msg 108 318 0;
 #X msg 152 318 5;
@@ -1138,8 +1141,8 @@ duration in bars and the tempo to calculate the length/progression.
 #X obj 108 244 -;
 #X obj 108 116 t b b;
 #X floatatom 108 269 5 0 0 0 - - -, f 5;
-#X obj 108 89 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 108 89 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X obj 108 293 select 0;
 #X msg 108 318 0;
 #X msg 152 318 5;
@@ -1240,17 +1243,43 @@ duration in bars and the tempo to calculate the length/progression.
 #X connect 65 0 10 0;
 #X restore 39 184 pd playrecstatus2;
 #X floatatom 346 388 17 0 0 0 - - -, f 17;
-#X obj 355 314 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 355 314 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 346 363 expr ( 8 * 4 * 0.5 * 48000 );
 #X obj 15 27 array define track\$0_l 768000;
 #X obj 14 52 array define track\$0_r 768000;
 #X obj 343 470 array max track\$0_l;
 #X floatatom 343 495 11 0 0 0 - - -, f 11;
-#X obj 341 426 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 341 426 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 466 471 array size track\$0_l;
 #X floatatom 466 496 11 0 0 0 - - -, f 11;
+#N canvas 230 185 450 325 dollarnum 0;
+#X obj 99 -12 loadbang;
+#X obj 99 13 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 99 36 \$1;
+#X obj 99 61 t f f;
+#X msg 99 86 \$1-num;
+#X obj 99 111 tools/receiver;
+#X obj 99 136 f \$0;
+#X obj 99 188 s dollarnumarray-r;
+#X obj 100 159 pack f f;
+#X obj 66 196 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X text 177 22 This subpatches receives a bang to \$1-num and sends
+[\$0 \$1( to the global dollarnumarray., f 34;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 1 8 1;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 8 0;
+#X connect 8 0 7 0;
+#X connect 8 0 9 0;
+#X restore 172 386 pd dollarnum;
 #X connect 6 0 3 0;
 #X connect 10 0 11 0;
 #X connect 11 0 9 0;
