@@ -1,4 +1,4 @@
-#N canvas 148 89 1295 718 10;
+#N canvas 70 24 1295 718 10;
 #X obj 127 74 cnv 15 1030 662 empty empty empty 0 0 0 4 #404040 #fcfcfc
 0;
 #N canvas 600 57 588 507 OSCconnections 0;
@@ -1502,53 +1502,6 @@ to 128?, f 26;
 #X connect 10 0 11 0;
 #X restore 305 -646 pd initialize;
 #X obj 305 -675 loadbang;
-#N canvas 358 182 450 350 load 0;
-#X obj 61 56 inlet;
-#X obj 199 45 r fromdsp;
-#X obj 199 70 routeOSC /create;
-#X floatatom 199 95 5 0 0 0 - - -, f 5;
-#X obj 199 119 t b f;
-#X obj 199 174 s;
-#X msg 222 145 symbol \$1-bng-r;
-#X obj 61 81 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000;
-#X obj 61 104 openpanel;
-#X msg 61 129 /load \$1;
-#X obj 61 154 s todsp;
-#X connect 0 0 7 0;
-#X connect 1 0 2 0;
-#X connect 2 0 3 0;
-#X connect 3 0 4 0;
-#X connect 4 0 5 0;
-#X connect 4 1 6 0;
-#X connect 6 0 5 1;
-#X connect 7 0 8 0;
-#X connect 8 0 9 0;
-#X connect 9 0 10 0;
-#X restore 82 -546 pd load;
-#X obj 82 -571 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
-#X obj 155 -565 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
-#N canvas 39 401 450 300 save 1;
-#X obj 151 65 inlet;
-#X obj 151 90 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000;
-#X obj 151 113 openpanel;
-#X msg 151 138 /save \$1;
-#X obj 151 163 s todsp;
-#X obj 267 68 r fromdsp;
-#X obj 267 93 routeOSC /saved;
-#X obj 267 118 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
-#X connect 0 0 1 0;
-#X connect 1 0 2 0;
-#X connect 2 0 3 0;
-#X connect 3 0 4 0;
-#X connect 6 0 7 0;
-#X restore 155 -542 pd save;
-#X connect 10 0 9 0;
-#X connect 11 0 12 0;
 #X restore 256 12 pd options;
 #N canvas 1 30 1210 860 tracks-matrix 0;
 #X obj 19 14 cnv 10 112 512 empty empty drums 11 6 0 10 #e80000 #404040
@@ -1667,7 +1620,7 @@ to 128?, f 26;
 #X obj 421 -58 metro 500;
 #X floatatom 231 -406 4 0 0 0 - - -, f 4;
 #X obj 138 -411 hradio 20 0 0 4 empty empty empty 0 -8 0 10 #fcfcfc
-#000000 #000000 2;
+#000000 #000000 0;
 #X obj 107 -411 tgl 20 0 \$0-globalplaypause-s \$0-globalplaypause-r
 play/pause -14 -12 0 10 #94a0fc #000000 #000000 0 1;
 #X obj 166 -429 tgl 14 0 empty empty metro 17 7 0 10 #fcfcfc #000000
@@ -1694,9 +1647,9 @@ play/pause -14 -12 0 10 #94a0fc #000000 #000000 0 1;
 #X obj 303 -217 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
 #X obj 246 -4 nbx 5 14 -1e+37 1e+37 0 0 beatsperbar beatsperbar-r empty
-0 -8 0 10 #fcfcfc #000000 #000000 4 256 0;
+0 -8 0 10 #fcfcfc #000000 #000000 0 256 0;
 #X obj 99 -16 nbx 5 14 -1e+37 1e+37 0 0 tempo_ms tempo_ms-r empty 0
--8 0 10 #fcfcfc #000000 #000000 652.174 256 0;
+-8 0 10 #fcfcfc #000000 #000000 0 256 0;
 #X floatatom 244 -81 5 0 0 0 - - -, f 5;
 #X connect 3 0 18 0;
 #X connect 3 0 45 0;
@@ -2304,113 +2257,68 @@ volume 19 7 1 13 #dcdcdc #000000 #000000 0 1;
 0;
 #X text 571 104 Clear;
 #X restore 678 52 pd current_apc_config;
-#N canvas 37 162 998 498 faders 0;
-#X obj 26 16 cnv 15 406 131 empty empty empty 20 12 0 14 #383838 #404040
+#N canvas 313 241 450 325 saveload 0;
+#X obj 90 25 cnv 15 128 42 empty empty empty 20 12 0 14 #7a7a7a #404040
 0;
-#X obj 34 22 vsl 22 102 0 127 0 0 empty fader48-r fader48 -8 112 0
-10 #606060 #f0f0f0 #d8d8d8 0 1;
-#X obj 78 22 vsl 22 102 0 127 0 0 fader49-s fader49-r fader49 -8 112
-0 10 #808080 #000000 #d8d8d8 0 1;
-#X obj 126 23 vsl 22 102 0 127 0 0 fader50-s fader50-r fader50 -8 112
-0 10 #808080 #000000 #d8d8d8 0 1;
-#X obj 173 23 vsl 22 102 0 127 0 0 fader51-s fader51-r fader51 -8 112
-0 10 #808080 #000000 #d8d8d8 0 1;
-#X obj 217 23 vsl 22 102 0 127 0 0 fader52-s fader52-r fader52 -8 112
-0 10 #808080 #000000 #d8d8d8 0 1;
-#X obj 265 23 vsl 22 102 0 127 0 0 fader53-s fader53-r fader53 -8 112
-0 10 #808080 #000000 #d8d8d8 0 1;
-#X obj 307 23 vsl 22 102 0 127 0 0 fader54-s fader54-r fader54 -8 112
-0 10 #808080 #000000 #d8d8d8 0 1;
-#X obj 351 23 vsl 22 102 0 127 0 0 fader55-s fader55-r fader55 -8 112
-0 10 #808080 #000000 #d8d8d8 0 1;
-#X obj 399 24 vsl 22 102 0 127 0 0 fader56-s fader56-r fader56 -8 112
-0 10 #808080 #000000 #d8d8d8 0 1;
-#N canvas 274 133 450 350 midictl_in 0;
-#X obj 111 31 r midictl;
-#X floatatom 111 81 5 0 0 0 value - -, f 5;
-#X floatatom 169 80 5 0 0 0 cc# - -, f 5;
-#X obj 111 227 s;
-#X msg 169 108 symbol fader\$1-r;
-#X obj 111 56 unpack f f f, f 20;
-#X floatatom 228 79 5 0 0 0 - - -, f 5;
-#X obj 111 190 spigot;
-#X obj 228 132 == 1;
-#X floatatom 228 157 5 0 0 0 - - -, f 5;
-#X text 267 157 only midi channel 1 is APC;
-#X connect 0 0 5 0;
-#X connect 1 0 7 0;
-#X connect 2 0 4 0;
-#X connect 4 0 3 1;
-#X connect 5 0 1 0;
-#X connect 5 1 2 0;
-#X connect 5 2 6 0;
-#X connect 6 0 8 0;
-#X connect 7 0 3 0;
+#N canvas 117 115 450 375 load 0;
+#X obj 61 56 inlet;
+#X obj 199 45 r fromdsp;
+#X floatatom 199 95 5 0 0 0 - - -, f 5;
+#X obj 199 119 t b f;
+#X obj 199 174 s;
+#X msg 222 145 symbol \$1-bng-r;
+#X obj 61 81 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 61 104 openpanel;
+#X msg 61 129 /load \$1;
+#X obj 61 154 s todsp;
+#X obj 199 70 routeOSC /create /UIstatus;
+#X obj 279 97 tosymbol;
+#X obj 280 203 s UIstatus;
+#X symbolatom 279 122 10 0 0 0 - - -, f 10;
+#X connect 0 0 6 0;
+#X connect 1 0 10 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 1 5 0;
+#X connect 5 0 4 1;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
 #X connect 8 0 9 0;
-#X connect 9 0 7 1;
-#X restore 353 326 pd midictl_in;
-#N canvas 262 305 872 354 OSC_out 0;
-#X obj 196 21 bng 15 250 50 0 empty empty Connect_NonMixer 17 7 0 10
-#fcfcfc #000000 #000000;
-#X msg 329 127 connect localhost 17154;
-#X obj 197 244 mrpeach/udpsend;
-#X obj 159 20 tgl 33 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 1 1;
-#X obj 196 39 bng 15 250 50 0 empty empty disconnect 17 7 0 10 #fcfcfc
+#X connect 10 0 2 0;
+#X connect 10 1 11 0;
+#X connect 11 0 12 0;
+#X connect 11 0 13 0;
+#X restore 95 92 pd load;
+#X obj 93 27 bng 15 250 50 0 empty empty Load 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 169 27 bng 15 250 50 0 empty empty Save 17 7 0 10 #fcfcfc #000000
+#000000;
+#N canvas 39 401 450 300 save 0;
+#X obj 151 65 inlet;
+#X obj 151 90 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 151 113 openpanel;
+#X msg 151 138 /save \$1;
+#X obj 151 163 s todsp;
+#X obj 267 68 r fromdsp;
+#X obj 267 93 routeOSC /saved;
+#X obj 267 118 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X msg 204 66 disconnect;
-#X obj 39 187 mrpeach/packOSC;
-#X obj 32 46 inlet;
-#X floatatom 33 96 5 0 0 0 - - -, f 5;
-#X obj 33 120 / 127;
-#X obj 32 71 unpack f s;
-#X obj 39 142 pack f s;
-#X msg 39 164 /strip/\$2/Gain/Gain%20(dB) \$1;
-#X symbolatom 89 115 10 0 0 0 - - -, f 10;
-#X obj 85 94 tosymbol;
-#X obj 78 41 print;
-#X obj 368 11 loadbang;
-#X obj 328 103 shell;
-#X msg 328 78 ./connect_jack_pd_nonmixer.sh;
-#X connect 0 0 18 0;
+#X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
-#X connect 4 0 5 0;
-#X connect 5 0 2 0;
-#X connect 6 0 2 0;
-#X connect 7 0 10 0;
-#X connect 7 0 15 0;
-#X connect 8 0 9 0;
-#X connect 9 0 11 0;
-#X connect 10 0 8 0;
-#X connect 10 1 14 0;
-#X connect 11 0 12 0;
-#X connect 12 0 6 0;
-#X connect 13 0 11 1;
-#X connect 14 0 13 0;
-#X connect 16 0 0 0;
-#X connect 17 1 1 0;
-#X connect 18 0 17 0;
-#X coords 0 -1 1 1 158 39 2 156 17;
-#X restore 138 321 pd OSC_out;
-#X obj 461 243 loadbang;
-#X obj 27 178 pack f s;
-#X obj 73 221 pack f s;
-#X obj 124 182 pack f s;
-#X obj 157 224 pack f s;
-#X obj 208 179 pack f s;
-#X obj 257 222 pack f s;
-#X obj 297 178 pack f s;
-#X obj 345 222 pack f s;
-#X obj 382 181 pack f s;
-#X obj 461 268 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
-#X obj 27 158 symbol Drums;
-#X obj 55 200 symbol Percu;
-#X obj 103 158 symbol Bass;
-#X obj 152 204 symbol Pads;
-#X obj 186 159 symbol Chords;
-#X obj 246 202 symbol Lead;
-#X obj 276 156 symbol Other1;
-#X obj 325 202 symbol Other2;
-#X 
+#X connect 3 0 4 0;
+#X connect 6 0 7 0;
+#X restore 168 96 pd save;
+#X symbolatom 138 46 12 0 0 0 Status: UIstatus -, f 12;
+#X obj 259 74 loadbang;
+#X msg 259 99 Ready.;
+#X obj 259 123 s UIstatus;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X coords 0 -1 1 1 129 43 2 90 24;
+#X restore 860 17 pd saveload;
+#X obj 1010 11 faders_knobs;
