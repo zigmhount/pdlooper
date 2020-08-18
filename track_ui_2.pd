@@ -1,4 +1,4 @@
-#N canvas 79 39 834 703 12;
+#N canvas 459 24 834 703 12;
 #X obj 99 19 import mrpeach;
 #N canvas 62 339 844 507 \$0-OSCoutput 0;
 #X text 232 23 receive /playpause 1;
@@ -25,38 +25,38 @@
 #X connect 9 0 1 0;
 #X restore 99 77 pd \$0-OSCoutput;
 #X obj 81 223 cnv 15 110 58 empty \$0-trackbackgd-r empty 0 0 0 10
--262144 -33289 0;
+#fcfcfc #202020 0;
 #N canvas 140 24 1088 718 trackconfig 0;
-#X obj 220 210 cnv 15 181 246 empty empty empty 20 12 0 14 -233017
--66577 0;
+#X obj 220 210 cnv 15 181 246 empty empty empty 20 12 0 14 #e0e0e0
+#404040 0;
 #X symbolatom 323 260 10 0 0 0 #0-nameset #0-nameset-r #0-nameset-s
 , f 10;
 #X obj 323 302 nbx 5 14 -1e+37 1e+37 0 0 \$0-volset-s \$0-volset-r
-\$0-volset -75 5 0 10 -262144 -1 -1 0 256 0;
+\$0-volset -75 5 0 10 #fcfcfc #000000 #000000 0 256 0;
 #X obj 323 284 nbx 5 14 -1e+37 1e+37 0 0 \$0-barsset-s \$0-barsset-r
-\$0-barsset -84 4 0 10 -262144 -1 -1 0 256 0;
+\$0-barsset -84 4 0 10 #fcfcfc #000000 #000000 0 256 0;
 #X obj 323 321 nbx 5 14 -1e+37 1e+37 0 0 \$0-panset-s \$0-panset-r
-\$0-panset -72 4 0 10 -262144 -1 -1 0 256 0;
+\$0-panset -72 4 0 10 #fcfcfc #000000 #000000 0 256 0;
 #X obj 323 340 nbx 5 14 -1e+37 1e+37 0 0 \$0-outputset-s \$0-outputset-r
-\$0-outputset -90 5 0 10 -262144 -1 -1 0 256 0;
+\$0-outputset -90 5 0 10 #fcfcfc #000000 #000000 0 256 0;
 #X obj 323 240 nbx 5 14 -1e+37 1e+37 0 0 \$0-statusset-s \$0-statusset-r
-\$0-statusset -87 5 0 10 -262144 -1 -1 4 256 0;
+\$0-statusset -87 5 0 10 #fcfcfc #000000 #000000 0 256 0;
 #X obj 323 358 nbx 5 14 -1e+37 1e+37 0 0 tracksliderpos-s tracksliderpos-r
-tracksliderpos -88 5 0 10 -262144 -1 -1 0 256 0;
+tracksliderpos -88 5 0 10 #fcfcfc #000000 #000000 0 256 0;
 #X text 481 -20 valid:;
 #X text 214 86 input from DSP;
-#X obj 419 210 cnv 15 222 195 empty empty empty 20 12 0 14 -233017
--66577 0;
+#X obj 419 210 cnv 15 222 195 empty empty empty 20 12 0 14 #e0e0e0
+#404040 0;
 #X symbolatom 565 232 10 0 0 0 #0-namechange #0-namechange-r #0-namechange-s
 , f 10;
 #X obj 565 278 nbx 5 14 -1e+37 1e+37 0 0 \$0-volchange-s \$0-volchange-r
-\$0-volchange -88 4 0 10 -262144 -1 -1 0 256 0;
+\$0-volchange -88 4 0 10 #fcfcfc #000000 #000000 0 256 0;
 #X obj 565 255 nbx 5 14 -1e+37 1e+37 0 0 \$0-barschange-s \$0-barschange-r
-\$0-barschange -95 4 0 10 -262144 -1 -1 0 256 0;
+\$0-barschange -95 4 0 10 #fcfcfc #000000 #000000 0 256 0;
 #X obj 565 302 nbx 5 14 -1e+37 1e+37 0 0 \$0-panchange-s \$0-panchange-r
-\$0-panchange -88 3 0 10 -262144 -1 -1 0 256 0;
+\$0-panchange -88 3 0 10 #fcfcfc #000000 #000000 0 256 0;
 #X obj 565 322 nbx 5 14 -1e+37 1e+37 0 0 \$0-outputchange-s \$0-outputchange-r
-\$0-outputchange -107 3 0 10 -262144 -1 -1 0 256 0;
+\$0-outputchange -107 3 0 10 #fcfcfc #000000 #000000 0 256 0;
 #X msg 329 511 set \$1;
 #X msg 325 558 set \$1;
 #X msg 325 587 set \$1;
@@ -68,8 +68,8 @@ tracksliderpos -88 5 0 10 -262144 -1 -1 0 256 0;
 #X obj 72 85 routeOSC /\$0;
 #X msg 98 60 set /\$1;
 #X obj 60 209 outlet;
-#X obj 205 143 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 205 143 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X floatatom 266 144 5 0 0 0 - - -, f 5;
 #X floatatom 327 143 5 0 0 0 - - -, f 5;
 #X floatatom 390 142 5 0 0 0 - - -, f 5;
@@ -79,7 +79,7 @@ tracksliderpos -88 5 0 10 -262144 -1 -1 0 256 0;
 #X floatatom 576 144 5 0 0 0 - - -, f 5;
 #X text 813 245 GUI envoie play/rec and receives status, f 22;
 #X obj 565 384 bng 15 250 50 0 \$0-stopchange-s \$0-stopchange-r \$0-stopchange
--95 3 0 10 -262144 -1 -1;
+-95 3 0 10 #fcfcfc #000000 #000000;
 #X msg 669 486 /output \$1;
 #X msg 669 459 /pan \$1;
 #X msg 669 435 /vol \$1;
@@ -91,19 +91,19 @@ tracksliderpos -88 5 0 10 -262144 -1 -1 0 256 0;
 #X text 473 210 Values changed in UI;
 #X text 246 211 Values set in DSP;
 #X obj 323 414 bng 15 250 50 0 \$0-stopset-s \$0-stopset-r \$0-stopset
--95 3 0 10 -262144 -1 -1;
+-95 3 0 10 #fcfcfc #000000 #000000;
 #X obj 514 185 s \$0-nameset-r;
 #X obj 328 489 r \$0-nameset-s;
 #X floatatom 81 146 5 0 0 0 - - -, f 5;
 #X floatatom 142 146 5 0 0 0 - - -, f 5;
 #X obj 323 377 nbx 5 14 -1e+37 1e+37 0 0 \$0-playset-s \$0-playset-r
-\$0-playset -78 5 0 10 -262144 -1 -1 0 256 0;
+\$0-playset -78 5 0 10 #fcfcfc #000000 #000000 0 256 0;
 #X obj 321 396 nbx 5 14 -1e+37 1e+37 0 0 \$0-recset-s \$0-recset-r
-\$0-recset -78 5 0 10 -262144 -1 -1 0 256 0;
+\$0-recset -78 5 0 10 #fcfcfc #000000 #000000 0 256 0;
 #X obj 564 341 nbx 5 14 -1e+37 1e+37 0 0 \$0-playchange-s \$0-playchange-r
-\$0-playchange -94 3 0 10 -262144 -1 -1 0 256 0;
+\$0-playchange -94 3 0 10 #fcfcfc #000000 #000000 0 256 0;
 #X obj 563 361 nbx 5 14 -1e+37 1e+37 0 0 \$0-recchange-s \$0-recchange-r
-\$0-recchange -90 3 0 10 -262144 -1 -1 1 256 0;
+\$0-recchange -90 3 0 10 #fcfcfc #000000 #000000 0 256 0;
 #X msg 669 571 /stop;
 #X obj 669 356 r \$0-namechange-s;
 #X obj 325 535 s \$0-namechange-r;
@@ -175,13 +175,13 @@ tracksliderpos -88 5 0 10 -262144 -1 -1 0 256 0;
 #X floatatom 627 508 5 0 0 0 - - -, f 5;
 #X msg 592 451 \$1-\$2-s;
 #X obj 592 480 tools/receiver;
-#X obj 289 259 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 289 259 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 627 536 print;
-#X obj 535 548 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 627 536 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 535 548 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 627 536 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X msg 535 519 0;
 #X connect 0 0 23 0;
 #X connect 1 0 0 0;
@@ -304,7 +304,7 @@ tracksliderpos -88 5 0 10 -262144 -1 -1 0 256 0;
 #X restore 456 9 pd trackconfig;
 #N canvas 442 392 450 350 initialize 1;
 #X obj 147 14 bng 15 250 50 0 trackui-initbang-s trackui-initbang-r
-trackui-initbang 17 7 0 10 -262144 -1 -1;
+trackui-initbang 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 147 38 \$1;
 #X obj 184 179 s \$0-loadnum;
 #X obj 147 72 t f f f f f;
@@ -319,8 +319,8 @@ trackui-initbang 17 7 0 10 -262144 -1 -1;
 #X connect 4 0 5 0;
 #X connect 6 0 5 0;
 #X restore 99 48 pd initialize;
-#X obj 84 244 tgl 16 0 empty \$0-cfg-r cfg 0 5 0 10 -262144 -1 -66577
-0 1;
+#X obj 84 244 tgl 16 0 empty \$0-cfg-r cfg 0 5 0 10 #fcfcfc #000000
+#404040 0 1;
 #X text 243 17 buttonGUI only to send changes to trackconfig \, not
 directly to DSP, f 29;
 #N canvas 489 24 682 392 set_buttoncontent 0;
@@ -329,14 +329,14 @@ directly to DSP, f 29;
 #X obj 42 64 select 0 1, f 87;
 #X obj 391 121 t b b b, f 8;
 #X msg 443 148 clear;
-#X obj 394 233 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 394 233 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X msg 413 173 obj 30 60 buttoncfg \$1;
 #X obj 411 148 \$1;
 #X obj 394 256 s initbang-buttoncfg-r;
 #X msg 150 155 clear;
-#X obj 73 207 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 73 207 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X obj 73 244 s buttonguibang-r;
 #X msg 107 183 obj 30 60 buttonGUI \$1;
 #X obj 114 156 \$1;
@@ -437,8 +437,8 @@ directly to DSP, f 29;
 #X obj 191 245 s \$0-barsset-r;
 #X obj 190 271 r \$0-barsset-s;
 #X msg 208 296 symbol \$1-barscfg-r;
-#X obj 105 5 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 105 5 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X msg 360 326 symbol \$1;
 #X msg 108 422 \$1;
 #X msg 261 407 3;
@@ -497,8 +497,8 @@ directly to DSP, f 29;
 #X msg 97 520 \$1-barscfg-s;
 #X obj 99 583 s \$0-barschange-r;
 #X msg 141 360 symbol \$1;
-#X obj 79 582 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 79 582 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X connect 0 0 5 0;
 #X connect 1 0 0 0;
 #X connect 2 0 18 0;
@@ -547,8 +547,8 @@ directly to DSP, f 29;
 #X connect 23 0 2 0;
 #X connect 24 0 23 0;
 #X restore 259 286 pd set_buttoncontent;
-#X obj 84 226 tgl 16 0 \$0-playUI-s \$0-playUI-r P 4 6 0 10 -262144
--1 -1 0 1;
+#X obj 84 226 tgl 16 0 \$0-playUI-s \$0-playUI-r P 4 6 0 10 #fcfcfc
+#000000 #000000 0 1;
 #N canvas 113 24 809 743 slider 0;
 #X obj 263 453 r \$0-statusset-s;
 #X floatatom 263 482 5 0 0 0 - - -, f 5;
@@ -560,8 +560,8 @@ directly to DSP, f 29;
 #X obj 228 262 *;
 #X obj 185 289 *;
 #X obj 185 7 r \$0-barsset-s;
-#X obj 77 388 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 77 388 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X obj 77 462 metro;
 #X obj 77 490 f 0;
 #X obj 108 491 + 1;
@@ -685,8 +685,8 @@ directly to DSP, f 29;
 #X floatatom 39 36 5 0 0 0 - - -, f 5;
 #X msg 39 64 \$1-midibutton;
 #X obj 39 93 tools/receiver;
-#X obj 39 122 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 39 122 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X obj 303 105 r midipedal;
 #X floatatom 303 130 5 0 0 0 - - -, f 5;
 #X obj 303 154 t f f;
@@ -708,8 +708,8 @@ directly to DSP, f 29;
 #X obj 402 101 t f f f;
 #X obj 420 209 select 1;
 #X msg 420 234 set 128;
-#X obj 447 435 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 447 435 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X msg 447 458 1;
 #X msg 425 564 128;
 #X obj 222 0 inlet;
@@ -731,21 +731,21 @@ directly to DSP, f 29;
 pressed?, f 25;
 #X obj 402 295 select 128;
 #X text 488 410 then start rec;
-#X obj 100 195 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 100 195 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 194 316 r \$0-selected-s;
 #X floatatom 194 345 5 0 0 0 - - -, f 5;
-#X obj 155 467 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X obj 155 280 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 155 467 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 155 280 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X msg 194 374 set \$1;
 #X obj 155 583 s global-selected-r;
 #X obj 642 175 r \$0-selected-s;
 #X floatatom 642 204 5 0 0 0 - - -, f 5;
 #X obj 402 182 spigot;
-#X obj 402 324 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 402 324 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 402 410 t 0 b b;
 #X obj 155 520 \$1;
 #X floatatom 110 547 5 0 0 0 - - -, f 5;
@@ -753,14 +753,14 @@ pressed?, f 25;
 #X floatatom 83 485 5 0 0 0 - - -, f 5;
 #X floatatom 186 520 5 0 0 0 - - -, f 5;
 #X floatatom 194 403 5 0 0 0 - - -, f 5;
-#X obj 83 513 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 83 513 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X floatatom 155 304 5 0 0 0 - - -, f 5;
 #X floatatom 402 348 5 0 0 0 - - -, f 5;
 #X obj 215 657 r global-selected-s;
 #X floatatom 215 686 5 0 0 0 - - -, f 5;
-#X obj 421 447 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 421 447 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X msg 315 439 set 0;
 #X obj 371 482 t b b;
 #X msg 387 517 0;
@@ -849,10 +849,10 @@ toggle rec, f 14;
 #X obj 171 105 t 1 play;
 #X obj 206 83 t 0 play;
 #X obj 119 50 select 0 3 4 5 6 1 2;
-#X obj 119 75 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X obj 158 239 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 119 75 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 158 239 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X msg 158 212 symbol \$0-\$1change-r;
 #X connect 0 0 8 0;
 #X connect 4 0 2 0;
@@ -906,8 +906,8 @@ toggle rec, f 14;
 #X obj 152 280 t f f;
 #X obj 69 181 \$1;
 #X floatatom 152 245 5 0 0 0 - - -, f 5;
-#X obj 214 251 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 214 251 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 405 76 r \$0-loadnum;
 #X msg 405 105 0;
 #N canvas 152 161 961 557 midi_cfg 0;
@@ -1032,7 +1032,7 @@ toggle rec, f 14;
 #X connect 20 0 10 0;
 #X connect 22 0 10 0;
 #X restore 99 180 pd midictrl;
-#N canvas 678 268 522 342 backgdcolor 0;
+#N canvas 679 73 522 585 backgdcolor 0;
 #N canvas 655 47 745 645 button_change_color 0;
 #X text 201 24 status number;
 #X obj 118 69 change;
@@ -1051,8 +1051,8 @@ rec \; 4 for rec queue \; 5 for stop \; 6 for stop queue;
 #X obj 118 129 select 0 1 2 3 4 5 6, f 40;
 #X msg 126 477 color 0 12;
 #X msg 437 182 stop;
-#X obj 54 149 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 54 149 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #N canvas 192 248 450 323 blink 0;
 #X obj 115 93 f 1;
 #X obj 146 93 + 1;
@@ -1061,8 +1061,8 @@ rec \; 4 for rec queue \; 5 for stop \; 6 for stop queue;
 #X floatatom 116 147 5 0 0 0 - - -, f 5;
 #X obj 113 17 inlet;
 #X obj 114 64 metro 250;
-#X obj 173 27 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 173 27 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X msg 209 26 stop;
 #X obj 110 225 outlet;
 #X obj 170 225 outlet;
@@ -1086,8 +1086,8 @@ rec \; 4 for rec queue \; 5 for stop \; 6 for stop queue;
 #X floatatom 116 147 5 0 0 0 - - -, f 5;
 #X obj 113 17 inlet;
 #X obj 114 64 metro 250;
-#X obj 173 27 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 173 27 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X msg 209 26 stop;
 #X obj 110 225 outlet;
 #X obj 170 225 outlet;
@@ -1111,8 +1111,8 @@ rec \; 4 for rec queue \; 5 for stop \; 6 for stop queue;
 #X floatatom 116 147 5 0 0 0 - - -, f 5;
 #X obj 113 17 inlet;
 #X obj 114 64 metro 250;
-#X obj 173 27 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 173 27 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X msg 209 26 stop;
 #X obj 110 225 outlet;
 #X obj 170 225 outlet;
@@ -1175,6 +1175,10 @@ rec \; 4 for rec queue \; 5 for stop \; 6 for stop queue;
 #X obj 129 59 t a a a a;
 #X obj 203 51 t f f f f, f 25;
 #X obj 358 101 s;
+#X obj 183 366 s;
+#X obj 61 333 s;
+#X msg 201 332 symbol \$0-playrecbutton-r;
+#X msg 135 404 symbol \$1-sliderUI-r;
 #X connect 0 0 9 0;
 #X connect 1 0 3 1;
 #X connect 2 0 10 0;
@@ -1189,6 +1193,8 @@ rec \; 4 for rec queue \; 5 for stop \; 6 for stop queue;
 #X connect 10 1 1 0;
 #X connect 10 2 7 0;
 #X connect 10 3 8 0;
+#X connect 14 0 12 1;
+#X connect 15 0 13 1;
 #X restore 100 147 pd backgdcolor;
 #N canvas 537 338 679 342 slidergrad 0;
 #X obj 34 17 r \$0-loadnum;
@@ -1253,11 +1259,11 @@ rec \; 4 for rec queue \; 5 for stop \; 6 for stop queue;
 #X floatatom 158 132 5 0 0 0 - - -, f 5;
 #X obj 158 160 mod;
 #X floatatom 257 74 5 0 0 0 - - -, f 5;
-#X obj 51 74 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 51 74 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X obj 158 189 select 0;
-#X obj 158 218 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 158 218 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 158 242 s \$0-trackstart;
 #X obj 34 11 r \$0-loadnum;
 #X msg 51 98 0;
@@ -1266,8 +1272,8 @@ slider;
 #X obj 366 47 r \$0-statusset-s;
 #X floatatom 366 76 5 0 0 0 - - -, f 5;
 #X obj 366 104 change;
-#X obj 366 155 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 366 155 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X text 408 154 <-- this is a dirty workaround that shouldn't be needed
 if stuff were initialized properly, f 31;
 #X obj 366 133 select 1 3 5;
@@ -1335,10 +1341,10 @@ if stuff were initialized properly, f 31;
 #X obj 116 25 r \$0-statusset-s;
 #X obj 116 54 select 1 6;
 #X obj 115 278 s thumb_array_act-val;
-#X obj 183 84 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X obj 115 88 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 183 84 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 115 88 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X msg 264 214 0 56;
 #X floatatom 215 150 5 0 0 0 - - -, f 5;
 #X obj 290 30 r \$0-loadnum;
@@ -1504,10 +1510,10 @@ is set to trackui-initband-r without track number, f 10;
 #X restore 79 328 pd change<>UI;
 #N canvas 394 266 450 325 track_selected_color 0;
 #X obj 125 117 select 0 1;
-#X obj 144 25 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X obj 159 144 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 144 25 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 159 144 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X floatatom 125 90 5 0 0 0 - - -, f 5;
 #X obj 125 61 r \$0-selected-r;
 #X obj 147 199 s \$0-cfg-r;
@@ -1524,5 +1530,106 @@ is set to trackui-initband-r without track number, f 10;
 #X connect 7 0 5 0;
 #X connect 8 0 6 0;
 #X restore 260 244 pd track_selected_color;
+#X obj 290 459 cnv 15 85 44 empty \$0-trackbackgd-r empty 0 0 0 10
+#a0a0a0 #202020 0;
+#X obj 293 463 bng 16 250 50 0 1188-playUI-s \$0-playrecbang-r empty
+17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 293 463 cnv 16 16 16 empty empty empty 20 12 0 14 #000000 #404040
+0;
+#X obj 293 483 tgl 16 0 empty \$0-cfg-r cfg 0 5 0 10 #fcfcfc #000000
+#404040 0 1;
+#N canvas 659 34 560 634 playrecbutton 0;
+#X obj 52 46 r \$0-statusset-s;
+#X floatatom 52 75 5 0 0 0 - - -, f 5;
+#X obj 104 645 s \$0-playrecbutton-r;
+#X msg 183 612 send \$0-recUI-s;
+#X obj 104 669 s \$0-playrecbang-r;
+#X obj 258 35 r \$0-recUI-s;
+#X obj 258 64 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 286 93 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 286 64 r \$0-playUI-s;
+#X obj 317 124 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 317 95 r \$0-pauseUI-s;
+#X msg 34 516 send \$0-playUI-s;
+#X text 84 12 button shows what the next clic will do;
+#X obj 137 78 r \$0-recarm-s;
+#X floatatom 137 107 5 0 0 0 - - -, f 5;
+#X msg 100 538 label ❚❚ \, label_font 0 12 \, label_pos -1 4;
+#X msg 171 590 label ● \, label_font 0 17 \, label_pos 1 3;
+#X msg 17 494 label ▶ \, label_font 0 17 \, label_pos 1 3;
+#X msg 110 560 send \$0-pauseUI-s;
+#X obj 17 439 t b b;
+#X obj 97 442 t b b;
+#X obj 168 443 t b b;
+#X obj 52 103 pack f f;
+#X obj 52 145 route 0 1 2 3 4 5 6, f 59;
+#X floatatom 52 174 5 0 0 0 - - -, f 5;
+#X obj 110 199 select 0 1;
+#X text 198 201 playing with rec arm OFF or ON;
+#X obj 169 228 select 0 1;
+#X text 253 228 play queued with rec arm OFF or ON;
+#X obj 227 258 select 0 1;
+#X text 311 258 rec with rec arm OFF or ON;
+#X obj 286 285 select 0 1;
+#X text 370 285 rec queued with rec arm OFF or ON;
+#X obj 344 311 select 0 1;
+#X text 428 310 stopped with rec arm OFF or ON;
+#X obj 403 339 select 0 1;
+#X text 486 340 stop queued with rec arm OFF or ON;
+#X msg 431 453 1;
+#X obj 431 482 s \$0-statusset-s;
+#X msg 469 455 2;
+#X msg 423 432 0;
+#X msg 462 432 5;
+#X connect 0 0 1 0;
+#X connect 1 0 22 0;
+#X connect 3 0 4 0;
+#X connect 5 0 6 0;
+#X connect 8 0 7 0;
+#X connect 10 0 9 0;
+#X connect 11 0 4 0;
+#X connect 13 0 14 0;
+#X connect 14 0 22 1;
+#X connect 15 0 2 0;
+#X connect 16 0 2 0;
+#X connect 17 0 2 0;
+#X connect 18 0 4 0;
+#X connect 19 0 17 0;
+#X connect 19 1 11 0;
+#X connect 20 0 15 0;
+#X connect 20 1 18 0;
+#X connect 21 0 16 0;
+#X connect 21 1 3 0;
+#X connect 22 0 23 0;
+#X connect 23 0 24 0;
+#X connect 23 1 25 0;
+#X connect 23 2 27 0;
+#X connect 23 3 29 0;
+#X connect 23 4 31 0;
+#X connect 23 5 33 0;
+#X connect 23 6 35 0;
+#X connect 24 0 21 0;
+#X connect 25 0 20 0;
+#X connect 25 1 21 0;
+#X connect 27 0 20 0;
+#X connect 27 1 20 0;
+#X connect 29 0 20 0;
+#X connect 29 1 20 0;
+#X connect 31 0 20 0;
+#X connect 31 1 20 0;
+#X connect 33 0 19 0;
+#X connect 33 1 21 0;
+#X connect 35 0 19 0;
+#X connect 35 1 21 0;
+#X connect 37 0 38 0;
+#X connect 39 0 38 0;
+#X connect 40 0 38 0;
+#X connect 41 0 38 0;
+#X restore 251 523 pd playrecbutton;
+#X obj 294 464 cnv 14 14 14 1188-recUI-s \$0-playrecbutton-r ▶ 1
+3 0 17 #fc2828 #000000 0;
 #X connect 5 0 7 0;
 #X coords 0 -1 1 1 110 58 2 81 223;

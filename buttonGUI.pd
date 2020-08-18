@@ -1,25 +1,25 @@
-#N canvas 441 305 186 105 10;
+#N canvas 641 103 549 526 10;
 #X obj 92 65 hsl 62 16 0 127 0 0 \$0-sliderUI-s \$0-sliderUI-r empty
--2 -9 0 10 -262144 -1 -262144 0 0;
-#X obj 73 63 cnv 15 22 22 empty \$0-UIbackgd-r empty 20 12 0 14 -233017
--66577 0;
-#X obj 73 44 cnv 15 86 18 empty \$0-UIbackgd-r empty 20 12 0 14 -233017
--66577 0;
-#X obj 76 65 bng 16 250 50 0 \$0-stopUI-s \$0-stopUI-r S 4 6 0 10 -262144
--1 -1;
-#X obj 76 47 tgl 16 0 \$0-recUI-s \$0-recUI-r R 4 6 0 10 -262144 -258049
--176129 0 1;
-#X obj 94 47 cnv 10 44 15 empty \$0-nameUI-r symbol 1 6 0 10 -233017
--66577 0;
+-2 -9 0 10 #fcfcfc #000000 #fcfcfc 0 0;
+#X obj 73 63 cnv 15 22 22 empty \$0-UIbackgd-r empty 20 12 0 14 #e0e0e0
+#404040 0;
+#X obj 73 44 cnv 15 86 18 empty \$0-UIbackgd-r empty 20 12 0 14 #e0e0e0
+#404040 0;
+#X obj 76 65 bng 16 250 50 0 \$0-stopUI-s \$0-stopUI-r S 4 6 0 10 #fcfcfc
+#000000 #000000;
+#X obj 76 47 tgl 16 0 \$0-recUI-s \$0-recUI-r R 4 6 0 10 #fcfcfc #fc0000
+#ac0000 0 1;
+#X obj 94 47 cnv 10 44 15 empty \$0-nameUI-r symbol 1 6 0 10 #e0e0e0
+#404040 0;
 #X floatatom 168 48 3 0 0 0 - - -, f 3;
 #X obj 248 55 bng 15 250 50 0 empty buttonguibang-r buttonguibang 17
-7 0 10 -262144 -1 -1;
+7 0 10 #fcfcfc #000000 #000000;
 #X obj 248 79 \$1;
 #X obj 281 238 s buttonguibang-r;
 #X msg 281 213 receive \$1-buttonguibang-r;
 #X obj 249 32 s buttonguibang-r;
-#X obj 250 3 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 250 3 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #N canvas 731 372 450 373 gradarray-init 0;
 #X msg 289 28 32;
 #X obj 289 55 array size gradarray;
@@ -71,16 +71,50 @@
 #X obj 528 312 s \$0-stopUI-r;
 #X obj 512 368 s \$0-nameUI-r;
 #X msg 513 342 receive \$1-nameUI-r;
-#X obj 93 84 cnv 1 66 1 empty \$0-UIbackgd-r empty 20 12 0 14 -233017
--66577 0;
+#X obj 93 84 cnv 1 66 1 empty \$0-UIbackgd-r empty 20 12 0 14 #e0e0e0
+#404040 0;
 #X msg 210 395 receive \$1-UIbackgd-r;
 #X obj 210 420 s \$0-UIbackgd-r;
 #X obj 498 421 s \$0-sliderUI-r;
 #X msg 498 396 receive \$1-sliderUI-r;
-#X obj 95 65 cnv 1 1 16 empty empty empty 20 12 0 14 -1 -66577 0;
-#X obj 154 65 cnv 1 1 16 empty empty empty 20 12 0 14 -1 -66577 0;
-#X obj 156 62 cnv 1 3 22 empty \$0-UIbackgd-r empty 20 12 0 14 -233017
--66577 0;
+#X obj 95 65 cnv 1 1 16 empty empty empty 20 12 0 14 #000000 #404040
+0;
+#X obj 154 65 cnv 1 1 16 empty empty empty 20 12 0 14 #000000 #404040
+0;
+#X obj 156 62 cnv 1 3 22 empty \$0-UIbackgd-r empty 20 12 0 14 #e0e0e0
+#404040 0;
+#X obj 4 88 cnv 15 64 44 empty \$0-UIbackgd-r empty 20 12 0 14 #a0a0a0
+#404040 0;
+#X dropdown 48 112 1 1 0 0 - - -, f 1;
+#X obj 4 92 hsl 59 16 0 127 0 0 \$0-sliderUI-s \$0-sliderUI-r \$0-Unna
+5 7 0 10 #fcfcfc #000000 #606060 0 0;
+#X obj 8 112 bng 16 250 50 0 \$0-stopUI-s \$0-stopUI-r ◼ 3 4 0 14
+#fcfcfc #000000 #000000;
+#X obj 28 112 tgl 16 0 \$0-recUI-s \$0-recUI-r R 4 7 0 10 #fcfcfc #fc0000
+#ac0000 0 1;
+#X obj 7 92 cnv 1 1 16 empty empty empty 20 12 0 14 #000000 #404040
+0;
+#X obj 64 92 cnv 1 1 16 empty empty empty 20 12 0 14 #000000 #404040
+0;
+#X obj 65 88 cnv 1 3 22 empty \$0-UIbackgd-r empty 20 12 0 14 #a0a0a0
+#404040 0;
+#X obj 4 92 cnv 3 3 17 empty \$0-UIbackgd-r empty 20 12 0 14 #a0a0a0
+#404040 0;
+#X obj 48 112 cnv 1 1 16 empty empty empty 20 12 0 14 #000000 #404040
+0;
+#X obj 65 112 cnv 2 3 16 empty empty empty 20 12 0 14 #989898 #404040
+0;
+#X obj 63 112 cnv 1 1 16 empty empty empty 20 12 0 14 #000000 #404040
+0;
+#X obj 48 112 cnv 1 16 1 empty empty empty 20 12 0 14 #000000 #404040
+0;
+#X obj 48 127 cnv 1 16 1 empty empty empty 20 12 0 14 #000000 #404040
+0;
+#X obj 49 113 cnv 14 14 14 empty empty ≣ 1 4 1 14 #e8e8e8 #404040
+0;
+#X msg 51 441 label \$1;
+#X obj 51 465 s \$0-sliderUI-r;
+#X obj 51 420 tools/stringsplit 9;
 #X connect 7 0 8 0;
 #X connect 8 0 6 0;
 #X connect 8 0 16 0;
@@ -93,6 +127,7 @@
 #X connect 16 3 24 0;
 #X connect 17 0 18 0;
 #X connect 18 0 20 0;
+#X connect 18 0 58 0;
 #X connect 19 0 18 0;
 #X connect 19 1 17 0;
 #X connect 19 3 14 0;
@@ -112,4 +147,6 @@
 #X connect 32 0 31 0;
 #X connect 34 0 35 0;
 #X connect 37 0 36 0;
+#X connect 56 0 57 0;
+#X connect 58 0 56 0;
 #X coords 0 -1 1 1 86 41 2 73 44;
