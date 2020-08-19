@@ -1,18 +1,18 @@
-#N canvas 61 233 862 485 10;
-#X obj 4 88 cnv 15 64 44 empty empty empty 20 12 0 14 #a0a0a0 #404040
+#N canvas 66 68 431 236 10;
+#X obj 52 84 cnv 15 64 23 empty empty empty 20 12 0 14 #a0a0a0 #404040
 0;
-#X dropdown 48 112 1 1 0 0 - #0-actiondd-r #0-actiondd-s, f 1;
-#X obj 92 65 hsl 62 16 0 127 0 0 \$0-sliderUI-s \$0-sliderUI-r empty
+#X dropdown 96 87 1 1 0 0 - #0-actiondd-r #0-actiondd-s, f 1;
+#X obj 71 35 hsl 62 16 0 127 0 0 \$0-sliderUI-s \$0-sliderUI-r empty
 -2 -9 0 10 #fcfcfc #000000 #fcfcfc 0 0;
-#X obj 73 63 cnv 15 22 22 empty \$0-UIbackgd-r empty 20 12 0 14 #e0e0e0
+#X obj 52 33 cnv 15 22 22 empty \$0-UIbackgd-r empty 20 12 0 14 #e0e0e0
 #404040 0;
-#X obj 73 44 cnv 15 86 18 empty \$0-UIbackgd-r empty 20 12 0 14 #e0e0e0
+#X obj 52 14 cnv 15 86 18 empty \$0-UIbackgd-r empty 20 12 0 14 #e0e0e0
 #404040 0;
-#X obj 76 65 bng 16 250 50 0 \$0-stopUI-s \$0-stopUI-r S 4 6 0 10 #fcfcfc
+#X obj 55 35 bng 16 250 50 0 \$0-stopUI-s \$0-stopUI-r S 4 6 0 10 #fcfcfc
 #000000 #000000;
-#X obj 76 47 tgl 16 0 \$0-recUI-s \$0-recUI-r R 4 6 0 10 #fcfcfc #fc0000
+#X obj 55 17 tgl 16 0 \$0-recUI-s \$0-recUI-r R 4 6 0 10 #fcfcfc #fc0000
 #ac0000 0 1;
-#X obj 94 47 cnv 10 44 15 empty \$0-nameUI-r symbol 1 6 0 10 #e0e0e0
+#X obj 73 17 cnv 10 44 15 empty \$0-nameUI-r symbol 1 6 0 10 #e0e0e0
 #404040 0;
 #X floatatom 168 48 3 0 0 0 - - -, f 3;
 #X obj 248 55 bng 15 250 50 0 empty buttonguibang-r buttonguibang 17
@@ -31,7 +31,6 @@
 #X msg 528 289 send \$1-stopUI-s \, receive \$1-stopUI-r;
 #X msg 545 244 send \$1-recUI-s \, receive \$1-recUI-r;
 #X msg 559 195 send \$1-playUI-s \, receive \$1-playUI-r;
-#X obj 485 172 t b f f f f f;
 #X obj 148 277 s tracknameUI-r;
 #X obj 304 166 t f f;
 #X msg 329 191 label \$1-buttonguibang;
@@ -40,45 +39,43 @@
 #X obj 528 312 s \$0-stopUI-r;
 #X obj 512 368 s \$0-nameUI-r;
 #X msg 513 342 receive \$1-nameUI-r;
-#X obj 93 84 cnv 1 66 1 empty \$0-UIbackgd-r empty 20 12 0 14 #e0e0e0
+#X obj 72 54 cnv 1 66 1 empty \$0-UIbackgd-r empty 20 12 0 14 #e0e0e0
 #404040 0;
 #X msg 210 395 receive \$1-UIbackgd-r;
 #X obj 210 420 s \$0-UIbackgd-r;
 #X obj 498 421 s \$0-sliderUI-r;
 #X msg 498 396 receive \$1-sliderUI-r;
-#X obj 95 65 cnv 1 1 16 empty empty empty 20 12 0 14 #000000 #404040
+#X obj 74 35 cnv 1 1 16 empty empty empty 20 12 0 14 #000000 #404040
 0;
-#X obj 154 65 cnv 1 1 16 empty empty empty 20 12 0 14 #000000 #404040
+#X obj 133 35 cnv 1 1 16 empty empty empty 20 12 0 14 #000000 #404040
 0;
-#X obj 156 62 cnv 1 3 22 empty \$0-UIbackgd-r empty 20 12 0 14 #e0e0e0
+#X obj 135 32 cnv 1 3 22 empty \$0-UIbackgd-r empty 20 12 0 14 #e0e0e0
 #404040 0;
-#X obj 4 92 hsl 59 16 0 127 0 0 \$0-sliderUI-s \$0-sliderUI-r \$0-Unna
+#X obj 52 67 hsl 59 16 0 127 0 0 \$0-sliderUI-s \$0-sliderUI-r \$0-Unna
 5 7 0 10 #fcfcfc #000000 #606060 0 0;
-#X obj 8 112 bng 16 250 50 0 \$0-stopUI-s \$0-stopUI-r ◼ 3 4 0 14
+#X obj 56 87 bng 16 250 50 0 \$0-stopUI-s \$0-stopUI-r ◼ 3 4 0 14
 #fcfcfc #000000 #000000;
-#X obj 28 112 tgl 16 0 \$0-recUI-s \$0-recUI-r R 4 7 0 10 #fcfcfc #fc0000
-#ac0000 0 1;
-#X obj 7 92 cnv 1 1 16 empty empty empty 20 12 0 14 #000000 #404040
+#X obj 76 87 tgl 16 0 \$0-recarmUI-s \$0-recarmUI-r A 4 7 0 10 #fcfcfc
+#fc0000 #ac0000 0 1;
+#X obj 55 67 cnv 1 1 16 empty empty empty 20 12 0 14 #000000 #404040
 0;
-#X obj 64 92 cnv 1 1 16 empty empty empty 20 12 0 14 #000000 #404040
+#X obj 112 67 cnv 1 1 16 empty empty empty 20 12 0 14 #000000 #404040
 0;
-#X obj 65 88 cnv 3 3 22 empty empty empty 20 12 0 14 #a0a0a0 #404040
+#X obj 113 63 cnv 3 3 22 empty empty empty 20 12 0 14 #a0a0a0 #404040
 0;
-#X obj 4 92 cnv 3 3 20 empty empty empty 20 12 0 14 #a0a0a0 #404040
+#X obj 52 67 cnv 3 3 20 empty empty empty 20 12 0 14 #a0a0a0 #404040
 0;
-#X obj 48 112 cnv 1 1 16 empty empty empty 20 12 0 14 #000000 #404040
+#X obj 96 87 cnv 1 1 16 empty empty empty 20 12 0 14 #000000 #404040
 0;
-#X obj 63 112 cnv 1 1 16 empty empty empty 20 12 0 14 #000000 #404040
+#X obj 111 87 cnv 1 1 16 empty empty empty 20 12 0 14 #000000 #404040
 0;
-#X obj 48 112 cnv 1 16 1 empty empty empty 20 12 0 14 #000000 #404040
+#X obj 96 87 cnv 1 16 1 empty empty empty 20 12 0 14 #000000 #404040
 0;
-#X obj 48 127 cnv 1 16 1 empty empty empty 20 12 0 14 #000000 #404040
-0;
-#X obj 49 113 cnv 14 14 14 empty empty ≣ 1 4 1 14 #e8e8e8 #404040
+#X obj 96 102 cnv 1 16 1 empty empty empty 20 12 0 14 #000000 #404040
 0;
 #X msg 50 351 label \$1;
 #X obj 50 330 tools/stringsplit 9;
-#X obj 65 112 cnv 2 3 16 empty empty empty 20 12 0 14 #989898 #404040
+#X obj 113 87 cnv 2 3 16 empty empty empty 20 12 0 14 #989898 #404040
 0;
 #N canvas 68 346 450 325 action_dropdown 0;
 #X obj 44 30 r \$0-actiondd-s;
@@ -108,44 +105,53 @@
 #X msg 62 251 \$1-nameset-s;
 #X obj 24 226 t b f f f, f 10;
 #X msg 39 271 symbol \$1-nameset-r;
+#X obj 97 88 cnv 14 14 14 empty empty ≣ 1 4 1 14 #e8e8e8 #404040
+0;
+#X obj 485 172 t b f f f f f f;
+#X msg 570 502 send \$1-recarmUI-s \, receive \$1-recarmUI-r;
+#X obj 570 525 s \$0-recarmUI-r;
+#X obj 52 63 cnv 3 64 3 empty empty empty 20 12 0 14 #a0a0a0 #404040
+0;
 #X connect 9 0 10 0;
 #X connect 10 0 8 0;
 #X connect 10 0 15 0;
 #X connect 12 0 11 0;
 #X connect 14 0 13 0;
-#X connect 15 0 65 0;
-#X connect 15 1 33 0;
-#X connect 15 2 25 0;
-#X connect 15 3 23 0;
+#X connect 15 0 63 0;
+#X connect 15 1 32 0;
+#X connect 15 2 24 0;
+#X connect 15 3 66 0;
 #X connect 16 0 17 0;
 #X connect 17 0 19 0;
 #X connect 18 0 17 0;
 #X connect 18 1 16 0;
-#X connect 19 0 24 0;
-#X connect 20 0 29 0;
-#X connect 21 0 28 0;
-#X connect 22 0 27 0;
-#X connect 23 0 61 0;
-#X connect 23 1 36 0;
-#X connect 23 2 31 0;
-#X connect 23 3 20 0;
-#X connect 23 4 21 0;
-#X connect 25 0 12 0;
-#X connect 25 1 26 0;
-#X connect 26 0 11 0;
-#X connect 31 0 30 0;
-#X connect 33 0 34 0;
-#X connect 36 0 35 0;
-#X connect 52 0 62 0;
-#X connect 53 0 52 0;
-#X connect 56 0 53 0;
-#X connect 57 0 65 0;
-#X connect 61 0 60 0;
-#X connect 63 0 62 1;
-#X connect 64 0 56 0;
-#X connect 65 0 58 0;
-#X connect 65 1 66 0;
-#X connect 65 2 64 0;
-#X connect 65 3 63 0;
-#X connect 66 0 58 1;
-#X coords 0 -1 1 1 86 41 2 73 44;
+#X connect 19 0 23 0;
+#X connect 20 0 28 0;
+#X connect 21 0 27 0;
+#X connect 22 0 26 0;
+#X connect 24 0 12 0;
+#X connect 24 1 25 0;
+#X connect 25 0 11 0;
+#X connect 30 0 29 0;
+#X connect 32 0 33 0;
+#X connect 35 0 34 0;
+#X connect 50 0 60 0;
+#X connect 51 0 50 0;
+#X connect 54 0 51 0;
+#X connect 55 0 63 0;
+#X connect 59 0 58 0;
+#X connect 61 0 60 1;
+#X connect 62 0 54 0;
+#X connect 63 0 56 0;
+#X connect 63 1 64 0;
+#X connect 63 2 62 0;
+#X connect 63 3 61 0;
+#X connect 64 0 56 1;
+#X connect 66 0 59 0;
+#X connect 66 1 35 0;
+#X connect 66 2 30 0;
+#X connect 66 3 20 0;
+#X connect 66 4 21 0;
+#X connect 66 6 67 0;
+#X connect 67 0 68 0;
+#X coords 0 -1 1 1 64 44 2 52 63;

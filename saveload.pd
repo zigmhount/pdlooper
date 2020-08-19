@@ -1,4 +1,4 @@
-#N canvas 810 437 216 176 10;
+#N canvas 811 460 216 176 10;
 #N canvas 300 41 1021 701 save 0;
 #X obj 78 83 savepanel;
 #X msg 117 240 clear;
@@ -191,7 +191,7 @@
 #000000;
 #X obj 49 71 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
-#N canvas 88 67 628 675 load 1;
+#N canvas 89 67 628 675 load 0;
 #X msg 64 168 read \$1;
 #X obj 64 193 text define \$0-toload;
 #X obj 45 20 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
@@ -236,8 +236,8 @@
 #X obj 531 485 f;
 #X obj 460 410 t a a a;
 #X obj 479 458 route symbol float;
-#X obj 375 554 t 5;
-#X obj 375 579 s;
+#X obj 375 567 t 5;
+#X obj 375 593 s;
 #X obj 375 469 t a a a;
 #X obj 43 483 s toui;
 #X obj 45 145 t b a b b;
@@ -251,7 +251,8 @@ the last row has been read \; , f 17;
 #X msg 270 124 \$2;
 #X msg 297 123 symbol \$1-r;
 #X obj 270 99 t l l;
-#X msg 411 557 symbol \$2-statusset-r;
+#X msg 411 571 symbol \$2-statusset-r;
+#X obj 375 543 delay 1000;
 #X connect 0 0 1 0;
 #X connect 2 0 3 0;
 #X connect 3 0 45 0;
@@ -297,7 +298,7 @@ the last row has been read \; , f 17;
 #X connect 40 0 37 0;
 #X connect 40 1 38 0;
 #X connect 41 0 42 0;
-#X connect 43 0 41 0;
+#X connect 43 0 56 0;
 #X connect 43 1 55 0;
 #X connect 43 2 31 0;
 #X connect 45 0 4 0;
@@ -314,6 +315,7 @@ the last row has been read \; , f 17;
 #X connect 54 0 52 0;
 #X connect 54 1 53 0;
 #X connect 55 0 42 1;
+#X connect 56 0 41 0;
 #X restore 48 95 pd load;
 #X connect 1 0 0 0;
 #X connect 2 0 3 0;
