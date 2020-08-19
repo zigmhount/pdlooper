@@ -2,8 +2,8 @@
 
 Pdlooper is a looping software, typically used in live setups (but not only), with audio and MIDI support. It is written in [Pure Data](https://puredata.info/) - actually [Purr Data](https://github.com/agraef/purr-data), though I'm trying (not so successfully) to limit the number of externals used.   
 
-I've been trying out open-source looping software for a while and could not find exactly what I was looking for. I have pretty much no skills in "proper" programming languages so I didn't really have the possibility (unfortunately) to improve any of the tools I've tried, so I decided to build my own from scratch.  
-Not sure whether this will actually be usable (especially in terms of real-time performance) but it's at least fun to learn!
+I've been trying out open-source looping software for a while and could not find exactly what I was looking for. I have very little skills in lower-level, text-based programming languages so I didn't really have the possibility (unfortunately) to improve any of the tools I've tried, so I decided to build my own from scratch.  
+Not sure whether this will actually be usable - especially in terms of real-time performance and sound quality - but it's at least fun to learn!
 
 This has been developed and tested only on Debian 9.0 and OpenSuse 15.1-15.2 so far.
 
@@ -30,6 +30,7 @@ Like the tools I was inspired by (see below), I intend to use Pdlooper in a modu
 
 ## Current features
 - Set tempo by tapping
+- Save and load the session (parameters in a text file, wav files are stored in a subfolder <name_of_text_file>\_files/)
 - Audio input: selection between [adc~] (microphone) or an embedded fluidsynth input with [fluid~]
 - Audio tracks
   - Record audio tracks in stereo
@@ -37,7 +38,6 @@ Like the tools I was inspired by (see below), I intend to use Pdlooper in a modu
 - Control tracks
   - groups/scenes of tracks to start at once
   - "Follow" and "Random Follow" modes to play a few given tracks in a sequence or randomly after one another
-- ~Save tracks as wav files~
 - configuration panel for every track:
   - select the output channels
   - change the name
@@ -49,7 +49,7 @@ Like the tools I was inspired by (see below), I intend to use Pdlooper in a modu
   - include the controllers' knobs and faders in pdlooper's UI to send the signals to external mixers/plugins (rather than connecting the controllers to each mixer/effect host)
   - use some controls directly for the tracks' configuration inside pdlooper
 
-That's what it currently looks like. It's a bit of a mess, as I added widgets to quicky test and jam, but I plan to improve that soon!
+That's what it currently looks like:
 ![](screenshots/latest.png)
 
 Follow and Random Follow:
@@ -59,17 +59,14 @@ Matrix thumbnail of all currently playing tracks, can be sent to scenes for arra
 ![](screenshots/matrix_thumb.png)
 
 ## Current issues
-- Can't easily load saved files
 - Still some audio glitches
 - Quite a few unexpected behaviours of the UI
 
 ## Planned features
-- File management
-  - Save session file
-  - Load session file and wav files as loops
 - More looping
   - tracks for midi controls
   - tracks for midi sequences?
+  - one-shot mode for tracks that should be played only once
 - Fancy stuff
   - include lv2 host with [lv2plugin~]?
   - arrange the tracks and scenes to start sequentially, while keeping the freedom to start/stop other tracks as wished
