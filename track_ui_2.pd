@@ -1,4 +1,4 @@
-#N canvas 459 24 834 703 12;
+#N canvas 460 39 834 703 12;
 #X obj 99 19 import mrpeach;
 #N canvas 62 339 844 507 \$0-OSCoutput 0;
 #X text 232 23 receive /playpause 1;
@@ -323,7 +323,7 @@ trackui-initbang 17 7 0 10 #fcfcfc #000000 #000000;
 #404040 0 1;
 #X text 243 17 buttonGUI only to send changes to trackconfig \, not
 directly to DSP, f 29;
-#N canvas 489 24 682 392 set_buttoncontent 0;
+#N canvas 490 47 682 392 set_buttoncontent 0;
 #X obj 42 30 inlet;
 #X text 93 31 cfg or UI;
 #X obj 42 64 select 0 1, f 87;
@@ -368,6 +368,8 @@ directly to DSP, f 29;
 #X msg 46 546 symbol \$1-nameUI-r;
 #X msg 99 193 set \$1;
 #X msg 77 299 set \$1;
+#X msg 188 545 symbol \$1-sliderUI-r;
+#X obj 171 581 s;
 #X connect 0 0 13 0;
 #X connect 0 2 5 0;
 #X connect 0 3 1 0;
@@ -379,15 +381,18 @@ directly to DSP, f 29;
 #X connect 10 0 3 1;
 #X connect 11 0 4 1;
 #X connect 14 0 16 0;
+#X connect 15 0 24 0;
 #X connect 15 1 11 0;
 #X connect 15 2 10 0;
 #X connect 15 3 21 0;
 #X connect 16 0 12 0;
+#X connect 16 0 25 0;
 #X connect 18 0 8 0;
 #X connect 19 0 8 1;
 #X connect 21 0 12 1;
 #X connect 22 0 3 0;
 #X connect 23 0 4 0;
+#X connect 24 0 25 1;
 #X restore 48 288 pd from\$0toUI;
 #N canvas 596 49 450 598 fromUIto\$0 0;
 #X obj 103 76 \$1;
@@ -1530,8 +1535,8 @@ is set to trackui-initband-r without track number, f 10;
 #X connect 7 0 5 0;
 #X connect 8 0 6 0;
 #X restore 260 244 pd track_selected_color;
-#X obj 290 459 cnv 15 85 44 empty \$0-trackbackgd-r empty 0 0 0 10
-#a0a0a0 #202020 0;
+#X obj 290 459 cnv 15 85 44 empty empty empty 0 0 0 10 #a0a0a0 #202020
+0;
 #X obj 293 463 bng 16 250 50 0 1188-playUI-s \$0-playrecbang-r empty
 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 293 463 cnv 16 16 16 empty empty empty 20 12 0 14 #000000 #404040

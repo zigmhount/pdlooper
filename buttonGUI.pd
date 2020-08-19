@@ -1,4 +1,7 @@
-#N canvas 641 103 549 526 10;
+#N canvas 61 233 862 485 10;
+#X obj 4 88 cnv 15 64 44 empty empty empty 20 12 0 14 #a0a0a0 #404040
+0;
+#X dropdown 48 112 1 1 0 0 - #0-actiondd-r #0-actiondd-s, f 1;
 #X obj 92 65 hsl 62 16 0 127 0 0 \$0-sliderUI-s \$0-sliderUI-r empty
 -2 -9 0 10 #fcfcfc #000000 #fcfcfc 0 0;
 #X obj 73 63 cnv 15 22 22 empty \$0-UIbackgd-r empty 20 12 0 14 #e0e0e0
@@ -20,50 +23,16 @@
 #X obj 249 32 s buttonguibang-r;
 #X obj 250 3 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
-#N canvas 731 372 450 373 gradarray-init 0;
-#X msg 289 28 32;
-#X obj 289 55 array size gradarray;
-#X obj 205 125 int;
-#X floatatom 205 144 5 0 0 0 - - -, f 5;
-#X obj 222 57 pack f f;
-#X obj 204 95 expr $f2 / $f1;
-#X msg 219 3 4;
-#X obj 167 4 inlet;
-#X text 27 4 number of bars to show;
-#X msg 348 119 \; \$2 const \$1;
-#X obj 287 6 t f b f f;
-#X obj 208 170 pack f f;
-#X msg 205 195 \; grad\$2 xticks 0 \$1 1;
-#X msg 433 47 \; grad\$0 rename grad\$1;
-#X msg 348 90 -1 grad\$1;
-#X obj 296 -16 inlet;
-#X connect 0 0 4 1;
-#X connect 2 0 3 0;
-#X connect 3 0 11 0;
-#X connect 4 0 5 0;
-#X connect 5 0 2 0;
-#X connect 6 0 4 0;
-#X connect 7 0 4 0;
-#X connect 10 0 11 1;
-#X connect 10 1 0 0;
-#X connect 10 2 14 0;
-#X connect 10 3 13 0;
-#X connect 11 0 12 0;
-#X connect 14 0 9 0;
-#X connect 15 0 10 0;
-#X restore 114 264 pd gradarray-init;
-#X obj 114 239 tools/receiver;
-#X msg 129 217 \$1-trackbars-s;
 #X obj 69 139 t f f f f, f 71;
-#X msg 84 293 \$1-trackname-s;
-#X obj 69 318 tools/receiver;
+#X msg 163 198 \$1-trackname-s;
+#X obj 148 223 tools/receiver;
 #X obj 69 170 t b f f b f f;
-#X msg 69 347 label \$1;
+#X msg 148 252 label \$1;
 #X msg 528 289 send \$1-stopUI-s \, receive \$1-stopUI-r;
 #X msg 545 244 send \$1-recUI-s \, receive \$1-recUI-r;
 #X msg 559 195 send \$1-playUI-s \, receive \$1-playUI-r;
 #X obj 485 172 t b f f f f f;
-#X obj 69 372 s tracknameUI-r;
+#X obj 148 277 s tracknameUI-r;
 #X obj 304 166 t f f;
 #X msg 329 191 label \$1-buttonguibang;
 #X obj 559 218 s \$0-playUI-r;
@@ -83,9 +52,6 @@
 0;
 #X obj 156 62 cnv 1 3 22 empty \$0-UIbackgd-r empty 20 12 0 14 #e0e0e0
 #404040 0;
-#X obj 4 88 cnv 15 64 44 empty \$0-UIbackgd-r empty 20 12 0 14 #a0a0a0
-#404040 0;
-#X dropdown 48 112 1 1 0 0 - - -, f 1;
 #X obj 4 92 hsl 59 16 0 127 0 0 \$0-sliderUI-s \$0-sliderUI-r \$0-Unna
 5 7 0 10 #fcfcfc #000000 #606060 0 0;
 #X obj 8 112 bng 16 250 50 0 \$0-stopUI-s \$0-stopUI-r ◼ 3 4 0 14
@@ -96,13 +62,11 @@
 0;
 #X obj 64 92 cnv 1 1 16 empty empty empty 20 12 0 14 #000000 #404040
 0;
-#X obj 65 88 cnv 1 3 22 empty \$0-UIbackgd-r empty 20 12 0 14 #a0a0a0
-#404040 0;
-#X obj 4 92 cnv 3 3 17 empty \$0-UIbackgd-r empty 20 12 0 14 #a0a0a0
-#404040 0;
-#X obj 48 112 cnv 1 1 16 empty empty empty 20 12 0 14 #000000 #404040
+#X obj 65 88 cnv 3 3 22 empty empty empty 20 12 0 14 #a0a0a0 #404040
 0;
-#X obj 65 112 cnv 2 3 16 empty empty empty 20 12 0 14 #989898 #404040
+#X obj 4 92 cnv 3 3 20 empty empty empty 20 12 0 14 #a0a0a0 #404040
+0;
+#X obj 48 112 cnv 1 1 16 empty empty empty 20 12 0 14 #000000 #404040
 0;
 #X obj 63 112 cnv 1 1 16 empty empty empty 20 12 0 14 #000000 #404040
 0;
@@ -112,41 +76,76 @@
 0;
 #X obj 49 113 cnv 14 14 14 empty empty ≣ 1 4 1 14 #e8e8e8 #404040
 0;
-#X msg 51 441 label \$1;
-#X obj 51 465 s \$0-sliderUI-r;
-#X obj 51 420 tools/stringsplit 9;
-#X connect 7 0 8 0;
-#X connect 8 0 6 0;
-#X connect 8 0 16 0;
-#X connect 10 0 9 0;
+#X msg 50 351 label \$1;
+#X obj 50 330 tools/stringsplit 9;
+#X obj 65 112 cnv 2 3 16 empty empty empty 20 12 0 14 #989898 #404040
+0;
+#N canvas 68 346 450 325 action_dropdown 0;
+#X obj 44 30 r \$0-actiondd-s;
+#X symbolatom 44 55 10 0 0 0 - - -, f 10;
+#X obj 44 83 select clear copy cut, f 61;
+#X obj 44 108 t b b;
+#X obj 71 133 \$1;
+#X obj 44 190 s;
+#X msg 71 158 symbol \$1-clear;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 5 0;
+#X connect 3 1 4 0;
+#X connect 4 0 6 0;
+#X connect 6 0 5 1;
+#X restore 351 90 pd action_dropdown;
+#X obj 50 297 tools/receiver;
+#X obj 17 178 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 24 297 s;
+#X text 100 194 obsolete:;
+#X obj 482 476 s \$0-actiondd-r;
+#X msg 482 449 names copy? cut? clear;
+#X obj 50 415 s;
+#X msg 81 375 symbol \$1-sliderUI-r;
+#X msg 62 251 \$1-nameset-s;
+#X obj 24 226 t b f f f, f 10;
+#X msg 39 271 symbol \$1-nameset-r;
+#X connect 9 0 10 0;
+#X connect 10 0 8 0;
+#X connect 10 0 15 0;
 #X connect 12 0 11 0;
 #X connect 14 0 13 0;
-#X connect 15 0 14 0;
-#X connect 16 1 34 0;
-#X connect 16 2 26 0;
-#X connect 16 3 24 0;
-#X connect 17 0 18 0;
-#X connect 18 0 20 0;
-#X connect 18 0 58 0;
-#X connect 19 0 18 0;
-#X connect 19 1 17 0;
-#X connect 19 3 14 0;
-#X connect 19 4 15 0;
-#X connect 19 5 13 1;
-#X connect 20 0 25 0;
-#X connect 21 0 30 0;
-#X connect 22 0 29 0;
-#X connect 23 0 28 0;
-#X connect 24 1 37 0;
-#X connect 24 2 32 0;
-#X connect 24 3 21 0;
-#X connect 24 4 22 0;
-#X connect 26 0 10 0;
-#X connect 26 1 27 0;
-#X connect 27 0 9 0;
-#X connect 32 0 31 0;
-#X connect 34 0 35 0;
-#X connect 37 0 36 0;
-#X connect 56 0 57 0;
-#X connect 58 0 56 0;
+#X connect 15 0 65 0;
+#X connect 15 1 33 0;
+#X connect 15 2 25 0;
+#X connect 15 3 23 0;
+#X connect 16 0 17 0;
+#X connect 17 0 19 0;
+#X connect 18 0 17 0;
+#X connect 18 1 16 0;
+#X connect 19 0 24 0;
+#X connect 20 0 29 0;
+#X connect 21 0 28 0;
+#X connect 22 0 27 0;
+#X connect 23 0 61 0;
+#X connect 23 1 36 0;
+#X connect 23 2 31 0;
+#X connect 23 3 20 0;
+#X connect 23 4 21 0;
+#X connect 25 0 12 0;
+#X connect 25 1 26 0;
+#X connect 26 0 11 0;
+#X connect 31 0 30 0;
+#X connect 33 0 34 0;
+#X connect 36 0 35 0;
+#X connect 52 0 62 0;
+#X connect 53 0 52 0;
+#X connect 56 0 53 0;
+#X connect 57 0 65 0;
+#X connect 61 0 60 0;
+#X connect 63 0 62 1;
+#X connect 64 0 56 0;
+#X connect 65 0 58 0;
+#X connect 65 1 66 0;
+#X connect 65 2 64 0;
+#X connect 65 3 63 0;
+#X connect 66 0 58 1;
 #X coords 0 -1 1 1 86 41 2 73 44;
