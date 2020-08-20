@@ -1,4 +1,4 @@
-#N canvas 973 476 522 306 10;
+#N canvas 973 476 522 331 10;
 #N canvas 629 24 627 743 metronome 0;
 #X text 93 726 OSC messages to /ui/metro;
 #X text 145 15 OSC messages to /dsp/metro;
@@ -103,7 +103,7 @@ out of sync - but not with getmetro, f 27;
 #X obj 360 332 dsp_switch;
 #X obj 360 381 switch~;
 #X obj 162 171 nbx 5 14 -1e+37 1e+37 0 0 tempo-s tempo-r tempo-s/r
-55 5 0 10 #fcfcfc #000000 #000000 96 256 0;
+55 5 0 10 #fcfcfc #000000 #000000 120 256 0;
 #X connect 2 0 60 0;
 #X connect 3 0 4 0;
 #X connect 4 0 5 0;
@@ -196,7 +196,7 @@ out of sync - but not with getmetro, f 27;
 #X obj 41 98 loadbang;
 #X obj 41 382 mrpeach/udpsend;
 #X obj 41 407 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 1 1;
+#000000 0 1;
 #X obj 64 339 mrpeach/packOSC;
 #X msg 50 156 disconnect;
 #X obj 37 24 bng 15 250 50 0 empty empty connect_to_8081 17 7 0 10
@@ -204,7 +204,7 @@ out of sync - but not with getmetro, f 27;
 #X obj 36 47 bng 15 250 50 0 empty empty disconnect 17 7 0 10 #fcfcfc
 #000000 #000000;
 #X obj 156 13 tgl 18 0 empty empty connected 35 6 0 10 #fcfcfc #000000
-#000000 1 1;
+#000000 0 1;
 #X obj 282 33 import mrpeach;
 #X obj 237 109 r toui;
 #X obj 293 158 list split 1;
@@ -833,20 +833,20 @@ sends to right outlet if right input=1, f 35;
 #N canvas 590 327 458 366 loadGUI 0;
 #X obj 129 21 loadbang;
 #X obj 129 88 shell;
-#X text 113 142 future: add aconnect to auto-connect MIDI and audio?
-Qjakcctl should remember anyway I guess.;
 #X msg 129 47 purr-data -nrt -noaudio -unique ui_main.pd &;
 #X obj 114 192 r fromui;
 #X floatatom 114 242 5 0 0 0 - - -, f 5;
 #X obj 114 291 s pd-dsp_main.pd;
 #X msg 114 266 vis \$1;
 #X obj 114 217 route /vis;
-#X connect 0 0 3 0;
-#X connect 3 0 1 0;
-#X connect 4 0 8 0;
-#X connect 5 0 7 0;
-#X connect 7 0 6 0;
-#X connect 8 0 5 0;
+#X obj 213 18 inlet;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 3 0 7 0;
+#X connect 4 0 6 0;
+#X connect 6 0 5 0;
+#X connect 7 0 4 0;
+#X connect 8 0 2 0;
 #X restore 287 48 pd loadGUI;
 #N canvas 125 87 450 418 get_dollarnums_tracks 0;
 #X obj 61 40 table dollarnumarray 64;
@@ -885,3 +885,6 @@ Qjakcctl should remember anyway I guess.;
 #X connect 16 0 4 0;
 #X restore 371 48 pd get_dollarnums_tracks;
 #X obj 369 23 saveload;
+#X obj 270 48 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X connect 12 0 9 0;
