@@ -1,8 +1,8 @@
-#N canvas 219 249 450 375 10;
+#N canvas 936 315 450 425 10;
 #X obj 15 58 cnv 15 145 44 empty \$0-scene-cnv-r 82 130 5 0 9 #808080
 #9e9e9e 0;
 #X obj 19 13 table \$0-scene_array 64;
-#N canvas 762 134 494 416 update_thumb 0;
+#N canvas 763 157 494 416 update_thumb 0;
 #X msg 120 170 symbol \$0-\$2-r;
 #X msg 101 148 \$1;
 #X obj 101 328 s;
@@ -58,7 +58,6 @@
 #X msg 332 295 1 56;
 #X msg 355 263 1 35;
 #X msg 314 237 0 56;
-#X obj 101 194 select 0;
 #X obj 146 216 t b f;
 #X floatatom 185 245 5 0 0 1 bars - -, f 5;
 #X obj 185 273 max;
@@ -68,8 +67,9 @@
 #X obj 332 320 s \$0-scene_array-val;
 #X text 229 65 incoming list: value (0 if off \, otherwise num of bars)
 \, index, f 33;
+#X obj 101 194 select 0;
 #X connect 0 0 2 1;
-#X connect 1 0 13 0;
+#X connect 1 0 21 0;
 #X connect 3 0 5 0;
 #X connect 4 0 3 0;
 #X connect 5 0 2 0;
@@ -77,19 +77,19 @@
 #X connect 7 0 1 0;
 #X connect 7 1 0 0;
 #X connect 7 2 9 0;
-#X connect 7 3 19 0;
+#X connect 7 3 18 0;
 #X connect 8 0 6 1;
 #X connect 9 0 8 0;
-#X connect 10 0 20 0;
-#X connect 11 0 20 0;
-#X connect 12 0 20 0;
-#X connect 13 0 4 0;
+#X connect 10 0 19 0;
+#X connect 11 0 19 0;
+#X connect 12 0 19 0;
+#X connect 13 0 6 0;
 #X connect 13 1 14 0;
-#X connect 14 0 6 0;
-#X connect 14 1 15 0;
+#X connect 14 0 15 0;
 #X connect 15 0 16 0;
-#X connect 16 0 17 0;
-#X connect 18 0 7 0;
+#X connect 17 0 7 0;
+#X connect 21 0 4 0;
+#X connect 21 1 13 0;
 #X restore 38 177 pd update_thumb;
 #N canvas 744 83 612 608 init_fill_thumb 0;
 #X msg 105 234 clear;
@@ -157,28 +157,28 @@ top left \; \$3 = label \; \$4 = receive \; \$5 = send;
 #X connect 25 0 3 0;
 #X connect 26 0 25 0;
 #X connect 29 0 9 0;
-#X restore 37 246 pd init_fill_thumb;
+#X restore 37 267 pd init_fill_thumb;
 #X obj 37 220 bng 15 250 50 0 empty empty reinitialize 17 7 0 10 #fcfcfc
 #000000 #000000;
 #N canvas 180 162 562 532 thumb_reset 0;
 #X msg 115 103 0;
 #X obj 88 79 t b b;
-#X msg 146 352 0 \$1;
 #X obj 88 46 inlet;
 #X obj 88 152 line 20;
 #X msg 88 127 63 1260;
 #X floatatom 88 177 5 0 0 0 - - -, f 5;
 #X obj 88 201 t b f f f, f 10;
 #X obj 146 384 s \$0-scene_array-val;
-#X connect 0 0 4 0;
-#X connect 1 0 5 0;
+#X msg 146 352 0 \$1;
+#X connect 0 0 3 0;
+#X connect 1 0 4 0;
 #X connect 1 1 0 0;
-#X connect 2 0 8 0;
-#X connect 3 0 1 0;
-#X connect 4 0 6 0;
-#X connect 5 0 4 0;
-#X connect 6 0 7 0;
-#X connect 7 3 2 0;
+#X connect 2 0 1 0;
+#X connect 3 0 5 0;
+#X connect 4 0 3 0;
+#X connect 5 0 6 0;
+#X connect 6 3 8 0;
+#X connect 8 0 7 0;
 #X restore 38 157 pd thumb_reset;
 #X obj 111 82 bng 15 250 50 0 empty empty reset 17 7 0 10 #fcfcfc #000000
 #000000;
@@ -187,7 +187,7 @@ top left \; \$3 = label \; \$4 = receive \; \$5 = send;
 , f 4;
 #X obj 62 83 bng 15 250 50 0 \$0-sceneplay-s \$0-sceneplay-r Play 16
 5 0 10 #fcfcfc #000000 #000000;
-#N canvas 482 152 432 264 from_act_to_scene 0;
+#N canvas 450 318 432 314 from_act_to_scene 0;
 #X obj 59 66 \$1;
 #X obj 59 45 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
@@ -206,143 +206,142 @@ to the scene's array and thumbnail., f 32;
 #X connect 5 0 1 0;
 #X restore 200 14 pd from_act_to_scene;
 #N canvas 182 107 450 323 \$0-scenecnv 0;
-#X obj 0 35 cnv 5 5 5 1153-0-s 1153-0-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 0 35 cnv 5 5 5 1153-0-s 1153-0-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 0 35 cnv 5 5 5 1153-0-s 1153-0-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 0 35 cnv 5 5 5 1153-0-s 1153-0-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 5 35 cnv 5 5 5 1153-1-s 1153-1-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 5 35 cnv 5 5 5 1153-1-s 1153-1-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 10 35 cnv 5 5 5 1153-2-s 1153-2-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 10 35 cnv 5 5 5 1153-2-s 1153-2-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 15 35 cnv 5 5 5 1153-3-s 1153-3-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 15 35 cnv 5 5 5 1153-3-s 1153-3-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 20 35 cnv 5 5 5 1153-4-s 1153-4-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 20 35 cnv 5 5 5 1153-4-s 1153-4-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 25 35 cnv 5 5 5 1153-5-s 1153-5-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 25 35 cnv 5 5 5 1153-5-s 1153-5-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 30 35 cnv 5 5 5 1153-6-s 1153-6-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 30 35 cnv 5 5 5 1153-6-s 1153-6-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 35 35 cnv 5 5 5 1153-7-s 1153-7-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 35 35 cnv 5 5 5 1153-7-s 1153-7-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 0 30 cnv 5 5 5 1153-8-s 1153-8-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 0 30 cnv 5 5 5 1153-8-s 1153-8-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 5 30 cnv 5 5 5 1153-9-s 1153-9-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 5 30 cnv 5 5 5 1153-9-s 1153-9-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 10 30 cnv 5 5 5 1153-10-s 1153-10-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 10 30 cnv 5 5 5 1153-10-s 1153-10-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 15 30 cnv 5 5 5 1153-11-s 1153-11-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 15 30 cnv 5 5 5 1153-11-s 1153-11-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 20 30 cnv 5 5 5 1153-12-s 1153-12-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 20 30 cnv 5 5 5 1153-12-s 1153-12-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 25 30 cnv 5 5 5 1153-13-s 1153-13-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 25 30 cnv 5 5 5 1153-13-s 1153-13-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 30 30 cnv 5 5 5 1153-14-s 1153-14-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 30 30 cnv 5 5 5 1153-14-s 1153-14-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 35 30 cnv 5 5 5 1153-15-s 1153-15-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 35 30 cnv 5 5 5 1153-15-s 1153-15-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 0 25 cnv 5 5 5 1153-16-s 1153-16-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 0 25 cnv 5 5 5 1153-16-s 1153-16-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 5 25 cnv 5 5 5 1153-17-s 1153-17-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 5 25 cnv 5 5 5 1153-17-s 1153-17-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 10 25 cnv 5 5 5 1153-18-s 1153-18-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 10 25 cnv 5 5 5 1153-18-s 1153-18-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 15 25 cnv 5 5 5 1153-19-s 1153-19-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 15 25 cnv 5 5 5 1153-19-s 1153-19-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 20 25 cnv 5 5 5 1153-20-s 1153-20-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 20 25 cnv 5 5 5 1153-20-s 1153-20-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 25 25 cnv 5 5 5 1153-21-s 1153-21-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 25 25 cnv 5 5 5 1153-21-s 1153-21-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 30 25 cnv 5 5 5 1153-22-s 1153-22-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 30 25 cnv 5 5 5 1153-22-s 1153-22-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 35 25 cnv 5 5 5 1153-23-s 1153-23-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 35 25 cnv 5 5 5 1153-23-s 1153-23-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 0 20 cnv 5 5 5 1153-24-s 1153-24-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 0 20 cnv 5 5 5 1153-24-s 1153-24-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 5 20 cnv 5 5 5 1153-25-s 1153-25-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 5 20 cnv 5 5 5 1153-25-s 1153-25-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 10 20 cnv 5 5 5 1153-26-s 1153-26-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 10 20 cnv 5 5 5 1153-26-s 1153-26-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 15 20 cnv 5 5 5 1153-27-s 1153-27-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 15 20 cnv 5 5 5 1153-27-s 1153-27-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 20 20 cnv 5 5 5 1153-28-s 1153-28-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 20 20 cnv 5 5 5 1153-28-s 1153-28-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 25 20 cnv 5 5 5 1153-29-s 1153-29-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 25 20 cnv 5 5 5 1153-29-s 1153-29-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 30 20 cnv 5 5 5 1153-30-s 1153-30-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 30 20 cnv 5 5 5 1153-30-s 1153-30-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 35 20 cnv 5 5 5 1153-31-s 1153-31-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 35 20 cnv 5 5 5 1153-31-s 1153-31-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 0 15 cnv 5 5 5 1153-32-s 1153-32-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 0 15 cnv 5 5 5 1153-32-s 1153-32-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 5 15 cnv 5 5 5 1153-33-s 1153-33-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 5 15 cnv 5 5 5 1153-33-s 1153-33-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 10 15 cnv 5 5 5 1153-34-s 1153-34-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 10 15 cnv 5 5 5 1153-34-s 1153-34-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 15 15 cnv 5 5 5 1153-35-s 1153-35-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 15 15 cnv 5 5 5 1153-35-s 1153-35-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 20 15 cnv 5 5 5 1153-36-s 1153-36-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 20 15 cnv 5 5 5 1153-36-s 1153-36-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 25 15 cnv 5 5 5 1153-37-s 1153-37-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 25 15 cnv 5 5 5 1153-37-s 1153-37-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 30 15 cnv 5 5 5 1153-38-s 1153-38-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 30 15 cnv 5 5 5 1153-38-s 1153-38-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 35 15 cnv 5 5 5 1153-39-s 1153-39-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 35 15 cnv 5 5 5 1153-39-s 1153-39-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 0 10 cnv 5 5 5 1153-40-s 1153-40-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 0 10 cnv 5 5 5 1153-40-s 1153-40-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 5 10 cnv 5 5 5 1153-41-s 1153-41-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 5 10 cnv 5 5 5 1153-41-s 1153-41-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 10 10 cnv 5 5 5 1153-42-s 1153-42-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 10 10 cnv 5 5 5 1153-42-s 1153-42-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 15 10 cnv 5 5 5 1153-43-s 1153-43-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 15 10 cnv 5 5 5 1153-43-s 1153-43-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 20 10 cnv 5 5 5 1153-44-s 1153-44-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 20 10 cnv 5 5 5 1153-44-s 1153-44-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 25 10 cnv 5 5 5 1153-45-s 1153-45-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 25 10 cnv 5 5 5 1153-45-s 1153-45-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 30 10 cnv 5 5 5 1153-46-s 1153-46-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 30 10 cnv 5 5 5 1153-46-s 1153-46-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 35 10 cnv 5 5 5 1153-47-s 1153-47-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 35 10 cnv 5 5 5 1153-47-s 1153-47-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 0 5 cnv 5 5 5 1153-48-s 1153-48-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 0 5 cnv 5 5 5 1153-48-s 1153-48-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 5 5 cnv 5 5 5 1153-49-s 1153-49-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 5 5 cnv 5 5 5 1153-49-s 1153-49-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 10 5 cnv 5 5 5 1153-50-s 1153-50-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 10 5 cnv 5 5 5 1153-50-s 1153-50-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 15 5 cnv 5 5 5 1153-51-s 1153-51-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 15 5 cnv 5 5 5 1153-51-s 1153-51-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 20 5 cnv 5 5 5 1153-52-s 1153-52-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 20 5 cnv 5 5 5 1153-52-s 1153-52-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 25 5 cnv 5 5 5 1153-53-s 1153-53-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 25 5 cnv 5 5 5 1153-53-s 1153-53-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 30 5 cnv 5 5 5 1153-54-s 1153-54-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 30 5 cnv 5 5 5 1153-54-s 1153-54-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 35 5 cnv 5 5 5 1153-55-s 1153-55-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 35 5 cnv 5 5 5 1153-55-s 1153-55-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 0 0 cnv 5 5 5 1153-56-s 1153-56-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 0 0 cnv 5 5 5 1153-56-s 1153-56-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 5 0 cnv 5 5 5 1153-57-s 1153-57-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 5 0 cnv 5 5 5 1153-57-s 1153-57-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 10 0 cnv 5 5 5 1153-58-s 1153-58-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 10 0 cnv 5 5 5 1153-58-s 1153-58-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 15 0 cnv 5 5 5 1153-59-s 1153-59-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 15 0 cnv 5 5 5 1153-59-s 1153-59-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 20 0 cnv 5 5 5 1153-60-s 1153-60-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 20 0 cnv 5 5 5 1153-60-s 1153-60-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 25 0 cnv 5 5 5 1153-61-s 1153-61-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 25 0 cnv 5 5 5 1153-61-s 1153-61-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 30 0 cnv 5 5 5 1153-62-s 1153-62-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 30 0 cnv 5 5 5 1153-62-s 1153-62-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 35 0 cnv 5 5 5 1153-63-s 1153-63-r empty 0 0 0 12 #404040 #fcfcfc
+#X obj 35 0 cnv 5 5 5 1153-63-s 1153-63-r empty 0 0 0 12 #202020 #202020
 0;
 #X coords 0 -1 1 1 40 40 2 0 0;
 #X restore 17 60 pd \$0-scenecnv;
-#N canvas 497 260 498 473 playscene 0;
+#N canvas 717 229 756 473 playscene 0;
 #X obj 83 13 r \$0-sceneplay-s;
 #X obj 83 38 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
-#X obj 83 61 t b b;
 #X msg 110 81 0;
 #X obj 83 132 line 20;
 #X msg 83 107 63 1260;
@@ -355,133 +354,227 @@ to the scene's array and thumbnail., f 32;
 #X msg 127 329 1;
 #X msg 83 310 0;
 #X obj 83 392 s;
-#X msg 153 285 symbol \$1-playchange-r;
+#X msg 111 368 symbol \$1-playchange-r;
 #X obj 83 260 t f f;
 #X obj 83 181 t f f;
+#X obj 358 97 r beatnum;
+#X obj 358 152 f 0;
+#X obj 387 152 + 1;
+#X floatatom 358 177 5 0 0 0 - - -, f 5;
+#X obj 444 97 r \$0-thumb-maxbars-s;
+#X floatatom 444 152 5 0 0 0 - - -, f 5;
+#X obj 307 101 t b 2;
+#X obj 310 352 \$1;
+#X obj 310 377 noteout 1;
+#X obj 358 201 mod;
+#X obj 358 246 select 0;
+#X obj 358 122 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X floatatom 358 226 5 0 0 0 - - -, f 5;
+#X obj 358 271 t b 1;
+#X obj 310 298 spigot;
+#X obj 310 323 t b 0;
+#X obj 83 61 t b b 0 1;
+#X text 370 301 pass through only when sceneplay is activated \, and
+spigot set to 0 right after it goes through, f 28;
 #X connect 0 0 1 0;
-#X connect 1 0 2 0;
-#X connect 2 0 5 0;
-#X connect 2 1 3 0;
-#X connect 3 0 4 0;
-#X connect 4 0 6 0;
-#X connect 5 0 4 0;
-#X connect 6 0 16 0;
-#X connect 7 0 8 0;
-#X connect 8 0 15 0;
-#X connect 9 0 12 0;
-#X connect 9 1 10 0;
-#X connect 10 0 11 0;
-#X connect 11 0 13 0;
-#X connect 12 0 13 0;
-#X connect 14 0 13 1;
-#X connect 15 0 9 0;
-#X connect 16 0 7 0;
-#X connect 16 1 14 0;
+#X connect 1 0 32 0;
+#X connect 2 0 3 0;
+#X connect 3 0 5 0;
+#X connect 4 0 3 0;
+#X connect 5 0 15 0;
+#X connect 6 0 7 0;
+#X connect 7 0 14 0;
+#X connect 8 0 11 0;
+#X connect 8 1 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 12 0;
+#X connect 11 0 12 0;
+#X connect 13 0 12 1;
+#X connect 14 0 8 0;
+#X connect 15 0 6 0;
+#X connect 15 1 13 0;
+#X connect 16 0 27 0;
+#X connect 17 0 18 0;
+#X connect 17 0 19 0;
+#X connect 18 0 17 1;
+#X connect 19 0 25 0;
+#X connect 20 0 21 0;
+#X connect 21 0 25 1;
+#X connect 22 0 23 0;
+#X connect 22 1 24 1;
+#X connect 23 0 24 0;
+#X connect 25 0 28 0;
+#X connect 26 0 29 0;
+#X connect 27 0 17 0;
+#X connect 28 0 26 0;
+#X connect 29 0 30 0;
+#X connect 29 1 24 1;
+#X connect 30 0 31 0;
+#X connect 31 0 23 0;
+#X connect 31 1 30 1;
+#X connect 32 0 4 0;
+#X connect 32 1 2 0;
+#X connect 32 2 17 1;
+#X connect 32 3 30 1;
 #X restore 250 148 pd playscene;
-#N canvas 410 131 619 587 midiin-scenes 0;
+#N canvas 969 242 619 612 midiin-scenes 0;
 #X obj 100 10 r midibutton;
-#X obj 100 95 select;
+#X obj 100 278 select;
 #X obj 209 35 loadbang;
 #X obj 209 60 \$1;
 #X floatatom 100 35 5 0 0 0 - - -, f 5;
-#X obj 144 140 s \$0-sceneplay-r;
-#X obj 151 171 r beatnum;
-#X obj 151 226 f 0;
-#X obj 180 226 + 1;
-#X floatatom 151 251 5 0 0 0 - - -, f 5;
-#X obj 237 171 r \$0-thumb-maxbars-s;
-#X floatatom 237 226 5 0 0 0 - - -, f 5;
-#X obj 100 175 t b 2;
-#X obj 100 390 \$1;
-#X obj 100 415 noteout 1;
-#X obj 151 275 mod;
-#X obj 151 320 select 0;
-#X obj 151 196 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
-#X obj 76 120 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#X obj 100 422 s \$0-sceneplay-r;
+#X obj 76 303 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
 #X obj 292 35 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
-#X obj 100 120 t b 0 b;
-#X floatatom 151 300 5 0 0 0 - - -, f 5;
-#X obj 151 345 t b 0;
-#X text 104 440 use [until] to listen for the scenebang \; or maybe
-I have to create the scenebang here;
-#X obj 100 66 spigot;
+#X obj 100 248 spigot;
 #X obj 324 13 r midishift;
 #X floatatom 324 63 5 0 0 0 - - -, f 5;
 #X obj 332 35 r midipedal;
-#X obj 324 87 == 0;
-#X text 327 109 Do not launch scene if a track is selected;
+#X obj 350 111 == 0;
+#X text 308 151 Do not launch scene if a track is selected;
 #X obj 419 14 r global-selected-s;
 #X floatatom 419 39 5 0 0 0 - - -, f 5;
 #X obj 419 63 select 128;
-#X floatatom 143 45 5 0 0 0 - - -, f 5;
+#X floatatom 143 227 5 0 0 0 - - -, f 5;
 #X obj 423 172 spigot;
 #X floatatom 455 134 5 0 0 0 - - -, f 5;
 #X obj 481 88 t 0 0 1;
 #X obj 419 88 t 1 1;
+#X obj 296 357 spigot;
+#X obj 324 87 t f f;
+#X obj 100 363 spigot;
+#X obj 133 336 == 0;
+#X obj 301 298 t f f;
+#X text 342 357 if shift;
+#X text 98 441 if no shift \, launch scene;
+#X text 290 506 if shift \, assign to this scene;
+#X obj 100 303 t b b, f 15;
+#X obj 296 382 \$1;
+#X obj 296 407 t b f;
+#X obj 277 384 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 100 388 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 296 488 s matthumb-dd-r;
+#X obj 323 429 - 82;
+#X text 358 429 button 82 is the choice 0 in the dropdown menu;
+#X msg 429 461 4;
+#X floatatom 347 405 5 0 0 0 - - -, f 5;
+#X obj 296 432 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X floatatom 323 454 5 0 0 0 - - -, f 5;
 #X connect 0 0 4 0;
-#X connect 1 0 18 0;
-#X connect 1 0 20 0;
+#X connect 1 0 6 0;
+#X connect 1 0 30 0;
 #X connect 2 0 3 0;
 #X connect 3 0 1 1;
-#X connect 4 0 24 0;
-#X connect 6 0 17 0;
-#X connect 7 0 8 0;
-#X connect 7 0 9 0;
-#X connect 8 0 7 1;
-#X connect 9 0 15 0;
-#X connect 10 0 11 0;
-#X connect 11 0 15 1;
-#X connect 12 0 13 0;
-#X connect 12 1 14 1;
-#X connect 13 0 14 0;
-#X connect 15 0 21 0;
-#X connect 16 0 22 0;
-#X connect 17 0 7 0;
-#X connect 19 0 3 0;
-#X connect 20 0 12 0;
-#X connect 20 1 7 1;
-#X connect 20 2 5 0;
-#X connect 21 0 16 0;
-#X connect 22 0 13 0;
-#X connect 22 1 14 1;
-#X connect 24 0 1 0;
-#X connect 25 0 26 0;
-#X connect 26 0 28 0;
-#X connect 27 0 26 0;
-#X connect 28 0 34 0;
-#X connect 30 0 31 0;
+#X connect 4 0 8 0;
+#X connect 7 0 3 0;
+#X connect 8 0 1 0;
+#X connect 9 0 10 0;
+#X connect 10 0 23 0;
+#X connect 11 0 10 0;
+#X connect 14 0 15 0;
+#X connect 15 0 16 0;
+#X connect 16 0 21 0;
+#X connect 16 1 20 0;
+#X connect 17 0 8 1;
+#X connect 18 0 17 0;
+#X connect 19 0 18 1;
+#X connect 20 0 19 0;
+#X connect 20 1 18 0;
+#X connect 20 2 19 0;
+#X connect 21 0 18 0;
+#X connect 21 1 19 0;
+#X connect 22 0 31 0;
+#X connect 22 0 33 0;
+#X connect 23 0 26 0;
+#X connect 23 1 12 0;
+#X connect 24 0 5 0;
+#X connect 24 0 34 0;
+#X connect 25 0 24 1;
+#X connect 26 0 25 0;
+#X connect 26 1 22 1;
+#X connect 30 0 24 0;
+#X connect 30 1 22 0;
 #X connect 31 0 32 0;
-#X connect 32 0 37 0;
+#X connect 31 0 39 0;
+#X connect 32 0 40 0;
 #X connect 32 1 36 0;
-#X connect 33 0 24 1;
-#X connect 34 0 33 0;
-#X connect 35 0 34 1;
-#X connect 36 0 35 0;
-#X connect 36 1 34 0;
-#X connect 36 2 35 0;
-#X connect 37 0 34 0;
-#X connect 37 1 35 0;
+#X connect 36 0 41 0;
+#X connect 38 0 35 0;
+#X connect 41 0 35 0;
 #X restore 302 86 pd midiin-scenes;
-#N canvas 424 246 450 300 midiout-scenes 0;
+#N canvas 888 248 670 396 midiout-scenes 1;
 #X obj 78 23 r \$0-thumb-maxbars-s;
-#X floatatom 78 48 5 0 0 0 - - -, f 5;
-#X obj 78 72 select 0;
-#X obj 78 147 \$1;
-#X obj 78 172 noteout 1;
-#X obj 78 97 t b 0;
-#X obj 123 97 t b 1;
+#X floatatom 79 125 5 0 0 0 - - -, f 5;
+#X obj 124 335 \$1;
+#X obj 124 360 noteout 1;
+#X obj 236 25 r \$0-scene_array-val;
+#X obj 178 281 t b 1;
+#X obj 263 281 t b 2;
+#X obj 398 31 r global-selected-s;
+#X floatatom 398 56 5 0 0 0 - - -, f 5;
+#X obj 398 80 select 128;
+#X obj 456 102 t b;
+#X text 160 261 solid green;
+#X text 301 282 blink;
+#X obj 80 282 t b 0;
+#X text 88 264 off;
+#X text 219 45 value assigned to the array turn solid green, f 23
+;
+#X obj 79 149 select 0, f 17;
+#X obj 80 307 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 263 306 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 178 306 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 59 151 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 169 248 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 77 248 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 469 173 delay;
+#X obj 487 210 \$1;
+#X obj 487 235 - 82;
+#X obj 487 260 * 20;
+#X floatatom 487 285 5 0 0 0 - - -, f 5;
+#X obj 517 185 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X connect 0 0 1 0;
-#X connect 1 0 2 0;
-#X connect 2 0 5 0;
-#X connect 2 1 6 0;
-#X connect 3 0 4 0;
-#X connect 5 0 3 0;
-#X connect 5 1 4 1;
-#X connect 6 0 3 0;
-#X connect 6 1 4 1;
+#X connect 1 0 16 0;
+#X connect 1 0 20 0;
+#X connect 2 0 3 0;
+#X connect 4 0 5 0;
+#X connect 5 0 2 0;
+#X connect 5 0 19 0;
+#X connect 5 1 3 1;
+#X connect 6 0 2 0;
+#X connect 6 0 18 0;
+#X connect 6 1 3 1;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 1 0;
+#X connect 9 1 10 0;
+#X connect 10 0 23 0;
+#X connect 13 0 2 0;
+#X connect 13 0 17 0;
+#X connect 13 1 3 1;
+#X connect 16 0 13 0;
+#X connect 16 1 5 0;
+#X connect 21 0 5 0;
+#X connect 22 0 13 0;
+#X connect 23 0 6 0;
+#X connect 24 0 25 0;
+#X connect 25 0 26 0;
+#X connect 26 0 27 0;
+#X connect 27 0 23 1;
+#X connect 28 0 24 0;
 #X restore 304 109 pd midiout-scenes;
 #X obj 248 207 loadbang;
 #X obj 248 232 \$1;
@@ -489,7 +582,9 @@ I have to create the scenebang here;
 #X obj 248 302 s \$0-scene-cnv-r;
 #X obj 248 257 tosymbol;
 #X msg 350 219 82;
-#X connect 4 0 3 0;
+#X obj 37 243 t b b;
+#X text 17 30 const 0 if empty (value=maxbars);
+#X connect 4 0 21 0;
 #X connect 6 0 5 0;
 #X connect 7 0 4 0;
 #X connect 15 0 16 0;
@@ -497,4 +592,6 @@ I have to create the scenebang here;
 #X connect 17 0 18 0;
 #X connect 19 0 17 0;
 #X connect 20 0 19 0;
+#X connect 21 0 5 0;
+#X connect 21 1 3 0;
 #X coords 0 -1 1 1 145 44 2 15 58;

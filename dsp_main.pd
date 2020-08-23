@@ -1,4 +1,4 @@
-#N canvas 973 476 522 331 10;
+#N canvas 974 500 522 331 10;
 #N canvas 629 24 627 743 metronome 0;
 #X text 93 726 OSC messages to /ui/metro;
 #X text 145 15 OSC messages to /dsp/metro;
@@ -54,7 +54,7 @@
 #000000;
 #X msg 38 148 0;
 #X obj 23 75 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000
-1 1;
+0 1;
 #X obj 23 2 r fromui;
 #X obj 43 726 s toui;
 #X obj 23 27 mrpeach/routeOSC /metro;
@@ -196,7 +196,7 @@ out of sync - but not with getmetro, f 27;
 #X obj 41 98 loadbang;
 #X obj 41 382 mrpeach/udpsend;
 #X obj 41 407 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#000000 1 1;
 #X obj 64 339 mrpeach/packOSC;
 #X msg 50 156 disconnect;
 #X obj 37 24 bng 15 250 50 0 empty empty connect_to_8081 17 7 0 10
@@ -204,7 +204,7 @@ out of sync - but not with getmetro, f 27;
 #X obj 36 47 bng 15 250 50 0 empty empty disconnect 17 7 0 10 #fcfcfc
 #000000 #000000;
 #X obj 156 13 tgl 18 0 empty empty connected 35 6 0 10 #fcfcfc #000000
-#000000 0 1;
+#000000 1 1;
 #X obj 282 33 import mrpeach;
 #X obj 237 109 r toui;
 #X obj 293 158 list split 1;
@@ -830,7 +830,7 @@ sends to right outlet if right input=1, f 35;
 #X connect 20 2 19 0;
 #X coords 0 -1 1 1 74 73 1 107 60;
 #X restore 402 200 pd monitor_vu;
-#N canvas 590 327 458 366 loadGUI 0;
+#N canvas 591 281 479 460 loadGUI 0;
 #X obj 129 21 loadbang;
 #X obj 129 88 shell;
 #X msg 129 47 purr-data -nrt -noaudio -unique ui_main.pd &;
@@ -840,6 +840,11 @@ sends to right outlet if right input=1, f 35;
 #X msg 114 266 vis \$1;
 #X obj 114 217 route /vis;
 #X obj 213 18 inlet;
+#X text 229 89 TODO (?) \; - list jack ports with jack_lsp [-c for
+connections \, -A for aliases] \; - write a bash script to capture
+the name of the ports from the dsp instance \, give it aliases \; -
+start UI instance \; - give aliases to the UI ports \; - connect
+MIDI devices to the right ports;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
 #X connect 3 0 7 0;

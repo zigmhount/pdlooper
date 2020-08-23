@@ -1,4 +1,4 @@
-#N canvas 14 71 970 552 10;
+#N canvas 17 140 970 552 10;
 #X obj 77 4 cnv 15 881 547 empty empty empty 0 0 0 4 #404040 #fcfcfc
 0;
 #N canvas 291 96 450 350 test 0;
@@ -128,7 +128,7 @@
 #X obj 421 -58 metro 500;
 #X floatatom 231 -406 4 0 0 0 - - -, f 4;
 #X obj 138 -411 hradio 20 0 0 4 empty empty empty 0 -8 0 10 #fcfcfc
-#000000 #000000 0;
+#000000 #000000 3;
 #X obj 107 -411 tgl 20 0 \$0-globalplaypause-s \$0-globalplaypause-r
 play/pause -14 -12 0 10 #94a0fc #000000 #000000 0 1;
 #X obj 166 -429 tgl 14 0 empty empty metro 17 7 0 10 #fcfcfc #000000
@@ -169,7 +169,7 @@ play/pause -14 -12 0 10 #94a0fc #000000 #000000 1 1;
 #X obj 33 -266 bng 15 250 50 0 empty empty tap -2 -10 0 10 #fcfcfc
 #000000 #000000;
 #X obj 54 -350 vradio 20 0 0 4 empty empty empty 0 -8 0 10 #fcfcfc
-#000000 #000000 0;
+#000000 #000000 3;
 #X obj 495 -409 import mrpeach;
 #X obj 23 -180 mrpeach/routeOSC /metro;
 #X obj 23 -155 mrpeach/routeOSC /beatnum /tempo_ms /tempo_bpm /beatsperbar
@@ -1546,7 +1546,7 @@ sends \, but whatever \, it was faster to do it manually just now.
 #X connect 41 0 32 0;
 #X coords 0 -1 1 1 138 61 1 2 192;
 #X restore 32 -684 pd button_array;
-#N canvas 680 117 803 579 apc_midi_control 0;
+#N canvas 648 292 803 604 apc_midi_control 0;
 #X obj 159 77 r midibutton;
 #X floatatom 159 102 5 0 0 0 - - -, f 5;
 #X obj 159 160 moses 64;
@@ -1771,53 +1771,75 @@ control \, [value cc#(;
 #X connect 1 0 2 0;
 #X connect 1 1 3 0;
 #X restore 584 109 pd midicontrols;
-#X floatatom 419 34 5 0 0 0 selected: global-selected-r global-selected-s
-, f 5;
-#N canvas 889 150 457 525 select_track 0;
-#X floatatom 50 -123 5 0 0 0 - - -, f 5;
-#X obj 87 37 t 0 f;
-#X obj 88 133 s;
-#X text 148 -123 128 = no track selected;
-#X obj 302 -134 loadbang;
-#X msg 302 -109 128;
-#X obj 25 -97 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#N canvas 211 296 518 575 select_track 0;
+#X floatatom 100 -17 5 0 0 0 - - -, f 5;
+#X obj 125 250 t 0 f;
+#X obj 126 346 s;
+#X text 303 -43 128 = no track selected;
+#X obj 352 -134 loadbang;
+#X obj 75 43 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
-#X floatatom 87 10 5 0 0 0 - - -, f 5;
-#X obj 255 26 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000;
-#X obj 237 4 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000;
-#X obj 50 -99 t 1 f b f b f, f 16;
-#X obj 87 -42 pack f f;
-#X msg 87 -17 set \$2;
-#X obj 150 -70 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X floatatom 125 223 5 0 0 0 - - -, f 5;
+#X obj 293 239 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X msg 87 64 0;
-#X msg 114 59 symbol \$1-selected-s;
-#X obj 87 -70 delay 100;
-#X obj 50 -148 r global-selected-s;
-#X symbolatom 114 84 10 0 0 0 - - -, f 10;
-#X text 50 107 keep this disconnected;
-#X connect 0 0 6 0;
-#X connect 0 0 10 0;
-#X connect 1 0 8 0;
-#X connect 1 0 14 0;
-#X connect 1 1 15 0;
-#X connect 4 0 5 0;
-#X connect 5 0 0 0;
-#X connect 7 0 9 0;
-#X connect 7 0 1 0;
-#X connect 10 2 16 0;
-#X connect 10 3 11 1;
-#X connect 10 4 13 0;
-#X connect 11 0 12 0;
-#X connect 12 0 7 0;
-#X connect 13 0 7 0;
-#X connect 15 0 2 1;
-#X connect 15 0 18 0;
-#X connect 16 0 11 0;
-#X connect 17 0 0 0;
-#X restore 361 55 pd select_track;
+#X obj 275 217 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 88 114 t 1 f b f b f, f 16;
+#X obj 125 171 pack f f;
+#X msg 125 196 set \$2;
+#X obj 188 143 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X msg 125 277 0;
+#X msg 152 320 symbol \$1-selected-s;
+#X obj 125 143 delay 100;
+#X symbolatom 152 297 10 0 0 0 - - -, f 10;
+#X text 88 320 keep this disconnected;
+#X obj 100 -123 unpack f f;
+#X text 176 -124 tracknum \, 1 or 0;
+#X msg 100 -58 set \$1;
+#X obj 157 -44 select 1 0;
+#X obj 101 9 spigot;
+#X obj 185 -19 t 0 128;
+#X obj 295 39 t f;
+#X floatatom 295 64 5 0 0 0 selected: - global-selected-s, f 5;
+#X floatatom 100 -98 5 0 0 0 - - -, f 5;
+#X floatatom 137 -98 2 0 0 0 - - -, f 2;
+#X obj 100 -148 r global-selected-list;
+#X obj 142 -19 t b 1;
+#X text 91 87 obsolete:;
+#X connect 0 0 5 0;
+#X connect 0 0 22 0;
+#X connect 1 0 7 0;
+#X connect 1 0 13 0;
+#X connect 1 1 14 0;
+#X connect 4 0 23 0;
+#X connect 6 0 8 0;
+#X connect 6 0 1 0;
+#X connect 9 2 15 0;
+#X connect 9 3 10 1;
+#X connect 9 4 12 0;
+#X connect 10 0 11 0;
+#X connect 11 0 6 0;
+#X connect 12 0 6 0;
+#X connect 14 0 2 1;
+#X connect 14 0 16 0;
+#X connect 15 0 10 0;
+#X connect 18 0 26 0;
+#X connect 18 1 27 0;
+#X connect 20 0 0 0;
+#X connect 21 0 29 0;
+#X connect 21 1 23 0;
+#X connect 22 0 24 0;
+#X connect 23 0 22 1;
+#X connect 23 1 24 0;
+#X connect 24 0 25 0;
+#X connect 26 0 20 0;
+#X connect 27 0 21 0;
+#X connect 28 0 18 0;
+#X connect 29 0 0 0;
+#X connect 29 1 22 1;
+#X coords 0 -1 1 1 94 32 1 235 50;
+#X restore 360 17 pd select_track;
 #X obj 130 213 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
 #X obj 178 256 s;
@@ -1870,21 +1892,43 @@ control \, [value cc#(;
 #X restore 159 281 pd createtrackifmissing;
 #X obj 435 160 r midishift;
 #X floatatom 435 185 5 0 0 0 - - -, f 5;
-#X text 359 79 why does the deselection of a track not change global-selected
-to 128?, f 26;
+#N canvas 160 463 450 325 midi_out_select 0;
+#X obj 92 53 r global-selected-s;
+#X floatatom 92 78 5 0 0 0 - - -, f 5;
+#X connect 0 0 1 0;
+#X restore 586 162 pd midi_out_select;
+#N canvas 341 322 450 300 midiout_init 0;
+#X text 25 21 tracks are off at loadbang;
+#X obj 31 49 loadbang;
+#X obj 31 74 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X msg 31 97 64 \, 90 520;
+#X text 113 97 26 buttons between 64 and 90 \, 20ms each;
+#X obj 31 122 line 20;
+#X floatatom 31 147 5 0 0 0 - - -, f 5;
+#X obj 31 171 t f 0;
+#X obj 31 196 noteout 1;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 7 1 8 1;
+#X restore 590 206 pd midiout_init;
 #X connect 0 0 1 0;
 #X connect 1 0 8 0;
 #X connect 2 0 3 0;
-#X connect 3 0 14 0;
-#X connect 3 0 17 0;
+#X connect 3 0 13 0;
+#X connect 3 0 16 0;
 #X connect 4 0 5 0;
 #X connect 5 0 7 0;
 #X connect 8 0 2 0;
-#X connect 16 0 15 1;
-#X connect 17 0 18 0;
-#X connect 17 1 15 0;
-#X connect 17 2 16 0;
-#X connect 19 0 20 0;
+#X connect 15 0 14 1;
+#X connect 16 0 17 0;
+#X connect 16 1 14 0;
+#X connect 16 2 15 0;
+#X connect 18 0 19 0;
 #X restore 33 -471 pd apc_midi_control;
 #N canvas 0 0 450 300 sidebuttons_config 0;
 #X obj 75 78 s \$0-globalplaypause-r;
