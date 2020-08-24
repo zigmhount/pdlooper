@@ -1,4 +1,4 @@
-#N canvas 335 192 1139 680 10;
+#N canvas 336 215 457 273 10;
 #X obj 60 48 cnv 15 86 41 empty 56-cfgbackgd-r empty 20 12 0 14 #fcfcfc
 #202020 0;
 #X floatatom 124 69 3 1 127 0 - - -, f 3;
@@ -146,14 +146,10 @@
 #X msg 285 343 names 1 2 3 4 5 6 7 8;
 #X obj 94 141 cnv 2 2 20 empty empty empty 20 12 0 14 #989898 #404040
 0;
-#X floatatom 35 122 2 0 0 0 - - -, f 2;
-#X floatatom 35 142 2 0 0 0 - - -, f 2;
-#X obj 13 192 hsl 45 11 0 127 0 0 \$0-volcfg-s \$0-volcfg-r vol 7 4
-0 10 #fcfcfc #000000 #000000 0 1;
-#X obj 14 246 hsl 45 11 0 127 0 0 \$0-pancfg-s \$0-pancfg-r pan 7 4
-0 10 #fcfcfc #000000 #000000 0 1;
-#X msg 14 265 set \$1;
-#X msg 13 211 set \$1;
+#X obj 36 142 hsl 11 16 0 127 0 0 \$0-pancfg-s \$0-pancfg-r P 5 7 0
+10 #fcfcfc #000000 #000000 0 1;
+#X obj 36 122 vsl 16 11 0 127 0 0 \$0-volcfg-s \$0-volcfg-r V 4 5 0
+10 #fcfcfc #000000 #000000 0 1;
 #X connect 1 0 18 0;
 #X connect 2 0 22 0;
 #X connect 3 0 14 0;
@@ -209,10 +205,4 @@
 #X connect 51 0 18 0;
 #X connect 55 0 2 0;
 #X connect 55 0 49 0;
-#X connect 57 0 59 0;
-#X connect 58 0 60 0;
-#X connect 59 0 62 0;
-#X connect 60 0 61 0;
-#X connect 61 0 58 0;
-#X connect 62 0 57 0;
 #X coords 0 -1 1 1 64 44 2 32 118;
