@@ -1,16 +1,16 @@
-#N canvas 249 529 181 130 10;
+#N canvas 424 451 492 404 10;
 #X obj 20 64 cnv 15 84 44 empty \$0-cnv out:1 45 10 0 11 #808080 #000000
 0;
-#N canvas 786 177 554 505 update_thumb 0;
-#X msg 214 264 symbol \$0-\$2-r;
+#N canvas 1074 70 554 530 update_thumb 1;
+#X msg 214 116 symbol \$0-\$2-r;
 #X text 348 13 incoming list: value \, index;
-#X msg 195 222 \$1;
-#X obj 195 422 s;
-#X floatatom 195 369 9 0 0 0 - - -, f 9;
-#X obj 195 339 f 12;
-#X msg 195 396 color \$1 \$1;
-#X obj 240 338 f;
-#X obj 195 197 t a a a a, f 27;
+#X msg 195 74 \$1;
+#X obj 195 274 s;
+#X floatatom 195 221 9 0 0 0 - - -, f 9;
+#X obj 195 191 f 12;
+#X msg 195 248 color \$1 \$1;
+#X obj 240 190 f;
+#X obj 195 49 t a a a a, f 27;
 #N canvas 408 234 450 325 column_colors 0;
 #X obj 121 21 inlet;
 #X text 161 22 track number;
@@ -53,45 +53,34 @@
 #X connect 12 0 14 0;
 #X connect 13 0 14 0;
 #X connect 14 0 16 0;
-#X restore 301 245 pd column_colors;
-#X msg 301 221 \$2;
-#X msg 22 320 1 56;
-#X msg 45 288 1 35;
-#X msg 31 266 0 56;
-#X obj 195 288 select 0;
-#X obj 240 310 t b f;
-#X obj 25 14 loadbang;
-#X obj 25 39 \$1;
-#X msg 25 124 \$1-thumb_array_out-val;
-#X obj 25 149 tools/receiver;
-#X obj 83 13 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000;
-#X obj 354 221 tabwrite \$0-thumb_array_out;
-#X floatatom 25 64 5 0 0 0 - - -, f 5;
+#X restore 301 97 pd column_colors;
+#X msg 301 73 \$2;
+#X msg 21 249 1 56;
+#X msg 118 355 1 35;
+#X msg 104 333 0 56;
+#X obj 240 162 t b f;
+#X obj 354 73 tabwrite \$0-thumb_array_out;
 #X obj 195 14 r \$0-thumb_array_out-val;
-#X obj 25 174 s \$0-thumb_array_out-val;
-#X obj 21 240 r thumb_array_output-val;
-#X text 24 223 coming from the track:;
-#X obj 26 89 t f f;
-#X obj 195 140 spigot;
-#X obj 251 83 ==;
-#X obj 178 161 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
-#X obj 195 64 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000;
-#X obj 22 345 s \$0-thumb_array_out-val;
-#X msg 252 61 \$1;
-#X obj 251 108 t f f;
-#X obj 279 129 == 0;
-#X obj 245 151 spigot;
-#X obj 195 39 t a a a, f 10;
-#X msg 245 174 0 \$2;
-#X msg 195 165 1 \$2;
-#X text 309 89 filtering only lists coming from the tracks assigned
-to this output (\$1) \, if not send [0 \$2( to turn that dot black.
-, f 36;
+#X obj 18 33 r thumb_array_output-val;
+#X text 21 16 coming from the track:;
+#X obj 21 274 s \$0-thumb_array_out-val;
+#X obj 18 58 unpack f f;
+#X obj 18 88 t f b;
+#X obj 52 119 \$1;
+#X obj 52 144 - 1;
+#X obj 19 172 select;
+#X floatatom 75 90 5 0 0 0 - - -, f 5;
+#X msg 19 196 1;
+#X obj 19 221 pack f f;
+#X obj 195 140 select -1;
+#X obj 165 398 s thumb_array_output-val;
+#X msg 165 373 -1 56;
+#X msg 52 195 -1;
+#X msg 172 344 0 56;
+#X msg 228 341 1 56;
+#X msg 262 351 2 56;
 #X connect 0 0 3 1;
-#X connect 2 0 14 0;
+#X connect 2 0 28 0;
 #X connect 4 0 6 0;
 #X connect 5 0 4 0;
 #X connect 6 0 3 0;
@@ -99,78 +88,73 @@ to this output (\$1) \, if not send [0 \$2( to turn that dot black.
 #X connect 8 0 2 0;
 #X connect 8 1 0 0;
 #X connect 8 2 10 0;
-#X connect 8 3 21 0;
+#X connect 8 3 15 0;
 #X connect 9 0 7 1;
 #X connect 10 0 9 0;
-#X connect 11 0 32 0;
-#X connect 12 0 32 0;
-#X connect 13 0 32 0;
-#X connect 14 0 5 0;
-#X connect 14 1 15 0;
-#X connect 15 0 7 0;
-#X connect 16 0 17 0;
-#X connect 17 0 22 0;
-#X connect 18 0 19 0;
-#X connect 19 0 24 0;
-#X connect 20 0 17 0;
-#X connect 22 0 27 0;
-#X connect 23 0 37 0;
-#X connect 25 0 32 0;
-#X connect 27 0 18 0;
-#X connect 27 1 29 1;
-#X connect 28 0 30 0;
-#X connect 28 0 39 0;
-#X connect 29 0 34 0;
+#X connect 11 0 19 0;
+#X connect 12 0 29 0;
+#X connect 13 0 29 0;
+#X connect 14 0 7 0;
+#X connect 16 0 8 0;
+#X connect 17 0 20 0;
+#X connect 20 0 21 0;
+#X connect 20 1 25 0;
+#X connect 21 0 24 0;
+#X connect 21 1 22 0;
+#X connect 22 0 23 0;
+#X connect 23 0 24 1;
+#X connect 24 0 26 0;
+#X connect 24 1 31 0;
+#X connect 25 0 27 1;
+#X connect 26 0 27 0;
+#X connect 27 0 19 0;
+#X connect 28 0 5 0;
+#X connect 28 1 14 0;
+#X connect 30 0 29 0;
+#X connect 31 0 27 0;
+#X connect 32 0 29 0;
 #X connect 33 0 29 0;
-#X connect 34 0 28 1;
-#X connect 34 1 35 0;
-#X connect 35 0 36 1;
-#X connect 36 0 38 0;
-#X connect 37 0 28 0;
-#X connect 37 0 31 0;
-#X connect 37 1 36 0;
-#X connect 37 2 33 0;
-#X connect 38 0 8 0;
-#X connect 39 0 8 0;
+#X connect 34 0 29 0;
 #X restore 44 184 pd update_thumb;
 #X text 17 32 thumb_array_act is written to by track_ui_2 (when status
 1 or not)., f 35;
-#N canvas 863 161 612 583 init_fill_thumb 1;
-#X msg 105 234 clear;
-#X msg 186 -122 0;
-#X obj 159 -146 t b b;
-#X floatatom 159 -48 5 0 0 0 - - -, f 5;
-#X obj 159 -24 t f f f;
-#X floatatom 159 1 5 0 0 0 num - -, f 5;
-#X floatatom 178 50 5 0 0 0 row - -, f 5;
-#X floatatom 197 75 5 0 0 0 col - -, f 5;
-#X obj 268 -158 loadbang;
-#X obj 268 -108 / 8;
-#X floatatom 268 -83 5 0 0 0 - - -, f 5;
-#X obj 268 -59 t f f f;
-#X obj 178 106 pack f f f;
-#X obj 178 131 t a a;
-#X obj 178 156 expr ( $f2 * $f3 + 0 );
-#X floatatom 178 181 5 0 0 0 X - -, f 5;
-#X obj 203 210 expr ( $f1 * - $f3 + ( $f3 * 8 ) - $f3 );
-#X floatatom 203 235 5 0 0 0 Y - -, f 5;
-#X obj 178 25 div 8;
-#X obj 197 50 mod 8;
-#X obj 159 294 pack f f f f f;
-#X text 468 174 obj arguments: \; \$1 = X top left \; \$2 = Y
+#N canvas 804 98 692 767 init_fill_thumb 0;
+#X msg 490 477 clear;
+#X msg 66 38 0;
+#X obj 39 14 t b b;
+#X floatatom 39 112 5 0 0 0 - - -, f 5;
+#X obj 39 136 t f f f;
+#X floatatom 39 161 5 0 0 0 num - -, f 5;
+#X floatatom 58 210 5 0 0 0 row - -, f 5;
+#X floatatom 77 235 5 0 0 0 col - -, f 5;
+#X obj 148 72 loadbang;
+#X obj 148 122 / 8;
+#X floatatom 148 147 5 0 0 0 - - -, f 5;
+#X obj 148 171 t f f f;
+#X obj 58 266 pack f f f;
+#X obj 58 291 t a a;
+#X obj 58 316 expr ( $f2 * $f3 + 0 );
+#X floatatom 58 341 5 0 0 0 X - -, f 5;
+#X obj 83 370 expr ( $f1 * - $f3 + ( $f3 * 8 ) - $f3 );
+#X floatatom 83 395 5 0 0 0 Y - -, f 5;
+#X obj 58 185 div 8;
+#X obj 77 210 mod 8;
+#X obj 39 454 pack f f f f f;
+#X text 260 497 obj arguments: \; \$1 = X top left \; \$2 = Y
 top left \; \$3 = label \; \$4 = receive \; \$5 = send;
-#X obj 90 -144 inlet;
-#X obj 90 -119 t b b;
-#X msg 158 317 obj \$2 \$3 cnv \$4 \$4 \$4 \$0-\$1-s \$0-\$1-r empty
+#X obj 39 -44 inlet;
+#X msg 38 477 obj \$2 \$3 cnv \$4 \$4 \$4 \$0-\$1-s \$0-\$1-r empty
 0 0 14 12 -66577 0, f 65;
-#X obj 159 -73 line 20;
-#X msg 159 -98 63 1260;
-#X text 295 -133 size of the matrix;
-#X obj 109 349 s pd-thumbcnv-out\$0;
-#X msg 268 -133 40;
-#X connect 0 0 28 0;
-#X connect 1 0 25 0;
-#X connect 2 0 26 0;
+#X obj 39 87 line 20;
+#X msg 39 62 63 1260;
+#X text 175 97 size of the matrix;
+#X obj 38 509 s pd-thumbcnv-out\$0;
+#X msg 148 97 40;
+#X msg 270 10 \; \$0-thumb_array_out const -1;
+#X obj 39 -19 t b b b;
+#X connect 0 0 27 0;
+#X connect 1 0 24 0;
+#X connect 2 0 25 0;
 #X connect 2 1 1 0;
 #X connect 3 0 4 0;
 #X connect 4 0 5 0;
@@ -179,7 +163,7 @@ top left \; \$3 = label \; \$4 = receive \; \$5 = send;
 #X connect 5 0 20 0;
 #X connect 6 0 12 0;
 #X connect 7 0 12 1;
-#X connect 8 0 29 0;
+#X connect 8 0 28 0;
 #X connect 9 0 10 0;
 #X connect 10 0 11 0;
 #X connect 11 1 20 3;
@@ -193,45 +177,45 @@ top left \; \$3 = label \; \$4 = receive \; \$5 = send;
 #X connect 17 0 20 2;
 #X connect 18 0 6 0;
 #X connect 19 0 7 0;
-#X connect 20 0 24 0;
-#X connect 22 0 23 0;
-#X connect 23 0 2 0;
-#X connect 23 1 0 0;
-#X connect 24 0 28 0;
-#X connect 25 0 3 0;
-#X connect 26 0 25 0;
-#X connect 29 0 9 0;
+#X connect 20 0 23 0;
+#X connect 22 0 30 0;
+#X connect 23 0 27 0;
+#X connect 24 0 3 0;
+#X connect 25 0 24 0;
+#X connect 28 0 9 0;
+#X connect 30 0 2 0;
+#X connect 30 1 0 0;
+#X connect 30 2 29 0;
 #X restore 70 280 pd init_fill_thumb;
 #X obj 70 254 bng 15 250 50 0 empty empty reinitialize 17 7 0 10 #fcfcfc
 #000000 #000000;
-#N canvas 786 170 562 532 thumb_reset 0;
+#N canvas 808 213 562 582 thumb_reset 0;
 #X msg 115 103 0;
 #X obj 88 79 t b b;
-#X msg 146 352 0 \$1;
 #X obj 88 46 inlet;
 #X obj 88 152 line 20;
 #X msg 88 127 63 1260;
 #X floatatom 88 177 5 0 0 0 - - -, f 5;
-#X obj 88 246 s;
-#X obj 127 293 tools/receiver;
-#X obj 88 201 t b f f f, f 10;
-#X msg 107 224 symbol \$1-outputset-r;
-#X msg 127 268 \$1-outputset-r;
-#X obj 146 384 s \$0-thumb_array_out-val;
-#X connect 0 0 4 0;
-#X connect 1 0 5 0;
+#X obj 88 240 tabread \$0-thumb_array_out;
+#X obj 88 286 pack f f;
+#X obj 88 321 s \$0-thumb_array_out-val;
+#X obj 88 201 t f f, f 10;
+#X text 89 18 reset the thumbnail by reading the array \$0-thumb_array_out
+;
+#X text 265 322 triggers [pd update_thumb];
+#X floatatom 88 265 5 0 0 0 - - -, f 5;
+#X connect 0 0 3 0;
+#X connect 1 0 4 0;
 #X connect 1 1 0 0;
-#X connect 2 0 12 0;
-#X connect 3 0 1 0;
-#X connect 4 0 6 0;
-#X connect 5 0 4 0;
-#X connect 6 0 9 0;
-#X connect 9 0 7 0;
-#X connect 9 1 10 0;
-#X connect 9 2 11 0;
-#X connect 9 3 2 0;
-#X connect 10 0 7 1;
-#X connect 11 0 8 0;
+#X connect 2 0 1 0;
+#X connect 3 0 5 0;
+#X connect 4 0 3 0;
+#X connect 5 0 9 0;
+#X connect 6 0 7 0;
+#X connect 6 0 12 0;
+#X connect 7 0 8 0;
+#X connect 9 0 6 0;
+#X connect 9 1 7 1;
 #X restore 44 164 pd thumb_reset;
 #X obj 64 91 bng 15 250 50 0 empty empty res 16 5 0 10 #fcfcfc #000000
 #000000;
@@ -311,7 +295,7 @@ top left \; \$3 = label \; \$4 = receive \; \$5 = send;
 0;
 #X obj 10 15 cnv 5 5 5 1171-34-s 1171-34-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 15 15 cnv 5 5 5 1171-35-s 1171-35-r empty 0 0 0 12 #14e814 #14e814
+#X obj 15 15 cnv 5 5 5 1171-35-s 1171-35-r empty 0 0 0 12 #202020 #202020
 0;
 #X obj 20 15 cnv 5 5 5 1171-36-s 1171-36-r empty 0 0 0 12 #202020 #202020
 0;
@@ -371,21 +355,20 @@ top left \; \$3 = label \; \$4 = receive \; \$5 = send;
 0;
 #X coords 0 -1 1 1 40 40 2 0 0;
 #X restore 22 66 pd thumbcnv-out\$0;
-#X text 269 23 !!! Potential imprpovement: There should be only 1 array
-where the value is the output number \, and write all thumbnails from
-there;
 #X obj 195 95 loadbang;
 #X obj 195 120 \$1;
 #X obj 195 170 s \$0-cnv;
 #X msg 260 110 1;
 #X msg 195 145 label out:\$1;
+#X obj 40 307 delay 1300;
 #X connect 4 0 3 0;
 #X connect 6 0 5 0;
 #X connect 7 0 8 0;
-#X connect 8 0 6 0;
+#X connect 8 0 16 0;
 #X connect 8 1 4 0;
-#X connect 12 0 13 0;
-#X connect 13 0 16 0;
+#X connect 11 0 12 0;
+#X connect 12 0 15 0;
+#X connect 14 0 12 0;
 #X connect 15 0 13 0;
-#X connect 16 0 14 0;
+#X connect 16 0 6 0;
 #X coords 0 -1 1 1 84 44 2 20 64;

@@ -1,4 +1,4 @@
-#N canvas 17 140 970 552 10;
+#N canvas 2 47 970 552 10;
 #X obj 77 4 cnv 15 881 547 empty empty empty 0 0 0 4 #404040 #fcfcfc
 0;
 #N canvas 291 96 450 350 test 0;
@@ -128,7 +128,7 @@
 #X obj 421 -58 metro 500;
 #X floatatom 231 -406 4 0 0 0 - - -, f 4;
 #X obj 138 -411 hradio 20 0 0 4 empty empty empty 0 -8 0 10 #fcfcfc
-#000000 #000000 3;
+#000000 #000000 0;
 #X obj 107 -411 tgl 20 0 \$0-globalplaypause-s \$0-globalplaypause-r
 play/pause -14 -12 0 10 #94a0fc #000000 #000000 0 1;
 #X obj 166 -429 tgl 14 0 empty empty metro 17 7 0 10 #fcfcfc #000000
@@ -155,21 +155,21 @@ play/pause -14 -12 0 10 #94a0fc #000000 #000000 0 1;
 #X obj 303 -217 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
 #X obj 246 -4 nbx 5 14 -1e+37 1e+37 0 0 beatsperbar beatsperbar-r empty
-0 -8 0 10 #fcfcfc #000000 #000000 4 256 0;
+0 -8 0 10 #fcfcfc #000000 #000000 0 256 0;
 #X obj 99 -16 nbx 5 14 -1e+37 1e+37 0 0 tempo_ms tempo_ms-r empty 0
--8 0 10 #fcfcfc #000000 #000000 500 256 0;
+-8 0 10 #fcfcfc #000000 #000000 0 256 0;
 #X floatatom 244 -81 5 0 0 0 - - -, f 5;
 #X obj 20 -390 cnv 15 62 142 empty empty empty 20 12 0 14 #929292 #404040
 0;
 #X floatatom 54 -267 4 0 0 0 - - -, f 4;
 #X obj 34 -374 tgl 20 0 \$0-globalplaypause-s \$0-globalplaypause-r
-play/pause -14 -12 0 10 #94a0fc #000000 #000000 1 1;
+play/pause -14 -12 0 10 #94a0fc #000000 #000000 0 1;
 #X obj 27 -342 tgl 14 0 empty empty metro -6 -8 0 10 #fcfcfc #000000
 #000000 0 1;
 #X obj 33 -266 bng 15 250 50 0 empty empty tap -2 -10 0 10 #fcfcfc
 #000000 #000000;
 #X obj 54 -350 vradio 20 0 0 4 empty empty empty 0 -8 0 10 #fcfcfc
-#000000 #000000 3;
+#000000 #000000 0;
 #X obj 495 -409 import mrpeach;
 #X obj 23 -180 mrpeach/routeOSC /metro;
 #X obj 23 -155 mrpeach/routeOSC /beatnum /tempo_ms /tempo_bpm /beatsperbar
