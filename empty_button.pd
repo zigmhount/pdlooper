@@ -1,10 +1,10 @@
-#N canvas 654 32 711 710 10;
+#N canvas 286 47 711 735 10;
 #X obj 404 329 cnv 15 110 58 empty empty empty 20 12 0 14 #747474 #404040
 0;
 #N canvas 842 99 450 438 \$0-buttonframe 0;
-#X obj 78 51 bng 44 250 50 0 1533-bng-s 0-bng-r ADD 5 26 0 10 #7c7c7c
+#X obj 78 51 bng 44 250 50 0 2095-bng-s 0-bng-r ADD 5 26 0 10 #7c7c7c
 #000000 #000000;
-#X obj 118 51 bng 44 250 50 0 1533-bng-s 1533-bng-r ADD 5 26 0 10 #7c7c7c
+#X obj 118 51 bng 44 250 50 0 2095-bng-s 2095-bng-r ADD 5 26 0 10 #7c7c7c
 #000000 #000000;
 #X obj 78 51 cnv 15 84 44 empty empty Empty 27 18 0 10 #7c7c7c #404040
 0;
@@ -37,7 +37,7 @@
 #X msg 384 396 9;
 #X obj 384 421 t b f b;
 #X obj 44 79 t f f f;
-#N canvas 294 198 450 472 clear_track 0;
+#N canvas 932 296 450 497 clear_track 0;
 #X obj 89 15 inlet;
 #X obj 88 117 tools/receiver;
 #X obj 88 144 t b b;
@@ -55,7 +55,9 @@
 #X msg 166 265 set \$1;
 #X msg 219 264 /track/\$1/stop;
 #X obj 114 240 t f f f f, f 26;
-#X obj 88 169 delay 100;
+#X obj 88 196 delay 100;
+#X msg 268 299 -1 \$1;
+#X obj 268 324 s thumb_array_output-val;
 #X connect 0 0 5 0;
 #X connect 1 0 2 0;
 #X connect 2 0 16 0;
@@ -73,7 +75,9 @@
 #X connect 15 0 9 0;
 #X connect 15 1 13 0;
 #X connect 15 2 14 0;
+#X connect 15 3 17 0;
 #X connect 16 0 8 0;
+#X connect 17 0 18 0;
 #X restore 44 107 pd clear_track;
 #N canvas 415 166 450 447 switchon_track 0;
 #X obj 87 33 inlet;

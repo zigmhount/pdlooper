@@ -1,8 +1,8 @@
-#N canvas 936 315 450 425 10;
+#N canvas 1075 164 450 582 10;
 #X obj 15 58 cnv 15 145 44 empty \$0-scene-cnv-r 82 130 5 0 9 #808080
 #9e9e9e 0;
 #X obj 19 13 table \$0-scene_array 64;
-#N canvas 763 157 494 416 update_thumb 0;
+#N canvas 534 240 492 640 update_thumb 0;
 #X msg 120 170 symbol \$0-\$2-r;
 #X msg 101 148 \$1;
 #X obj 101 328 s;
@@ -10,7 +10,6 @@
 #X obj 101 245 f 12;
 #X msg 101 302 color \$1 \$1;
 #X obj 146 244 f;
-#X obj 101 103 t a a a a, f 27;
 #N canvas 408 234 450 325 column_colors 0;
 #X obj 121 21 inlet;
 #X text 161 22 track number;
@@ -55,41 +54,54 @@
 #X connect 14 0 16 0;
 #X restore 207 151 pd column_colors;
 #X msg 207 127 \$2;
-#X msg 332 295 1 56;
-#X msg 355 263 1 35;
-#X msg 314 237 0 56;
+#X msg 106 426 1 56;
+#X msg 129 394 1 35;
+#X msg 88 368 0 56;
 #X obj 146 216 t b f;
 #X floatatom 185 245 5 0 0 1 bars - -, f 5;
 #X obj 185 273 max;
-#X obj 185 298 s \$0-thumb-maxbars-r;
+#X obj 185 349 s \$0-thumb-maxbars-r;
 #X obj 101 78 r \$0-scene_array-val;
 #X obj 260 127 tabwrite \$0-scene_array;
-#X obj 332 320 s \$0-scene_array-val;
+#X obj 106 451 s \$0-scene_array-val;
 #X text 229 65 incoming list: value (0 if off \, otherwise num of bars)
 \, index, f 33;
 #X obj 101 194 select 0;
+#X msg 313 191 \$2;
+#X obj 313 216 select 0;
+#X obj 313 241 t 0;
+#X obj 100 103 t a a a a a, f 36;
+#X floatatom 185 298 5 0 0 0 - - -, f 5;
+#X obj 185 322 t f f;
 #X connect 0 0 2 1;
-#X connect 1 0 21 0;
+#X connect 1 0 20 0;
 #X connect 3 0 5 0;
 #X connect 4 0 3 0;
 #X connect 5 0 2 0;
 #X connect 6 0 3 0;
-#X connect 7 0 1 0;
-#X connect 7 1 0 0;
-#X connect 7 2 9 0;
-#X connect 7 3 18 0;
-#X connect 8 0 6 1;
-#X connect 9 0 8 0;
-#X connect 10 0 19 0;
-#X connect 11 0 19 0;
-#X connect 12 0 19 0;
-#X connect 13 0 6 0;
-#X connect 13 1 14 0;
-#X connect 14 0 15 0;
-#X connect 15 0 16 0;
-#X connect 17 0 7 0;
-#X connect 21 0 4 0;
-#X connect 21 1 13 0;
+#X connect 7 0 6 1;
+#X connect 8 0 7 0;
+#X connect 9 0 18 0;
+#X connect 10 0 18 0;
+#X connect 11 0 18 0;
+#X connect 12 0 6 0;
+#X connect 12 1 13 0;
+#X connect 13 0 14 0;
+#X connect 14 0 25 0;
+#X connect 16 0 24 0;
+#X connect 20 0 4 0;
+#X connect 20 1 12 0;
+#X connect 21 0 22 0;
+#X connect 22 0 23 0;
+#X connect 23 0 25 0;
+#X connect 24 0 1 0;
+#X connect 24 1 0 0;
+#X connect 24 2 8 0;
+#X connect 24 3 17 0;
+#X connect 24 4 21 0;
+#X connect 25 0 26 0;
+#X connect 26 0 15 0;
+#X connect 26 1 14 1;
 #X restore 38 177 pd update_thumb;
 #N canvas 744 83 612 608 init_fill_thumb 0;
 #X msg 105 234 clear;
@@ -180,14 +192,14 @@ top left \; \$3 = label \; \$4 = receive \; \$5 = send;
 #X connect 6 3 8 0;
 #X connect 8 0 7 0;
 #X restore 38 157 pd thumb_reset;
-#X obj 111 82 bng 15 250 50 0 empty empty reset 17 7 0 10 #fcfcfc #000000
+#X obj 111 83 bng 15 250 50 0 empty empty reset 17 7 0 10 #fcfcfc #000000
 #000000;
 #X obj 37 197 loadbang;
 #X floatatom 112 61 4 0 0 0 Max_bars #0-thumb-maxbars-r #0-thumb-maxbars-s
 , f 4;
 #X obj 62 83 bng 15 250 50 0 \$0-sceneplay-s \$0-sceneplay-r Play 16
 5 0 10 #fcfcfc #000000 #000000;
-#N canvas 450 318 432 314 from_act_to_scene 0;
+#N canvas 116 173 432 364 from_act_to_scene 0;
 #X obj 59 66 \$1;
 #X obj 59 45 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
@@ -205,7 +217,7 @@ to the scene's array and thumbnail., f 32;
 #X connect 4 0 3 0;
 #X connect 5 0 1 0;
 #X restore 200 14 pd from_act_to_scene;
-#N canvas 182 107 450 323 \$0-scenecnv 0;
+#N canvas 614 554 450 348 \$0-scenecnv 0;
 #X obj 0 35 cnv 5 5 5 1153-0-s 1153-0-r empty 0 0 0 12 #202020 #202020
 0;
 #X obj 0 35 cnv 5 5 5 1153-0-s 1153-0-r empty 0 0 0 12 #202020 #202020
@@ -292,7 +304,7 @@ to the scene's array and thumbnail., f 32;
 0;
 #X obj 5 10 cnv 5 5 5 1153-41-s 1153-41-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 10 10 cnv 5 5 5 1153-42-s 1153-42-r empty 0 0 0 12 #202020 #202020
+#X obj 10 10 cnv 5 5 5 1153-42-s 1153-42-r empty 0 0 0 12 #e8e828 #e8e828
 0;
 #X obj 15 10 cnv 5 5 5 1153-43-s 1153-43-r empty 0 0 0 12 #202020 #202020
 0;
@@ -306,7 +318,7 @@ to the scene's array and thumbnail., f 32;
 0;
 #X obj 0 5 cnv 5 5 5 1153-48-s 1153-48-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 5 5 cnv 5 5 5 1153-49-s 1153-49-r empty 0 0 0 12 #202020 #202020
+#X obj 5 5 cnv 5 5 5 1153-49-s 1153-49-r empty 0 0 0 12 #fcac44 #fcac44
 0;
 #X obj 10 5 cnv 5 5 5 1153-50-s 1153-50-r empty 0 0 0 12 #202020 #202020
 0;
@@ -320,7 +332,7 @@ to the scene's array and thumbnail., f 32;
 0;
 #X obj 35 5 cnv 5 5 5 1153-55-s 1153-55-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 0 0 cnv 5 5 5 1153-56-s 1153-56-r empty 0 0 0 12 #202020 #202020
+#X obj 0 0 cnv 5 5 5 1153-56-s 1153-56-r empty 0 0 0 12 #fc2828 #fc2828
 0;
 #X obj 5 0 cnv 5 5 5 1153-57-s 1153-57-r empty 0 0 0 12 #202020 #202020
 0;
@@ -338,7 +350,7 @@ to the scene's array and thumbnail., f 32;
 0;
 #X coords 0 -1 1 1 40 40 2 0 0;
 #X restore 17 60 pd \$0-scenecnv;
-#N canvas 717 229 756 473 playscene 0;
+#N canvas 198 123 756 593 playscene 0;
 #X obj 83 13 r \$0-sceneplay-s;
 #X obj 83 38 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
@@ -357,28 +369,41 @@ to the scene's array and thumbnail., f 32;
 #X msg 111 368 symbol \$1-playchange-r;
 #X obj 83 260 t f f;
 #X obj 83 181 t f f;
-#X obj 358 97 r beatnum;
-#X obj 358 152 f 0;
-#X obj 387 152 + 1;
-#X floatatom 358 177 5 0 0 0 - - -, f 5;
-#X obj 444 97 r \$0-thumb-maxbars-s;
-#X floatatom 444 152 5 0 0 0 - - -, f 5;
-#X obj 307 101 t b 2;
-#X obj 310 352 \$1;
-#X obj 310 377 noteout 1;
-#X obj 358 201 mod;
-#X obj 358 246 select 0;
-#X obj 358 122 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
-#X floatatom 358 226 5 0 0 0 - - -, f 5;
-#X obj 358 271 t b 1;
-#X obj 310 298 spigot;
-#X obj 310 323 t b 0;
+#X obj 358 54 r beatnum;
+#X obj 358 109 f 0;
+#X obj 387 109 + 1;
+#X floatatom 358 134 5 0 0 0 - - -, f 5;
+#X obj 444 54 r \$0-thumb-maxbars-s;
+#X floatatom 444 109 5 0 0 0 - - -, f 5;
+#X obj 307 58 t b 2;
+#X obj 310 309 \$1;
+#X obj 310 334 noteout 1;
+#X obj 358 158 mod;
+#X obj 358 203 select 0;
+#X obj 358 79 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X floatatom 358 183 5 0 0 0 - - -, f 5;
+#X obj 310 255 spigot;
 #X obj 83 61 t b b 0 1;
-#X text 370 301 pass through only when sceneplay is activated \, and
+#X text 370 258 pass through only when sceneplay is activated \, and
 spigot set to 0 right after it goes through, f 28;
+#X obj 444 334 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 310 280 t b 0 1;
+#X obj 358 228 t b 1 0;
+#X obj 444 417 select 0 1;
+#X msg 444 442 color 0;
+#X msg 512 442 color 16;
+#X obj 444 467 s \$0-sceneplay-r;
+#X obj 589 274 loadbang;
+#X msg 589 299 0;
+#X obj 606 468 s;
+#X obj 444 387 t f f b, f 30;
+#X obj 621 417 \$1;
+#X msg 621 442 symbol \$1-playstatus;
+#X obj 444 357 change;
 #X connect 0 0 1 0;
-#X connect 1 0 32 0;
+#X connect 1 0 30 0;
 #X connect 2 0 3 0;
 #X connect 3 0 5 0;
 #X connect 4 0 3 0;
@@ -405,18 +430,33 @@ spigot set to 0 right after it goes through, f 28;
 #X connect 22 1 24 1;
 #X connect 23 0 24 0;
 #X connect 25 0 28 0;
-#X connect 26 0 29 0;
+#X connect 26 0 34 0;
 #X connect 27 0 17 0;
 #X connect 28 0 26 0;
-#X connect 29 0 30 0;
-#X connect 29 1 24 1;
-#X connect 30 0 31 0;
-#X connect 31 0 23 0;
-#X connect 31 1 30 1;
-#X connect 32 0 4 0;
-#X connect 32 1 2 0;
-#X connect 32 2 17 1;
-#X connect 32 3 30 1;
+#X connect 29 0 33 0;
+#X connect 30 0 4 0;
+#X connect 30 1 2 0;
+#X connect 30 2 17 1;
+#X connect 30 3 29 1;
+#X connect 32 0 45 0;
+#X connect 33 0 23 0;
+#X connect 33 1 29 1;
+#X connect 33 2 32 0;
+#X connect 34 0 29 0;
+#X connect 34 1 24 1;
+#X connect 34 2 32 0;
+#X connect 35 0 36 0;
+#X connect 35 1 37 0;
+#X connect 36 0 38 0;
+#X connect 37 0 38 0;
+#X connect 39 0 40 0;
+#X connect 40 0 32 0;
+#X connect 42 0 35 0;
+#X connect 42 1 41 0;
+#X connect 42 2 43 0;
+#X connect 43 0 44 0;
+#X connect 44 0 41 1;
+#X connect 45 0 42 0;
 #X restore 250 148 pd playscene;
 #N canvas 969 242 619 612 midiin-scenes 0;
 #X obj 100 10 r midibutton;
@@ -508,7 +548,7 @@ spigot set to 0 right after it goes through, f 28;
 #X connect 38 0 35 0;
 #X connect 41 0 35 0;
 #X restore 302 86 pd midiin-scenes;
-#N canvas 888 248 670 396 midiout-scenes 1;
+#N canvas 888 248 670 396 midiout-scenes 0;
 #X obj 78 23 r \$0-thumb-maxbars-s;
 #X floatatom 79 125 5 0 0 0 - - -, f 5;
 #X obj 124 335 \$1;
@@ -584,6 +624,19 @@ spigot set to 0 right after it goes through, f 28;
 #X msg 350 219 82;
 #X obj 37 243 t b b;
 #X text 17 30 const 0 if empty (value=maxbars);
+#X obj 43 321 r getscenecnv;
+#X msg 43 346 \$0-scenecnv;
+#X obj 43 371 s returnscenecnv;
+#X msg 241 410 \$1-thumb-maxbars-r;
+#X obj 241 356 \$1;
+#X obj 241 435 tools/receiver;
+#X obj 241 460 s \$0-thumb-maxbars-r;
+#X obj 240 488 r \$0-thumb-maxbars-s;
+#X floatatom 240 513 5 0 0 0 - - -, f 5;
+#X obj 240 537 s;
+#X obj 241 381 t f f;
+#X obj 241 332 loadbang;
+#X msg 277 514 symbol \$1-thumb-maxbars-s;
 #X connect 4 0 21 0;
 #X connect 6 0 5 0;
 #X connect 7 0 4 0;
@@ -594,4 +647,15 @@ spigot set to 0 right after it goes through, f 28;
 #X connect 20 0 19 0;
 #X connect 21 0 5 0;
 #X connect 21 1 3 0;
+#X connect 23 0 24 0;
+#X connect 24 0 25 0;
+#X connect 26 0 28 0;
+#X connect 27 0 33 0;
+#X connect 28 0 29 0;
+#X connect 30 0 31 0;
+#X connect 31 0 32 0;
+#X connect 33 0 26 0;
+#X connect 33 1 35 0;
+#X connect 34 0 27 0;
+#X connect 35 0 32 1;
 #X coords 0 -1 1 1 145 44 2 15 58;
