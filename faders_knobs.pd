@@ -1,14 +1,14 @@
-#N canvas 20 242 937 453 10;
-#N canvas 739 327 450 350 OSC_out 1;
-#X obj 206 19 bng 15 250 50 0 empty empty Connect_NonMixer 17 7 0 10
-#fcfcfc #000000 #000000;
-#X msg 339 125 connect localhost 17154;
-#X obj 207 242 mrpeach/udpsend;
-#X obj 169 18 tgl 33 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 1 1;
-#X obj 206 37 bng 15 250 50 0 empty empty disconnect 17 7 0 10 #fcfcfc
+#N canvas 186 175 937 478 10;
+#N canvas 194 285 722 427 OSC_out 0;
+#X obj 206 36 bng 15 250 50 0 empty empty Connect 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X msg 214 64 disconnect;
+#X msg 337 163 connect localhost 17154;
+#X obj 207 242 mrpeach/udpsend;
+#X obj 169 26 tgl 35 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 1 1;
+#X obj 206 54 bng 15 250 50 0 empty empty disconnect 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X msg 214 87 disconnect;
 #X obj 49 185 mrpeach/packOSC;
 #X obj 42 44 inlet;
 #X floatatom 43 94 5 0 0 0 - - -, f 5;
@@ -20,8 +20,12 @@
 #X obj 95 92 tosymbol;
 #X obj 88 39 print;
 #X obj 338 101 shell;
-#X msg 338 76 ./connect_jack_pd_nonmixer.sh;
+#X msg 408 106 ./connect_jack_pd_nonmixer.sh;
 #X obj 97 259 outlet;
+#X msg 352 38 ./start_nonmixer.sh;
+#X obj 206 18 bng 15 250 50 0 empty empty Start\ NonMixer 17 7 0 10
+#fcfcfc #000000 #000000;
+#X obj 408 131 shell;
 #X connect 0 0 17 0;
 #X connect 0 0 18 0;
 #X connect 1 0 2 0;
@@ -40,8 +44,11 @@
 #X connect 13 0 11 1;
 #X connect 14 0 13 0;
 #X connect 16 1 1 0;
-#X connect 17 0 16 0;
-#X coords 0 -1 1 1 153 39 2 168 16;
+#X connect 16 1 17 0;
+#X connect 17 0 21 0;
+#X connect 19 0 16 0;
+#X connect 20 0 19 0;
+#X coords 0 -1 1 1 141 55 2 168 16;
 #X restore 174 186 pd OSC_out;
 #X obj 34 -80 cnv 15 406 131 empty empty empty 20 12 0 14 #383838 #404040
 0;
@@ -58,7 +65,7 @@
 #X obj 273 -73 vsl 22 102 0 127 0 0 fader53-s fader53-r fader53 -8
 112 0 10 #808080 #000000 #d8d8d8 0 1;
 #X obj 315 -73 vsl 22 102 0 127 0 0 fader54-s fader54-r fader54 -8
-112 0 10 #808080 #000000 #d8d8d8 0 1;
+112 0 10 #808080 #000000 #d8d8d8 10100 1;
 #X obj 359 -73 vsl 22 102 0 127 0 0 fader55-s fader55-r fader55 -8
 112 0 10 #808080 #000000 #d8d8d8 0 1;
 #X obj 407 -72 vsl 22 102 0 127 0 0 fader56-s fader56-r fader56 -8
@@ -228,4 +235,4 @@ f 40;
 #X connect 38 0 39 0;
 #X connect 41 0 39 0;
 #X connect 42 0 39 0;
-#X coords 0 -1 1 1 156 53 1 172 173;
+#X coords 0 -1 1 1 141 55 1 174 186;

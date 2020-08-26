@@ -1,5 +1,5 @@
-#N canvas 975 523 522 331 10;
-#N canvas 629 24 627 743 metronome 1;
+#N canvas 793 408 522 331 10;
+#N canvas 629 24 627 743 metronome 0;
 #X text 93 726 OSC messages to /ui/metro;
 #X text 145 15 OSC messages to /dsp/metro;
 #X floatatom 23 97 5 0 0 0 - - -, f 5;
@@ -54,7 +54,7 @@
 #000000;
 #X msg 38 148 0;
 #X obj 23 75 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000
-1 1;
+0 1;
 #X obj 23 2 r fromui;
 #X obj 43 726 s toui;
 #X obj 23 27 mrpeach/routeOSC /metro;
@@ -905,4 +905,5 @@ MIDI devices to the right ports;
 #X obj 369 23 saveload;
 #X obj 270 48 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
+#X obj 161 184 pd~;
 #X connect 12 0 9 0;

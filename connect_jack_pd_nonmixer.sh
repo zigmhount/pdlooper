@@ -3,9 +3,9 @@
 
 # purr-data -unique -rt -jack -nogui -inchannels "2" -outchannels "16" dsp_main.pd
 
-non-mixer --osc-port 17154 /home/zig/Nextcloud/PureData/APClooper/jams_made_with_pdlooper/NSMixer/defaultmixer_pdlooper/ &
+#non-mixer --osc-port 17154 /home/zig/Nextcloud/PureData/APClooper/jams_made_with_pdlooper/NSMixer/defaultmixer_pdlooper/ &
 
-sleep 7
+#sleep 7
 
 jack_connect pure_data_0:output0 Non-Mixer\ \(pdlooper_out\):Drums\/in-1
 jack_connect pure_data_0:output1 Non-Mixer\ \(pdlooper_out\):Drums\/in-2
