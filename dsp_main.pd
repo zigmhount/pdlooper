@@ -1,4 +1,4 @@
-#N canvas 793 408 522 331 10;
+#N canvas 795 411 522 331 10;
 #N canvas 629 24 627 743 metronome 0;
 #X text 93 726 OSC messages to /ui/metro;
 #X text 145 15 OSC messages to /dsp/metro;
@@ -228,9 +228,9 @@ out of sync - but not with getmetro, f 27;
 #X obj 256 415 mrpeach/routeOSC /dsp;
 #X obj 256 440 s fromui;
 #X obj 157 33 tgl 15 0 empty empty printOSC\ in 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#000000 1 1;
 #X obj 156 50 tgl 15 0 empty empty printOSC\ out 17 7 0 10 #fcfcfc
-#000000 #000000 0 1;
+#000000 #000000 1 1;
 #X obj 203 462 spigot;
 #X obj 319 277 spigot;
 #X obj 319 302 print OSCout_toui;
@@ -906,4 +906,24 @@ MIDI devices to the right ports;
 #X obj 270 48 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
 #X obj 161 184 pd~;
+#N canvas 459 245 390 271 stdout_pdsend 0;
+#X obj 71 35 netreceive 9999 1;
+#X obj 71 60 t a a;
+#X obj 98 83 print;
+#X text 187 35 stderr is redirected to stdout in pdlooper.sh \, then
+piped to `pdsend 9999 localhost udp` so we can catch it here., f 28
+;
+#X obj 71 108 route Loaded;
+#X obj 71 133 route Soundfont:;
+#X obj 71 158 list2symbol;
+#X obj 71 183 splitfilename;
+#X obj 146 213 s stdout_sndfnt_loaded;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 1 1 2 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 1 8 0;
+#X restore 382 114 pd stdout_pdsend;
 #X connect 12 0 9 0;

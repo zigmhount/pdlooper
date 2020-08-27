@@ -1,4 +1,4 @@
-#N canvas 170 232 941 403 10;
+#N canvas 172 278 941 403 10;
 #X msg 468 24 load /home/zig/soundfounts/FluidR3_GM.sf2;
 #X floatatom 258 136 5 0 0 0 channel - -, f 5;
 #X floatatom 329 136 5 0 0 0 value - -, f 5;
@@ -39,6 +39,12 @@
 #X msg 445 161 bend \$2 \$1;
 #X floatatom 445 119 5 0 0 0 - - -, f 5;
 #X floatatom 501 115 5 0 0 0 - - -, f 5;
+#X obj 443 299 r stdout_sndfnt_loaded;
+#X text 592 298 receive the "Loaded Soundfont: ..." message from [pd
+stdout_pdsend], f 35;
+#X symbolatom 443 324 22 0 0 0 - - -, f 22;
+#X msg 443 348 /fluid_sndfnt \$1;
+#X obj 443 373 s toui;
 #X connect 1 0 4 0;
 #X connect 2 0 4 1;
 #X connect 2 0 7 0;
@@ -74,4 +80,7 @@
 #X connect 30 1 34 0;
 #X connect 31 0 32 0;
 #X connect 32 0 12 0;
+#X connect 35 0 37 0;
+#X connect 37 0 38 0;
+#X connect 38 0 39 0;
 #X coords 0 -1 1 1 155 61 1 210 96;
