@@ -5,6 +5,10 @@
 # Pdlooper <https://github.com/zigmhount/pdlooper>
 # 
 
+# Kill all children processes when the script is killed:
+trap "kill 0" EXIT
+
+# Launch Purr Data and open the main patch:
 
 purr-data -stderr 2>&1 -unique -rt -jack -inchannels "2" -outchannels "16" -audiobuf 150 dsp_main.pd | while true; do pdsend 9999 localhost udp; done
 
@@ -41,3 +45,7 @@ purr-data -stderr 2>&1 -unique -rt -jack -inchannels "2" -outchannels "16" -audi
 # to increase Purr-data's buffer. Not sure yet whether 150 is ok on my machine
 # for good performance, good sound quality and limited latency.
 #
+
+
+# This will kill this script once the children are terminated:
+wait

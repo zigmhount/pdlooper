@@ -12,7 +12,7 @@ The current minor version, while not ready for production, is considered "jammab
 
 Follow the instructions [here](https://github.com/agraef/purr-data) to install Purr-Data, copy this project's files, start jack, and run:
 
-`purr-data -rt -nogui -jack -unique -inchannels "2" -outchannels "16" dsp_main.pd`
+`./pdlooper.sh`
 
 This is starting the DSP backend program, which will start a second instance of Purr-data with `-nrt -jack -unique -nosound ui_main.pd` to start the GUI in a separate thread, and the 2 instances will communicate *via* OSC messages.
 

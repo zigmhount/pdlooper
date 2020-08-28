@@ -1,4 +1,4 @@
-#N canvas 6 31 970 602 10;
+#N canvas 8 77 970 602 10;
 #X obj 77 4 cnv 15 881 547 empty empty empty 0 0 0 4 #404040 #fcfcfc
 0;
 #N canvas 291 96 450 350 test 0;
@@ -127,7 +127,7 @@
 #X obj 421 -58 metro 500;
 #X floatatom 231 -406 4 0 0 0 - - -, f 4;
 #X obj 138 -411 hradio 20 0 0 4 empty empty empty 0 -8 0 10 #fcfcfc
-#000000 #000000 0;
+#000000 #000000 3;
 #X obj 107 -411 tgl 20 0 \$0-globalplaypause-s \$0-globalplaypause-r
 play/pause -14 -12 0 10 #94a0fc #000000 #000000 0 1;
 #X obj 166 -429 tgl 14 0 empty empty metro 17 7 0 10 #fcfcfc #000000
@@ -168,7 +168,7 @@ play/pause -14 -12 0 10 #94a0fc #000000 #000000 0 1;
 #X obj 33 -266 bng 15 250 50 0 empty empty tap -2 -10 0 10 #fcfcfc
 #000000 #000000;
 #X obj 54 -350 vradio 20 0 0 4 empty empty empty 0 -8 0 10 #fcfcfc
-#000000 #000000 0;
+#000000 #000000 3;
 #X obj 495 -409 import mrpeach;
 #X obj 23 -180 mrpeach/routeOSC /metro;
 #X obj 23 -155 mrpeach/routeOSC /beatnum /tempo_ms /tempo_bpm /beatsperbar
@@ -491,8 +491,8 @@ f 3;
 #X obj 508 370 r fromdsp;
 #X obj 508 395 routeOSC /fluid_sndfnt;
 #X obj 508 420 list2symbol;
-#X obj 235 -14 cnv 16 63 16 empty \$0-fluid-sndfnt-r Timbres\ Of 0
-7 0 10 #9fd59b #404040 0;
+#X obj 235 -14 cnv 16 63 16 empty \$0-fluid-sndfnt-r SGM-v2.01- 0 7
+0 10 #9fd59b #404040 0;
 #X text 235 -30 soundfont;
 #X msg 688 390 lalalalalailio;
 #X obj 508 445 tools/stringsplit 10;
@@ -607,7 +607,7 @@ f 3;
 #X msg 70 58 names adc~ midifluid;
 #X obj 51 9 loadbang;
 #X obj 51 134 tgl 15 0 empty empty monitor-> 17 7 0 10 #fcfcfc #000000
-#000000 1 1;
+#000000 0 1;
 #X obj 51 34 t b b 1;
 #X msg 51 80 set 1;
 #X obj 124 398 s todsp;
@@ -615,7 +615,7 @@ f 3;
 #X msg 51 334 /input/monitor \$1;
 #X msg 68 217 0;
 #X obj 131 128 hsl 66 20 0 1 0 0 \$0-volmonslider \$0-set-volmonslider
-volume 19 7 1 13 #dcdcdc #000000 #000000 6500 1;
+volume 19 7 1 13 #dcdcdc #000000 #000000 0 1;
 #X obj 200 116 tgl 16 0 \$0-dsp-montoggle \$0-dsp-montoggle-set on
 3 6 1 9 #4a4f51 #4a4f51 #fcfcfc 0 1;
 #X obj 200 132 bng 16 500 50 0 \$0-monmute-bng \$0-monmute empty 0
@@ -2077,12 +2077,12 @@ control \, [value cc#(;
 #X connect 1 0 2 0;
 #X connect 1 1 3 0;
 #X restore 584 109 pd midicontrols;
-#N canvas 847 122 518 600 select_track 0;
-#X text 140 -9 128 = no track selected;
+#N canvas 344 123 518 625 select_track 0;
+#X text 140 78 128 = no track selected;
 #X obj 352 -134 loadbang;
 #X obj 100 -123 unpack f f;
 #X text 176 -124 tracknum \, 1 or 0;
-#X floatatom 100 -10 5 0 0 0 selected: - global-selected-s, f 5;
+#X floatatom 100 77 5 0 0 0 selected: - global-selected-s, f 5;
 #X floatatom 100 -98 5 0 0 0 - - -, f 5;
 #X floatatom 137 -98 2 0 0 0 - - -, f 2;
 #X obj 100 -148 r global-selected-list;
@@ -2090,22 +2090,31 @@ control \, [value cc#(;
 #X obj 100 -74 select;
 #X msg 100 -48 128;
 #X msg 133 -48 \$1;
+#X obj 100 -22 t f b;
+#X obj 127 30 s recarm-global-r;
+#X msg 127 5 1 128;
+#X text 249 -10 force disarming of all tracks when the selection changes
+\, in order to avoid keeping a track armed. Creating a new track will
+still start by arming it., f 34;
 #X connect 2 0 5 0;
 #X connect 5 0 9 0;
 #X connect 7 0 2 0;
 #X connect 8 0 9 1;
 #X connect 9 0 10 0;
 #X connect 9 1 11 0;
-#X connect 10 0 4 0;
-#X connect 11 0 4 0;
-#X coords 0 -1 1 1 94 32 1 40 -24;
+#X connect 10 0 12 0;
+#X connect 11 0 12 0;
+#X connect 12 0 4 0;
+#X connect 12 1 14 0;
+#X connect 14 0 13 0;
+#X coords 0 -1 1 1 94 32 1 39 63;
 #X restore 360 17 pd select_track;
 #X obj 130 213 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
 #X obj 178 256 s;
 #X msg 198 231 symbol \$1-midibutton;
 #X obj 159 209 t f b f;
-#N canvas 480 34 478 667 createtrackifmissing 0;
+#N canvas 480 34 478 667 createtrackifmissing 1;
 #X obj 124 24 inlet;
 #X text 163 25 button number;
 #X obj 111 335 spigot;
@@ -2150,6 +2159,7 @@ control \, [value cc#(;
 #X obj 111 392 delay 1000;
 #X text 36 465 select and arm the track right away after creation,
 f 13;
+#X text 156 484 arm;
 #X connect 0 0 8 0;
 #X connect 2 0 3 0;
 #X connect 2 0 15 0;
@@ -2607,35 +2617,29 @@ f 13;
 #X text 571 104 Clear;
 #X restore 32 -338 pd current_apc_config;
 #X obj 211 -432 faders_knobs;
-#N canvas 813 278 450 375 trackarm 1;
+#N canvas 895 33 470 378 trackarm 0;
 #X text 108 11 only one track should be armed at a time;
-#X obj 85 63 r recarm-global-r;
-#X floatatom 85 88 5 0 0 0 - - -, f 5;
-#X obj 85 112 select;
-#X msg 85 136 128;
-#X msg 118 137 \$1;
-#X floatatom 85 161 5 0 0 0 - - -, f 5;
-#X obj 85 185 s global-armed-s;
-#X obj 201 63 r global-armed-s;
-#X obj 62 89 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#X obj 85 41 r recarm-global-r;
+#X floatatom 85 181 5 0 0 0 - - -, f 5;
+#X obj 85 205 s global-armed-s;
+#X obj 60 51 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
-#X obj 65 135 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000;
-#X floatatom 201 88 5 0 0 0 - - -, f 5;
 #X text 43 225 if it comes from trecarmUI \, only set global-armed
 \, but if it comes from another track being armed then send the value
 ;
-#X connect 1 0 2 0;
-#X connect 1 0 9 0;
+#X obj 85 93 route 0 1;
+#X msg 85 118 128;
+#X msg 116 118 \$1;
+#X text 204 41 armedstatus \, tracknum;
+#X text 41 181 armed:;
+#X connect 1 0 4 0;
+#X connect 1 0 6 0;
 #X connect 2 0 3 0;
-#X connect 3 0 4 0;
-#X connect 3 0 10 0;
-#X connect 3 1 5 0;
-#X connect 4 0 6 0;
-#X connect 5 0 6 0;
 #X connect 6 0 7 0;
-#X connect 8 0 11 0;
-#X connect 11 0 3 1;
+#X connect 6 1 8 0;
+#X connect 7 0 2 0;
+#X connect 8 0 2 0;
+#X coords 0 -1 1 1 77 33 1 40 166;
 #X restore 191 -472 pd trackarm;
 #X restore 3 80 pd settings;
 #X obj 87 501 matrix_thumb_output 1;
@@ -2651,7 +2655,7 @@ f 13;
 #N canvas 519 268 450 325 midi_in_monitor 0;
 #X obj 91 56 notein;
 #X obj 91 81 pack f f f;
-#X obj 231 46 cnv 15 57 16 empty \$0-midimon-r 84\ 0\ 1 1 6 0 10 #e0e0e0
+#X obj 231 46 cnv 15 57 16 empty \$0-midimon-r 98\ 0\ 1 1 6 0 10 #e0e0e0
 #404040 0;
 #X obj 181 46 cnv 15 49 16 empty empty midimon: 1 6 0 10 #e0e0e0 #404040
 0;

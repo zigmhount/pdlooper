@@ -3,7 +3,7 @@
 
 # purr-data -unique -rt -jack -nogui -inchannels "2" -outchannels "16" dsp_main.pd
 
-non-mixer --osc-port 17154 /home/zig/Nextcloud/PureData/APClooper/jams_made_with_pdlooper/NSMixer/defaultmixer_pdlooper/ &
+non-mixer --osc-port 17154 NonMixer_defaultsetup_pdlooper/ &
 
 sleep 7
 
