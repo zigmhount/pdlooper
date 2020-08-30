@@ -3,11 +3,12 @@
 [[toc]]
 
 # Requirements
-Purr-Data is shipped with a number of Pd externals without any need to install additional externals. A few abstractions have been found online (mostly on [](https://forum.pdpatchrepo.info) and put in the `tools/` subfolder of this project. Some of the non-vanilla externals used in this project are listed below (but it may not be exhaustive):
+Purr-Data is shipped with a number of Pd externals without any need to install additional externals. A few abstractions have been found online (mostly on [forum.pdpatchrepo.info](https://forum.pdpatchrepo.info)) and put in the `tools/` subfolder of this project. Some of the non-vanilla externals used in this project are listed below (but it may not be exhaustive):
 - moonlib (mknob,...)
 - zexy (list2symbol,...)
 - mrpeach (OSC messages)
 - ...
+
 This project has been developed on OpenSuse Leap (15.1, 15.2) and Debian (9, 10) using the following additional utilities:
 - Bash for the scripts
 - Alsa and Jack (optionally using a GUI like QJackctl)
@@ -45,6 +46,7 @@ Unfortunately I haven't found a way yet to give each MIDI/Jack client a better n
 # Usage
 
 Now that the devices are connected, we can look at Pdlooper's interface:
+
 ***add picture here***
 
 ## Main interface
@@ -68,9 +70,13 @@ Each track contains one sample, that can be recorded, played, stopped using the 
 
 Each track slot can have 3 different views:
 - Empty slot
+
 ***add picture***
+
 - Track main view
+
 ***add picture***
+
   - Each track can have 7 status:
     0. Empty, white background, i.e. no sample has been recorded yet.
     1. Playing, solid green background
@@ -88,7 +94,9 @@ Each track slot can have 3 different views:
     - Clear the track: This will delete the sample and free the track's slot.
     - TO DO: Cut/Copy the track to be pasted into a different, empty slot.
 - Track configuration
+
 ***add picture***
+
   - The Play/Rec/Pause button is still visible
   - The Cfg button is still visible to switch back to the track's main view
   - A knob (or slider) for the track's volume, independent from all other tracks
@@ -100,16 +108,22 @@ Each track slot can have 3 different views:
 
 ## Tracks thumbnails
 ### Currently playing thumbnail
+
 ***add picture***
+
 The big icon represents the tracks currently playing, each by a dot corresponding to the column they are in. This overview can be sent to a scene by selecting it in the dropdown menu (numbered from 82 to 89 as per the MIDI buttons on the controller, but this may change in the future).
 
 ### Scenes
+
 ***add picture***
+
 When the thumbnail is sent to a scene, the corresponding widget in the 9th column on the right will display the same thumbnail. All tracks displayed on the thumbnail can be started simultaneously when the scene is triggered with the scene's Play button.
 
 
 ### Outputs
+
 ***add picture***
+
 Similarly to the thumbnail above, this displays the existing tracks (not necessarily currently playing) assigned to each pair of outputs. This is updated whenever a track is moved to a different output using the track's configuration panel.
 
 
