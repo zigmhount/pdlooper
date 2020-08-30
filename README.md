@@ -16,7 +16,7 @@ Follow the instructions [here](https://github.com/agraef/purr-data) to install P
 
 This is starting the DSP backend program, which will start a second instance of Purr-data with `-nrt -jack -unique -nosound ui_main.pd` to start the GUI in a separate thread, and the 2 instances will communicate *via* OSC messages.
 
-There is a script to launch Non-Mixer and auto-connect Pdlooper to it (and send it OSC messages), but the Non-Mixer settings are not here yet.
+There is a script to launch Non-Mixer and auto-connect Pdlooper to it (and send it OSC messages).
 
 # Description
 ## Usage concept
@@ -31,7 +31,7 @@ Like the tools I was inspired by (see below), I intend to use Pdlooper in a modu
 ## Current features
 - Set tempo by tapping
 - Save and load the session (parameters in a text file, wav files are stored in a subfolder <name_of_text_file>\_files/)
-- Audio input: selection between [adc~] (microphone) or an embedded fluidsynth input with [fluid~]
+- Audio input: selection between [adc~] (microphone) or an embedded fluidsynth input with [fluid~] and a preset system
 - Audio tracks
   - Record audio tracks in stereo
   - Loop audio tracks
@@ -59,8 +59,8 @@ Matrix thumbnail of all currently playing tracks, can be sent to scenes for arra
 ![](screenshots/matrix_thumb.png)
 
 ## Current issues
-- Still some audio glitches
-- Quite a few unexpected behaviours of the UI
+- There might still be some audio glitches
+- A few unexpected behaviours of the UI
 
 ## Planned features
 - More looping

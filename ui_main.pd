@@ -1,4 +1,4 @@
-#N canvas 8 77 970 602 10;
+#N canvas 2 47 963 558 10;
 #X obj 77 4 cnv 15 881 547 empty empty empty 0 0 0 4 #404040 #fcfcfc
 0;
 #N canvas 291 96 450 350 test 0;
@@ -127,7 +127,7 @@
 #X obj 421 -58 metro 500;
 #X floatatom 231 -406 4 0 0 0 - - -, f 4;
 #X obj 138 -411 hradio 20 0 0 4 empty empty empty 0 -8 0 10 #fcfcfc
-#000000 #000000 3;
+#000000 #000000 0;
 #X obj 107 -411 tgl 20 0 \$0-globalplaypause-s \$0-globalplaypause-r
 play/pause -14 -12 0 10 #94a0fc #000000 #000000 0 1;
 #X obj 166 -429 tgl 14 0 empty empty metro 17 7 0 10 #fcfcfc #000000
@@ -154,9 +154,9 @@ play/pause -14 -12 0 10 #94a0fc #000000 #000000 0 1;
 #X obj 303 -217 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
 #X obj 246 -4 nbx 5 14 -1e+37 1e+37 0 0 beatsperbar beatsperbar-r empty
-0 -8 0 10 #fcfcfc #000000 #000000 4 256 0;
+0 -8 0 10 #fcfcfc #000000 #000000 0 256 0;
 #X obj 99 -16 nbx 5 14 -1e+37 1e+37 0 0 tempo_ms tempo_ms-r empty 0
--8 0 10 #fcfcfc #000000 #000000 500 256 0;
+-8 0 10 #fcfcfc #000000 #000000 0 256 0;
 #X floatatom 244 -81 5 0 0 0 - - -, f 5;
 #X obj 20 -390 cnv 15 62 142 empty empty empty 20 12 0 14 #929292 #404040
 0;
@@ -168,7 +168,7 @@ play/pause -14 -12 0 10 #94a0fc #000000 #000000 0 1;
 #X obj 33 -266 bng 15 250 50 0 empty empty tap -2 -10 0 10 #fcfcfc
 #000000 #000000;
 #X obj 54 -350 vradio 20 0 0 4 empty empty empty 0 -8 0 10 #fcfcfc
-#000000 #000000 3;
+#000000 #000000 0;
 #X obj 495 -409 import mrpeach;
 #X obj 23 -180 mrpeach/routeOSC /metro;
 #X obj 23 -155 mrpeach/routeOSC /beatnum /tempo_ms /tempo_bpm /beatsperbar
@@ -237,7 +237,7 @@ play/pause -14 -12 0 10 #94a0fc #000000 #000000 0 1;
 #X connect 55 3 18 0;
 #X coords 0 -1 1 1 64 143 2 19 -391;
 #X restore 4 110 pd tempo;
-#N canvas 15 47 468 415 midifluid_GUI 0;
+#N canvas 204 83 468 440 midifluid_GUI 0;
 #X obj 147 -47 cnv 15 257 78 empty empty Fluidsynth 4 8 0 10 #7a7a7a
 #404040 0;
 #X msg 5 -169 load /home/zig/soundfounts/FluidR3_GM.sf2;
@@ -308,6 +308,8 @@ f 3;
 #X obj 249 139 symbol Loading...;
 #X msg 249 164 label \$1 \, color #b15353 0;
 #X obj 232 218 delay 500;
+#X obj 170 213 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X connect 0 0 12 0;
 #X connect 1 0 12 0;
 #X connect 2 0 9 0;
@@ -329,6 +331,7 @@ f 3;
 #X connect 16 0 17 0;
 #X connect 17 0 15 0;
 #X connect 18 0 4 0;
+#X connect 19 0 4 0;
 #X restore 106 277 pd load_soundfont_initialize;
 #N canvas 863 47 450 581 save_preset 0;
 #X obj 82 286 text set synths_list 1e+06;
@@ -442,7 +445,7 @@ f 3;
 #X obj 464 280 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
 #X obj 483 209 t b a;
-#N canvas 504 108 450 465 load_ddpresets 0;
+#N canvas 814 125 450 490 load_ddpresets 0;
 #X obj 57 117 text sequence synths_list;
 #X msg 57 89 line 0 \, tempo 10 msec \, auto;
 #X obj 57 67 delay 500;
@@ -491,15 +494,14 @@ f 3;
 #X obj 508 370 r fromdsp;
 #X obj 508 395 routeOSC /fluid_sndfnt;
 #X obj 508 420 list2symbol;
-#X obj 235 -14 cnv 16 63 16 empty \$0-fluid-sndfnt-r SGM-v2.01- 0 7
-0 10 #9fd59b #404040 0;
+#X obj 235 -14 cnv 16 63 16 empty \$0-fluid-sndfnt-r Loading... 0 7
+0 10 #b15353 #fcfcfc 0;
 #X text 235 -30 soundfont;
 #X msg 688 390 lalalalalailio;
 #X obj 508 445 tools/stringsplit 10;
 #X msg 382 477 color #b15353 0;
 #X msg 386 447 color #e0e0e0 2;
 #X msg 387 408 color #9fd59b 2;
-#X msg 508 472 label \$1 \, color #9fd59b 2;
 #X obj 699 304 s \$0-fluid-val-r;
 #X obj 645 349 s \$0-fluid-chan-r;
 #X obj 672 327 s \$0-fluid-bank-r;
@@ -537,6 +539,8 @@ f 3;
 #X connect 15 1 13 0;
 #X connect 15 2 11 0;
 #X restore 633 268 pd sndfnt_loaded;
+#X msg 701 454 color #9fd59b 2;
+#X msg 508 472 label \$1 \, color 17 2;
 #X connect 1 0 12 0;
 #X connect 2 0 12 0;
 #X connect 6 0 7 0;
@@ -582,21 +586,20 @@ f 3;
 #X connect 49 1 23 0;
 #X connect 52 0 12 0;
 #X connect 53 0 54 0;
-#X connect 54 0 50 0;
 #X connect 55 0 52 0;
 #X connect 58 0 59 0;
 #X connect 59 0 60 0;
 #X connect 60 0 64 0;
 #X connect 63 0 64 0;
-#X connect 64 0 68 0;
+#X connect 64 0 75 0;
 #X connect 65 0 56 0;
 #X connect 66 0 56 0;
 #X connect 67 0 56 0;
-#X connect 68 0 56 0;
-#X connect 72 0 73 0;
-#X connect 73 0 70 0;
-#X connect 73 1 71 0;
-#X connect 73 2 69 0;
+#X connect 71 0 72 0;
+#X connect 72 0 69 0;
+#X connect 72 1 70 0;
+#X connect 72 2 68 0;
+#X connect 75 0 56 0;
 #X coords 0 -1 1 1 257 78 1 147 -47;
 #X restore 699 6 pd midifluid_GUI;
 #N canvas 556 195 708 556 sound_input 0;
@@ -607,7 +610,7 @@ f 3;
 #X msg 70 58 names adc~ midifluid;
 #X obj 51 9 loadbang;
 #X obj 51 134 tgl 15 0 empty empty monitor-> 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#000000 1 1;
 #X obj 51 34 t b b 1;
 #X msg 51 80 set 1;
 #X obj 124 398 s todsp;
@@ -880,8 +883,8 @@ volume 19 7 1 13 #dcdcdc #000000 #000000 0 1;
 #X coords 0 -1 1 1 60 70 2 90 24;
 #X restore 6 4 pd saveload;
 #X obj 802 447 scene 90;
-#N canvas 998 48 387 427 settings 1;
-#X obj 14 -701 cnv 15 360 384 empty empty empty 20 12 0 14 #abc4ca
+#N canvas 976 47 383 392 settings 1;
+#X obj 14 -701 cnv 15 361 323 empty empty empty 20 12 0 14 #abc4ca
 #404040 0;
 #X text 454 -574 0 empty \; 1 playing \; 2 play queued \; 3 recording
 \; 4 record armed \; 5 not empty \, stopped \; 6 stop queued;
@@ -1851,8 +1854,8 @@ sends \, but whatever \, it was faster to do it manually just now.
 #X connect 40 0 39 0;
 #X connect 41 0 32 0;
 #X coords 0 -1 1 1 138 61 1 2 192;
-#X restore 32 -684 pd button_array;
-#N canvas 648 292 803 604 apc_midi_control 0;
+#X restore 18 -696 pd button_array;
+#N canvas 148 109 760 357 apc_midi_control 0;
 #X obj 159 77 r midibutton;
 #X floatatom 159 102 5 0 0 0 - - -, f 5;
 #X obj 159 160 moses 64;
@@ -2114,7 +2117,7 @@ still start by arming it., f 34;
 #X obj 178 256 s;
 #X msg 198 231 symbol \$1-midibutton;
 #X obj 159 209 t f b f;
-#N canvas 480 34 478 667 createtrackifmissing 1;
+#N canvas 480 34 478 667 createtrackifmissing 0;
 #X obj 124 24 inlet;
 #X text 163 25 button number;
 #X obj 111 335 spigot;
@@ -2222,6 +2225,12 @@ f 13;
 #X connect 7 0 8 0;
 #X connect 7 1 8 1;
 #X restore 590 206 pd midiout_init;
+#N canvas 0 0 450 300 sidebuttons_config 0;
+#X obj 75 78 s \$0-globalplaypause-r;
+#X obj 75 53 select 97 90;
+#X obj 71 16 r midibutton;
+#X connect 1 0 0 0;
+#X restore 597 244 pd sidebuttons_config;
 #X connect 0 0 1 0;
 #X connect 1 0 8 0;
 #X connect 2 0 3 0;
@@ -2235,13 +2244,8 @@ f 13;
 #X connect 16 1 14 0;
 #X connect 16 2 15 0;
 #X connect 18 0 19 0;
-#X restore 33 -471 pd apc_midi_control;
-#N canvas 0 0 450 300 sidebuttons_config 0;
-#X obj 75 78 s \$0-globalplaypause-r;
-#X obj 75 53 select 97 90;
-#X obj 71 16 r midibutton;
-#X connect 1 0 0 0;
-#X restore 33 -448 pd sidebuttons_config;
+#X coords 0 -1 1 1 97 47 1 359 2;
+#X restore 18 -485 pd apc_midi_control;
 #N canvas 0 0 450 300 latency_test 0;
 #X obj 103 150 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
@@ -2266,7 +2270,7 @@ f 13;
 #X connect 7 0 1 0;
 #X connect 8 0 9 0;
 #X connect 9 0 1 0;
-#X restore 32 -368 pd latency_test;
+#X restore 19 -399 pd latency_test;
 #N canvas 600 57 588 507 OSCconnections 0;
 #X obj 32 79 loadbang;
 #X obj 32 274 mrpeach/udpsend;
@@ -2336,7 +2340,7 @@ f 13;
 #X connect 31 0 23 0;
 #X connect 31 1 22 0;
 #X coords 0 -1 1 1 212 59 1 35 4;
-#X restore 32 -614 pd OSCconnections;
+#X restore 160 -696 pd OSCconnections;
 #N canvas 208 313 450 325 OSCconnect_dsp 0;
 #X obj 65 52 bng 15 250 50 0 empty empty connect_to_8081 17 7 0 10
 #fcfcfc #000000 #000000;
@@ -2382,7 +2386,7 @@ f 13;
 #X connect 17 2 5 0;
 #X connect 17 3 6 0;
 #X coords 0 -1 1 1 313 61 1 62 31;
-#X restore 32 -549 pd OSCconnect_dsp;
+#X restore 18 -630 pd OSCconnect_dsp;
 #N canvas 475 228 450 443 midisetup 0;
 #X obj 37 26 bng 15 250 50 0 empty empty Connect\ MIDI\ devices 17
 5 0 10 #fcfcfc #000000 #000000;
@@ -2430,8 +2434,8 @@ f 13;
 #X connect 10 1 7 0;
 #X connect 11 0 10 0;
 #X coords 0 -1 1 1 151 32 1 33 12;
-#X restore 32 -419 pd midisetup;
-#N canvas 363 178 546 392 current_apc_config 0;
+#X restore 17 -556 pd midisetup;
+#N canvas 191 90 719 528 current_apc_config 0;
 #X obj 47 43 cnv 15 505 315 empty empty empty 20 12 0 14 #383838 #404040
 0;
 #X obj 61 72 cnv 15 48 21 empty empty 56 2 4 0 9 #e0e0e0 #404040 0
@@ -2601,22 +2605,22 @@ f 13;
 #X text 571 9 When track is selected:, f 12;
 #X text 573 138 Rec;
 #X text 554 328 SHIFT / REC if empty;
-#X text 572 170 Stop;
+#X text 573 170 Stop;
 #X text 531 80 90;
 #X text 531 296 97;
 #X text 477 336 79;
 #X text 79 336 72;
-#X text 61 366 + 1 bar;
-#X text 121 367 - 1 bar;
-#X text 173 367 output -1;
-#X text 232 367 output +1;
+#X text 573 198 + 1 bar;
+#X text 573 230 - 1 bar;
+#X text 573 293 output -1;
+#X text 573 260 output +1;
 #X obj 61 54 cnv 5 48 8 empty empty empty 20 12 0 14 #fc0000 #404040
 0;
 #X obj 118 54 cnv 5 48 8 empty empty empty 20 12 0 14 #fc9800 #404040
 0;
-#X text 571 104 Clear;
-#X restore 32 -338 pd current_apc_config;
-#X obj 211 -432 faders_knobs;
+#X text 573 104 Clear;
+#X restore 18 -422 pd current_apc_config;
+#X obj 173 -556 faders_knobs;
 #N canvas 895 33 470 378 trackarm 0;
 #X text 108 11 only one track should be armed at a time;
 #X obj 85 41 r recarm-global-r;
@@ -2640,7 +2644,7 @@ f 13;
 #X connect 7 0 2 0;
 #X connect 8 0 2 0;
 #X coords 0 -1 1 1 77 33 1 40 166;
-#X restore 191 -472 pd trackarm;
+#X restore 143 -471 pd trackarm;
 #X restore 3 80 pd settings;
 #X obj 87 501 matrix_thumb_output 1;
 #X obj 176 501 matrix_thumb_output 2;
@@ -2655,7 +2659,7 @@ f 13;
 #N canvas 519 268 450 325 midi_in_monitor 0;
 #X obj 91 56 notein;
 #X obj 91 81 pack f f f;
-#X obj 231 46 cnv 15 57 16 empty \$0-midimon-r 98\ 0\ 1 1 6 0 10 #e0e0e0
+#X obj 231 46 cnv 15 57 16 empty \$0-midimon-r 50\ 0\ 17 1 6 0 10 #e0e0e0
 #404040 0;
 #X obj 181 46 cnv 15 49 16 empty empty midimon: 1 6 0 10 #e0e0e0 #404040
 0;
