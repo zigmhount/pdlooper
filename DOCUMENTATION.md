@@ -109,13 +109,13 @@ Each track slot can have 3 different views:
 ![playing track](screenshots/doc/tracks_statuses.png)
 
   - Each track can have 7 status:
-    0 Empty, white background, i.e. no sample has been recorded yet.
-    1 Playing, solid green background
-    2 Playing in queue, blinking green background. The sample will be played at the start of the next bar.
-    3 Recording, solid red background
-    4 Recording in queue, blinking red background. The sample will be recorded starting from the next bar.
-    5 Stopped, yellow background
-    6 Stopped in queue, blinking yellow background. The sample will stop when it finished playing.
+    - 0  Empty, white background, i.e. no sample has been recorded yet.
+    - 1  Playing, solid green background
+    - 2  Playing in queue, blinking green background. The sample will be played at the start of the next bar.
+    - 3  Recording, solid red background
+    - 4  Recording in queue, blinking red background. The sample will be recorded starting from the next bar.
+    - 5  Stopped, yellow background
+    - 6  Stopped in queue, blinking yellow background. The sample will stop when it finished playing.
   - One Play/Rec/Pause button, changing status and color depending on the current status of the track. Stop, Rec or Pause will be activated only at the beginning of the next bar or the end of the sample.
   - Cfg button, to display the track's configuration panel
   - A `[hslider]` object showing the time progression of the track's sample, the label of the track, and the background color depending on the track's status
