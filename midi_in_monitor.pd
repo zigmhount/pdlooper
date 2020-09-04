@@ -1,0 +1,26 @@
+#N canvas 161 252 260 173 10;
+#X obj 98 43 notein;
+#X obj 98 68 pack f f f;
+#X obj 238 33 cnv 15 57 16 empty \$0-midimon-r 67\ 0\ 1 1 6 0 10 #e0e0e0
+#404040 0;
+#X obj 188 33 cnv 15 49 16 empty empty midimon: 1 6 0 10 #e0e0e0 #404040
+0;
+#X obj 98 218 s \$0-midimon-r;
+#X msg 335 67 45 127 1;
+#X obj 125 115 list2symbol;
+#X msg 125 140 label \$1 \, color #d2ca57;
+#X msg 98 191 color #e0e0e0;
+#X obj 98 89 t b a;
+#X obj 98 166 delay 200;
+#X connect 0 0 1 0;
+#X connect 0 1 1 1;
+#X connect 0 2 1 2;
+#X connect 1 0 9 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 4 0;
+#X connect 8 0 4 0;
+#X connect 9 0 10 0;
+#X connect 9 1 6 0;
+#X connect 10 0 8 0;
+#X coords 0 -1 1 1 108 16 2 187 33;

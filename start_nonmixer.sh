@@ -1,6 +1,10 @@
 #!/bin/bash
 
 
+# Kill all children processes when the script is killed:
+trap "kill 0" EXIT
+
+
 # purr-data -unique -rt -jack -nogui -inchannels "2" -outchannels "16" dsp_main.pd
 
 non-mixer --osc-port 17154 NonMixer_defaultsetup_pdlooper/ &
@@ -52,3 +56,9 @@ sleep 7
 #jack_disconnect pure_data_0:output1 system:playback_2
 #jack_connect Non-Mixer/Master:out-1 system:playback_1
 #jack_connect Non-Mixer/Master:out-2 system:playback_2
+
+
+# This will kill this script once the children are terminated:
+wait
+
+

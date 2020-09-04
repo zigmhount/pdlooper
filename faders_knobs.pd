@@ -1,4 +1,4 @@
-#N canvas 186 175 937 478 10;
+#N canvas 187 197 937 478 10;
 #N canvas 194 285 722 427 OSC_out 0;
 #X obj 206 36 bng 15 250 50 0 empty empty Connect 17 7 0 10 #fcfcfc
 #000000 #000000;
@@ -34,7 +34,6 @@
 #X connect 5 0 2 0;
 #X connect 6 0 2 0;
 #X connect 7 0 10 0;
-#X connect 7 0 15 0;
 #X connect 8 0 9 0;
 #X connect 9 0 11 0;
 #X connect 10 0 8 0;
@@ -53,23 +52,23 @@
 #X obj 34 -80 cnv 15 406 131 empty empty empty 20 12 0 14 #383838 #404040
 0;
 #X obj 42 -74 vsl 22 102 0 127 0 0 empty fader48-r fader48 -8 112 0
-10 #606060 #f0f0f0 #d8d8d8 0 1;
+10 #606060 #f0f0f0 #d8d8d8 10100 1;
 #X obj 86 -74 vsl 22 102 0 127 0 0 fader49-s fader49-r fader49 -8 112
 0 10 #808080 #000000 #d8d8d8 0 1;
 #X obj 134 -73 vsl 22 102 0 127 0 0 fader50-s fader50-r fader50 -8
 112 0 10 #808080 #000000 #d8d8d8 0 1;
 #X obj 181 -73 vsl 22 102 0 127 0 0 fader51-s fader51-r fader51 -8
-112 0 10 #808080 #000000 #d8d8d8 0 1;
+112 0 10 #808080 #000000 #d8d8d8 10100 1;
 #X obj 225 -73 vsl 22 102 0 127 0 0 fader52-s fader52-r fader52 -8
-112 0 10 #808080 #000000 #d8d8d8 0 1;
+112 0 10 #808080 #000000 #d8d8d8 10100 1;
 #X obj 273 -73 vsl 22 102 0 127 0 0 fader53-s fader53-r fader53 -8
-112 0 10 #808080 #000000 #d8d8d8 0 1;
+112 0 10 #808080 #000000 #d8d8d8 10100 1;
 #X obj 315 -73 vsl 22 102 0 127 0 0 fader54-s fader54-r fader54 -8
 112 0 10 #808080 #000000 #d8d8d8 10100 1;
 #X obj 359 -73 vsl 22 102 0 127 0 0 fader55-s fader55-r fader55 -8
-112 0 10 #808080 #000000 #d8d8d8 0 1;
+112 0 10 #808080 #000000 #d8d8d8 10100 1;
 #X obj 407 -72 vsl 22 102 0 127 0 0 fader56-s fader56-r fader56 -8
-112 0 10 #808080 #000000 #d8d8d8 0 1;
+112 0 10 #808080 #000000 #d8d8d8 10100 1;
 #X obj 35 82 pack f s;
 #X obj 81 125 pack f s;
 #X obj 132 86 pack f s;
