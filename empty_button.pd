@@ -1,10 +1,10 @@
-#N canvas 286 47 711 735 10;
+#N canvas 288 23 343 346 10;
 #X obj 404 329 cnv 15 110 58 empty empty empty 20 12 0 14 #747474 #404040
 0;
 #N canvas 842 99 450 438 \$0-buttonframe 0;
-#X obj 78 51 bng 44 250 50 0 2095-bng-s 0-bng-r ADD 5 26 0 10 #7c7c7c
+#X obj 78 51 bng 44 250 50 0 2486-bng-s 56-bng-r ADD 5 26 0 10 #7c7c7c
 #000000 #000000;
-#X obj 118 51 bng 44 250 50 0 2095-bng-s 2095-bng-r ADD 5 26 0 10 #7c7c7c
+#X obj 118 51 bng 44 250 50 0 2486-bng-s 2486-bng-r ADD 5 26 0 10 #7c7c7c
 #000000 #000000;
 #X obj 78 51 cnv 15 84 44 empty empty Empty 27 18 0 10 #7c7c7c #404040
 0;
@@ -15,7 +15,7 @@
 #X obj 100 -6 loadbang;
 #X msg 9 207 1;
 #X msg 132 471 1;
-#X obj 191 -12 bng 15 250 50 1 empty initbang-emptybutton-r initbang-emptybutton-r
+#X obj 191 -12 bng 15 250 50 1 empty 0-initbang-emptybutton-r 0-initbang-emptybutton-r
 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 193 9 t b b;
 #X floatatom 111 78 5 0 0 0 - - -, f 5;
