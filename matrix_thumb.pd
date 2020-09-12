@@ -1,151 +1,150 @@
-#N canvas 546 71 450 325 10;
+#N canvas 891 92 450 350 10;
 #X obj 21 65 cnv 15 156 69 empty empty empty 20 12 0 14 #808080 #404040
 0;
 #N canvas 182 107 450 323 thumbcnv 0;
-#X obj 0 56 cnv 8 8 8 1151-0-s 1151-0-r empty 0 0 0 12 #202020 #202020
+#X obj 0 56 cnv 8 8 8 1218-0-s 1218-0-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 0 56 cnv 8 8 8 1151-0-s 1151-0-r empty 0 0 0 12 #202020 #202020
+#X obj 0 56 cnv 8 8 8 1218-0-s 1218-0-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 8 56 cnv 8 8 8 1151-1-s 1151-1-r empty 0 0 0 12 #202020 #202020
+#X obj 8 56 cnv 8 8 8 1218-1-s 1218-1-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 16 56 cnv 8 8 8 1151-2-s 1151-2-r empty 0 0 0 12 #202020 #202020
+#X obj 16 56 cnv 8 8 8 1218-2-s 1218-2-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 24 56 cnv 8 8 8 1151-3-s 1151-3-r empty 0 0 0 12 #202020 #202020
+#X obj 24 56 cnv 8 8 8 1218-3-s 1218-3-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 32 56 cnv 8 8 8 1151-4-s 1151-4-r empty 0 0 0 12 #202020 #202020
+#X obj 32 56 cnv 8 8 8 1218-4-s 1218-4-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 40 56 cnv 8 8 8 1151-5-s 1151-5-r empty 0 0 0 12 #202020 #202020
+#X obj 40 56 cnv 8 8 8 1218-5-s 1218-5-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 48 56 cnv 8 8 8 1151-6-s 1151-6-r empty 0 0 0 12 #202020 #202020
+#X obj 48 56 cnv 8 8 8 1218-6-s 1218-6-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 56 56 cnv 8 8 8 1151-7-s 1151-7-r empty 0 0 0 12 #202020 #202020
+#X obj 56 56 cnv 8 8 8 1218-7-s 1218-7-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 0 48 cnv 8 8 8 1151-8-s 1151-8-r empty 0 0 0 12 #202020 #202020
+#X obj 0 48 cnv 8 8 8 1218-8-s 1218-8-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 8 48 cnv 8 8 8 1151-9-s 1151-9-r empty 0 0 0 12 #202020 #202020
+#X obj 8 48 cnv 8 8 8 1218-9-s 1218-9-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 16 48 cnv 8 8 8 1151-10-s 1151-10-r empty 0 0 0 12 #202020 #202020
+#X obj 16 48 cnv 8 8 8 1218-10-s 1218-10-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 24 48 cnv 8 8 8 1151-11-s 1151-11-r empty 0 0 0 12 #202020 #202020
+#X obj 24 48 cnv 8 8 8 1218-11-s 1218-11-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 32 48 cnv 8 8 8 1151-12-s 1151-12-r empty 0 0 0 12 #202020 #202020
+#X obj 32 48 cnv 8 8 8 1218-12-s 1218-12-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 40 48 cnv 8 8 8 1151-13-s 1151-13-r empty 0 0 0 12 #202020 #202020
+#X obj 40 48 cnv 8 8 8 1218-13-s 1218-13-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 48 48 cnv 8 8 8 1151-14-s 1151-14-r empty 0 0 0 12 #202020 #202020
+#X obj 48 48 cnv 8 8 8 1218-14-s 1218-14-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 56 48 cnv 8 8 8 1151-15-s 1151-15-r empty 0 0 0 12 #202020 #202020
+#X obj 56 48 cnv 8 8 8 1218-15-s 1218-15-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 0 40 cnv 8 8 8 1151-16-s 1151-16-r empty 0 0 0 12 #202020 #202020
+#X obj 0 40 cnv 8 8 8 1218-16-s 1218-16-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 8 40 cnv 8 8 8 1151-17-s 1151-17-r empty 0 0 0 12 #202020 #202020
+#X obj 8 40 cnv 8 8 8 1218-17-s 1218-17-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 16 40 cnv 8 8 8 1151-18-s 1151-18-r empty 0 0 0 12 #202020 #202020
+#X obj 16 40 cnv 8 8 8 1218-18-s 1218-18-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 24 40 cnv 8 8 8 1151-19-s 1151-19-r empty 0 0 0 12 #202020 #202020
+#X obj 24 40 cnv 8 8 8 1218-19-s 1218-19-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 32 40 cnv 8 8 8 1151-20-s 1151-20-r empty 0 0 0 12 #202020 #202020
+#X obj 32 40 cnv 8 8 8 1218-20-s 1218-20-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 40 40 cnv 8 8 8 1151-21-s 1151-21-r empty 0 0 0 12 #202020 #202020
+#X obj 40 40 cnv 8 8 8 1218-21-s 1218-21-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 48 40 cnv 8 8 8 1151-22-s 1151-22-r empty 0 0 0 12 #202020 #202020
+#X obj 48 40 cnv 8 8 8 1218-22-s 1218-22-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 56 40 cnv 8 8 8 1151-23-s 1151-23-r empty 0 0 0 12 #202020 #202020
+#X obj 56 40 cnv 8 8 8 1218-23-s 1218-23-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 0 32 cnv 8 8 8 1151-24-s 1151-24-r empty 0 0 0 12 #202020 #202020
+#X obj 0 32 cnv 8 8 8 1218-24-s 1218-24-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 8 32 cnv 8 8 8 1151-25-s 1151-25-r empty 0 0 0 12 #202020 #202020
+#X obj 8 32 cnv 8 8 8 1218-25-s 1218-25-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 16 32 cnv 8 8 8 1151-26-s 1151-26-r empty 0 0 0 12 #202020 #202020
+#X obj 16 32 cnv 8 8 8 1218-26-s 1218-26-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 24 32 cnv 8 8 8 1151-27-s 1151-27-r empty 0 0 0 12 #202020 #202020
+#X obj 24 32 cnv 8 8 8 1218-27-s 1218-27-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 32 32 cnv 8 8 8 1151-28-s 1151-28-r empty 0 0 0 12 #202020 #202020
+#X obj 32 32 cnv 8 8 8 1218-28-s 1218-28-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 40 32 cnv 8 8 8 1151-29-s 1151-29-r empty 0 0 0 12 #202020 #202020
+#X obj 40 32 cnv 8 8 8 1218-29-s 1218-29-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 48 32 cnv 8 8 8 1151-30-s 1151-30-r empty 0 0 0 12 #202020 #202020
+#X obj 48 32 cnv 8 8 8 1218-30-s 1218-30-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 56 32 cnv 8 8 8 1151-31-s 1151-31-r empty 0 0 0 12 #202020 #202020
+#X obj 56 32 cnv 8 8 8 1218-31-s 1218-31-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 0 24 cnv 8 8 8 1151-32-s 1151-32-r empty 0 0 0 12 #202020 #202020
+#X obj 0 24 cnv 8 8 8 1218-32-s 1218-32-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 8 24 cnv 8 8 8 1151-33-s 1151-33-r empty 0 0 0 12 #202020 #202020
+#X obj 8 24 cnv 8 8 8 1218-33-s 1218-33-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 16 24 cnv 8 8 8 1151-34-s 1151-34-r empty 0 0 0 12 #202020 #202020
+#X obj 16 24 cnv 8 8 8 1218-34-s 1218-34-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 24 24 cnv 8 8 8 1151-35-s 1151-35-r empty 0 0 0 12 #202020 #202020
+#X obj 24 24 cnv 8 8 8 1218-35-s 1218-35-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 32 24 cnv 8 8 8 1151-36-s 1151-36-r empty 0 0 0 12 #202020 #202020
+#X obj 32 24 cnv 8 8 8 1218-36-s 1218-36-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 40 24 cnv 8 8 8 1151-37-s 1151-37-r empty 0 0 0 12 #202020 #202020
+#X obj 40 24 cnv 8 8 8 1218-37-s 1218-37-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 48 24 cnv 8 8 8 1151-38-s 1151-38-r empty 0 0 0 12 #202020 #202020
+#X obj 48 24 cnv 8 8 8 1218-38-s 1218-38-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 56 24 cnv 8 8 8 1151-39-s 1151-39-r empty 0 0 0 12 #202020 #202020
+#X obj 56 24 cnv 8 8 8 1218-39-s 1218-39-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 0 16 cnv 8 8 8 1151-40-s 1151-40-r empty 0 0 0 12 #202020 #202020
+#X obj 0 16 cnv 8 8 8 1218-40-s 1218-40-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 8 16 cnv 8 8 8 1151-41-s 1151-41-r empty 0 0 0 12 #202020 #202020
+#X obj 8 16 cnv 8 8 8 1218-41-s 1218-41-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 16 16 cnv 8 8 8 1151-42-s 1151-42-r empty 0 0 0 12 #e8e828 #e8e828
+#X obj 16 16 cnv 8 8 8 1218-42-s 1218-42-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 24 16 cnv 8 8 8 1151-43-s 1151-43-r empty 0 0 0 12 #202020 #202020
+#X obj 24 16 cnv 8 8 8 1218-43-s 1218-43-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 32 16 cnv 8 8 8 1151-44-s 1151-44-r empty 0 0 0 12 #202020 #202020
+#X obj 32 16 cnv 8 8 8 1218-44-s 1218-44-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 40 16 cnv 8 8 8 1151-45-s 1151-45-r empty 0 0 0 12 #202020 #202020
+#X obj 40 16 cnv 8 8 8 1218-45-s 1218-45-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 48 16 cnv 8 8 8 1151-46-s 1151-46-r empty 0 0 0 12 #202020 #202020
+#X obj 48 16 cnv 8 8 8 1218-46-s 1218-46-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 56 16 cnv 8 8 8 1151-47-s 1151-47-r empty 0 0 0 12 #202020 #202020
+#X obj 56 16 cnv 8 8 8 1218-47-s 1218-47-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 0 8 cnv 8 8 8 1151-48-s 1151-48-r empty 0 0 0 12 #202020 #202020
+#X obj 0 8 cnv 8 8 8 1218-48-s 1218-48-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 8 8 cnv 8 8 8 1151-49-s 1151-49-r empty 0 0 0 12 #fcac44 #fcac44
+#X obj 8 8 cnv 8 8 8 1218-49-s 1218-49-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 16 8 cnv 8 8 8 1151-50-s 1151-50-r empty 0 0 0 12 #202020 #202020
+#X obj 16 8 cnv 8 8 8 1218-50-s 1218-50-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 24 8 cnv 8 8 8 1151-51-s 1151-51-r empty 0 0 0 12 #202020 #202020
+#X obj 24 8 cnv 8 8 8 1218-51-s 1218-51-r empty 0 0 0 12 #14e814 #14e814
 0;
-#X obj 32 8 cnv 8 8 8 1151-52-s 1151-52-r empty 0 0 0 12 #202020 #202020
+#X obj 32 8 cnv 8 8 8 1218-52-s 1218-52-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 40 8 cnv 8 8 8 1151-53-s 1151-53-r empty 0 0 0 12 #202020 #202020
+#X obj 40 8 cnv 8 8 8 1218-53-s 1218-53-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 48 8 cnv 8 8 8 1151-54-s 1151-54-r empty 0 0 0 12 #202020 #202020
+#X obj 48 8 cnv 8 8 8 1218-54-s 1218-54-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 56 8 cnv 8 8 8 1151-55-s 1151-55-r empty 0 0 0 12 #202020 #202020
+#X obj 56 8 cnv 8 8 8 1218-55-s 1218-55-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 0 0 cnv 8 8 8 1151-56-s 1151-56-r empty 0 0 0 12 #fc2828 #fc2828
+#X obj 0 0 cnv 8 8 8 1218-56-s 1218-56-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 8 0 cnv 8 8 8 1151-57-s 1151-57-r empty 0 0 0 12 #202020 #202020
+#X obj 8 0 cnv 8 8 8 1218-57-s 1218-57-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 16 0 cnv 8 8 8 1151-58-s 1151-58-r empty 0 0 0 12 #202020 #202020
+#X obj 16 0 cnv 8 8 8 1218-58-s 1218-58-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 24 0 cnv 8 8 8 1151-59-s 1151-59-r empty 0 0 0 12 #202020 #202020
+#X obj 24 0 cnv 8 8 8 1218-59-s 1218-59-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 32 0 cnv 8 8 8 1151-60-s 1151-60-r empty 0 0 0 12 #202020 #202020
+#X obj 32 0 cnv 8 8 8 1218-60-s 1218-60-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 40 0 cnv 8 8 8 1151-61-s 1151-61-r empty 0 0 0 12 #202020 #202020
+#X obj 40 0 cnv 8 8 8 1218-61-s 1218-61-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 48 0 cnv 8 8 8 1151-62-s 1151-62-r empty 0 0 0 12 #202020 #202020
+#X obj 48 0 cnv 8 8 8 1218-62-s 1218-62-r empty 0 0 0 12 #202020 #202020
 0;
-#X obj 56 0 cnv 8 8 8 1151-63-s 1151-63-r empty 0 0 0 12 #202020 #202020
+#X obj 56 0 cnv 8 8 8 1218-63-s 1218-63-r empty 0 0 0 12 #202020 #202020
 0;
 #X coords 0 -1 1 1 64 64 2 0 0;
 #X restore 23 68 pd thumbcnv;
-#N canvas 643 121 490 530 update_thumb 0;
-#X obj 101 78 r thumb_array_act-val;
-#X obj 260 127 tabwrite thumb_array_act;
-#X msg 120 170 symbol \$0-\$2-r;
-#X text 257 80 incoming list: value \, index;
-#X msg 101 128 \$1;
-#X obj 101 328 s;
-#X floatatom 101 275 9 0 0 0 - - -, f 9;
-#X obj 101 245 f 12;
-#X msg 101 302 color \$1 \$1;
-#X obj 146 244 f;
-#X obj 101 103 t a a a a, f 27;
+#N canvas 435 110 490 530 update_thumb 1;
+#X obj 31 28 r thumb_array_act-val;
+#X obj 286 76 tabwrite thumb_array_act;
+#X msg 94 129 symbol \$0-\$2-r;
+#X text 187 30 incoming list: value \, index;
+#X msg 31 78 \$1;
+#X obj 31 278 s;
+#X floatatom 31 225 9 0 0 0 - - -, f 9;
+#X obj 31 195 f 12;
+#X msg 31 252 color \$1 \$1;
+#X obj 76 194 f;
 #N canvas 408 234 450 325 column_colors 0;
 #X obj 121 21 inlet;
 #X text 161 22 track number;
@@ -188,39 +187,45 @@
 #X connect 12 0 14 0;
 #X connect 13 0 14 0;
 #X connect 14 0 16 0;
-#X restore 207 151 pd column_colors;
-#X msg 207 127 \$2;
-#X msg 332 295 1 56;
-#X obj 332 320 s thumb_array_act-val;
-#X msg 355 263 1 35;
-#X msg 314 237 0 56;
-#X obj 101 194 select 0;
-#X obj 146 216 t b f;
-#X floatatom 185 245 5 0 0 1 bars - -, f 5;
-#X obj 185 273 max;
-#X obj 185 298 s \$0-thumb-maxbars-r;
-#X connect 0 0 10 0;
+#X restore 158 103 pd column_colors;
+#X msg 158 79 \$2;
+#X msg 136 332 1 56;
+#X obj 136 357 s thumb_array_act-val;
+#X msg 189 331 1 35;
+#X msg 148 305 0 56;
+#X obj 31 144 select 0;
+#X obj 76 166 t b f;
+#X floatatom 115 195 5 0 0 1 bars - -, f 5;
+#X obj 222 189 s \$0-thumb-maxbars-r;
+#X obj 31 53 t a a a a a, f 43;
+#X obj 222 137 array max thumb_array_act;
+#X floatatom 222 162 5 0 0 0 - - -, f 5;
+#X obj 303 108 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X connect 0 0 20 0;
 #X connect 2 0 5 1;
-#X connect 4 0 17 0;
+#X connect 4 0 16 0;
 #X connect 6 0 8 0;
 #X connect 7 0 6 0;
 #X connect 8 0 5 0;
 #X connect 9 0 6 0;
-#X connect 10 0 4 0;
-#X connect 10 1 2 0;
-#X connect 10 2 12 0;
-#X connect 10 3 1 0;
-#X connect 11 0 9 1;
-#X connect 12 0 11 0;
-#X connect 13 0 14 0;
-#X connect 15 0 14 0;
-#X connect 16 0 14 0;
-#X connect 17 0 7 0;
+#X connect 10 0 9 1;
+#X connect 11 0 10 0;
+#X connect 12 0 13 0;
+#X connect 14 0 13 0;
+#X connect 15 0 13 0;
+#X connect 16 0 7 0;
+#X connect 16 1 17 0;
+#X connect 17 0 9 0;
 #X connect 17 1 18 0;
-#X connect 18 0 9 0;
-#X connect 18 1 19 0;
-#X connect 19 0 20 0;
-#X connect 20 0 21 0;
+#X connect 20 0 4 0;
+#X connect 20 1 2 0;
+#X connect 20 2 11 0;
+#X connect 20 3 21 0;
+#X connect 20 4 1 0;
+#X connect 21 0 22 0;
+#X connect 22 0 19 0;
+#X connect 23 0 21 0;
 #X restore 44 184 pd update_thumb;
 #X obj 22 12 table thumb_array_act 64;
 #X text 17 32 thumb_array_act is written to by track_ui_2 (when status
@@ -407,6 +412,8 @@ top left \; \$3 = label \; \$4 = receive \; \$5 = send;
 #X connect 17 0 18 0;
 #X connect 18 0 19 0;
 #X restore 261 147 pd midiin;
+#X obj 239 178 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X connect 6 0 5 0;
 #X connect 8 0 7 0;
 #X connect 10 0 14 0;
