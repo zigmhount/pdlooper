@@ -1,4 +1,4 @@
-#N canvas 594 147 523 450 10;
+#N canvas 755 151 523 475 10;
 #N canvas 489 168 384 482 \$0-buttonframe 0;
 #X dropdown 64 74 1 1 0 0 - #0main-actiondd-r #0main-actiondd-s, f
 1;
@@ -17,7 +17,7 @@
 #X obj 20 71 cnv 15 64 23 empty empty empty 20 12 0 14 #a0a0a0 #404040
 0;
 #X obj 20 54 hsl 59 16 0 63 0 0 \$0main-sliderUI-s \$0main-sliderUI-r
-57-Unnamed 5 7 0 9 #fcac44 #000000 #202020 368 0;
+56-Unnamed 5 7 0 9 #fcfcfc #000000 #202020 0 0;
 #X obj 24 74 bng 16 250 50 0 \$0main-stopUI-s \$0main-stopUI-r ◼
 3 4 0 14 #fcfcfc #000000 #000000;
 #X obj 44 74 tgl 16 0 \$0main-recarmUI-s \$0main-recarmUI-r A 4 7 0
@@ -50,9 +50,9 @@
 #X obj 82 123 cnv 2 2 20 empty empty empty 20 12 0 14 #989898 #404040
 0;
 #X obj 24 124 hsl 11 16 0 127 0 0 \$0cfg-pancfg-s \$0cfg-pancfg-r P
-5 7 0 10 #fcfcfc #000000 #000000 504 1;
+5 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 24 104 vsl 16 11 0 127 0 0 \$0cfg-volcfg-s \$0cfg-volcfg-r V
-4 5 0 10 #fcfcfc #000000 #000000 866 1;
+4 5 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 0 100 cnv 15 19 44 empty empty empty 0 0 0 10 #a0a0a0 #202020
 0;
 #X obj 3 104 bng 16 250 50 0 1038-recUIbang-s \$0-playrecbang-r empty
@@ -61,7 +61,7 @@
 0;
 #X obj 3 124 tgl 16 0 \$0cfg-cfg-s \$0cfg-cfg-r cfg 0 6 0 9 #fcfcfc
 #000000 #404040 0 1;
-#X obj 4 105 cnv 14 14 14 empty \$0-playrecbutton-r ▶ 1 3 0 17 #fcac44
+#X obj 4 105 cnv 14 14 14 empty \$0-playrecbutton-r ● 1 3 0 17 #fcfcfc
 #202020 0;
 #X obj 0 0 cnv 15 84 44 empty empty Empty 27 18 0 10 #7c7c7c #404040
 0;
@@ -99,7 +99,7 @@ the canvas;
 #X restore 156 6 pd create_onetime;
 #X obj 3 54 cnv 16 16 16 empty empty empty 20 12 0 14 #000000 #404040
 0;
-#X obj 4 55 cnv 14 14 14 empty \$0-playrecbutton-r ▶ 1 3 0 17 #fcac44
+#X obj 4 55 cnv 14 14 14 empty \$0-playrecbutton-r ● 1 3 0 17 #fcfcfc
 #202020 0;
 #N canvas 112 103 450 613 uitweaks 0;
 #X obj 27 37 r \$0main-cfg-s;
@@ -137,7 +137,7 @@ the canvas;
 #X obj 65 75 cnv 14 14 14 empty empty ≣ 1 4 1 14 #e8e8e8 #404040
 0;
 #X connect 34 0 35 0;
-#X coords 0 -1 1 1 84 44 2 0 50;
+#X coords 0 -1 1 1 84 44 2 0 0;
 #X restore 11 12 pd \$0-buttonframe;
 #N canvas 299 103 450 572 clear_track 0;
 #X obj 69 238 s todsp;
@@ -198,7 +198,7 @@ the canvas;
 #X connect 8 0 10 0;
 #X connect 9 0 1 0;
 #X restore 209 14 pd \$0-OSCoutput;
-#N canvas 133 125 642 563 \$0-fromdsptoUI 0;
+#N canvas 582 97 642 563 \$0-fromdsptoUI 1;
 #X obj 13 47 routeOSC /track;
 #X obj 45 93 f \$1;
 #X obj 13 69 t a b;
@@ -214,7 +214,6 @@ the canvas;
 #X floatatom 463 192 5 0 0 0 - - -, f 5;
 #X floatatom 39 196 5 0 0 0 - - -, f 5;
 #X floatatom 92 195 5 0 0 0 - - -, f 5;
-#X floatatom 516 191 5 0 0 0 - - -, f 5;
 #X text 114 140 input from DSP for this track;
 #X obj 264 318 nbx 5 14 -1e+37 1e+37 0 0 \$0dsp-bars-s \$0dsp-bars-r
 \$0dsp-bars -75 5 0 10 #fcfcfc #000000 #000000 2 256 0;
@@ -231,7 +230,7 @@ the canvas;
 #X obj 264 371 nbx 5 14 -1e+37 1e+37 0 0 \$0dsp-output-s \$0dsp-output-r
 \$0dsp-output -87 5 0 10 #fcfcfc #000000 #000000 0 256 0;
 #X obj 264 282 nbx 5 14 -1e+37 1e+37 0 0 \$0dsp-status-s \$0dsp-status-r
-\$0dsp-status -87 5 0 10 #fcfcfc #000000 #000000 5 256 0;
+\$0dsp-status -87 5 0 10 #fcfcfc #000000 #000000 0 256 0;
 #X obj 264 353 nbx 5 14 -1e+37 1e+37 0 0 \$0dsp-pan-s \$0dsp-pan-r
 \$0dsp-pan -75 5 0 10 #fcfcfc #000000 #000000 64 256 0;
 #N canvas 97 207 450 325 removeslash 0;
@@ -259,30 +258,31 @@ the canvas;
 #X obj 39 169 routeOSC /play /rec /stop /bars /vol /pan /output /name
 /status, f 80;
 #X obj 463 216 s \$0dsp-status-r;
+#X obj 474 286 nbx 5 14 -1e+37 1e+37 0 0 \$0dsp-sliderfreq-s \$0dsp-sliderfreq-r
+\$0dsp-sliderfreq -87 5 0 10 #fcfcfc #000000 #000000 0 256 0;
 #X connect 0 0 2 0;
 #X connect 1 0 4 0;
 #X connect 2 0 3 0;
 #X connect 2 1 1 0;
-#X connect 3 0 27 0;
-#X connect 3 0 29 0;
-#X connect 3 0 31 0;
+#X connect 3 0 26 0;
+#X connect 3 0 28 0;
+#X connect 3 0 30 0;
 #X connect 4 0 3 0;
 #X connect 10 0 0 0;
-#X connect 11 0 32 0;
-#X connect 18 0 27 0;
-#X connect 19 0 27 0;
-#X connect 22 0 27 0;
-#X connect 27 0 17 0;
-#X connect 29 0 28 0;
-#X connect 31 0 12 0;
-#X connect 31 1 13 0;
-#X connect 31 2 5 0;
-#X connect 31 3 6 0;
-#X connect 31 4 7 0;
-#X connect 31 5 8 0;
-#X connect 31 6 9 0;
-#X connect 31 8 11 0;
-#X connect 31 9 14 0;
+#X connect 11 0 31 0;
+#X connect 17 0 26 0;
+#X connect 18 0 26 0;
+#X connect 21 0 26 0;
+#X connect 26 0 16 0;
+#X connect 28 0 27 0;
+#X connect 30 0 12 0;
+#X connect 30 1 13 0;
+#X connect 30 2 5 0;
+#X connect 30 3 6 0;
+#X connect 30 4 7 0;
+#X connect 30 5 8 0;
+#X connect 30 6 9 0;
+#X connect 30 8 11 0;
 #X coords 0 -1 1 1 160 151 1 168 256;
 #X restore 13 71 pd \$0-fromdsptoUI;
 #X symbolatom 13 228 26 0 0 1 #0dsp-incoming - -, f 26;

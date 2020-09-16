@@ -1,4 +1,4 @@
-#N canvas 11 184 963 558 10;
+#N canvas 12 184 963 558 10;
 #X obj 77 4 cnv 15 881 547 empty empty empty 0 0 0 4 #404040 #fcfcfc
 0;
 #N canvas 291 96 450 350 test 0;
@@ -127,7 +127,7 @@
 #X obj 421 -58 metro 500;
 #X floatatom 231 -406 4 0 0 0 - - -, f 4;
 #X obj 138 -411 hradio 20 0 0 4 empty empty empty 0 -8 0 10 #fcfcfc
-#000000 #000000 1;
+#000000 #000000 0;
 #X obj 107 -411 tgl 20 0 \$0-globalplaypause-s \$0-globalplaypause-r
 play/pause -14 -12 0 10 #94a0fc #000000 #000000 0 1;
 #X obj 166 -429 tgl 14 0 empty empty metro 17 7 0 10 #fcfcfc #000000
@@ -162,13 +162,13 @@ play/pause -14 -12 0 10 #94a0fc #000000 #000000 0 1;
 0;
 #X floatatom 54 -267 4 0 0 0 - - -, f 4;
 #X obj 34 -374 tgl 20 0 \$0-globalplaypause-s \$0-globalplaypause-r
-play/pause -14 -12 0 10 #94a0fc #000000 #000000 1 1;
+play/pause -14 -12 0 10 #94a0fc #000000 #000000 0 1;
 #X obj 27 -342 tgl 14 0 empty empty metro -6 -8 0 10 #fcfcfc #000000
 #000000 0 1;
 #X obj 33 -266 bng 15 250 50 0 empty empty tap -2 -10 0 10 #fcfcfc
 #000000 #000000;
 #X obj 54 -350 vradio 20 0 0 4 empty empty empty 0 -8 0 10 #fcfcfc
-#000000 #000000 1;
+#000000 #000000 0;
 #X obj 495 -409 import mrpeach;
 #X obj 23 -180 mrpeach/routeOSC /metro;
 #X obj 23 -155 mrpeach/routeOSC /beatnum /tempo_ms /tempo_bpm /beatsperbar
@@ -618,7 +618,7 @@ f 3;
 #X msg 51 334 /input/monitor \$1;
 #X msg 68 217 0;
 #X obj 131 128 hsl 66 20 0 1 0 0 \$0-volmonslider \$0-set-volmonslider
-volume 19 7 1 13 #dcdcdc #000000 #000000 0 1;
+volume 19 7 1 13 #dcdcdc #000000 #000000 6500 1;
 #X obj 200 116 tgl 16 0 \$0-dsp-montoggle \$0-dsp-montoggle-set on
 3 6 1 9 #4a4f51 #4a4f51 #fcfcfc 0 1;
 #X obj 200 132 bng 16 500 50 0 \$0-monmute-bng \$0-monmute empty 0
@@ -2664,6 +2664,11 @@ f 13;
 #X coords 0 -1 1 1 77 33 1 40 166;
 #X restore 143 -471 pd trackarm;
 #X obj 14 -368 import mrpeach;
+#X obj 168 -374 loadbang;
+#X msg 168 -349 compatibility 0.47;
+#X obj 168 -324 send pd;
+#X connect 13 0 14 0;
+#X connect 14 0 15 0;
 #X restore 3 80 pd settings;
 #X obj 87 501 matrix_thumb_output 1;
 #X obj 176 501 matrix_thumb_output 2;

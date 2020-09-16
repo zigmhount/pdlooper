@@ -10,7 +10,7 @@ trap "kill 0" EXIT
 
 # Launch Purr Data and open the main patch:
 
-purr-data -stderr 2>&1 -unique -rt -jack -inchannels "2" -outchannels "16" -audiobuf 150 dsp_main.pd | while true; do pdsend 9999 localhost udp; done
+purr-data -stderr 2>&1 -unique -rt -jack -inchannels "2" -outchannels "16" -audiobuf 70 dsp_main.pd | while true; do pdsend 9999 localhost udp; done
 
 # This loads dsp_main.pd in Purr-Data with the following options:
 #
