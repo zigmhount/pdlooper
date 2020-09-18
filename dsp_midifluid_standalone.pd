@@ -1,9 +1,9 @@
-#N canvas 106 248 450 300 10;
+#N canvas 741 185 450 325 10;
 #N canvas 451 105 798 620 OSCconnections 0;
 #X obj 41 98 loadbang;
 #X obj 42 420 mrpeach/udpsend;
 #X obj 41 465 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#000000 1 1;
 #X obj 64 339 mrpeach/packOSC;
 #X msg 50 156 disconnect;
 #X obj 37 24 bng 15 250 50 0 empty empty connect_to_8081 17 7 0 10
@@ -11,7 +11,7 @@
 #X obj 36 47 bng 15 250 50 0 empty empty disconnect 17 7 0 10 #fcfcfc
 #000000 #000000;
 #X obj 156 13 tgl 18 0 empty empty connected 35 6 0 10 #fcfcfc #000000
-#000000 0 1;
+#000000 1 1;
 #X obj 282 33 import mrpeach;
 #X obj 237 109 r toui;
 #X obj 293 158 list split 1;
@@ -45,7 +45,7 @@
 #X obj 256 415 mrpeach/routeOSC /pdfluid;
 #X obj 50 389 spigot;
 #X obj 108 10 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#000000 1 1;
 #X connect 0 0 34 0;
 #X connect 1 0 2 0;
 #X connect 2 0 7 0;
@@ -91,7 +91,7 @@
 #X connect 37 0 36 1;
 #X coords 0 -1 1 1 235 60 1 26 8;
 #X restore 15 13 pd OSCconnections;
-#X obj 13 121 midifluid;
+#X obj 13 120 midifluid;
 #N canvas 94 143 708 581 sound_input 0;
 #X text 125 7 switch between adc~ and midifluid, f 14;
 #X dropdown 51 114 6 0 0 0 - - -, f 6;
