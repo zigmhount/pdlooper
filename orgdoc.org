@@ -1,0 +1,11 @@
+* Introduction
+This is a tentative to render an org file in Github, maybe to replace some of the documentation I started in Markdown.
+** subheader
+*** TODO If the Todos are rendered nicely it can be super useful for project management
+*** DONE if this one is completed.
+*** TODO Maybe I add a deadline?
+    DEADLINE: <2020-09-19 Sat>
+and details to the note
+** and another subheader
+* That's it!
+C'est fini.
